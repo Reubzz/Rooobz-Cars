@@ -1,7 +1,7 @@
 # Rooobz Cars
 
 A car rental project for my Final Year Project. 
-- Tech Stack 
+## Tech Stack 
     - Backend:
         - NodeJS 
         - ExpressJS 
