@@ -11,7 +11,10 @@ A car rental project for my Final Year Project.
         - HTML
         - CSS
         - JS
+<<<<<<< HEAD
         - AJAX
+=======
+>>>>>>> 49a0edeeedd403adfa0d130de2ecdd030fb81bad
 
     - Database: 
         - MongoDB
