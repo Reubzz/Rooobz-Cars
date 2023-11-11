@@ -1,0 +1,16 @@
+{
+    "socials": {
+        "facebook": "",
+        "twitter": "",
+        "instagram": ""
+    },
+    "phone": "(+91) 012 345 6789",
+    "address": "Roooobz Cars, Mumbai, India",
+    "mail": "contact@rooobzcars.com",
+    "domain": "rooobzcars.reubz.io",
+    "working_hours": {
+        "Monday_Friday": "8AM - 10PM",
+        "Saturday": "8AM - 7PM",
+        "Sunday": "Closed"
+    }
+}
