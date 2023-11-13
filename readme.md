@@ -1,6 +1,6 @@
-# Rooobz Cars
-
-A car rental project for my Final Year Project. 
+<img width="100%" src="./public/imgs/logo-with-text-long-alternate.png" ></img>
+<br/>
+### A car rental project for my Final Year Project. 
 ## Tech Stack 
 - Backend:
     - NodeJS 
