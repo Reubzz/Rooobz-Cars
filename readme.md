@@ -2,23 +2,23 @@
 
 A car rental project for my Final Year Project. 
 ## Tech Stack 
-    - Backend:
-        - NodeJS 
-        - ExpressJS 
+- Backend:
+    - NodeJS 
+    - ExpressJS 
         
-    - Frontend:
-        - EJS
-        - HTML
-        - CSS
-        - JS
-        - AJAX
+- Frontend:
+    - EJS
+    - HTML
+    - CSS
+    - JS
+    - AJAX
 
-    - Database: 
-        - MongoDB
-        - AWS S3 (Document Store)
+- Database: 
+    - MongoDB
+    - AWS S3 (Document Store)
     
-    - Deployment:
-        - AWS EC2
+- Deployment:
+    - AWS EC2
 
 ## Features
 1. User Registration and Login
