@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -5,4 +6,148 @@
   scroll-behavior: smooth;
   scrollbar-width: thin;
   scrollbar-color: #FF4C30;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #DADADA;
+  border-radius: 0.2em;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FF4C30;
+  border-radius: 0.2em;
+  border: 2px #252525;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #147efb;
+}
+
+body {
+  font-size: 62.5%;
+  font-family: "Rubik", sans-serif;
+}
+
+header nav {
+  background-color: #DADADA;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+header nav img {
+  width: 150px;
+}
+header nav ul {
+  justify-content: center;
+  text-align: center;
+  font-size: 1rem;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  width: 100%;
+}
+header nav .navbar-item {
+  text-decoration: none;
+  color: #0c0c0c;
+  width: 100%;
+}
+header nav .register-button {
+  background-color: #FF4C30;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: #FF4C30 0px 0px 10px;
+}
+
+footer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: -moz-max-content;
+  height: max-content;
+  background-color: #DADADA;
+  flex-direction: row;
+  padding: 30px 40px;
+}
+footer div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+footer div .title {
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 0;
+}
+footer div .title img {
+  width: auto;
+}
+footer div .brand-data {
+  width: 400px;
+}
+footer div .data {
+  list-style-type: none;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+footer div .data a {
+  text-decoration: none;
+  color: #0c0c0c;
+}
+footer div .phone-number {
+  font-size: 1rem;
+  color: #0c0c0c;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+footer div .phone-number img {
+  background-color: #FF4C30;
+  -webkit-mask-image: url("/icons/phone.png");
+          mask-image: url("/icons/phone.png");
+}
+footer div .email {
+  font-size: 1rem;
+  color: #0c0c0c;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+footer div .email img {
+  background-color: #FF4C30;
+  -webkit-mask-image: url("/icons/email.png");
+          mask-image: url("/icons/email.png");
+}
+footer div #subscribe-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+footer div #subscribe-form #subscribe-email {
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+}
+footer div #subscribe-form #subscribe-submit {
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #FF4C30;
+  color: #f1f1f1;
+  font-size: 1rem;
 }/*# sourceMappingURL=common.css.map */
