@@ -1,0 +1,132 @@
+// ? Imports
+@import "./variables";
+@import "./site-font";
+
+header {
+    nav {
+        background-color: $smokedWhite;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 10px;
+
+        img {
+            width: 150px;
+        }
+
+        ul {
+            justify-content: center;
+            text-align: center;
+            font-size: 1rem;
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
+            width: 100%;
+        }
+
+        .navbar-item {
+            text-decoration: none;
+            color: $black;
+            width: 100%;
+        }
+
+        .register-button {
+            background-color: $orange;
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: $orange 0px 0px 10px;
+        }
+
+        #hamburger-menu {
+            display: none;
+            .bar1, .bar2, .bar3 {
+                width: 25px;
+                height: 2px;
+                background-color: $black;
+                margin: 6px 0;
+                transition: 0.5s;
+            }
+
+            &.open {
+                .bar1 {
+                    -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+                    transform: rotate(-45deg) translate(-6px, 6px);
+                }  
+                .bar2 {
+                    opacity: 0;
+                }
+    
+                .bar3 {
+                    -webkit-transform: rotate(45deg) translate(-6px, 6px);
+                    transform: rotate(45deg) translate(-5px, -5px);
+                }
+
+                .mobile-menu {
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    flex-direction: column;
+                }
+            } 
+
+            .mobile-menu {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                padding: 50px 30px;
+                background-color: $smokedWhite;
+                z-index: 999;
+                gap: 50px;
+                
+                .mob-navbar-start {
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    flex-direction: column;
+                    gap: 20px;
+                    flex: 1;
+                }
+                .mob-navbar-end {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 20px;
+                    width: 100%;
+                    flex: 1;
+
+                }
+                li {
+                    list-style: none;
+                    text-align: center; 
+                    .signin-button {
+                        border-color: $orange;
+                        border-width: 2px;
+                        padding: 10px 20px;
+                        border-radius: 5px;
+                        box-shadow: $orange 0px 0px 3px 3px;
+                    }                   
+                    a {
+                        color: $black;
+                        font-size: 1.6rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// !! 990 PX - Mobile Layout
+@media screen and (max-width: 980px) {
+    nav {
+        .navbar-center, .navbar-end {
+            display: none !important;
+        }
+        #hamburger-menu {
+            display: block !important;
+        }
+    }
+}

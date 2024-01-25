@@ -1,0 +1,254 @@
+// ? Imports
+@import "./components/variables";
+@import "./components/navbar";
+@import "./components/site-font";
+@import "./components/footer";
+@import "./components/scrollbar";
+@import "./components/faq";
+@import "./components/save-banner";
+@import "./components/call-banner";
+@import "./components/testimonials";
+@import "./components/plans";
+@import "./components/animated-span";
+@import "./components/animations";
+
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: $orange;
+}
+ 
+.data-wrapper {
+    display: flex;
+    gap: 100px;
+    flex-direction: column;
+    background-color: $bgColor;
+}
+
+
+.main-data {
+    padding: 0 7%;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
+#banner-title-container {
+    width: 100%; 
+    height: 100%; 
+    padding: 100px 7%;
+    background-image: url("/imgs/top-banner-bg.png"); 
+    background-color: $bgColor;
+    background-blend-mode: darken;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: flex-start; 
+    gap: 16px; 
+    display: inline-flex;
+    .title {
+        align-self: stretch; 
+        color: $orange; 
+        font-size: 4rem; 
+        font-family: $rubik; 
+        font-weight: $bold; 
+        word-wrap: break-word;
+    }
+    .sub-title {
+        font-size: 2rem; 
+        font-family: $rubik; 
+        font-weight: $medium; 
+        word-wrap: break-word;
+    }
+}
+
+#contact-us-container {
+    width: 100%; 
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: center; 
+    gap: 10px; 
+    display: flex;
+
+    .data-wrapper {
+        width: 100%; 
+        justify-content: center; 
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        gap: 100px;
+        .left-wrapper {
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: flex-start; 
+            gap: 20px; 
+            display: inline-flex;
+
+            width: 100%;
+
+            .sub-title {
+                color: $orange; 
+                font-size: 2rem; 
+                font-family: $rubik; 
+                font-weight: $semiBold; 
+                word-wrap: break-word
+            }
+            .title {
+                width: 100%; 
+                color: $black; 
+                font-size: 3rem; 
+                font-family: $rubik; 
+                font-weight: $bold; 
+                word-wrap: break-word;
+            }
+            .description {
+                align-self: stretch; 
+                color: $black; 
+                font-size: 1.4rem; 
+                font-family: $rubik; 
+                font-weight: $regular; 
+                word-wrap: break-word;
+            }
+            .email, .phone-number {
+                color: $black;
+                text-decoration: none;
+                font-size: 1.2rem;
+                i {
+                    color: $orange;
+
+                }
+                &:hover {
+                    color: $orange;
+                }
+            }
+        }
+
+        .right-wrapper {
+            width: 100%;
+            #contact-us-form {
+                display: flex;
+                flex-direction: column; 
+                width: 100%;
+                gap: 20px; 
+                background-color: $smokedWhite;
+                padding: 50px;
+                border-radius: 20px;
+                .form-element {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    label {
+                        font-size: 1.4rem;
+                        font-family: $rubik;
+                        font-weight: $medium;
+                    }
+                    span {
+                        color: $orange;
+                    }
+                    input, textarea {
+                        padding: 15px 10px;
+                        background-color: $white;
+                        border: none;
+                        font-family: $rubik;
+                        font-size: 1rem;
+                        color: $black;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        -webkit-appearance: none;
+
+                        &#message {
+                            resize: horizontal;
+                        }
+                    }
+                }
+                #submit {
+                    // height: 60px; 
+                    padding: 10px 0;
+                    background: $orange; 
+                    box-shadow: 0px 10px 15px $orange; 
+                    border-radius: 10px; 
+                    border-color: transparent;
+                    justify-content: center; 
+                    align-items: center; 
+                    gap: 10px; 
+                    display: flex;
+                    font-size: 1.4rem;
+                    font-weight: $medium;
+                }
+            }
+            
+        }
+    }
+}
+
+
+// !! Media Queries
+// !! 1330 PX
+@media screen and (max-width: 1330px) {
+    #quick-booking {
+        .form-data-title {
+            h2 {
+                font-size: 1.6rem !important;
+            }
+        }
+    }
+}
+
+
+// !! 1100 PX
+@media screen and (max-width: 1100px) {
+    #quick-booking {
+        .form-data-title {
+            h2 {
+                font-size: 1.2rem !important;
+            }
+        }
+    }
+}
+
+
+
+// !! 980 PX
+@media screen and (max-width: 980px) {
+    
+    #landing-page {
+        // height: 100%;
+        .landing-page-wrapper {
+            width: 100%;
+            justify-content: space-around;
+            flex-direction: column-reverse;
+            .landing-page-right {
+                display: flex;
+                justify-content: center;
+                img {
+                    width: 80%;
+                    display: none;
+                }
+            }
+        }
+    }
+    
+    #quick-booking {
+        .form-data {
+            flex-direction: column;     
+        } 
+    }
+
+
+    #contact-us-container {
+        .data-wrapper{
+            flex-direction: column;
+            gap: 100px;
+
+            .right-wrapper {
+                #contact-us-form {
+                    padding: 20px;
+                }
+            }
+        }
+    }
+}

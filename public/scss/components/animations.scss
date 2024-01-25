@@ -1,0 +1,27 @@
+
+@keyframes bounce {
+    0% {
+        transform: translate3d(0, 0px, 0);
+    }
+    15% {
+        transform: scale(1.5);
+    }
+    25% {
+        transform: translate3d(0, 50px, 0);
+    }
+    50%, 100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes popup {
+    from {
+        transform: scale3d(1.2, 1.4, 1);
+    } 
+    50% {
+        transform: scale3d(1, 1, 1);
+    }
+    to {
+        transform: scale3d(1, 1, 1), translateZ();
+    }
+}

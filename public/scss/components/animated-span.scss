@@ -1,0 +1,13 @@
+@import "./animations";
+
+// !!! HIGHLIGHTED ELEMENTS - ORANGE ELEMENTS ANIMATIONS + COLORS 
+span {
+    &.actual {
+        color: $orange;
+        animation: popup 2s ease-in-out 0s infinite alternate forwards;
+        position: absolute;
+    }  
+    &.placeholder {
+        opacity: 0; 
+    }
+}

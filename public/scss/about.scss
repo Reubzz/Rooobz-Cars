@@ -1,0 +1,258 @@
+// ? Imports
+@import "./components/variables";
+@import "./components/navbar";
+@import "./components/site-font";
+@import "./components/footer";
+@import "./components/scrollbar";
+@import "./components/faq";
+@import "./components/save-banner";
+@import "./components/call-banner";
+@import "./components/testimonials";
+@import "./components/plans";
+@import "./components/animated-span";
+@import "./components/animations";
+
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: $orange;
+}
+ 
+.data-wrapper {
+    display: flex;
+    gap: 100px;
+    flex-direction: column;
+    background-color: $bgColor;
+}
+
+
+.main-data {
+    min-height: 100vh;
+    padding: 0 7%;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
+#banner-title-container {
+    width: 100%; 
+    height: 100%; 
+    padding: 100px 7%;
+    background-image: url("/imgs/top-banner-bg.png"); 
+    background-color: $bgColor;
+    background-blend-mode: darken;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: flex-start; 
+    gap: 16px; 
+    display: inline-flex;
+    .title {
+        align-self: stretch; 
+        color: $orange; 
+        font-size: 4rem; 
+        font-family: $rubik; 
+        font-weight: $bold; 
+        word-wrap: break-word;
+    }
+    .sub-title {
+        font-size: 2rem; 
+        font-family: $rubik; 
+        font-weight: $medium; 
+        word-wrap: break-word;
+    }
+}
+
+#about-us-container {
+    width: 100%; 
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: center; 
+    gap: 10px; 
+    display: flex;
+
+    .wcu-data {
+        width: 100%; 
+        justify-content: center; 
+        align-items: center;
+        display: flex;
+        gap: 200px;
+        .wcu-wrapper-left {
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: flex-start; 
+            gap: 20px; 
+            display: inline-flex;
+
+            width: 100%;
+
+            .sub-title {
+                color: $orange; 
+                font-size: 2rem; 
+                font-family: $rubik; 
+                font-weight: $semiBold; 
+                word-wrap: break-word
+            }
+            .title {
+                width: 100%; 
+                color: $black; 
+                font-size: 3rem; 
+                font-family: $rubik; 
+                font-weight: $bold; 
+                word-wrap: break-word;
+            }
+            .description {
+                align-self: stretch; 
+                color: $black; 
+                font-size: 1.4rem; 
+                font-family: $rubik; 
+                font-weight: $regular; 
+                word-wrap: break-word;
+            }
+            .booknow-btn {
+                padding: 20px 30px;
+                background: $orange; 
+                box-shadow: 0px 10px 15px $orange; 
+                border-radius: 10px; 
+                justify-content: center; 
+                align-items: center; 
+                gap: 10px; 
+                display: flex;
+                text-decoration: none;
+
+                .booknow-text {
+                    color: $black; 
+                    font-size: 1.6rem; 
+                    font-family:  $rubik; 
+                    font-weight: $medium; 
+                }
+                .booknow-icon {
+                    width: 30px; 
+                }
+            }
+        }
+
+        .wcu-wrapper-right {
+            display: flex;
+            flex-direction: column; 
+            gap: 50px; 
+            width: 100%;
+
+            .deal {
+                justify-content: flex-start; 
+                align-items: center; 
+                gap: 20px; 
+                display: flex;
+
+                width: 100%;
+                .deal-img {
+                    border-radius: 100px;
+                    height: 100%;
+                }
+                .deal-details {
+                    flex-direction: column; 
+                    justify-content: flex-start; 
+                    align-items: flex-start; 
+                    gap: 10px; 
+                    display: inline-flex;
+
+                    // width: 70%;
+
+                    .deal-title {
+                        color: $black; 
+                        font-size: 1.6rem; 
+                        font-family: $rubik; 
+                        font-weight: $extraBold; 
+                        word-wrap: break-word;
+                        width: 100%;
+                    }
+                    .deal-description {
+                        width: 600px; 
+                        color: $black; 
+                        font-size: 1.4rem; 
+                        font-family:  $rubik; 
+                        font-weight: $regular; 
+                        word-wrap: break-word;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// !! Media Queries
+// !! 1330 PX
+@media screen and (max-width: 1330px) {
+    #quick-booking {
+        .form-data-title {
+            h2 {
+                font-size: 1.6rem !important;
+            }
+        }
+    }
+}
+
+
+// !! 1100 PX
+@media screen and (max-width: 1100px) {
+    #quick-booking {
+        .form-data-title {
+            h2 {
+                font-size: 1.2rem !important;
+            }
+        }
+    }
+}
+
+
+
+// !! 980 PX
+@media screen and (max-width: 980px) {
+    
+    #landing-page {
+        // height: 100%;
+        .landing-page-wrapper {
+            width: 100%;
+            justify-content: space-around;
+            flex-direction: column-reverse;
+            .landing-page-right {
+                display: flex;
+                justify-content: center;
+                img {
+                    width: 80%;
+                    display: none;
+                }
+            }
+        }
+    }
+    
+    #quick-booking {
+        .form-data {
+            flex-direction: column;     
+        } 
+    }
+
+
+    #about-us-container {
+        .wcu-data {
+            flex-direction: column;
+            gap: 100px;
+
+            .wcu-wrapper-right {
+                .deal {
+                    flex-direction: column;
+                    .deal-details {
+                        text-align: center;
+                    }
+
+                }
+            }
+        }
+    }
+}

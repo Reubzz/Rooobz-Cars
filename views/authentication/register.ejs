@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Rooobz Cars</title>
+        
+        <link rel="stylesheet" href="/css/login-register.css">
+
+        <!-- Jquery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        
+        <!-- Fontawesome Link -->
+        <!-- <script src="https://kit.fontawesome.com/4d3f484b6f.js" crossorigin="anonymous"></script> -->
+        <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
+        <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-thin.css">
+        <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-solid.css">
+        <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css">
+        <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css">
+    </head>
+<body>
+
+    
+    <section class="data-wrapper">
+        <div class="left-wrapper">
+            <div>
+                <img id="logo" src="/imgs/logo-with-text.png" alt="Brand Logo Image"/>
+            </div>
+        </div>
+
+        <div class="right-wrapper">
+            <h1 class="title">Create your account</h1>
+            <form id="form" action="">
+                <div class="name">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name">
+                </div>
+                <div class="username">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username">
+                </div>
+                <div class="email">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" name="username">
+                </div>
+
+                <div class="password">
+                    <label for="password">Password</label>
+                    <input type="password" id="passwd" name="password">
+                </div>
+                <div class="re-password">
+                    <label for="re-passwd">Re Enter Password</label>
+                    <input type="re-password" id="re-password" name="password">
+                </div>
+
+                <button type="submit" id="submit">Register</button>
+            </form>
+
+            <hr class="line">
+            <div class="redirect-wrapper">
+                <p id="redirect-text">Already have an account?</p>
+                <a href="/login" id="redirect-btn">Login here</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ! Javascript -->
+    <script src="/js/login.js"></script>
+    <script src="/js/import-html.js"></script>
+    <script src="/js/mobile-navbar.js"></script>
+</body>
+</html>

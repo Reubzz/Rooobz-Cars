@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
+body {
+  font-size: 62.5%;
+  font-family: "Rubik", sans-serif;
+}
+
+#faq .faq-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin: 0 0 100px 0;
+}
+#faq .title-wrapper {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+#faq .title-wrapper .sub-title {
+  color: #0c0c0c;
+  font-size: 32px;
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
+  word-wrap: break-word;
+}
+#faq .title-wrapper .title {
+  color: #0c0c0c;
+  font-size: 64px;
+  font-family: "Rubik", sans-serif;
+  font-weight: 700;
+  word-wrap: break-word;
+}
+#faq .title-wrapper .description {
+  color: #707070;
+  font-size: 24px;
+  font-family: "Rubik", sans-serif;
+  font-weight: 300;
+  word-wrap: break-word;
+  text-align: center;
+}
+#faq .data-container {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#faq .data-container .faq-data {
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  box-shadow: #707070 0px 5px 2px;
+  cursor: pointer;
+}
+#faq .data-container .faq-data .faq-question-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 1.6rem;
+  background-color: #f1f1f1;
+  padding: 20px 20px;
+  border-radius: 2px;
+  list-style: none;
+}
+#faq .data-container .faq-data .faq-question-wrapper::-webkit-details-marker {
+  display: none;
+}
+#faq .data-container .faq-data[open] {
+  border-width: 2px;
+  border-color: #FF4C30;
+  border-style: solid;
+  box-shadow: 0px 0px 3px #FF4C30 inset, 0px 5px 2px #707070;
+}
+#faq .data-container .faq-data[open] .faq-question-wrapper {
+  background-color: #FF4C30;
+  color: #f1f1f1;
+  box-shadow: 0px 0px 16px #FF4C30;
+}
+#faq .data-container .faq-data .faq-answer-wrapper {
+  padding: 20px 30px;
+  font-weight: 300;
+  font-size: 1.4rem;
+}
+
+@media screen and (max-width: 980px) {
+  #faq .data-container {
+    width: 100%;
+  }
+}/*# sourceMappingURL=faq.css.map */

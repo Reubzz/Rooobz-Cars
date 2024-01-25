@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Rooobz Cars</title>
+        
+        <link rel="stylesheet" href="/css/login-register.css">
+
+        <!-- Jquery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        
+        <!-- Fontawesome Link -->
+        <!-- <script src="https://kit.fontawesome.com/4d3f484b6f.js" crossorigin="anonymous"></script> -->
+        <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
+        <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-thin.css">
+        <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-solid.css">
+        <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css">
+        <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css">
+    </head>
+<body>
+
+    
+    <section class="data-wrapper">
+        <div class="left-wrapper">
+            <div>
+                <img id="logo" src="/imgs/logo-with-text.png" alt="Brand Logo Image"/>
+            </div>
+        </div>
+
+        <div class="right-wrapper">
+            <h1 class="title">Log in to your account</h1>
+            <form id="form" action="">
+                <div class="username">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username"><br/>
+                </div>
+
+                <div class="password">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password">
+                </div>
+
+                <button type="submit" id="submit">Login</button>
+            </form>
+
+            <hr class="line">
+            <div class="redirect-wrapper">
+                <p id="redirect-text">Don't have an account?</p>
+                <a href="/register" id="redirect-btn">Create Account</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ! Javascript -->
+    <script src="/js/login.js"></script>
+    <script src="/js/import-html.js"></script>
+    <script src="/js/mobile-navbar.js"></script>
+</body>
+</html>

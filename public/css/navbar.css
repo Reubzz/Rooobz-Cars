@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
+body {
+  font-size: 62.5%;
+  font-family: "Rubik", sans-serif;
+}
+
+header nav {
+  background-color: #DADADA;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+header nav img {
+  width: 150px;
+}
+header nav ul {
+  justify-content: center;
+  text-align: center;
+  font-size: 1rem;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  width: 100%;
+}
+header nav .navbar-item {
+  text-decoration: none;
+  color: #0c0c0c;
+  width: 100%;
+}
+header nav .register-button {
+  background-color: #FF4C30;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: #FF4C30 0px 0px 10px;
+}
+header nav #hamburger-menu {
+  display: none;
+}
+header nav #hamburger-menu .bar1, header nav #hamburger-menu .bar2, header nav #hamburger-menu .bar3 {
+  width: 25px;
+  height: 2px;
+  background-color: #0c0c0c;
+  margin: 6px 0;
+  transition: 0.5s;
+}
+header nav #hamburger-menu.open .bar1 {
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+header nav #hamburger-menu.open .bar2 {
+  opacity: 0;
+}
+header nav #hamburger-menu.open .bar3 {
+  transform: rotate(45deg) translate(-5px, -5px);
+}
+header nav #hamburger-menu.open .mobile-menu {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+header nav #hamburger-menu .mobile-menu {
+  display: none;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  padding: 50px 30px;
+  background-color: #DADADA;
+  z-index: 999;
+  gap: 50px;
+}
+header nav #hamburger-menu .mobile-menu .mob-navbar-start {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+}
+header nav #hamburger-menu .mobile-menu .mob-navbar-end {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  flex: 1;
+}
+header nav #hamburger-menu .mobile-menu li {
+  list-style: none;
+  text-align: center;
+}
+header nav #hamburger-menu .mobile-menu li .signin-button {
+  border-color: #FF4C30;
+  border-width: 2px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: #FF4C30 0px 0px 3px 3px;
+}
+header nav #hamburger-menu .mobile-menu li a {
+  color: #0c0c0c;
+  font-size: 1.6rem;
+}
+
+@media screen and (max-width: 980px) {
+  nav .navbar-center, nav .navbar-end {
+    display: none !important;
+  }
+  nav #hamburger-menu {
+    display: block !important;
+  }
+}/*# sourceMappingURL=navbar.css.map */

@@ -1,0 +1,109 @@
+// ? Imports
+@import "./variables";
+@import "./site-font";
+
+footer {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: max-content;
+    background-color: $smokedWhite;
+    flex-direction: row;
+    padding: 30px 40px;
+    // gap: 70px;
+
+    div {
+        // width: 80%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        // flex: 1;
+        .title {
+            font-size: 1.4rem;
+            font-weight: $medium;
+            text-transform: uppercase;
+            padding: 0;
+            width: 100%;
+
+            .brand-image {
+                width: auto;
+                // width: 300px;
+            }
+        }
+
+        .brand-data {
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .data {
+            list-style-type: none;
+            font-size: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            a {
+                text-decoration: none;
+                color: $black;
+                &:hover {
+                    color: $orange;
+                }
+            }
+        }
+
+        .phone-number, .email {
+            font-size: 1rem;
+            color: $black;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            .fa-phone-volume, .fa-envelope {
+                color: $orange;
+            }
+            &:hover {
+                color: $orange;
+            }
+        }
+
+        #subscribe-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            #subscribe-email {
+                padding: 10px;
+                width: 100%;
+                border-radius: 5px;
+                outline: none;
+                border: none;
+            }
+
+            #subscribe-submit {
+                padding: 10px;
+                cursor: pointer;
+                border: none;
+                border-radius: 5px;
+                background-color: $orange;
+                color: $white;
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+// !! 990 PX - Mobile Layout
+@media screen and (max-width: 980px) {
+    footer {
+        flex-direction: column-reverse;
+        gap: 30px;
+
+        .brand-image {
+            width: 100% !important;
+        }
+    }
+}

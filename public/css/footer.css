@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
+body {
+  font-size: 62.5%;
+  font-family: "Rubik", sans-serif;
+}
+
+footer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: -moz-max-content;
+  height: max-content;
+  background-color: #DADADA;
+  flex-direction: row;
+  padding: 30px 40px;
+}
+footer div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+footer div .title {
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 0;
+  width: 100%;
+}
+footer div .title .brand-image {
+  width: auto;
+}
+footer div .brand-data {
+  max-width: 400px;
+  width: 100%;
+}
+footer div .data {
+  list-style-type: none;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+footer div .data a {
+  text-decoration: none;
+  color: #0c0c0c;
+}
+footer div .data a:hover {
+  color: #FF4C30;
+}
+footer div .phone-number, footer div .email {
+  font-size: 1rem;
+  color: #0c0c0c;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+footer div .phone-number .fa-phone-volume, footer div .phone-number .fa-envelope, footer div .email .fa-phone-volume, footer div .email .fa-envelope {
+  color: #FF4C30;
+}
+footer div .phone-number:hover, footer div .email:hover {
+  color: #FF4C30;
+}
+footer div #subscribe-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+footer div #subscribe-form #subscribe-email {
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+}
+footer div #subscribe-form #subscribe-submit {
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #FF4C30;
+  color: #f1f1f1;
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 980px) {
+  footer {
+    flex-direction: column-reverse;
+    gap: 30px;
+  }
+  footer .brand-image {
+    width: 100% !important;
+  }
+}/*# sourceMappingURL=footer.css.map */

@@ -6,381 +6,194 @@
         <title>Rooobz Cars</title>
         
         <link rel="stylesheet" href="/css/home.css">
-        <link rel="stylesheet" href="/css/common.css">
 
+        <!-- Jquery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        
         <!-- Fontawesome Link -->
-        <script src="https://kit.fontawesome.com/4d3f484b6f.js" crossorigin="anonymous"></script>
+        <!-- <script src="https://kit.fontawesome.com/4d3f484b6f.js" crossorigin="anonymous"></script> -->
+        <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
+        <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-thin.css">
+        <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-solid.css">
+        <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css">
+        <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css">
+
     </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="navbar-start">
-                <a href="/"><img src="/imgs/logo-with-text-short-alternate.png" alt="Rooobz Cars logo"></a>
-            </div>
-            
-            <div class="navbar-center">
-                <ul>
-                    <li><a href="/" class="navbar-item">Home</a></li>
-                    <li><a href="/about" class="navbar-item">About</a></li>
-                    <li><a href="/vehicles" class="navbar-item">Vehicles</a></li>
-                    <li><a href="/contact" class="navbar-item">Contact</a></li>
-                </ul>
-            </div>
+    <header data-include="navbar"></header>
 
-            <div class="navbar-end">
-                <ul>
-                    <li><a href="/signin" class="navbar-item signin-button">Sign In</a></li>
-                    <li><a href="/register" class="navbar-item register-button">Register</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-
-    <section class="main-data-part1">
-        <section class="landing-page">
-
-            <!-- * Main Landing Page Data -->
-            <div class="landing-page-wrapper">
-                <!-- * Landing page left side data -->
-                <div class="landing-page-left">
-                    <h3>Plan your trip now</h3>
-                    <h1> Save <span>big</span> with our car rental</h1>
-                    <p>Rent the car of your dreams. Unbeatable prices, unlimited kilometeres, flexible pick-up options and much more.</p>
-                    <div class="landing-page-buttons">
-                        <a href="/booking" class="book-now-button">Book Now <img src="/icons/Tick.png" alt="Tick Mark"></a>
-                        <a href="/learn" class="learn-more-button">Learn More <img src="/icons/Right-Arrow.png" alt="Right Arrow"></a>
+    <section class="main-data-wrapper">
+        <section class="main-data-part1">
+            <section id="landing-page" class="landing-page">
+    
+                <!-- * Main Landing Page Data -->
+                <div class="landing-page-wrapper">
+                    <!-- * Landing page left side data -->
+                    <div class="landing-page-left">
+                        <h3>Plan your trip now</h3>
+                        <h1> Save <span class="actual">big</span> <span class="placeholder">big</span> with our car rental</h1>
+                        <p>Rent the car of your dreams. Unbeatable prices, unlimited kilometeres, flexible pick-up options and much more.</p>
+                        <div class="landing-page-buttons">
+                            <a href="/booking" class="book-now-button">Book Now <img src="/icons/Tick.png" alt="Tick Mark"></a>
+                            <a href="/learn" class="learn-more-button">Learn More <img src="/icons/Right-Arrow.png" alt="Right Arrow"></a>
+                        </div>
+                    </div>
+                    <!-- * Landing page right side image -->
+                    <div class="landing-page-right">
+                        <img src="/imgs/banner image.png" alt="Car Image">
                     </div>
                 </div>
-                <!-- * Landing page right side image -->
-                <div class="landing-page-right">
-                    <img src="/imgs/banner image.png" alt="Car Image">
+                
+    
+                <!-- * Scroll down Arrow -->
+                <div class="arrow">
+                    <a href="#quick-booking" class="arrow"><img src="/icons/Scroll-Down-Arrow.png" alt="Scroll Down Arrow"></a>
                 </div>
-            </div>
-            
-
-            <!-- * Scroll down Arrow -->
-            <div class="arrow">
-                <a href="#quick-booking" class="arrow"><img src="/icons/Scroll-Down-Arrow.png" alt="Scroll Down Arrow"></a>
-            </div>
+            </section>
+    
+    
+            <!-- ! Quick Booking Page -->
+            <section id="quick-booking">
+                <div class="wrapper">
+                    <div class="title">
+                        <h1>Book a Car</h1>
+                    </div>
+                    <form class="form-data">
+                        <div class="form-left form-column">
+                            <div class="data-wrapper">
+                                <div class="form-data-title">
+                                    <h2>Select your Car Type <span>*</span></h2>
+                                </div>
+                                <select class="dropdown" name="car-type" id="car-type" required>
+                                    <option value="placeholder" class="placeholder-text">Select a Car Type</option>
+                                    <option value="sedan">Sedan</option>
+                                    <option value="coupe">Coupe</option>
+                                    <option value="suv">SUV</option>
+                                    <option value="wagon">Wagon</option>
+                                    <option value="hatchback">Hatchback</option>
+                                </select>
+                            </div>
+                            <div class="data-wrapper">
+                                <div class="form-data-title">
+                                    <h2>Select your Car Brand <span>*</span></h2>
+                                </div>
+                                <select class="dropdown">
+                                    <option value="placeholder" class="placeholder-text">Select a Car Brand</option>
+                                    <option value="maruti">Maruti</option>
+                                    <option value="audi">Audi</option>
+                                    <option value="bmw">Bmw</option>
+                                    <option value="nissan">Nissan</option>
+                                    <option value="mercedes">Mercedes</option>
+                                    <option value="toyota">Toyota</option>
+                                    <option value="tata">Tata Nano</option>
+                                    <option value="maruti">Maruti</option>
+                                    <option value="jeep">Jeep</option>
+                                    <option value="hyundai">Hyundai</option>
+                                    <option value="honda">Honda</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-center form-column">
+                            <div class="data-wrapper">
+                                <div class="form-data-title">
+                                    <h2>Pickup Date <span>*</span></h2>
+                                </div>
+                                <input class="dropdown" id="pickup-date" onfocus="(this.type = 'datetime-local')" type="text" placeholder="dd/mm/yyyy HH:MM">
+                            </div>
+                            <div class="data-wrapper">
+                                <div class="form-data-title">
+                                    <h2>Drop-off Date <span>*</span></h2>
+                                </div>
+                                <input class="dropdown" id="dropoff-date" type="text" onfocus="(this.type = 'datetime-local')" placeholder="dd / mm / yyyy, HH : MM">
+                            </div>
+                        </div>
+                        <div class="form-right form-column">
+                            <div class="data-wrapper">
+                                <div class="form-data-title">
+                                    <h2>Pickup Type <span>*</span></h2>
+                                </div>
+                                <select class="dropdown">
+                                    <option value="placeholder" class="placeholder-text">Select Pickup Type</option>
+                                    <option value="store-pickup">In-Store Pickup</option>
+                                    <option value="home-delivery">Home Delivery</option>
+                                </select>
+                            </div>
+                            <button class="search-button" type="submit">Search</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+    
+            <!-- ! Plans Container  -->
+            <section data-include="plans"></section>
+    
         </section>
 
-
-        <!-- ! Quick Booking Page -->
-        <section id="quick-booking">
-            <div class="wrapper">
-                <div class="title">
-                    <h1>Book a Car</h1>
+        <!-- ! Banner -->
+        <section data-include="save-banner"></section>
+        
+        <section class="main-data-part2">
+            <!-- ! Why Choose Us Container -->
+            <section id="choose-us-container">
+                <div class="banner-img-wrapper">
+                  <img class="banner-img" src="/imgs/banner-image-2.png" />
                 </div>
-                <form class="form-data">
-                    <div class="form-left form-column">
-                        <div class="data-wrapper">
-                            <div class="form-data-title">
-                                <h2>Select your Car Type <span>*</span></h2>
+                <div class="wcu-data">
+                    <div class="wcu-wrapper-left">
+                        <div class="sub-title">Why Choose Us</div>
+                        <div class="title">Best valued deals you will ever find</div>
+                        <div class="description">Discover the best deals you'll ever find with our unbeatable offers. We're dedicated to providing you with the best value for your money, so you can enjoy top-quality services and products without breaking the bank. Our deals are designed to give you the ultimate renting experience, so don't miss out on your chance to save big.</div>
+                        <button class="booknow-btn">
+                            <div class="booknow-text">Book Now  </div>
+                            <img class="booknow-icon" src="/icons/Tick.png">
+                        </button>
+                    </div>
+                    <div class="wcu-wrapper-right">
+                        <div class="deal">
+                            <img class="deal-img" src="/imgs/wcu1.png">
+                            <div class="deal-details">
+                                <div class="deal-title">Cross Country Drive</div>
+                                <div class="deal-description">Take your driving experience to the next level with our top-notch vehicles for your cross-country adventures.</div>
                             </div>
-                            <select class="dropdown" name="car-type" id="car-type" required>
-                                <option value="placeholder" class="placeholder-text">Select a Car Type</option>
-                                <option value="sedan">Sedan</option>
-                                <option value="coupe">Coupe</option>
-                                <option value="suv">SUV</option>
-                                <option value="wagon">Wagon</option>
-                                <option value="hatchback">Hatchback</option>
-                            </select>
                         </div>
-                        <div class="data-wrapper">
-                            <div class="form-data-title">
-                                <h2>Select your Car <span>*</span></h2>
+                        <div class="deal">
+                            <img class="deal-img" src="/imgs/wcu2.png">
+                            <div class="deal-details">
+                                <div class="deal-title">All Inclusive Pricing</div>
+                                <div class="deal-description">Get everything you need in one convenient, transparent price with our all-inclusive pricing policy.</div>
                             </div>
-                            <select class="dropdown">
-                                <option value="placeholder" class="placeholder-text">Select a Car</option>
-                                <option value="maruti-wagonr">Wagon R</option>
-                                <option value="audi-a8">Audi A8</option>
-                                <option value="bmw-x3">Bmw X3</option>
-                                <option value="nissan-gtr">Nissan GTR</option>
-                                <option value="mercedes-cclass">Mercedes C-Class</option>
-                                <option value="toyota-glanza">Toyota Glanza</option>
-                                <option value="tata-nano">Tata Nano</option>
-                                <option value="maruti-swift">Maruti Swift</option>
-                                <option value="jeep-wrangler">Jeep Wrangler</option>
-                            </select>
+                        </div>
+                        <div class="deal">
+                            <img class="deal-img" src="/imgs/wcu3.png">
+                            <div class="deal-details">
+                                <div class="deal-title">No Hidden Charges</div>
+                                <div class="deal-description">Enjoy peace of mind with our no hidden charges policy. We believe in transparent and honest pricing.</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="form-center form-column">
-                        <div class="data-wrapper">
-                            <div class="form-data-title">
-                                <h2>Pickup Date <span>*</span></h2>
-                            </div>
-                            <!-- <div class="dropdown">
-                                <div class="placeholder-text">dd-mm-yyyy hh:mm:ss</div>
-                                <i class="icon fa-solid fa-angle-down"></i>
-                            </div> -->
-                            <input class="dropdown" type="datetime-local">
-                        </div>
-                        <div class="data-wrapper">
-                            <div class="form-data-title">
-                                <h2>Drop-off Date <span>*</span></h2>
-                            </div>
-                            <!-- <div class="dropdown">
-                                <div class="placeholder-text">dd-mm-yyyy hh:mm:ss</div>
-                                <i class="icon fa-solid fa-angle-down"></i>
-
-                            </div> -->
-                            <input class="dropdown" type="datetime-local">
-                        </div>
-                    </div>
-                    <div class="form-right form-column">
-                        <div class="data-wrapper">
-                            <div class="form-data-title">
-                                <h2>Pickup Type <span>*</span></h2>
-                            </div>
-                            <!-- <div class="dropdown">
-                                <div class="placeholder-text">Select Pickup Type</div>
-                                <i class="icon fa-solid fa-angle-down"></i>
-                            </div> -->
-                            <select class="dropdown">
-                                <option value="placeholder" class="placeholder-text">Select Pickup Type</option>
-                                <option value="store-pickup">In-Store Pickup</option>
-                                <option value="home-delivery">Home Delivery</option>
-                            </select>
-                        </div>
-                        <button class="search-button" type="submit">Search</button>
-                    </div>
-                </form>
-            </div>
-        </section>
-
-
-
-
-        <!-- ! Plans Container  -->
-        <section id="plans-container">
-            <div class="plans-container-title">
-                <h3>Plan your trip now</h3>
-                <h1>Quick &amp; Easy Car Rental</h1>
-            </div>
-            <div class="data-wrapper">
-                <div class="plan">
-                    <img class="plan-img" src="/imgs/plan1.png" />
-                    <h3 class="plan-title">Select Car</h3>
-                    <p class="plan-description">We offers a big range of vehicles for all your driving needs. We have the perfect car to meet your needs</p>
                 </div>
-                <div class="plan">
-                    <img class="plan-img" src="/imgs/plan2.png" />
-                    <h3 class="plan-title">Contact Operator</h3>
-                    <p class="plan-description">Our knowledgeable and friendly operators are always ready to help with any questions or concerns</p>
-                </div>
-                <div class="plan">
-                    <img class="plan-img" src="/imgs/plan3.png" />
-                    <h3 class="plan-title">Let's Drive</h3>
-                    <p class="plan-description">Whether you're hitting the open road, we've got you covered with our wide range of cars</p>
-                </div>
-            </div>
-        </section>
-
-    </section>
-
-    <!-- ! Banner -->
-    <section class="save-banner-container">
-        <section class="save-banner">
-            <h1>Save Big with our cheap car rental!</h1>
-            <h3>Top Airports. Local Suppliers. <span>24/7</span> Support</h3>
+            </section>
+    
+            <!-- ! Testimonials Container -->
+            <section data-include="testimonials"></section>
+    
+    
+            <!-- ! FAQ -->
+            <section data-include="faq"></section>
         </section>
     </section>
+
+
     
 
-    <section class="main-data-part2">
-        <!-- ! Why Choose Us Container -->
-        <section id="choose-us-contianer">
-            <div class="banner-img-wrapper">
-              <img class="banner-img" src="/imgs/banner-image-2.png" />
-            </div>
-            <div class="wcu-data">
-                <div class="wcu-wrapper-left">
-                    <div class="sub-title">Why Choose Us</div>
-                    <div class="title">Best valued deals you will ever find</div>
-                    <div class="description">Discover the best deals you'll ever find with our unbeatable offers. We're dedicated to providing you with the best value for your money, so you can enjoy top-quality services and products without breaking the bank. Our deals are designed to give you the ultimate renting experience, so don't miss out on your chance to save big.</div>
-                    <button class="booknow-btn">
-                        <div class="booknow-text">Book Now  </div>
-                        <img class="booknow-icon" src="/icons/Tick.png">
-                    </button>
-                </div>
-                <div class="wcu-wrapper-right">
-                    <div class="deal">
-                        <img class="deal-img" src="/imgs/wcu1.png">
-                        <div class="deal-details">
-                            <div class="deal-title">Cross Country Drive</div>
-                            <div class="deal-description">Take your driving experience to the next level with our top-notch vehicles for your cross-country adventures.</div>
-                        </div>
-                    </div>
-                    <div class="deal">
-                        <img class="deal-img" src="/imgs/wcu2.png">
-                        <div class="deal-details">
-                            <div class="deal-title">All Inclusive Pricing</div>
-                            <div class="deal-description">Get everything you need in one convenient, transparent price with our all-inclusive pricing policy.</div>
-                        </div>
-                    </div>
-                    <div class="deal">
-                        <img class="deal-img" src="/imgs/wcu3.png">
-                        <div class="deal-details">
-                            <div class="deal-title">No Hidden Charges</div>
-                            <div class="deal-description">Enjoy peace of mind with our no hidden charges policy. We believe in transparent and honest pricing.</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ! Testimonials Container -->
-        <section id="testimonials">
-            <div class="testimonials-container">
-                <div class="title-wrapper">
-                  <div class="sub-title">Reviewed by People</div>
-                  <div class="title">Client's Testimonials</div>
-                  <div class="description">Discover the positive impact we've made on the our clients by reading through their testimonials. Our clients have experienced our service and results, and they're eager to share their positive experiences with you.</div>
-                </div>
-                <div class="reviews-container">
-                  <div class="review-wrapper">
-                    <div class="review-message">"We rented a car from this website and had an amazing experience! The booking was easy and the rental rates were very affordable. "</div>
-                    <div class="review-data-wrapper">
-                      <div class="review-data-left">
-                        <img class="review-user-img" src="https://via.placeholder.com/70x70" />
-                        <div class="review-user-name-wrapper">
-                          <div class="review-user-name">Parry Hotter</div>
-                          <div class="review-user-location">Hogwarts</div>
-                        </div>
-                      </div>
-                      <div class="review-data-right">
-                        <img class="review-icon" src="/icons/quotation-mark.png" alt="">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="review-wrapper">
-                    <div class="review-message">"The car was in great condition and made our trip even better. Highly recommend this car rental website!"</div>
-                    <div class="review-data-wrapper">
-                      <div class="review-data-left">
-                        <img class="review-user-img" src="https://via.placeholder.com/70x70" />
-                        <div class="review-user-name-wrapper">
-                          <div class="review-user-name">Reubz Rizzly</div>
-                          <div class="review-user-location">Mumbai</div>
-                        </div>
-                      </div>
-                      <div class="review-data-right">
-                        <img class="review-icon" src="/icons/quotation-mark.png" alt="">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- ! FAQ -->
-        <section id="faq">
-            <div class="faq-container">
-                <div class="title-wrapper">
-                    <div class="sub-title">FAQ</div>
-                    <div class="title">Frequently Asked Questions</div>
-                    <div class="description">Frequently Asked Questions about the Car Rental Booking Process on our website:<br>Answers to Common Concerns and Inquiries.</div>
-                </div>
-
-                <div class="data-container">
-                    <details class="faq-data" open>
-                        <summary class="faq-question-wrapper" onclick="faqClick('q1')">
-                            <div id="q1" class="question">1. What is special about comparing rental car deals?</div>
-                            <div class="icon">
-                                <!-- <i class="fa-solid fa-angle-up"></i> -->
-                                <i class="fa-solid fa-angle-down"></i>
-                            </div>
-                        </summary>
-                        <div class="faq-answer-wrapper">
-                            <p class="answer">Comparing rental car deals is important as it helps find the best deal that fits your budget and requirements, ensuring you get the most value for your money. By comparing various options, you can find deals that offer lower prices, additional services, or better car models. You can find car rental deals by researching online and comparing prices from different rental companies.</p>
-                        </div>
-                    </details>
-                    <details class="faq-data">
-                        <summary class="faq-question-wrapper" onclick="faqClick('q1')">
-                            <div id="q2" class="question">2. How do I find car rental deals?</div>
-                            <div class="icon">
-                                <!-- <i class="fa-solid fa-angle-up"></i> -->
-                                <i class="fa-solid fa-angle-down"></i>
-                            </div>
-                        </summary>
-                        <div class="faq-answer-wrapper">
-                            <p class="answer">You can find car rental deals by researching online and comparing prices from different rental companies. Websites such as Expedia, Kayak, and Travelocity allow you to compare prices and view available rental options. It is also recommended to sign up for email newsletters and follow rental car companies on social media to be informed of any special deals or promotions.</p>
-                        </div>
-                    </details>
-                    <details class="faq-data">
-                        <summary id="q3" class="faq-question-wrapper" onclick="faqClick('q1')">
-                            <div class="question">3. What is special about comparing rental car deals?</div>
-                            <div class="icon">
-                                <!-- <i class="fa-solid fa-angle-up"></i> -->
-                                <i class="fa-solid fa-angle-down"></i>
-                            </div>
-                        </summary>
-                        <div class="faq-answer-wrapper">
-                            <p class="answer">Book in advance: Booking your rental car ahead of time can often result in lower prices. Compare prices from multiple companies: Use websites like Kayak, Expedia, or Travelocity to compare prices from multiple rental car companies. Look for discount codes and coupons: Search for discount codes and coupons that you can use to lower the rental price. Renting from an off-airport location can sometimes result in lower prices.</p>
-                        </div>
-                    </details>
-                </div>
-            </div>
-        </section>
-    </section>
 
 
     <!-- ! Footer -->
-    <!-- ! Footer -->
-    <!-- ! Footer -->
-    <!-- ! Footer -->
-    <!-- ! Footer -->
+    <footer data-include="footer"></footer>
 
-    <footer>
-        <!-- ! 1st Section - Brand Data -->
-        <div class="section1">
-            <div class="title">
-                <img src="/imgs/logo-with-text-long-alternate.png" alt="Logo Text">
-            </div>
-            <p class="data brand-data">
-                We are a leading car rental company that offers affordable and reliable services to customers worldwide. We are committed to providing the perfect car to meet your needs
-            </p>
-            <a href="tel:0123456789" class="phone-number highlight-link">
-                <img src="/icons/phone.png" alt="phone"> (+91) 012 345 6789
-            </a>
-            <a href="mailto:contact@rooobzcars.com" class="email highlight-link">
-                <img src="/icons/email.png" alt="email"> contact@rooobzcars.com
-            </a>
-            
-        </div>
-
-        <!-- ! 2nd Section - Quick Links -->
-        <div class="section2">
-            <h2 class="title">Quick Links</h2>
-            <ul class="data">
-                <li><a href="/careers">Careers</a></li>
-                <li><a href="/how-we-work">How we work</a></li>
-                <li><a href="/cars">All Cars</a></li>
-                <li><a href="/booking">Book Now</a></li>
-            </ul>
-        </div>
-        <!-- ! 3rd Section - Working Hours -->
-        <div class="section3">
-            <h2 class="title">Working Hours</h2>           
-            <ul class="data">
-                <li>Mon - Fri: 9 AM to 7 PM</li>
-                <li>Sat: 8 AM to 7 PM</li>
-                <li>Sun: Closed</li>
-            </ul>
-        </div>
-
-        <!-- ! 4th Section - Subscriptions -->
-        <div class="section4">
-            <h2 class="title">Subscriptions</h2>
-            <p class="data">Subscribe your email address for latest news and updates</p>
-            <form id="subscribe-form" action="" method="post">
-                <input id="subscribe-email" type="email" name="subscription_email" placeholder="Email Address">
-                <button id="subscribe-submit" type="submit">Submit</button>
-            </form>
-        </div>
-
-    </footer>
 
     <script src="/js/home.js"></script>
+    <script src="/js/mobile-navbar.js"></script>
+    <script src="/js/import-html.js"></script>
 </body>
 </html>

@@ -14,11 +14,24 @@
 
 
 ### 14/11/2023 - Update 0.0.2
-- Updated Home Page 
+- Updated Home Page (Added Basic HTML Skeleton)
 
 ### 22/01/2024 - Update 0.0.3
 - Updated Home Page (main skeleton with styling completed)
 - added new Assets (icons/imgs)
 - added `users.js` a schema for database
-- added `home.js` for homepage (no codes there for now)
+- added `home.js` for homepage 
 - cleaned up code in `root.js`
+
+### 25/01/2024 - Update 0.0.4
+- Homepage - Mobile Layout Ready
+- Added Animations to Homepage
+- Rearranged items around for better UI/UX
+- Separated `.scss` files for better code manageability.
+- Separated `.js` files for better code manageability.
+- Added Login Page & Registeration Page
+- Added About Page & Contact Us Page 
+- Added new background image assets
+- Separated repeating html components to different files for reusability
+- Reusable `.html`/`.ejs` Components made available on path `/views/components/*.ejs`
+- Added `fontawesome pro`

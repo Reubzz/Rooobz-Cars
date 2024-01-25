@@ -1,0 +1,33 @@
+.save-banner-container {
+    background-color: $bgColor;
+    height: 100%;
+    .save-banner {
+        background: #2B2B2B;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: center;
+        padding: 50px 5px;
+        width: 100%;
+
+        
+        h1 {
+            text-align: center;
+            font-family: $rubik;
+            font-size: 3.5rem;
+            font-weight: $extraBold;
+            color: $white;
+        }
+        h3 {
+            text-align: center;
+            font-family: $rubik;
+            font-size: 2rem;
+            font-weight: $medium;
+            color: $white;
+            span {
+                color: $orange;
+            }
+        }
+    }
+}
