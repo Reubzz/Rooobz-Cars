@@ -39,6 +39,6 @@
 ### 26/01/2024 - Update 0.0.5
 - Requesting `components` link changed to api folder + Link changed to api route [From `/views/components/<xyz>` to `/api/components/<xyz>`]
 - allowed adding query parameters to components [`title-banner` custom title and description allowed]
-- removed `site-font.scss` -> added it to `variables.scss` [recompiled all css files]
+- removed `site-font.scss` -> added it to `variables.scss` [recompiled all css files]- removed `site-font.scss` -> added it to `variables.scss` [recompiled all css files]
 - added meta tags to all pages
 - added vehicles page 
