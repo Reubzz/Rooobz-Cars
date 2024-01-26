@@ -1,7 +1,6 @@
 // ? Imports
 @import "./components/variables";
 @import "./components/navbar";
-@import "./components/site-font";
 @import "./components/footer";
 @import "./components/scrollbar";
 @import "./components/faq";
@@ -11,6 +10,7 @@
 @import "./components/plans";
 @import "./components/animated-span";
 @import "./components/animations";
+@import "./components/title-banner";
 
 
 
@@ -38,33 +38,6 @@
     gap: 100px;
 }
 
-#banner-title-container {
-    width: 100%; 
-    height: 100%; 
-    padding: 100px 7%;
-    background-image: url("/imgs/top-banner-bg.png"); 
-    background-color: $bgColor;
-    background-blend-mode: darken;
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: flex-start; 
-    gap: 16px; 
-    display: inline-flex;
-    .title {
-        align-self: stretch; 
-        color: $orange; 
-        font-size: 4rem; 
-        font-family: $rubik; 
-        font-weight: $bold; 
-        word-wrap: break-word;
-    }
-    .sub-title {
-        font-size: 2rem; 
-        font-family: $rubik; 
-        font-weight: $medium; 
-        word-wrap: break-word;
-    }
-}
 
 #contact-us-container {
     width: 100%; 
@@ -159,9 +132,13 @@
                         border-radius: 5px;
                         cursor: pointer;
                         -webkit-appearance: none;
+                        appearance: none;
 
                         &#message {
                             resize: horizontal;
+                        }
+                        &:focus {
+                            outline: 2px solid $orange;
                         }
                     }
                 }

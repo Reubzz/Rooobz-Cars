@@ -8,8 +8,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
+body {
+  font-size: 62.5%;
+  font-family: "Rubik", sans-serif;
+}
+
 body {
   font-size: 62.5%;
   font-family: "Rubik", sans-serif;
@@ -128,11 +131,6 @@ body {
   font-family: "Rubik", sans-serif;
 }
 
-body {
-  font-size: 62.5%;
-  font-family: "Rubik", sans-serif;
-}
-
 footer {
   display: flex;
   width: 100%;
@@ -202,6 +200,9 @@ footer div #subscribe-form #subscribe-email {
   border-radius: 5px;
   outline: none;
   border: none;
+}
+footer div #subscribe-form #subscribe-email:focus {
+  outline: 2px solid #FF4C30;
 }
 footer div #subscribe-form #subscribe-submit {
   padding: 10px;
@@ -344,6 +345,11 @@ body {
     width: 100%;
   }
 }
+body {
+  font-size: 62.5%;
+  font-family: "Rubik", sans-serif;
+}
+
 .save-banner-container {
   background-color: #eeeeee;
   height: 100%;
@@ -374,6 +380,11 @@ body {
 }
 .save-banner-container .save-banner h3 span {
   color: #FF4C30;
+}
+
+body {
+  font-size: 62.5%;
+  font-family: "Rubik", sans-serif;
 }
 
 .call-banner-container {
@@ -541,6 +552,11 @@ body {
     flex-direction: column;
   }
 }
+body {
+  font-size: 62.5%;
+  font-family: "Rubik", sans-serif;
+}
+
 #plans-container {
   width: 100%;
   height: 100%;
@@ -693,6 +709,40 @@ span.placeholder {
     transform: scale3d(1, 1, 1), translateZ();
   }
 }
+body {
+  font-size: 62.5%;
+  font-family: "Rubik", sans-serif;
+}
+
+#banner-title-container {
+  width: 100%;
+  height: 100%;
+  padding: 100px 7%;
+  background-image: url("/imgs/top-banner-bg.png");
+  background-color: #eeeeee;
+  background-position: top;
+  background-size: cover;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 16px;
+  display: inline-flex;
+}
+#banner-title-container .title {
+  align-self: stretch;
+  color: #FF4C30;
+  font-size: 4rem;
+  font-family: "Rubik", sans-serif;
+  font-weight: 700;
+  word-wrap: break-word;
+}
+#banner-title-container .sub-title {
+  font-size: 2rem;
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
+  word-wrap: break-word;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -714,34 +764,6 @@ span.placeholder {
   display: flex;
   flex-direction: column;
   gap: 100px;
-}
-
-#banner-title-container {
-  width: 100%;
-  height: 100%;
-  padding: 100px 7%;
-  background-image: url("/imgs/top-banner-bg.png");
-  background-color: #eeeeee;
-  background-blend-mode: darken;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 16px;
-  display: inline-flex;
-}
-#banner-title-container .title {
-  align-self: stretch;
-  color: #FF4C30;
-  font-size: 4rem;
-  font-family: "Rubik", sans-serif;
-  font-weight: 700;
-  word-wrap: break-word;
-}
-#banner-title-container .sub-title {
-  font-size: 2rem;
-  font-family: "Rubik", sans-serif;
-  font-weight: 500;
-  word-wrap: break-word;
 }
 
 #contact-us-container {
@@ -837,9 +859,14 @@ span.placeholder {
   border-radius: 5px;
   cursor: pointer;
   -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
 }
 #contact-us-container .data-wrapper .right-wrapper #contact-us-form .form-element input#message, #contact-us-container .data-wrapper .right-wrapper #contact-us-form .form-element textarea#message {
   resize: horizontal;
+}
+#contact-us-container .data-wrapper .right-wrapper #contact-us-form .form-element input:focus, #contact-us-container .data-wrapper .right-wrapper #contact-us-form .form-element textarea:focus {
+  outline: 2px solid #FF4C30;
 }
 #contact-us-container .data-wrapper .right-wrapper #contact-us-form #submit {
   padding: 10px 0;

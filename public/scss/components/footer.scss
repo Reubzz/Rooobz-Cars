@@ -1,6 +1,5 @@
 // ? Imports
 @import "./variables";
-@import "./site-font";
 
 footer {
     display: flex;
@@ -81,6 +80,9 @@ footer {
                 border-radius: 5px;
                 outline: none;
                 border: none;
+                &:focus {
+                    outline: 2px solid $orange;
+                }
             }
 
             #subscribe-submit {
