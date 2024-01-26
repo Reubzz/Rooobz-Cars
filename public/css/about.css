@@ -882,36 +882,15 @@ body {
     font-size: 1.6rem !important;
   }
 }
-@media screen and (max-width: 1100px) {
-  #quick-booking .form-data-title h2 {
-    font-size: 1.2rem !important;
-  }
-}
 @media screen and (max-width: 980px) {
-  #landing-page .landing-page-wrapper {
-    width: 100%;
-    justify-content: space-around;
-    flex-direction: column-reverse;
-  }
-  #landing-page .landing-page-wrapper .landing-page-right {
-    display: flex;
-    justify-content: center;
-  }
-  #landing-page .landing-page-wrapper .landing-page-right img {
-    width: 80%;
-    display: none;
-  }
-  #quick-booking .form-data {
-    flex-direction: column;
-  }
-  #about-us-container .wcu-data {
+  #about-us-container .data-wrapper {
     flex-direction: column;
     gap: 100px;
   }
-  #about-us-container .wcu-data .wcu-wrapper-right .deal {
+  #about-us-container .data-wrapper .right-wrapper .deal {
     flex-direction: column;
   }
-  #about-us-container .wcu-data .wcu-wrapper-right .deal .deal-details {
+  #about-us-container .data-wrapper .right-wrapper .deal .deal-details {
     text-align: center;
   }
 }/*# sourceMappingURL=about.css.map */
