@@ -21,3 +21,8 @@ $extraBold: 800;
 // ! Font Family
 $rubik: "Rubik", sans-serif;
 
+// ! Site Wide Font size and Font Family
+body {
+    font-size: 62.5%;
+    font-family: $rubik;
+}
