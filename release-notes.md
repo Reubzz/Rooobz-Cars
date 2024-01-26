@@ -35,3 +35,6 @@
 - Separated repeating html components to different files for reusability
 - Reusable `.html`/`.ejs` Components made available on path `/views/components/*.ejs`
 - Added `fontawesome pro`
+
+### 26/01/2024 - Update 0.0.5
+- Requesting `components` link changed to api folder + Link changed to api route [From `/views/components/<xyz>` to `/api/components/<xyz>`]

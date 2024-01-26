@@ -14,6 +14,7 @@ app.use(express.json());
 
 // page segregation .. App use statments
 app.use('/', require(path.join(__dirname, "/routes/pages/root.js")));
+app.use('/api/components', require(path.join(__dirname, "/routes/api/components.js")));
 
 
 app.listen(port, () => {
