@@ -41,3 +41,4 @@
 - allowed adding query parameters to components [`title-banner` custom title and description allowed]
 - removed `site-font.scss` -> added it to `variables.scss` [recompiled all css files]
 - added meta tags to all pages
+- added vehicles page 
