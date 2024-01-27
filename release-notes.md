@@ -45,3 +45,4 @@
 
 ### 27/01/2024 - Update 0.0.6
 - Cleaned up `.css` and `.scss` files using `sass partial files`. (reduced number of css files)
+- added vehicles page 

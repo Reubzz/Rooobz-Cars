@@ -3,6 +3,7 @@
 
 // ! Colors
 $smokedWhite: #DADADA;
+$smokedWhiteDark: #d5d5d5;
 $orange: #FF4C30;
 $black: #0c0c0c;
 $white: #f1f1f1;
@@ -20,6 +21,9 @@ $extraBold: 800;
 
 // ! Font Family
 $rubik: "Rubik", sans-serif;
+
+// ! Button Shadow 
+$buttonShadow: 0px 10px 15px $orange;
 
 // ! Site Wide Font size and Font Family
 body {
