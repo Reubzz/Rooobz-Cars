@@ -8,6 +8,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
 body {
   font-size: 62.5%;
   font-family: "Rubik", sans-serif;
@@ -675,6 +676,11 @@ body {
     transform: scale3d(1, 1, 1), translateZ();
   }
 }
+body {
+  font-size: 62.5%;
+  font-family: "Rubik", sans-serif;
+}
+
 span.actual {
   color: #FF4C30;
   animation: popup 2s ease-in-out 0s infinite alternate forwards;
@@ -916,4 +922,4 @@ body {
   #contact-us-container .data-wrapper .right-wrapper #contact-us-form {
     padding: 20px;
   }
-}/*# sourceMappingURL=contact.css.map */
+}

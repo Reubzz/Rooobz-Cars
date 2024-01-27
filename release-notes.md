@@ -42,3 +42,6 @@
 - removed `site-font.scss` -> added it to `variables.scss` [recompiled all css files]- removed `site-font.scss` -> added it to `variables.scss` [recompiled all css files]
 - added meta tags to all pages
 - added vehicles page 
+
+### 27/01/2024 - Update 0.0.6
+- Cleaned up `.css` and `.scss` files using `sass partial files`. (reduced number of css files)
