@@ -137,5 +137,17 @@ router.get('/login', (req, res) => {
 router.get('/register', (req, res) => {    
     res.render('authentication/register', {})
 })
+router.get("/logout", (req, res) => {
+    res.cookie("jwt", "", { maxAge: "1" })
+    res.redirect("back")
+})
+
+// 404 Page
+// router.get("*", (req, res) => {
+//     // * TODO
+//     // res.status(404).sendFile(path.join(__dirname, "../pages", "error", "404.html"));
+//     res.status(404).render('errors/404', {})
+
+// });
 
 module.exports = router;

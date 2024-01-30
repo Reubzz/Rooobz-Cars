@@ -15,23 +15,22 @@ const mondel = db.MAIN_DB.model(
         id: { type: String, required: true }, // ! auto generated unique ID of the car [ REQUIRED ]
         username: { type: String, required: true }, // ! unique username of the person
         password: { type: String, required: true }, // ! hashed password of the used
-        firstname: { type: String, required: true }, // ! Fist name of the user
-        lastname: { type: String, required: true }, // ! Last name of the user
+        name: { type: String, required: true }, // ! Name of the user
         email: { type: String, required: true }, // ! Email of the user
         createdDate: { type: Date, required: true }, // ! Date of Account Creation
-        phone: { type: Number, required: true }, // ! Contact Number of the user
-        age: { type: Date, required: true }, // ! Date of birth 
-        location: { type: String, required: true }, // ! Location of the user
-        address: { type: String, required: true }, // ! Exact Address of the user
-        city: { type: String, required: true }, // ! City of the user 
-        state: { type: String, required: true }, // ! State of the user
-        pinCode: { type: Number, required: true}, // ! Pin Code of the user
+        phone: { type: Number, required: false }, // ! Contact Number of the user
+        age: { type: Date, required: false }, // ! Date of birth 
+        location: { type: String, required: false }, // ! Location of the user
+        address: { type: String, required: false }, // ! Exact Address of the user
+        city: { type: String, required: false }, // ! City of the user 
+        state: { type: String, required: false }, // ! State of the user
+        pinCode: { type: Number, required: false}, // ! Pin Code of the user
         profileImg: { type: String, required: false, default: "https://reubz.s3.ap-south-1.amazonaws.com/default-user-img.png"}, // ? Profile Image of the user. Defualts to basic image if not provided.
 
-        transanctions: { type: Array }, // * Array of Transactions ID from "transactions collection"
-        reviews: { type: Array }, // * Array of Reviews ID from "reviews collection"
+        transanctions: { type: Array, required: false }, // * Array of Transactions ID from "transactions collection"
+        reviews: { type: Array, required: false }, // * Array of Reviews ID from "reviews collection"
 
-        license: { type: Image, required: true } // ! Driving license Image
+        license: { type: Image, required: false } // ! Driving license Image
         
     })
     
