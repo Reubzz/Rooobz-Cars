@@ -60,6 +60,25 @@
         <!-- <div class="title-wrapper">
             <h1 class="title">Our Fleet</h1>
         </div> -->
+        <div class="search-header">
+            <div class="searchbar">
+                <input type="search" name="search" onkeyup="search(value)" id="searchInput" placeholder="Search for a car..."/>
+                <button class="search-btn" type="submit">
+                    <i class="fas fa-search searchIcon"></i>
+                </button>
+            </div>
+            <div class="sort-dropdown">
+                
+                <select name="sort" placeholder="Sort By:" id="sort" onchange="sortBy()">
+                    <option id="placeholder-text" value="none">Sort By:</option>
+                    <option value="none">Default</option>
+                    <option value="price-high-to-low">Price High to Low</option>
+                    <option value="price-low-to-high">Price Low to High</option>
+                    <option value="name-ascending">Price A to Z</option>
+                    <option value="name-descending">Price Z to A</option>
+                </select>
+            </div>
+        </div>
         <div class="data-wrapper">
             <% vehicles.forEach(car => { %>
                 <a href="" class="card">
