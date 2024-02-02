@@ -1,0 +1,20 @@
+@import "./components/variables";
+@import "./components/navbar";
+@import "./components/footer";
+@import "./components/scrollbar";
+@import "./components/title-banner";
+
+.container {
+    padding: 5% 10%;
+    p {
+        font-size: 1rem;
+        color: $black;
+        font-family: $rubik;
+        font-weight: $regular;
+    }
+    h3 {
+        font-size: 1.2rem;
+        font-family: $rubik;
+        font-weight: $medium;
+    }
+}

@@ -78,6 +78,12 @@
                     <option value="name-descending">Price Z to A</option>
                 </select>
             </div>
+
+            <% if (showAllBtn == true) { %>
+                <div class="show-all-button-wrapper">
+                    <a href="/vehicles">Show All Cars</a>
+                </div>
+            <% } %>
         </div>
         <div class="data-wrapper">
             <% vehicles.forEach(car => { %>
@@ -101,17 +107,17 @@
                                     <p> <%= car.brand %></p>
                                 </div>
                                 <div class="right-wrapper">
-                                    <p><%= car.transmission %> </p>
-                                    <i class="fa-duotone fa-gears fa-3x" style="--fa-primary-color: #FF4C30; --fa-primary-opacity: 0.6; --fa-secondary-color: #FF4C30; --fa-secondary-opacity: 2;"></i>
+                                    <p><%= car.engineType %> </p>
+                                    <i class="fa-duotone fa-gas-pump fa-3x" style="--fa-primary-color: #FF4C30; --fa-primary-opacity: 0.6; --fa-secondary-color: #FF4C30; --fa-secondary-opacity: 2;"></i>
                                 </div>
                             </div>
                             <div class="bottom-wrapper">
                                 <div class="left-wrapper">
-                                    <i class="fa-duotone fa-gas-pump fa-3x" style="--fa-primary-color: #FF4C30; --fa-primary-opacity: 0.6; --fa-secondary-color: #FF4C30; --fa-secondary-opacity: 2;"></i>
-                                    <p><%= car.engineType %> </p>
+                                    <i class="fa-duotone fa-gear fa-3x" style="--fa-primary-color: #FF4C30; --fa-primary-opacity: 0.6; --fa-secondary-color: #FF4C30; --fa-secondary-opacity: 2;"></i>
+                                    <p><%= car.transmission %> </p>
                                 </div>
                                 <div class="right-wrapper">
-                                    <p><%= car.seats %> Seater</p>
+                                    <p><%= car.seats %> Seats</p>
                                     <i class="fa-duotone fa-person-seat fa-4x" style="--fa-primary-color: #FF4C30; --fa-secondary-color: #FF4C30; --fa-secondary-opacity: 0.6;"></i>
                                 </div>
                             </div>

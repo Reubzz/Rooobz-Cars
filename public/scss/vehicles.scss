@@ -90,21 +90,44 @@
                 }
             }
         }
+        .show-all-button-wrapper {
+            background-color: $orange;
+            color: $white;
+            padding: 10px 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            width: max-content;
+            // height: 100%;
+            border-radius: 5px;
+            a {
+                color: $white;
+                text-decoration: none;
+                font-size: 1rem;
+            }
+        }
     }
     .data-wrapper {
         width: 100%; 
         height: 100%; 
         flex-wrap: wrap; 
-        justify-content: flex-start; 
+        // justify-content: space-evenly; 
+        justify-content: flex-start;
         align-items: center; 
         display: flex; 
+        // gap: 1em;
         gap: 20px;
 
         
         .card {
+            // // flex: 0 1 calc(20% - 1em);
+            // // width: auto;  
+            // // max-width: 350px;
+            // // max-width: 30%;
             flex: 1;
-            width: 100%;  
-            max-width: 400px;
+            width: 100%;
+            max-width: 370px;
             padding: 10px;
             background: $smokedWhite; 
             border-radius: 5px; 
@@ -160,13 +183,21 @@
                         display: flex;
                         h2 {
                             color: $black; 
-                            font-size: 2rem; 
+                            font-size: 1.6rem; 
                             font-family: $rubik; 
                             font-weight: $semiBold; 
                             word-wrap: break-word;
                             &:hover {
                                 color: $orange;
                             }
+                        }
+                    }
+                    .price {
+                        background-color: $orange;
+                        padding: 5px;
+                        border-radius: 5px;
+                        h2 {
+                            color: $white !important;
                         }
                     }
                 }
@@ -190,6 +221,9 @@
                             align-items: center; 
                             gap: 10px; 
                             display: flex;
+                            i  {
+                                max-width: 30px;
+                            }
                             img {
                                 width: 42px; 
                                 height: 42px; 
@@ -235,5 +269,16 @@
 @media screen and (max-width: 900px){
     .search-header {
         flex-direction: column !important;
+    }
+}
+@media screen and (max-width: 1400px){
+    .card {
+            // max-width: 300px !important;
+            // flex: 0 1 calc(50% - 1em);
+        .details-data {
+            p {
+                font-size: 1.2rem !important;
+            }
+        }
     }
 }

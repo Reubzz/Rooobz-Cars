@@ -1,0 +1,42 @@
+@import "./components/variables";
+@import "./components/navbar";
+@import "./components/footer";
+@import "./components/scrollbar";
+@import "./components/title-banner";
+@import "./components/call-banner";
+@import "./components/animated-span";
+@import "./components/animations";
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 5%;
+    .wrapper {
+        // display: flex;
+        // justify-content: flex-start;
+        // align-items: flex-start;
+        // flex-direction: column;
+
+    }
+    h2 {
+        font-size: 2rem;
+        color: $orange;
+        font-weight: $medium;
+        font-family: $rubik;
+    }
+    h1 {
+        font-size: 4rem;
+        font-weight: $bold;
+        color: $black;
+        font-family: $rubik;
+    }
+    p {
+        font-size: 1.8rem;
+        color: $black;
+        font-weight: $regular;
+        font-family: $rubik;
+    }
+}

@@ -487,6 +487,7 @@ body {
   align-items: flex-start;
   gap: 30px;
   display: inline-flex;
+  cursor: default;
 }
 #testimonials .testimonials-container .reviews-container .review-wrapper .review-message {
   align-self: stretch;

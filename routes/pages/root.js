@@ -124,12 +124,26 @@ router.get('/vehicles', (req, res) => {
             return 0
         })
     }
+    if (req.query.type == 'brand') {
+        vehiclesArr.sort(function (a, b) {
+            let carA = a.brand.toLowerCase() 
+            let carB = b.brand.toLowerCase();
+            // if ()
+        })
+    }
     res.render('vehicles/vehicles', {
         vehicles: vehiclesArr,
+        showAllBtn: true
     })
 })
 router.get('/contact', (req, res) => {    
     res.render('contact/contact', {})
+})
+router.get('/terms', (req, res) => {    
+    res.render('terms/terms', {})
+})
+router.get('/how-we-work', (req, res) => {    
+    res.render('how-we-work/how-we-work', {})
 })
 router.get('/login', (req, res) => {    
     res.render('authentication/login', {})

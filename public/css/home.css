@@ -486,6 +486,7 @@ body {
   align-items: flex-start;
   gap: 30px;
   display: inline-flex;
+  cursor: default;
 }
 #testimonials .testimonials-container .reviews-container .review-wrapper .review-message {
   align-self: stretch;
@@ -994,6 +995,7 @@ span.placeholder {
   font-size: 1.6rem;
   font-family: "Rubik", sans-serif;
   font-weight: 500;
+  text-decoration: none;
 }
 #choose-us-container .wcu-data .wcu-wrapper-left .booknow-btn .booknow-icon {
   width: 30px;

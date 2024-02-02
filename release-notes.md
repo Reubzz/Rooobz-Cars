@@ -48,3 +48,8 @@
 - added vehicles page 
 - added sort button and search bar in vehicles page.
 - added Authentication Module (`alpha update`)
+
+### 2/2/2024 - Update 0.0.7
+- Fixed Buttons/Links in Homepage
+- Added Dummy Terms And Condition Page 
+- Added How We Work Page [Funny]
