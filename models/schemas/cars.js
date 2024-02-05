@@ -9,7 +9,7 @@ const db = require('../../db.js')
  *      * Additional Data not compulsory but needed. 
  */
 
-const mondel = db.MAIN_DB.model(
+const model = db.MAIN_DB.model(
     'car',
     new mongoose.Schema({
         id: { type: String, required: true }, // ! auto generated unique ID of the car [ REQUIRED ]
@@ -30,3 +30,4 @@ const mondel = db.MAIN_DB.model(
         updateTime: { type: Date, default: Date.now() }, // ? Time this car dataset was updated - [ defaults to current date if not provided ]
     })
 )
+module.exports = model;

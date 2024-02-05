@@ -1,6 +1,10 @@
-// check if user is there with username
-// check if password is correct 
-// login user
+// Databases
+const User = require('../../schemas/users')
+const jwtSecret = process.env.JWT
+const jwt = require('jsonwebtoken')
+
+// Config File
+const { loginMaxAge } = require('../../../config.json')
 
 /**
  * 
@@ -17,16 +21,6 @@
  *      @status 200 = login + session created + create cookie
  *  
  */
-
-// Databases
-const User = require('../../schemas/userAuth')
-const jwtSecret = process.env.JWT
-const jwt = require('jsonwebtoken')
-
-
-// Config File
-const { loginMaxAge } = require('../../../config.json')
-
 
 const error = {
     100: {
@@ -95,8 +89,14 @@ exports.loginUser = async (req, res, next) => {
         // All good - username + password correct
         if (check1.password == password) {
             // Generate JWT
-            const token = jwt.sign(
-                { id: check1.id, username: check1.username, role: check1.role },
+            const token = jwt.sign({ 
+                    id: check1.id, 
+                    username: check1.username, 
+                    name: check1.name, 
+                    role: check1.role, 
+                    email: check1.email,
+                    profileImg: check1.profileImg 
+                },
                 jwtSecret,
                 { expiresIn: loginMaxAge } // 1 day in secs 
             );

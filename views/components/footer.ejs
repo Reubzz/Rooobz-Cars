@@ -2,16 +2,16 @@
     <!-- ! 1st Section - Brand Data -->
     <div class="section1">
         <div class="title">
-            <img class="brand-image" src="/imgs/logo-with-text-long-alternate.png" alt="Logo Text">
+            <img class="brand-image" src="<%= config.logo %>" alt="Logo Text">
         </div>
         <p class="data brand-data">
             We are a leading car rental company that offers affordable and reliable services to customers worldwide. We are committed to providing the perfect car to meet your needs
         </p>
-        <a href="tel:0123456789" class="phone-number highlight-link">
-            <i class="fa-light fa-phone-volume fa-lg"></i> (+91) 012 345 6789
+        <a href="tel:<%= config.phone %>" class="phone-number highlight-link">
+            <i class="fa-light fa-phone-volume fa-lg"></i> <%= config.phone %>
         </a>
-        <a href="mailto:contact@rooobzcars.com" class="email highlight-link">
-            <i class="fa-light fa-envelope fa-lg"></i> contact@rooobzcars.com
+        <a href="mailto:<%= config.email %>" class="email highlight-link">
+            <i class="fa-light fa-envelope fa-lg"></i> <%= config.email %>
         </a>
         
     </div>
@@ -22,7 +22,7 @@
         <ul class="data">
             <!-- <li><a href="/careers">Careers</a></li> -->
             <li><a href="/how-we-work">How we work</a></li>
-            <li><a href="/cars">All Cars</a></li>
+            <li><a href="/vehicles">All Cars</a></li>
             <li><a href="/terms">Terms &amp; Conditions</a></li>
         </ul>
     </div>

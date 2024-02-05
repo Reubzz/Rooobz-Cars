@@ -10,11 +10,13 @@ const app = express();
 app.set('view engine', 'ejs');
 app.use(express.static("public"));
 app.use(express.json());
+app.use(cookieParser())
 
 
 // page segregation .. App use statments
 app.use('/', require(path.join(__dirname, "/routes/pages/root.js")));
 app.use('/api/components', require(path.join(__dirname, "/routes/api/components.js")));
+app.use('/api/auth', require(path.join(__dirname, "/routes/api/authentication.js")));
 
 
 app.listen(port, () => {

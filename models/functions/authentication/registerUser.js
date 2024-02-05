@@ -53,7 +53,7 @@ const status = {
     },
 }
 exports.registerUser = async (req, res, next) => {
-    const { name, username, password, email } = req.body
+    const { name, username, password, email, role } = req.body
     if (username.length < 4) {
         return res.status(401).json({
             message: "Username Invalid",
@@ -78,11 +78,13 @@ exports.registerUser = async (req, res, next) => {
     try {
         const id = uuidv4();
         await User.create({
+            id: id,
             name: name,
             username: username,
-            password: password,
             email: email,
-            id: id,
+            password: password,
+            role: role,
+            createdDate: new Date()
         }).then((user) => {
             // Creating JWT Token 
             const token = jwt.sign({ 
@@ -90,6 +92,8 @@ exports.registerUser = async (req, res, next) => {
                     name: user.name,
                     username: user.username,
                     email: user.email,
+                    role: user.role,
+                    profileImg:  user.profileImg,
                 },
                 jwtSecret,
                 { expiresIn: loginMaxAge } // 1 day in secs 

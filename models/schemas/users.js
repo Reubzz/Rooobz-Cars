@@ -9,7 +9,7 @@ const db = require('../../db.js')
  *      * Additional Data not compulsory but needed. 
  */
 
-const mondel = db.MAIN_DB.model(
+const model = db.MAIN_DB.model(
     'user',
     new mongoose.Schema({
         id: { type: String, required: true }, // ! auto generated unique ID of the car [ REQUIRED ]
@@ -18,20 +18,21 @@ const mondel = db.MAIN_DB.model(
         name: { type: String, required: true }, // ! Name of the user
         email: { type: String, required: true }, // ! Email of the user
         createdDate: { type: Date, required: true }, // ! Date of Account Creation
-        phone: { type: Number, required: false }, // ! Contact Number of the user
-        age: { type: Date, required: false }, // ! Date of birth 
-        location: { type: String, required: false }, // ! Location of the user
-        address: { type: String, required: false }, // ! Exact Address of the user
-        city: { type: String, required: false }, // ! City of the user 
-        state: { type: String, required: false }, // ! State of the user
-        pinCode: { type: Number, required: false}, // ! Pin Code of the user
+        phone: { type: Number, required: false }, // * Contact Number of the user
+        age: { type: Date, required: false }, // * Date of birth 
+        location: { type: String, required: false }, // * Location of the user
+        address: { type: String, required: false }, // * Exact Address of the user
+        city: { type: String, required: false }, // * City of the user 
+        state: { type: String, required: false }, // * State of the user
+        pinCode: { type: Number, required: false}, // * Pin Code of the user
         profileImg: { type: String, required: false, default: "https://reubz.s3.ap-south-1.amazonaws.com/default-user-img.png"}, // ? Profile Image of the user. Defualts to basic image if not provided.
 
         transanctions: { type: Array, required: false }, // * Array of Transactions ID from "transactions collection"
         reviews: { type: Array, required: false }, // * Array of Reviews ID from "reviews collection"
 
-        license: { type: Image, required: false } // ! Driving license Image
+        license: { type: String, required: false }, // ! Driving license Image Link
         
+        role: { type: String, required: false, default: 'basic'}
     })
-    
 )
+module.exports = model;

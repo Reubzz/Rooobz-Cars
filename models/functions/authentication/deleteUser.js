@@ -14,7 +14,7 @@
  * 103 - Unknown Error
  */
 
-const User = require('../../schemas/userAuth')
+const User = require('../../schemas/users')
 
 const status = {
     200: {

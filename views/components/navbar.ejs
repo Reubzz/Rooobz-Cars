@@ -15,8 +15,26 @@
     
         <div class="navbar-end">
             <ul>
-                <li><a href="/login" class="navbar-item signin-button">Log In</a></li>
-                <li><a href="/register" class="navbar-item register-button">Register</a></li>
+                <% if(user.id == undefined) {%>
+                    <li><a href="/login" class="navbar-item login-button">Log In</a></li>
+                    <li><a href="/register" class="navbar-item register-button">Register</a></li>
+                <% } else { %>
+                    <li>
+                        <div class="dropdown">
+                            <button class="dropbtn">
+                                <div class="wrapper">
+                                    <%= user.username %>
+                                    <img class="user-pfp" src="<%= user.profileImg %>" alt="Profile Picture">
+                                </div>
+                            </button>
+                            <div class="dropdown-content">
+                                <a href="/account"><i class="fad fa-sliders"></i> Account</a>
+                                <a href="/api/auth/logout" class="logout-button"><i class="fa-duotone fa-right-from-bracket"></i> Logout</a>
+                            </div>
+                        </div>
+                    </li>
+                <% } %>
+
             </ul>
         </div>
     
@@ -35,8 +53,22 @@
                     <li><a href="/contact" class="navbar-item">Contact</a></li>
                 </div>
                 <div class="mob-navbar-end">
-                    <li><a href="/login" class="navbar-item signin-button">Sign In</a></li>
-                    <li><a href="/register" class="navbar-item register-button">Register</a></li>
+                    <% if(user.id == undefined) {%>
+                        <li><a href="/login" class="navbar-item login-button">Log In</a></li>
+                        <li><a href="/register" class="navbar-item register-button">Register</a></li>
+                    <% } else { %>
+                        <li>
+                            <div class="dropdown">
+                                <button class="dropbtn">Dropdown</button>
+                                <div class="dropdown-content">
+                                    <a href="#">Link 1</a>
+                                    <a href="#">Link 2</a>
+                                    <a href="#">Link 3</a>
+                                    <a href="/api/auth/logout" class="navbar-item logout-button">Logout</a>
+                                </div>
+                            </div>
+                        </li>
+                    <% } %>
                 </div>
             </ul>
         </div>

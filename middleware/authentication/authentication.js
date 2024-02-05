@@ -1,6 +1,5 @@
 // check sessions here 
 require('dotenv').config()
-
 const jwt = require('jsonwebtoken');
 const jwtSecret = process.env.JWT;
 
@@ -21,13 +20,17 @@ exports.authCheck = async (req, res, next) => {
     if (token) {
         jwt.verify(token, jwtSecret, (err, decodedToken) => {
             if (err) {
+                console.log(err)
                 return res.status(401).send("Unknown Error | Kindly clear all cookies from your browser then access the page")
             }
 
             else {
-                res.locals.userRole = decodedToken.role;
-                res.locals.userId = decodedToken.id;
-                res.locals.userName = decodedToken.username;
+                res.locals.role = decodedToken.role;
+                res.locals.id = decodedToken.id;
+                res.locals.username = decodedToken.username;
+                res.locals.name = decodedToken.name;
+                res.locals.email = decodedToken.email;
+                res.locals.profileImg = decodedToken.profileImg;
                 next();
             }
         })

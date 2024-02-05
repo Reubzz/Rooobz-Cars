@@ -17,14 +17,16 @@ header {
         ul {
             justify-content: center;
             text-align: center;
-            font-size: 1rem;
             list-style: none;
             display: flex;
             flex-direction: row;
             gap: 15px;
             width: 100%;
+            font-size: 1rem;
+            font-family: $rubik;
+            font-weight: $regular;
         }
-
+        
         .navbar-item {
             text-decoration: none;
             color: $black;
@@ -38,6 +40,73 @@ header {
             box-shadow: $orange 0px 0px 10px;
         }
 
+        
+        /* The container <div> - needed to position the dropdown content */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            .dropbtn {
+                background-color: $smokedWhiteDark;
+                color: $black;
+                font-family: $rubik;
+                font-weight: $regular;
+                padding: 16px;
+                font-size: 16px;
+                border: none;
+                // width: 200px;
+                .wrapper {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 20px;
+
+                }
+                
+                img {
+                    width: 30px;
+                    margin:auto;
+                }
+                
+            }
+            /* Dropdown Content (Hidden by Default) */
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f1f1f1;
+                // min-width: 160px;
+                width: 100%;
+                overflow: auto;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+
+                /* Links inside the dropdown */
+                a {
+                    color: black;
+                    padding: 12px 16px;
+                    text-decoration: none;
+                    display: flex;
+                    gap: 10px;
+                    justify-content: space-between;
+                    
+                    /* Change color of dropdown links on hover */
+                    &:hover {
+                        background-color: #ddd;
+                    }
+                }
+            }
+            /* Show the dropdown menu on hover */
+            &:hover {
+                .dropdown-content {
+                    display: block;
+                }
+                /* Change the background color of the dropdown button when the dropdown content is shown */
+                .dropbtn {
+                    background-color: $orange;
+                    color: $smokedWhite;
+                }
+            } 
+        }
+        
         #hamburger-menu {
             display: none;
             .bar1, .bar2, .bar3 {
@@ -101,7 +170,7 @@ header {
                 li {
                     list-style: none;
                     text-align: center; 
-                    .signin-button {
+                    .login-button {
                         border-color: $orange;
                         border-width: 2px;
                         padding: 10px 20px;

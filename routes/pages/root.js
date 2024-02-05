@@ -1,17 +1,19 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');
+const config = require('../../config.json')
 
-router.get('/', (req, res) => {    
-    res.render('home/home', {
-        data: "test-data"
-    })
+// MiddleWares
+const { authCheck } = require("../../middleware/authentication/authentication")
+
+router.get('/', authCheck, (req, res) => {    
+    res.render('home/home', {})
 })
 
-router.get('/about', (req, res) => {    
+router.get('/about', authCheck, (req, res) => {    
     res.render('about/about', {})
 })
-router.get('/vehicles', (req, res) => {   
+router.get('/vehicles', authCheck, (req, res) => {   
     let vehiclesArr = [
         {
             name: 'A1',
@@ -136,24 +138,27 @@ router.get('/vehicles', (req, res) => {
         showAllBtn: true
     })
 })
-router.get('/contact', (req, res) => {    
+router.get('/contact', authCheck, (req, res) => {    
     res.render('contact/contact', {})
 })
-router.get('/terms', (req, res) => {    
+router.get('/terms', authCheck, (req, res) => {    
     res.render('terms/terms', {})
 })
-router.get('/how-we-work', (req, res) => {    
+router.get('/how-we-work', authCheck, (req, res) => {    
     res.render('how-we-work/how-we-work', {})
 })
+
+router.get('/account', authCheck, (req, res) => {    
+    res.render('account/account', {
+        user: res.locals
+    })
+})
+
 router.get('/login', (req, res) => {    
     res.render('authentication/login', {})
 })
 router.get('/register', (req, res) => {    
     res.render('authentication/register', {})
-})
-router.get("/logout", (req, res) => {
-    res.cookie("jwt", "", { maxAge: "1" })
-    res.redirect("back")
 })
 
 // 404 Page

@@ -53,3 +53,8 @@
 - Fixed Buttons/Links in Homepage
 - Added Dummy Terms And Condition Page 
 - Added How We Work Page [Funny]
+
+## 5/2/2024 - Update 0.1.0 [Major]
+- **Added Authentication Modules** [Working]
+- Added a back button to Login & Register Page
+- Changed Components to use uniform data from `config.json` instead of static data

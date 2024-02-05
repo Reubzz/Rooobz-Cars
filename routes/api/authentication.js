@@ -19,7 +19,10 @@ router.route('/login').post(urlEncodedParser, loginUser)
 router.route('/delete').delete(deleteUser)
 
 // ! User Logout Flow 
-router.route('/logout').get()
+router.route('/logout').get((req, res) => {
+    res.cookie("jwt", "", { maxAge: "1" })
+    res.redirect("back")
+})
 
 
 module.exports = router;
