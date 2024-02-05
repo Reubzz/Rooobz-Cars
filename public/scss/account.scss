@@ -1,0 +1,128 @@
+// ? Imports
+@import "./components/variables";
+@import "./components/navbar";
+@import "./components/footer";
+@import "./components/scrollbar";
+@import "./components/faq";
+@import "./components/save-banner";
+@import "./components/call-banner";
+@import "./components/testimonials";
+@import "./components/plans";
+@import "./components/animated-span";
+@import "./components/animations";
+@import "./components/title-banner";
+
+.data-wrapper {
+    display: flex;
+    width: 100%;
+    padding: 2% 5%;
+    
+    .main-container {
+        background-color: $smokedWhite;
+        display: flex;
+        width: 100%;
+        border-radius: 10px;
+        padding: 30px;
+        gap: 20px;
+    }
+}
+.left-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 20px;
+    .image-container {
+        width: 80%;
+        img {
+            width: 100%;
+        }
+    }
+    .buttons-wrapper {
+        #change-btn {
+            padding: 10px 10px;
+            background-color: $smokedWhite;
+            font-size: 1rem;
+            font-family: $rubik;
+            font-weight: $regular;
+            border: 0px solid $grey;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0px 0px 5px $grey, inset 0px 0px 2px $grey;
+            
+            &:hover {
+                border: 2px solid $orange;
+                box-shadow: 0px 0px 5px $orange;
+            }
+            i {
+                --fa-primary-color: #FF4C30;
+                --fa-secondary-color: #FF4C30;
+                --fa-secondary-opacity: 0.4;
+
+            }
+
+
+        }
+    }
+}
+.right-container {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    form {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 20px;
+    }
+    .form-fields-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .username, .name, .email {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        h3 {
+            font-size: 1.2rem;
+            font-family: $rubik;
+            font-weight: $medium;
+            color: $black;
+        }
+        input {
+            padding: 10px;
+            width: 100%;
+            font-size: 1.4rem;
+            font-family: $rubik;
+            font-weight: $regular;
+            color: $grey;
+            background-color: $smokedWhiteDark;
+    
+            box-shadow: inset 0px 0px 2px $grey, 0px 0px 5px $smokedWhiteDark;
+            border-radius: 5px;
+        }
+    }
+    #confirm-btn {
+        padding: 10px;
+        font-size: 1rem;
+        font-family: $rubik;
+        font-weight: $regular;
+        background-color: $orange;
+        border-radius: 5px;
+        border: none;
+        width: max-content;
+        color: $white;
+
+    }
+}
+
+@media screen and (max-width: 990px) {
+    .main-container {
+        flex-direction: column;
+    }
+}

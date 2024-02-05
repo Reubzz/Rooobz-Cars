@@ -58,3 +58,9 @@
 - **Added Authentication Modules** [Working]
 - Added a back button to Login & Register Page
 - Changed Components to use uniform data from `config.json` instead of static data
+
+### 6/2/2024 - Update 0.1.1 
+- Removed unnecessary Codes
+- Improved User Interface
+- Updated Navbar to show Logged In User and dropdown  menu with options like "Logout" or "Profile".
+- Added Account/Profile Page

@@ -62,8 +62,9 @@ header nav .dropdown .dropbtn {
   font-family: "Rubik", sans-serif;
   font-weight: 400;
   padding: 16px;
-  font-size: 16px;
+  font-size: 1.2rem !important;
   border: none;
+  border-radius: 5px;
 }
 header nav .dropdown .dropbtn .wrapper {
   display: flex;
@@ -72,7 +73,7 @@ header nav .dropdown .dropbtn .wrapper {
   gap: 20px;
 }
 header nav .dropdown .dropbtn img {
-  width: 30px;
+  width: 42px;
   margin: auto;
 }
 header nav .dropdown .dropdown-content {
@@ -92,6 +93,7 @@ header nav .dropdown .dropdown-content a {
   display: flex;
   gap: 10px;
   justify-content: space-between;
+  font-size: 1.2rem !important;
   /* Change color of dropdown links on hover */
 }
 header nav .dropdown .dropdown-content a:hover {

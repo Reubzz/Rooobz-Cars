@@ -51,9 +51,10 @@ header {
                 font-family: $rubik;
                 font-weight: $regular;
                 padding: 16px;
-                font-size: 16px;
+                font-size: 1.2rem !important;
                 border: none;
                 // width: 200px;
+                border-radius: 5px;
                 .wrapper {
                     display: flex;
                     justify-content: center;
@@ -63,7 +64,7 @@ header {
                 }
                 
                 img {
-                    width: 30px;
+                    width: 42px;
                     margin:auto;
                 }
                 
@@ -87,6 +88,7 @@ header {
                     display: flex;
                     gap: 10px;
                     justify-content: space-between;
+                    font-size: 1.2rem !important;
                     
                     /* Change color of dropdown links on hover */
                     &:hover {

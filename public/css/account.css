@@ -828,178 +828,111 @@ body {
   word-wrap: break-word;
 }
 
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-  scrollbar-width: thin;
-  scrollbar-color: #FF4C30;
-}
-
 .data-wrapper {
   display: flex;
-  gap: 100px;
-  flex-direction: column;
-  background-color: #eeeeee;
-}
-
-.main-data {
-  padding: 0 7%;
-  display: flex;
-  flex-direction: column;
-  gap: 100px;
-}
-
-#contact-us-container {
   width: 100%;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 10px;
-  display: flex;
+  padding: 2% 5%;
 }
-#contact-us-container .data-wrapper {
+.data-wrapper .main-container {
+  background-color: #DADADA;
+  display: flex;
   width: 100%;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  gap: 100px;
-}
-#contact-us-container .data-wrapper .left-wrapper {
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  border-radius: 10px;
+  padding: 30px;
   gap: 20px;
-  display: inline-flex;
+}
+
+.left-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  gap: 20px;
+}
+.left-container .image-container {
+  width: 80%;
+}
+.left-container .image-container img {
   width: 100%;
 }
-#contact-us-container .data-wrapper .left-wrapper .sub-title {
-  color: #FF4C30;
-  font-size: 2rem;
+.left-container .buttons-wrapper #change-btn {
+  padding: 10px 10px;
+  background-color: #DADADA;
+  font-size: 1rem;
   font-family: "Rubik", sans-serif;
-  font-weight: 600;
-  word-wrap: break-word;
+  font-weight: 400;
+  border: 0px solid #707070;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 0px 5px #707070, inset 0px 0px 2px #707070;
 }
-#contact-us-container .data-wrapper .left-wrapper .title {
+.left-container .buttons-wrapper #change-btn:hover {
+  border: 2px solid #FF4C30;
+  box-shadow: 0px 0px 5px #FF4C30;
+}
+.left-container .buttons-wrapper #change-btn i {
+  --fa-primary-color: #FF4C30;
+  --fa-secondary-color: #FF4C30;
+  --fa-secondary-opacity: 0.4;
+}
+
+.right-container {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  color: #0c0c0c;
-  font-size: 3rem;
-  font-family: "Rubik", sans-serif;
-  font-weight: 700;
-  word-wrap: break-word;
 }
-#contact-us-container .data-wrapper .left-wrapper .description {
-  align-self: stretch;
+.right-container form {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+.right-container .form-fields-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.right-container .username, .right-container .name, .right-container .email {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.right-container .username h3, .right-container .name h3, .right-container .email h3 {
+  font-size: 1.2rem;
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
   color: #0c0c0c;
+}
+.right-container .username input, .right-container .name input, .right-container .email input {
+  padding: 10px;
+  width: 100%;
   font-size: 1.4rem;
   font-family: "Rubik", sans-serif;
   font-weight: 400;
-  word-wrap: break-word;
-}
-#contact-us-container .data-wrapper .left-wrapper .email, #contact-us-container .data-wrapper .left-wrapper .phone-number {
-  color: #0c0c0c;
-  text-decoration: none;
-  font-size: 1.2rem;
-}
-#contact-us-container .data-wrapper .left-wrapper .email i, #contact-us-container .data-wrapper .left-wrapper .phone-number i {
-  color: #FF4C30;
-}
-#contact-us-container .data-wrapper .left-wrapper .email:hover, #contact-us-container .data-wrapper .left-wrapper .phone-number:hover {
-  color: #FF4C30;
-}
-#contact-us-container .data-wrapper .right-wrapper {
-  width: 100%;
-}
-#contact-us-container .data-wrapper .right-wrapper #contact-us-form {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  gap: 20px;
-  background-color: #DADADA;
-  padding: 50px;
-  border-radius: 20px;
-}
-#contact-us-container .data-wrapper .right-wrapper #contact-us-form .form-element {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-#contact-us-container .data-wrapper .right-wrapper #contact-us-form .form-element label {
-  font-size: 1.4rem;
-  font-family: "Rubik", sans-serif;
-  font-weight: 500;
-}
-#contact-us-container .data-wrapper .right-wrapper #contact-us-form .form-element span {
-  color: #FF4C30;
-}
-#contact-us-container .data-wrapper .right-wrapper #contact-us-form .form-element input, #contact-us-container .data-wrapper .right-wrapper #contact-us-form .form-element textarea {
-  padding: 15px 10px;
-  background-color: #f1f1f1;
-  border: none;
-  font-family: "Rubik", sans-serif;
-  font-size: 1rem;
-  color: #0c0c0c;
+  color: #707070;
+  background-color: #d5d5d5;
+  box-shadow: inset 0px 0px 2px #707070, 0px 0px 5px #d5d5d5;
   border-radius: 5px;
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-       appearance: none;
 }
-#contact-us-container .data-wrapper .right-wrapper #contact-us-form .form-element input#message, #contact-us-container .data-wrapper .right-wrapper #contact-us-form .form-element textarea#message {
-  resize: horizontal;
-}
-#contact-us-container .data-wrapper .right-wrapper #contact-us-form .form-element input:focus, #contact-us-container .data-wrapper .right-wrapper #contact-us-form .form-element textarea:focus {
-  outline: 2px solid #FF4C30;
-}
-#contact-us-container .data-wrapper .right-wrapper #contact-us-form #submit {
-  padding: 10px 0;
-  background: #FF4C30;
-  box-shadow: 0px 10px 15px #FF4C30;
-  border-radius: 10px;
-  border-color: transparent;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  display: flex;
-  font-size: 1.4rem;
-  font-weight: 500;
-  cursor: pointer;
+.right-container #confirm-btn {
+  padding: 10px;
+  font-size: 1rem;
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  background-color: #FF4C30;
+  border-radius: 5px;
+  border: none;
+  width: -moz-max-content;
+  width: max-content;
+  color: #f1f1f1;
 }
 
-@media screen and (max-width: 1330px) {
-  #quick-booking .form-data-title h2 {
-    font-size: 1.6rem !important;
-  }
-}
-@media screen and (max-width: 1100px) {
-  #quick-booking .form-data-title h2 {
-    font-size: 1.2rem !important;
-  }
-}
-@media screen and (max-width: 980px) {
-  #landing-page .landing-page-wrapper {
-    width: 100%;
-    justify-content: space-around;
-    flex-direction: column-reverse;
-  }
-  #landing-page .landing-page-wrapper .landing-page-right {
-    display: flex;
-    justify-content: center;
-  }
-  #landing-page .landing-page-wrapper .landing-page-right img {
-    width: 80%;
-    display: none;
-  }
-  #quick-booking .form-data {
+@media screen and (max-width: 990px) {
+  .main-container {
     flex-direction: column;
-  }
-  #contact-us-container .data-wrapper {
-    flex-direction: column;
-    gap: 100px;
-  }
-  #contact-us-container .data-wrapper .right-wrapper #contact-us-form {
-    padding: 20px;
   }
 }
