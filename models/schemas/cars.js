@@ -13,8 +13,8 @@ const model = db.MAIN_DB.model(
     'car',
     new mongoose.Schema({
         id: { type: String, required: true }, // ! auto generated unique ID of the car [ REQUIRED ]
-        model: { type: String, required: true }, // ! Model of the car - [Eg. Nano]
-        make: { type: String, required: true }, // ! make of the car - [Eg. Tata]
+        name: { type: String, required: true }, // ! Model of the car - [Eg. Nano]
+        brand: { type: String, required: true }, // ! make of the car - [Eg. Tata]
         color: { type: String, required: true }, // ! Color of the car 
         descrption: { type: String, maxlength: 128 }, // * Description the car 
         condition: { type: String, required: true }, // ! Condition of the car 

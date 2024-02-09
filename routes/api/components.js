@@ -12,7 +12,6 @@ router.get('/:filename', authCheck, (req, res) => {
         config: config,
         user: res.locals,
     })
-    console.log(res.locals)
 })
 
 module.exports = router;

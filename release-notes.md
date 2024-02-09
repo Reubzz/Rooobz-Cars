@@ -64,3 +64,9 @@
 - Improved User Interface
 - Updated Navbar to show Logged In User and dropdown  menu with options like "Logout" or "Profile".
 - Added Account/Profile Page
+
+### 7/2/2024 - Update 0.1.2 
+- Added a new route `api/cars` to add new cars data (`create-cars-data.js`)
+- Edited `cars.js` schema to better fit the exact dataset and simplicity
+- Updated Vehicles page Css
+- Updated Accounts Page meta tags

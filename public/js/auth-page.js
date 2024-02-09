@@ -36,7 +36,8 @@ async function authApi(apiEndPoint, bodyOptions) {
         const res = await fetch('/api/auth/' + apiEndPoint, {
             method: 'POST',
             body: JSON.stringify(bodyOptions),
-            headers: { 'Content-Type': 'application/json' }
+            headers: { 'Content-Type': 'application/json' },
+            // apiKey: "reubz123"
         })
         const data = await res.json()
         if (res.status === 400 || res.status === 401) {
@@ -47,7 +48,8 @@ async function authApi(apiEndPoint, bodyOptions) {
             }, 10 * 1000)
             return;
         }
-        data.role === "basic" ? history.back() : history.back()
+        // data.role === "basic" ? history.back() : history.back()
+        data.role === "basic" ? window.location.replace(document.referrer) : window.location.replace(document.referrer)
     } catch (err) {
         console.log(err.message)
     }

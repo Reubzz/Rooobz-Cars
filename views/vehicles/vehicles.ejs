@@ -89,7 +89,7 @@
             <% vehicles.forEach(car => { %>
                 <a href="" class="card">
                     <div class="image-container">
-                        <img src="https://via.placeholder.com/385x355" />
+                        <img src="<%= car.imgUrls[0] %>" />
                     </div>
                     <div class="details-container">
                         <div class="details-title-container">
@@ -107,7 +107,7 @@
                                     <p> <%= car.brand %></p>
                                 </div>
                                 <div class="right-wrapper">
-                                    <p><%= car.engineType %> </p>
+                                    <p><%= car.fuelType %> </p>
                                     <i class="fa-duotone fa-gas-pump fa-3x" style="--fa-primary-color: #FF4C30; --fa-primary-opacity: 0.6; --fa-secondary-color: #FF4C30; --fa-secondary-opacity: 2;"></i>
                                 </div>
                             </div>

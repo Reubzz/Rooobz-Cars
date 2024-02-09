@@ -17,6 +17,7 @@ app.use(cookieParser())
 app.use('/', require(path.join(__dirname, "/routes/pages/root.js")));
 app.use('/api/components', require(path.join(__dirname, "/routes/api/components.js")));
 app.use('/api/auth', require(path.join(__dirname, "/routes/api/authentication.js")));
+app.use('/api/cars', require(path.join(__dirname, "/routes/api/create-cars-data.js")));
 
 
 app.listen(port, () => {
