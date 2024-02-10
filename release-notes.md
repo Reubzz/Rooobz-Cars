@@ -75,4 +75,4 @@
 - Fixed Typo errors in `contact.ejs`
 - Fixed Login/Register Function where it was not redirecting and refreshing page after successful login / registration
 - Changed Navbar Javascript file name from `mobile-navbar.js` to `navbar.js`.
-- 
+- Made Full Screen Navbar Dropdown for Mobile Layout

@@ -16,8 +16,8 @@
         <div class="navbar-end">
             <ul>
                 <% if(user.id == undefined) {%>
-                    <li><a href="/login" class="navbar-item login-button">Log In</a></li>
-                    <li><a href="/register" class="navbar-item register-button">Register</a></li>
+                    <li><a href="/login" class="navbar-item login-button" id="login-btn-desktop">Log In</a></li>
+                    <li><a href="/register" class="navbar-item register-button" id="register-btn-desktop">Register</a></li>
                 <% } else { %>
                     <li>
                         <div class="dropdown">
@@ -54,8 +54,8 @@
                 </div>
                 <div class="mob-navbar-end">
                     <% if(user.id == undefined) {%>
-                        <li><a href="/login" class="navbar-item login-button">Log In</a></li>
-                        <li><a href="/register" class="navbar-item register-button">Register</a></li>
+                        <li><a href="/login" class="navbar-item login-button" id="login-btn-mobile">Log In</a></li>
+                        <li><a href="/register" class="navbar-item register-button" id="register-btn-mobile">Register</a></li>
                     <% } else { %>
                         <li>
                             <div class="dropdown">
