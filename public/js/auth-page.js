@@ -6,6 +6,8 @@ const email = document.querySelector('#email')
 const display = document.querySelector('#error')
 const submitBtn = document.querySelector('#submit').value.toLowerCase()
 
+
+
 form.addEventListener('submit', async (e) => {
     e.preventDefault()
     display.textContent = ''
@@ -33,7 +35,7 @@ form.addEventListener('submit', async (e) => {
 
 async function authApi(apiEndPoint, bodyOptions) {
     try {
-        const res = await fetch('/api/auth/' + apiEndPoint, {
+        const res = await fetch(`/api/auth/${apiEndPoint}?callbackUrl=${document.referrer}`, {
             method: 'POST',
             body: JSON.stringify(bodyOptions),
             headers: { 'Content-Type': 'application/json' },
@@ -49,8 +51,17 @@ async function authApi(apiEndPoint, bodyOptions) {
             return;
         }
         // data.role === "basic" ? history.back() : history.back()
-        data.role === "basic" ? window.location.replace(document.referrer) : window.location.replace(document.referrer)
+        if(res.status === 200) {
+            window.location.reload();
+            window.location.replace(document.referrer)
+            return; 
+        }
+        // data.role === "basic" ? window.location.replace(document.referrer) : window.location.replace(document.referrer)
     } catch (err) {
         console.log(err.message)
     }
 }
+
+// function checkIfUserAlreadyLoggedIn() {
+//     if()
+// }

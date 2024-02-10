@@ -74,14 +74,13 @@ exports.loginUser = async (req, res, next) => {
         // Check for user in DB
         const check1 = await User.findOne(uName)
 
-        // If no user
+        // ! If no user found
         if (!check1) {
             return res.status(401).json({ error: error[101], status: status[201] })
         }
 
         // Compare password
-
-        // password incorrect
+        // ! password incorrect
         if (check1.password != password) {
             return res.status(401).json({ error: error[102], status: status[201] })
         }
@@ -106,15 +105,19 @@ exports.loginUser = async (req, res, next) => {
                 httpOnly: true,
                 maxAge: loginMaxAge * 1000, // 3hrs in ms
             });
+
+            // ** Sucessful Login ** 
             res.status(200).json({ error: error[100], status: status[200], user: check1 })
         }
         else {
+            // ! Incorrect Details Login 
             return res.status(401).json({
                 error: error[101],
                 status: status[201]
             });
         }
     } catch (error) {
+        // ! Unknown Error Login
         res.status(400).json({
             error: { message: error.message, code: 109 },
             status: status[201]
