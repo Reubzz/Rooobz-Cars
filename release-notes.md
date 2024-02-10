@@ -74,3 +74,5 @@
 ### 10/02/2024 -  Update v0.1.3 
 - Fixed Typo errors in `contact.ejs`
 - Fixed Login/Register Function where it was not redirecting and refreshing page after successful login / registration
+- Changed Navbar Javascript file name from `mobile-navbar.js` to `navbar.js`.
+- 
