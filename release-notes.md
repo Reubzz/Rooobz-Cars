@@ -76,3 +76,7 @@
 - Fixed Login/Register Function where it was not redirecting and refreshing page after successful login / registration
 - Changed Navbar Javascript file name from `mobile-navbar.js` to `navbar.js`.
 - Made Full Screen Navbar Dropdown for Mobile Layout
+
+### 11/02/2024 - Update v0.1.4 
+- Removed Unnesccessary Imports from scss files. 
+- Added Subscribe Email List Api - (`api/subscribe`)
