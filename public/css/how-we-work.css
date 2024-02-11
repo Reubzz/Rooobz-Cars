@@ -1,10 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
 body {
   font-size: 62.5%;
   font-family: "Rubik", sans-serif;
@@ -46,6 +41,7 @@ header nav .navbar-item {
   text-decoration: none;
   color: #0c0c0c;
   width: 100%;
+  cursor: pointer;
 }
 header nav .register-button {
   background-color: #FF4C30;
@@ -83,8 +79,9 @@ header nav .dropdown .dropdown-content {
   display: none;
   position: absolute;
   background-color: #f1f1f1;
-  width: 100%;
-  overflow: auto;
+  right: 0;
+  width: -moz-max-content;
+  width: max-content;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   /* Links inside the dropdown */
@@ -95,12 +92,11 @@ header nav .dropdown .dropdown-content a {
   text-decoration: none;
   display: flex;
   gap: 10px;
-  justify-content: space-between;
   font-size: 1.2rem !important;
   /* Change color of dropdown links on hover */
 }
 header nav .dropdown .dropdown-content a:hover {
-  background-color: #ddd;
+  background-color: #DADADA;
 }
 header nav .dropdown:hover {
   /* Change the background color of the dropdown button when the dropdown content is shown */
@@ -189,11 +185,6 @@ header nav #hamburger-menu .mobile-menu li a {
     display: block !important;
   }
 }
-body {
-  font-size: 62.5%;
-  font-family: "Rubik", sans-serif;
-}
-
 footer {
   display: flex;
   width: 100%;
@@ -276,6 +267,19 @@ footer div #subscribe-form #subscribe-submit {
   color: #f1f1f1;
   font-size: 1rem;
 }
+footer div #confirm-message {
+  display: none;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: "Rubik", sans-serif;
+  color: #f1f1f1;
+  background-color: rgba(255, 76, 48, 0.5490196078);
+  padding: 10px;
+  border-radius: 5px;
+}
+footer div .show {
+  display: block !important;
+}
 
 @media screen and (max-width: 980px) {
   footer {
@@ -286,11 +290,6 @@ footer div #subscribe-form #subscribe-submit {
     width: 100% !important;
   }
 }
-body {
-  font-size: 62.5%;
-  font-family: "Rubik", sans-serif;
-}
-
 * {
   padding: 0;
   margin: 0;
@@ -317,11 +316,6 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #147efb;
-}
-
-body {
-  font-size: 62.5%;
-  font-family: "Rubik", sans-serif;
 }
 
 #banner-title-container {
@@ -351,11 +345,6 @@ body {
   font-family: "Rubik", sans-serif;
   font-weight: 500;
   word-wrap: break-word;
-}
-
-body {
-  font-size: 62.5%;
-  font-family: "Rubik", sans-serif;
 }
 
 .call-banner-container {
@@ -388,44 +377,6 @@ body {
 }
 .call-banner-container .call-banner h3 span {
   color: #FF4C30;
-}
-
-@keyframes bounce {
-  0% {
-    transform: translate3d(0, 0px, 0);
-  }
-  15% {
-    transform: scale(1.5);
-  }
-  25% {
-    transform: translate3d(0, 50px, 0);
-  }
-  50%, 100% {
-    transform: translate3d(0, 0, 0);
-  }
-}
-@keyframes popup {
-  from {
-    transform: scale3d(1.2, 1.4, 1);
-  }
-  50% {
-    transform: scale3d(1, 1, 1);
-  }
-  to {
-    transform: scale3d(1, 1, 1), translateZ();
-  }
-}
-@keyframes autoHide {
-  70% {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-body {
-  font-size: 62.5%;
-  font-family: "Rubik", sans-serif;
 }
 
 span.actual {
