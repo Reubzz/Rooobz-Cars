@@ -80,3 +80,5 @@
 ### 11/02/2024 - Update v0.1.4 
 - Removed Unnesccessary Imports from scss files. 
 - Added Subscribe Email List Api - (`api/subscribe`)
+- Fixed issue where user didn't reach original page they were on before login/register
+    - Now user redirects back to its initial page he was on before he clicked login button. 

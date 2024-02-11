@@ -80,10 +80,16 @@ router.get('/account', authCheck, (req, res) => {
     })
 })
 
-router.get('/login', (req, res) => {    
+router.get('/login', (req, res) => {   
+    if(req.cookies.jwt) {
+        return res.redirect('back') 
+    } 
     res.render('authentication/login', {})
 })
-router.get('/register', (req, res) => {    
+router.get('/register', (req, res) => {   
+    if(req.cookies.jwt) {
+        return res.redirect('back') 
+    }  
     res.render('authentication/register', {})
 })
 

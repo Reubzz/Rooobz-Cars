@@ -72,7 +72,7 @@ router.delete('/delete', async (req, res) => {
             })
     }
     catch (error){
-        
+        console.log('creat-cars-data - '+ error)
     }
 })
 

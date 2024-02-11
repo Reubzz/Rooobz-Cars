@@ -11,32 +11,19 @@ document.onclick = function(x) {
     }
 }
 
-const loginBtnDesktop = document.getElementById('login-btn-desktop');
-const registerBtnDesktop = document.getElementById('register-btn-desktop');
-const loginBtnMobile = document.getElementById('login-btn-mobile');
-const loginregistertnMobile = document.getElementById('register-btn-mobile');
-
-console.log(loginBtnDesktop)
-loginBtnDesktop.onclick = () => {
-    // let popupURL = browser.extension.getURL("popup/popup.html");
-
-    // let creating = browser.windows.create({
-    //     url: popupURL,
-    //     type: "popup",
-    //     height: 200,
-    //     width: 200,
-    // }); 
-    // creating.then(onCreated, onError);
-    browser.windows.create()
+const openWindow = (pageUrl) => {
+    // window.open('/login', 'User Login', 'scrollbars=yes,resizable=no,status=no,location=no,toolbar=no,menubar=no,width=0,height=0,left=1000,top=1000')
+    setCookie('redirectToUrl', window.location, 1);
+    window.location.replace(pageUrl)
 }
 
 
-function setCookie(name, value, days) {
+function setCookie(name, value, hours) {
     let expires = "";
-    if (days) {
-        var date = new Date();
-        date.setTime(date.getTime() + (24 * 60 * 60 * 1000)); // 1 day 
-        expires = "; expires=" + date.toUTCString();
+    if (hours) {
+        let date = new Date();
+        date.setTime(date.getTime() + (hours * 60 * 60 * 1000)); // 1 day 
+        expires = `; expires=${date.toUTCString()}`;
     }
-    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+    document.cookie = name + "=" + (value || "")  + expires + "; path=/; SameSite=Lax";
 }

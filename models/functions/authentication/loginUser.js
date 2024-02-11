@@ -104,6 +104,7 @@ exports.loginUser = async (req, res, next) => {
             res.cookie("jwt", token, {
                 httpOnly: true,
                 maxAge: loginMaxAge * 1000, // 3hrs in ms
+                sameSite: 'lax'
             });
 
             // ** Sucessful Login ** 
@@ -122,5 +123,6 @@ exports.loginUser = async (req, res, next) => {
             error: { message: error.message, code: 109 },
             status: status[201]
         });
+        console.log('login user api - ' + error);    
     }
 }

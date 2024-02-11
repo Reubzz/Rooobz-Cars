@@ -20,7 +20,7 @@ router.route('/delete').delete(deleteUser)
 
 // ! User Logout Flow 
 router.route('/logout').get((req, res) => {
-    res.cookie("jwt", "", { maxAge: "1" })
+    res.cookie("jwt", "", { maxAge: "-1", sameSite: 'lax'  })
     res.redirect("back")
 })
 

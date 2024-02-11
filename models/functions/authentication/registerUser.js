@@ -116,6 +116,6 @@ exports.registerUser = async (req, res, next) => {
             error: error[103],
             status: status[201]
         })
-        console.log(err)
+        console.log('register User api - ' + err)
     }
 }

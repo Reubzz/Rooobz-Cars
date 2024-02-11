@@ -6,8 +6,6 @@ const email = document.querySelector('#email')
 const display = document.querySelector('#error')
 const submitBtn = document.querySelector('#submit').value.toLowerCase()
 
-
-
 form.addEventListener('submit', async (e) => {
     e.preventDefault()
     display.textContent = ''
@@ -42,6 +40,8 @@ async function authApi(apiEndPoint, bodyOptions) {
             // apiKey: "reubz123"
         })
         const data = await res.json()
+
+        // ! If Unsuccessful Login - Error
         if (res.status === 400 || res.status === 401) {
             display.classList.add("error")
             display.textContent = `Error ${data.error.code} - ${(data.error.code != 100) ? data.error.message : ''}`
@@ -50,18 +50,29 @@ async function authApi(apiEndPoint, bodyOptions) {
             }, 10 * 1000)
             return;
         }
-        // data.role === "basic" ? history.back() : history.back()
+        
+        // ! If Success Login
         if(res.status === 200) {
             window.location.reload();
-            window.location.replace(document.referrer)
-            return; 
+            if(getCookie('redirectToUrl') != null) {
+                window.location.replace(getCookie('redirectToUrl'));
+                deleteCookie('redirectToUrl');
+                return; 
+            }
+            return window.location.replace('/'); 
         }
-        // data.role === "basic" ? window.location.replace(document.referrer) : window.location.replace(document.referrer)
     } catch (err) {
+        // ! If Unknown errors
         console.log(err.message)
     }
 }
 
-// function checkIfUserAlreadyLoggedIn() {
-//     if()
-// }
+function getCookie(name) {
+    const cookiesObject = Object.fromEntries(document.cookie.split('; ').map(v=>v.split(/=(.*)/s).map(decodeURIComponent)))
+    return cookiesObject[name] ? cookiesObject[name] : null;
+}
+
+function deleteCookie(cookieName) {
+    // Set the cookie's expiration date to a past date
+    document.cookie = cookieName + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+}
