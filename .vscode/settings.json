@@ -1,9 +1,20 @@
 {
-    "liveSassCompile.settings.formats": [
-        {
-          "format": "expanded",
-          "extensionName": ".css",
-          "savePath": "./public/css/"
-        }
-    ]    
+	"liveSassCompile.settings.formats": [
+		{
+			"format": "expanded",
+			"extensionName": ".css",
+			"savePath": "./public/css/"
+		}
+	],
+	"files.associations": {
+		"*.ejs": "html"
+	},
+	"emmet.includeLanguages": {
+		"ejs": "html",
+	},
+	"htmlhint.options": {
+		"spec-char-escape": false,
+		"doctype-first": false
+	}
+	
 }
