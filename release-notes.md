@@ -82,3 +82,6 @@
 - Added Subscribe Email List Api - (`api/subscribe`)
 - Fixed issue where user didn't reach original page they were on before login/register
     - Now user redirects back to its initial page he was on before he clicked login button. 
+
+### 15/02/2024 - Update v0.1.5
+- Made Navbar Sticky to the top of the screen.

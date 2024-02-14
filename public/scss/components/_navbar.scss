@@ -1,6 +1,12 @@
 // ? Imports
 @import "./variables";
 
+.sticky { 
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+}
 header {
     nav {
         background-color: $smokedWhite;
@@ -10,8 +16,8 @@ header {
         align-items: center;
         padding: 0 10px;
 
-        position: fixed;
-        width: 100%;
+        // position: fixed;
+        // width: 100%;
         
         z-index: 2;
         
