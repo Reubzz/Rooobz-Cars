@@ -85,3 +85,6 @@
 
 ### 15/02/2024 - Update v0.1.5
 - Made Navbar Sticky to the top of the screen.
+
+### 17/02/2024 - Update v0.1.5 - Part 2 (minor)
+- Fixed Authentication Page - All fields are now required and field validations done on front end Javascript. 

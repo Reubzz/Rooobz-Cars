@@ -2,6 +2,7 @@ const form = document.querySelector('form')
 const fullName = document.querySelector('#name')
 const username = document.querySelector('#username')
 const password = document.querySelector('#password')
+const repassword = document.querySelector('#re-password')
 const email = document.querySelector('#email')
 const display = document.querySelector('#error')
 const submitBtn = document.querySelector('#submit').value.toLowerCase()
@@ -10,7 +11,19 @@ form.addEventListener('submit', async (e) => {
     e.preventDefault()
     display.textContent = ''
 
-    // if Login Page
+    // ! Standard Form Inputs Checking
+    // ! Check If password - re-enter password is same value
+    if (password.value != repassword.value) {
+        showError({
+            code: '401',
+            message: 'Passwords do not match. Please Try again'
+        })
+        repassword.value = '';
+        repassword.style.border = 'thin solid red';
+        return;
+    }
+
+    // ? if Login Page
     if (submitBtn == 'login') {
         authApi('login', bodyOptions = {
             username: username.value,
@@ -18,7 +31,8 @@ form.addEventListener('submit', async (e) => {
         });
     }
 
-    // If Register user page 
+    // ? If Register user page
+    
     if (submitBtn == 'register') {
         authApi('register', bodyOptions = {
             name:  fullName.value,
@@ -37,17 +51,16 @@ async function authApi(apiEndPoint, bodyOptions) {
             method: 'POST',
             body: JSON.stringify(bodyOptions),
             headers: { 'Content-Type': 'application/json' },
-            // apiKey: "reubz123"
+            // apiKey: "admin"
         })
         const data = await res.json()
 
         // ! If Unsuccessful Login - Error
         if (res.status === 400 || res.status === 401) {
-            display.classList.add("error")
-            display.textContent = `Error ${data.error.code} - ${(data.error.code != 100) ? data.error.message : ''}`
-            setTimeout(() => {
-                display.classList.remove('error')
-            }, 10 * 1000)
+            showError({
+                error: data.error.code,
+                message: data.error.message
+            })
             return;
         }
         
@@ -75,4 +88,13 @@ function getCookie(name) {
 function deleteCookie(cookieName) {
     // Set the cookie's expiration date to a past date
     document.cookie = cookieName + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+}
+
+function showError({ code, message}) {
+    display.classList.add("error")
+    display.textContent = `Error ${code} - ${(code != 100) ? message : ''}`
+    setTimeout(() => {
+        display.classList.remove('error')
+    }, 10 * 1000)
+    return;
 }
