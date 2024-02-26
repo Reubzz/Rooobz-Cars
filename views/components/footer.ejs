@@ -42,7 +42,7 @@
         <p class="data">Subscribe your email address for latest news and updates</p>
         <form id="subscribe-form" action="">
             <input id="subscribe-email" type="email" name="subscription_email" placeholder="Email Address" required>
-            <button id="subscribe-submit" type="button">Submit</button>
+            <button id="subscribe-submit" onclick="emailSubmit(document.getElementById('subscribe-email').value)" type="button">Submit</button>
         </form>
         <p id="confirm-message">This is Error</p>
     </div>

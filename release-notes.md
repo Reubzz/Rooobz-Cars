@@ -88,3 +88,6 @@
 
 ### 17/02/2024 - Update v0.1.5 - Part 2 (minor)
 - Fixed Authentication Page - All fields are now required and field validations done on front end Javascript. 
+
+### 26/02/2024 - Update v0.1.5 - Part 3 (minor)
+- Fixed email subscription button submission in footer

@@ -34,7 +34,6 @@ const status = {
 }
 router.post('/', async (req, res) => {    
     const { email } = req.body;
-    console.log(email) // ! dEBUBG
 
     if (!email) {
         return res.status(400).json({
@@ -45,7 +44,7 @@ router.post('/', async (req, res) => {
     const check = await emailList.findOne({ email: email });
     if(check) {
         return res.status(401).json({
-            error: error[103],
+            error: error[102],
             status: status[201]
         })
     }
