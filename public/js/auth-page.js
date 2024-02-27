@@ -11,18 +11,7 @@ form.addEventListener('submit', async (e) => {
     e.preventDefault()
     display.textContent = ''
 
-    // ! Standard Form Inputs Checking
-    // ! Check If password - re-enter password is same value
-    if (password.value != repassword.value) {
-        showError({
-            code: '401',
-            message: 'Passwords do not match. Please Try again'
-        })
-        repassword.value = '';
-        repassword.style.border = 'thin solid red';
-        return;
-    }
-
+    
     // ? if Login Page
     if (submitBtn == 'login') {
         authApi('login', bodyOptions = {
@@ -30,10 +19,22 @@ form.addEventListener('submit', async (e) => {
             password: password.value
         });
     }
-
+    
     // ? If Register user page
     
     if (submitBtn == 'register') {
+        // ! Standard Form Inputs Checking
+        // ! Check If password - re-enter password is same value
+        if (password.value != repassword.value) {
+            showError({
+                code: '401',
+                message: 'Passwords do not match. Please Try again'
+            })
+            repassword.value = '';
+            repassword.style.border = 'thin solid red';
+            return;
+        }
+        
         authApi('register', bodyOptions = {
             name:  fullName.value,
             username: username.value,
@@ -51,7 +52,6 @@ async function authApi(apiEndPoint, bodyOptions) {
             method: 'POST',
             body: JSON.stringify(bodyOptions),
             headers: { 'Content-Type': 'application/json' },
-            // apiKey: "admin"
         })
         const data = await res.json()
 
