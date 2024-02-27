@@ -47,7 +47,7 @@ form.addEventListener('submit', async (e) => {
 
 async function authApi(apiEndPoint, bodyOptions) {
     try {
-        const res = await fetch(`/api/auth/${apiEndPoint}?callbackUrl=${document.referrer}`, {
+        const res = await fetch(`/api/auth/${apiEndPoint}`, {
             method: 'POST',
             body: JSON.stringify(bodyOptions),
             headers: { 'Content-Type': 'application/json' },
