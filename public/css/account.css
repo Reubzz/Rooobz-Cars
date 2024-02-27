@@ -769,7 +769,7 @@ span.placeholder {
   padding: 2% 5%;
 }
 .data-wrapper .main-container {
-  background-color: #DADADA;
+  background-color: #f1f1f1;
   display: flex;
   width: 100%;
   border-radius: 10px;
@@ -803,8 +803,8 @@ span.placeholder {
   box-shadow: 0px 0px 5px #707070, inset 0px 0px 2px #707070;
 }
 .left-container .buttons-wrapper #change-btn:hover {
-  border: 2px solid #FF4C30;
-  box-shadow: 0px 0px 5px #FF4C30;
+  box-shadow: 0px 0px 5px 2px #FF4C30;
+  background-color: #e0e0e0;
 }
 .left-container .buttons-wrapper #change-btn i {
   --fa-primary-color: #FF4C30;
@@ -845,12 +845,12 @@ span.placeholder {
 .right-container .username input, .right-container .name input, .right-container .email input {
   padding: 10px;
   width: 100%;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-family: "Rubik", sans-serif;
   font-weight: 400;
-  color: #707070;
-  background-color: #d5d5d5;
-  box-shadow: inset 0px 0px 2px #707070, 0px 0px 5px #d5d5d5;
+  color: #0c0c0c;
+  background-color: #e0e0e0;
+  box-shadow: inset 0px 0px 2px #d5d5d5;
   border-radius: 5px;
 }
 .right-container #confirm-btn {
@@ -864,6 +864,10 @@ span.placeholder {
   width: -moz-max-content;
   width: max-content;
   color: #f1f1f1;
+  cursor: pointer;
+}
+.right-container #confirm-btn:hover {
+  background-color: #e64229;
 }
 
 @media screen and (max-width: 990px) {
