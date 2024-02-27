@@ -27,3 +27,18 @@ function setCookie(name, value, hours) {
     }
     document.cookie = name + "=" + (value || "")  + expires + "; path=/; SameSite=Lax";
 }
+
+
+// When the user scrolls the page, execute myFunction
+
+window.onscroll = function() {
+    const navbar = document.getElementById("navbar");
+    let sticky = navbar.offsetTop;
+    if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky")
+    } else {
+        navbar.classList.remove("sticky");
+    }
+};
+function myFunction() {
+} 
