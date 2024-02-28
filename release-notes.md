@@ -1,6 +1,6 @@
-# Release Notes
+<h1 style="font-size: 64px; color: #FF4C30; ">Release Notes</h1>
 
-### 11/11/2023 - Initial Commit
+# 11/11/2023 - Initial Commit
 - Created the initial commit for this project.
 - Similar File Directory to [Personal Website Structure](https://github.com/Reubzz/personal-website)
 
@@ -54,7 +54,7 @@
 - Added Dummy Terms And Condition Page 
 - Added How We Work Page [Funny]
 
-## 5/2/2024 - Update 0.1.0 [Major]
+# 5/2/2024 - Update 0.1.0 [Major]
 - **Added Authentication Modules** [Working]
 - Added a back button to Login & Register Page
 - Changed Components to use uniform data from `config.json` instead of static data
