@@ -97,3 +97,4 @@
 - All Fields can now be edited/updated by the user on the account page. `/account`
 - Account Page css overhaul
 - Added a new api route for account editing : `/api/account/edit`
+- Separated Error Popup to a separate component for reusablity
