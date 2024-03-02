@@ -87,43 +87,45 @@
         </div>
         <div class="data-wrapper">
             <% vehicles.forEach(car => { %>
-                <a href="" class="card">
-                    <div class="image-container">
-                        <img src="<%= car.imgUrls[0] %>" />
-                    </div>
-                    <div class="details-container">
-                        <div class="details-title-container">
-                            <div class="model">
-                                <h2><%= car.name %></h2>
+                <% if (car.status == true) { %>
+                    <a href="vehicles/<%= car.brand %>/<%= car.name %>" class="card">
+                        <div class="image-container">
+                            <img src="<%= car.imgUrls[0] %>" />
+                        </div>
+                        <div class="details-container">
+                            <div class="details-title-container">
+                                <div class="model">
+                                    <h2><%= car.name %></h2>
+                                </div>
+                                <div class="price">
+                                    <h2>₹<%= car.price %></h2>
+                                </div>
                             </div>
-                            <div class="price">
-                                <h2>₹<%= car.price %></h2>
+                            <div class="details-data">
+                                <div class="top-wrapper">
+                                    <div class="left-wrapper">
+                                        <i class="fa-duotone fa-car-wrench fa-3x" style="--fa-primary-color: #FF4C30; --fa-primary-opacity: 0.6; --fa-secondary-color: #FF4C30; --fa-secondary-opacity: 2;"></i>
+                                        <p> <%= car.brand %></p>
+                                    </div>
+                                    <div class="right-wrapper">
+                                        <p><%= car.fuelType %> </p>
+                                        <i class="fa-duotone fa-gas-pump fa-3x" style="--fa-primary-color: #FF4C30; --fa-primary-opacity: 0.6; --fa-secondary-color: #FF4C30; --fa-secondary-opacity: 2;"></i>
+                                    </div>
+                                </div>
+                                <div class="bottom-wrapper">
+                                    <div class="left-wrapper">
+                                        <i class="fa-duotone fa-gear fa-3x" style="--fa-primary-color: #FF4C30; --fa-primary-opacity: 0.6; --fa-secondary-color: #FF4C30; --fa-secondary-opacity: 2;"></i>
+                                        <p><%= car.transmission %> </p>
+                                    </div>
+                                    <div class="right-wrapper">
+                                        <p><%= car.seats %> Seats</p>
+                                        <i class="fa-duotone fa-person-seat fa-4x" style="--fa-primary-color: #FF4C30; --fa-secondary-color: #FF4C30; --fa-secondary-opacity: 0.6;"></i>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="details-data">
-                            <div class="top-wrapper">
-                                <div class="left-wrapper">
-                                    <i class="fa-duotone fa-car-wrench fa-3x" style="--fa-primary-color: #FF4C30; --fa-primary-opacity: 0.6; --fa-secondary-color: #FF4C30; --fa-secondary-opacity: 2;"></i>
-                                    <p> <%= car.brand %></p>
-                                </div>
-                                <div class="right-wrapper">
-                                    <p><%= car.fuelType %> </p>
-                                    <i class="fa-duotone fa-gas-pump fa-3x" style="--fa-primary-color: #FF4C30; --fa-primary-opacity: 0.6; --fa-secondary-color: #FF4C30; --fa-secondary-opacity: 2;"></i>
-                                </div>
-                            </div>
-                            <div class="bottom-wrapper">
-                                <div class="left-wrapper">
-                                    <i class="fa-duotone fa-gear fa-3x" style="--fa-primary-color: #FF4C30; --fa-primary-opacity: 0.6; --fa-secondary-color: #FF4C30; --fa-secondary-opacity: 2;"></i>
-                                    <p><%= car.transmission %> </p>
-                                </div>
-                                <div class="right-wrapper">
-                                    <p><%= car.seats %> Seats</p>
-                                    <i class="fa-duotone fa-person-seat fa-4x" style="--fa-primary-color: #FF4C30; --fa-secondary-color: #FF4C30; --fa-secondary-opacity: 0.6;"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
+                    </a>
+                <% } %>
             <% });  %>
             
 
