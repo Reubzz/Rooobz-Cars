@@ -103,7 +103,7 @@ exports.loginUser = async (req, res, next) => {
             // Setting the Cookie - creating session
             res.cookie("jwt", token, {
                 httpOnly: true,
-                maxAge: loginMaxAge * 1000, // 3hrs in ms
+                maxAge: loginMaxAge * 1000,
                 sameSite: 'lax'
             });
 
