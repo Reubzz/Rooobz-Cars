@@ -24,7 +24,7 @@ const model = db.MAIN_DB.model(
         seats: { type: String, default: 4 }, // ? Number Seats in the car - [ defaults to 4 ]
         price: { type: Number, default: 0 }, // ? Price of the car - [ defaults to 0 ]
         discount: { type: Number, required: true }, // ! in % 0 to 100 (100 means free) [ REQUIRED ]
-        status: { type: Boolean, default: false }, // ? Availability of the car [ defaults to false ]
+        status: { type: Boolean, default: true }, // ? Availability of the car [ defaults to false ] (true = available | false = not available)
         imgUrls: [{ type: String }], // * Array of Images 
         createTime: { type: Date, default: Date.now() }, // ? Time this car dataset was created - [ defaults to current date if not provided ]
         updateTime: { type: Date, default: Date.now() }, // ? Time this car dataset was updated - [ defaults to current date if not provided ]
