@@ -50,11 +50,7 @@
 </head>
 <body>
 
-    <div class="error-wrapper">
-        <div id="error">
-            This is a error message
-        </div>
-    </div>
+    <%- include('../components/error-popup') %>
 
     <button onclick="window.location.replace(document.referrer)" id="back-btn">
         <i class="fad fa-arrow-left"></i> Back
@@ -95,5 +91,6 @@
 
     <!-- ! Javascript -->
     <script src="/js/auth-page.js"></script>
+    <script src="/js/import-html.js"></script>
 </body>
 </html>

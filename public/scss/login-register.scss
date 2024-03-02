@@ -3,30 +3,9 @@
 @import "./components/scrollbar";
 @import "./components/animated-span";
 @import "./components/animations";
+@import "./components/error-popup";
 
-.error-wrapper {
-    position: absolute;
-    top: 5px;
-    left: 50%;
-    z-index: 3;
-    #error {
-        display: none;
-        padding: 20px 50px;
-        position: relative;
-        left: -50%;
-        border: 2px solid $orange;
-        font-size: 1.4rem;
-        font-family: $rubik;
-        font-weight: $regular;
-        color: white;
-        background-color: $orangeFadded;
-        border-radius: 5px;
-    }
-    .error {
-        display: block !important;
-        animation: autoHide 10s linear;
-    }
-}
+
 
 #back-btn {
     position: absolute;
