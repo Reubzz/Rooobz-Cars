@@ -1,10 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');
-const config = require('../../config.json')
+const config = require('../../config.json');
 
 // Databases
-const carsDB = require('../../models/schemas/cars')
+const carsDB = require('../../models/schemas/cars');
+const usersDB = require('../../models/schemas/users');
 
 // MiddleWares
 const { authCheck } = require("../../middleware/authentication/authentication")
@@ -49,7 +50,8 @@ router.get('/vehicles', authCheck, async (req, res) => {
     }
     res.render('vehicles/vehicles', {
         vehicles: vehiclesArr,
-        showAllBtn: true
+        showAllBtn: true,
+        user: res.locals,
     })
 })
 
@@ -57,10 +59,10 @@ router.get('/vehicles/:brand/:name', authCheck, async (req, res) => {
     const brand = req.params.brand;
     const name = req.params.name;
 
-    let carsData = await carsDB.findOne({ name: name, brand: brand })
-    console.log(carsData)
+    let carData = await carsDB.findOne({ name: name, brand: brand })
+    // console.log(carData)
     res.render("vehicles/car", {
-        vehicle: carsData,
+        car: carData,
         user: res.locals,
     })
 })
@@ -74,10 +76,15 @@ router.get('/how-we-work', authCheck, (req, res) => {
     res.render('how-we-work/how-we-work', {})
 })
 
-router.get('/account', authCheck, (req, res) => {    
-    res.render('account/account', {
-        user: res.locals
-    })
+router.get('/account', authCheck, async (req, res) => { 
+    if (req.cookies.jwt) {
+        res.render('account/account', {
+            user: await usersDB.findOne({ id: res.locals.id })
+        })
+    }   
+    else {
+        res.redirect('/login')
+    }
 })
 
 router.get('/login', (req, res) => {   
