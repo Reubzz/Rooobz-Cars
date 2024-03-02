@@ -75,8 +75,8 @@ span.placeholder {
   }
 }
 .error-wrapper {
-  position: absolute;
-  top: 5px;
+  position: fixed;
+  top: 10%;
   left: 50%;
   z-index: 3;
 }
