@@ -91,3 +91,9 @@
 
 ### 26/02/2024 - Update v0.1.5 - Part 3 (minor)
 - Fixed email subscription button submission in footer
+
+### 3/3/2024 - Update v0.1.6 
+- Added Account Edit Feature.
+- All Fields can now be edited/updated by the user on the account page. `/account`
+- Account Page css overhaul
+- Added a new api route for account editing : `/api/account/edit`

@@ -11,6 +11,7 @@
 @import "./components/animated-span";
 @import "./components/animations";
 @import "./components/title-banner";
+@import "./components/error-popup";
 
 .data-wrapper {
     display: flex;
@@ -89,23 +90,57 @@
         display: flex;
         flex-direction: column;
         gap: 5px;
+        .input-wrapper {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px;
+            color: $black;
+            background-color: $smokedWhiteLight;
+    
+            border: 2px solid $grey;
+            box-shadow: inset 0px 0px 3px $grey;
+            border-radius: 5px;
+            input {
+                width: 100%;
+                font-size: 1.2rem;
+                font-family: $rubik;
+                font-weight: $regular;
+                color: $grey;
+                background-color: $smokedWhiteLight;
+                border-color: transparent;
+            }
+            button {
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
+                padding: 10px;
+                cursor: pointer;
+                font-size: 1.2rem;
+                font-family: $rubik;
+                font-weight: $regular;
+                color: $white;
+                background-color: $orange;
+                border-radius: 5px;
+                border: none;
+                &:hover {
+                    background-color: $orangeDark;
+                }
+            }
+            &:focus-within {
+                border: 2px solid $orange;
+                background-color: $white;
+                input {
+                    outline:  none;
+                    background-color: $white;
+                    color: $black;
+                }
+            }
+        }
         h3 {
             font-size: 1.2rem;
             font-family: $rubik;
             font-weight: $medium;
             color: $black;
-        }
-        input {
-            padding: 10px;
-            width: 100%;
-            font-size: 1.2rem;
-            font-family: $rubik;
-            font-weight: $regular;
-            color: $black;
-            background-color: $smokedWhiteLight;
-    
-            box-shadow: inset 0px 0px 2px $smokedWhiteDark;
-            border-radius: 5px;
         }
     }
     #confirm-btn {
@@ -126,6 +161,117 @@
     }
 }
 
+.form-wrapper {
+    // display: flex;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    display: none;
+    &.open {
+        display: flex !important;
+        #image-upload {
+            // margin: 0 auto;
+    
+            width: 60%;
+            height: max-content;
+    
+            background-color: $smokedWhiteLight;
+            border-radius: 5px;
+            box-shadow: inset 0px 0px 2px $grey, 0px 0px 10px $grey;
+            .content-wrapper {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                // align-items: center;
+                gap: 30px;
+                padding: 50px;
+                width: 100%;
+                height: 100%;
+                .title-wrapper {
+                    display: flex;
+                    justify-content: space-between  ;
+                    h2 {
+                        font-size: 2rem;
+                        font-family: $rubik;
+                        font-weight: $medium;
+                        color: $black;
+                    }
+                    i {
+                        font-size: 2rem;
+                        &:hover {
+                            color: $orange;
+                            cursor: pointer;
+                        }
+                    }
+                }
+                .file-upload-wrapper {
+                    width: 100%;
+                    height: 70%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    input {
+                        display: flex;
+                        flex-direction: column;
+                        outline: 2px dotted $orange;
+                        width: 100%;
+                        height: 100%;
+                        padding: 20px;
+                        
+                        text-align: center;
+                        font-size: 1rem;
+                        font-family: $rubik;
+                        font-weight: $regular;
+                        &:hover {
+                            cursor: pointer;
+                            outline: 2px solid $orange;
+                            box-shadow: inset 0px 0px 5px $orange, 0px 0px 3px $orange;
+                            background-color: $orangeLight;
+                        }
+                        &::file-selector-button {
+                            padding: 10px 20px;
+                            font-size: 1rem;
+                            font-family: $rubik;
+                            font-weight: $regular;
+                            background-color: $orange;
+                            border-radius: 5px;
+                            border: none;
+                            width: max-content;
+                            color: $white;
+                            cursor: pointer;
+                            &:hover {
+                                background-color: $orangeDark;
+                            }
+                        }
+                    }
+                    
+                }
+                button {
+                    padding: 10px 20px;
+                    font-size: 1rem;
+                    font-family: $rubik;
+                    font-weight: $regular;
+                    background-color: $orange;
+                    border-radius: 5px;
+                    border: none;
+                    width: max-content;
+                    color: $white;
+                    cursor: pointer;
+    
+                    &:hover {
+                        background-color: $orangeDark;
+                    }
+                }
+            }
+        }
+    }
+}
 @media screen and (max-width: 990px) {
     .main-container {
         flex-direction: column;
