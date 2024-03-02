@@ -13,50 +13,52 @@ router.post('/add', authCheck, async (req, res) => {
     // if (res.locals.role != 'admin' && res.headersSent.apiKey != "admin") {
     //     return res.status(400).send("Admin Role required to Access this route.")
     // }
-    const { 
-        name, 
-        brand, 
-        color, 
-        description, 
-        condition, 
-        doors, 
-        transmission, 
-        fuelType, 
-        seats, 
-        price, 
-        discount, 
-        status, 
-        imgUrls, 
-        createdTime, 
-        updateTime 
-    } = req.body
+    const dataArr = req.body;
+    dataArr.forEach(async (carData) => {
+        let {
+            name, 
+            brand, 
+            color, 
+            description, 
+            condition, 
+            doors, 
+            transmission, 
+            fuelType, 
+            seats, 
+            price, 
+            discount, 
+            status, 
+            imgUrls, 
+            createdTime, 
+            updateTime 
+        } = carData
 
-
-    try {
-        const id = uuidv4()
-        await carsDB.create({
-            id: id,
-            name: name,
-            brand: brand,
-            color: color,
-            description: description,
-            condition: condition,
-            doors: doors,
-            transmission: transmission,
-            fuelType: fuelType, 
-            seats: seats,
-            price: price,
-            discount: discount,
-            status: status,
-            imgUrls: imgUrls,
-            createdTime: createdTime,
-            updateTime: updateTime,
-        }).then((car) => {
-            res.status(200).send("Data Saved")
-        })
-    } catch (error) {
-        res.status(400).send(error)        
-    }
+        try {
+            const id = uuidv4()
+            await carsDB.create({
+                id: id,
+                name: name,
+                brand: brand,
+                color: color,
+                description: description,
+                condition: condition,
+                doors: doors,
+                transmission: transmission,
+                fuelType: fuelType, 
+                seats: seats,
+                price: price,
+                discount: discount,
+                status: status,
+                imgUrls: imgUrls,
+                createdTime: createdTime,
+                updateTime: updateTime,
+            }).then((car) => {
+                console.log(car.name + "saved ")
+            })
+        } catch (error) {
+        }
+    })
+    res.status(200).send("Data Saved")
 })
 
 router.delete('/delete', async (req, res) => {

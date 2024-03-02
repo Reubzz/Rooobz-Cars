@@ -98,3 +98,4 @@
 - Account Page css overhaul
 - Added a new api route for account editing : `/api/account/edit`
 - Separated Error Popup to a separate component for reusablity
+- Added Car Page & Showing car details when clicking on any car
