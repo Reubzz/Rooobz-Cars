@@ -34,7 +34,7 @@ function setCookie(name, value, hours) {
 window.onscroll = function() {
     const navbar = document.getElementById("navbar");
     let sticky = navbar.offsetTop;
-    if (window.pageYOffset >= sticky) {
+    if (window.pageYOffset > sticky) {
         navbar.classList.add("sticky")
     } else {
         navbar.classList.remove("sticky");
