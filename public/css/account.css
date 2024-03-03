@@ -5,6 +5,29 @@ body {
   font-family: "Rubik", sans-serif;
 }
 
+.underlineText {
+  position: relative;
+}
+.underlineText:hover {
+  animation: hoverIcon 0.2s ease-in-out both;
+}
+.underlineText:hover:before {
+  visibility: visible;
+  transform: scale(1);
+}
+.underlineText:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #FF4C30;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+}
+
 body {
   font-size: 62.5%;
   font-family: "Rubik", sans-serif;
@@ -763,29 +786,6 @@ span.placeholder {
   word-wrap: break-word;
 }
 
-.underlineText {
-  position: relative;
-}
-.underlineText:hover {
-  animation: hoverIcon 0.2s ease-in-out both;
-}
-.underlineText:hover:before {
-  visibility: visible;
-  transform: scale(1);
-}
-.underlineText:before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  bottom: -2px;
-  left: 0;
-  background-color: #FF4C30;
-  visibility: hidden;
-  transform: scaleX(0);
-  transition: all 0.3s ease-in-out 0s;
-}
-
 .error-wrapper {
   position: fixed;
   top: 10%;
@@ -878,12 +878,12 @@ span.placeholder {
   flex-direction: column;
   gap: 20px;
 }
-.right-container .field {
+.right-container .username, .right-container .name, .right-container .email {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
-.right-container .field .input-wrapper {
+.right-container .username .input-wrapper, .right-container .name .input-wrapper, .right-container .email .input-wrapper {
   display: flex;
   justify-content: space-between;
   padding: 5px;
@@ -893,7 +893,7 @@ span.placeholder {
   box-shadow: inset 0px 0px 3px #707070;
   border-radius: 5px;
 }
-.right-container .field .input-wrapper input {
+.right-container .username .input-wrapper input, .right-container .name .input-wrapper input, .right-container .email .input-wrapper input {
   width: 100%;
   font-size: 1.2rem;
   font-family: "Rubik", sans-serif;
@@ -902,7 +902,7 @@ span.placeholder {
   background-color: #e0e0e0;
   border-color: transparent;
 }
-.right-container .field .input-wrapper button {
+.right-container .username .input-wrapper button, .right-container .name .input-wrapper button, .right-container .email .input-wrapper button {
   display: flex;
   flex-direction: row;
   gap: 10px;
@@ -916,19 +916,19 @@ span.placeholder {
   border-radius: 5px;
   border: none;
 }
-.right-container .field .input-wrapper button:hover {
+.right-container .username .input-wrapper button:hover, .right-container .name .input-wrapper button:hover, .right-container .email .input-wrapper button:hover {
   background-color: #e64229;
 }
-.right-container .field .input-wrapper:focus-within {
+.right-container .username .input-wrapper:focus-within, .right-container .name .input-wrapper:focus-within, .right-container .email .input-wrapper:focus-within {
   border: 2px solid #FF4C30;
   background-color: #f1f1f1;
 }
-.right-container .field .input-wrapper:focus-within input {
+.right-container .username .input-wrapper:focus-within input, .right-container .name .input-wrapper:focus-within input, .right-container .email .input-wrapper:focus-within input {
   outline: none;
   background-color: #f1f1f1;
   color: #0c0c0c;
 }
-.right-container .field h3 {
+.right-container .username h3, .right-container .name h3, .right-container .email h3 {
   font-size: 1.2rem;
   font-family: "Rubik", sans-serif;
   font-weight: 500;
