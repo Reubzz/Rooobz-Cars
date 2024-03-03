@@ -58,6 +58,7 @@
 <body>
     <div data-include="navbar"></div>
 
+    <div data-include="login-modal"></div>
 
     <section class="container">
         <div class="top-wrapper">
@@ -143,7 +144,7 @@
                         </tr>
                     </table>
                 </div>
-                <button id="book-now-btn" onclick="location.href='/booking?id=<%= car.id %>'">BOOK
+                <button id="book-now-btn" onclick="bookNow('<%=car.id%>')">BOOK
                     Rs. <%= car.price + car.price*18/100 %> • Book Now 
                 </button>
                 
@@ -240,6 +241,10 @@
     <div data-include="footer"></div>
 
     <!-- ! Javascript -->
+    <script>
+        const user = JSON.parse('<%- JSON.stringify(user) %> ') 
+        const car = JSON.parse('<%- JSON.stringify(car) %>')
+    </script>
     <script src="/js/car.js"></script>
     <script src="/js/navbar.js"></script>
     <script src="/js/footer.js"></script>
