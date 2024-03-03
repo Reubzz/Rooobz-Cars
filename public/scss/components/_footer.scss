@@ -58,11 +58,14 @@ footer {
             align-items: center;
             gap: 10px;
 
-            .fa-phone-volume, .fa-envelope {
-                color: $orange;
+            i {
+                color: $black;
             }
             &:hover {
                 color: $orange;
+                i {
+                    color: $orange;
+                }
             }
         }
 
@@ -90,6 +93,10 @@ footer {
                 background-color: $orange;
                 color: $white;
                 font-size: 1rem;
+                &:hover {
+                    background-color: $orangeDark;
+                    box-shadow: 0px 0px 6px 1px $orange; 
+                }
             }
         }
         #confirm-message {

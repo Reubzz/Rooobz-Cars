@@ -107,6 +107,11 @@
     
                     text-decoration: none;
                     color: $black;
+
+                    &:hover {
+                        background-color: $orangeDark;
+                        box-shadow: 0px 0px 10px 1px $orange; 
+                    }
                     img {
     
                         width: 16px;
@@ -115,6 +120,10 @@
                 .learn-more-button {
                     background-color: $black !important;
                     color: $smokedWhite;
+                    &:hover {
+                        background-color: $black;
+                        box-shadow: 0px 0px 10px 1px $grey; 
+                    }
                 }
             }
         }
@@ -131,12 +140,6 @@
         justify-content: center;
         align-items: center;
         img {
-            // animation: bounce ease-in-out;
-            // animation: bounce 0.21s;
-            // animation-direction: alternate;
-            // animation-timing-function: ease-in-out;
-            // animation-iteration-count: infinite;
-            // animation-delay: 1s;
             animation: bounce 2s ease-in-out 0s infinite normal forwards;
         }
     }
@@ -147,8 +150,8 @@
     width: 100%; 
     height: 100%; 
     padding: 25px 50px; 
-    background: #D0D0D0; 
-    box-shadow: 0px 4px 68px 9px rgba(0, 0, 0, 0.25); 
+    background: $smokedWhiteDark; 
+    box-shadow: 0px 0px 50px 5px $grey; 
     border-radius: 10px; 
     overflow: hidden; 
     flex-direction: column; 
@@ -246,12 +249,18 @@
                 border-radius: 10px; 
                 border-color: $orange;
                 
-                box-shadow: 0px 0px 20px 3px $orange;
+                // box-shadow: 0px 0px 20px 3px $orange;
                 color: $smokedWhite; 
                 font-size: 1.6rem; 
                 font-family: $rubik; 
                 font-weight: $medium; 
                 word-wrap: break-word;
+
+                &:hover {
+                    background-color: $orangeDark;
+                    box-shadow: 0px 0px 10px 1px $orange; 
+                    cursor: pointer;
+                }
             }
 
         }
@@ -322,13 +331,17 @@
                 height: 60px; 
                 padding: 20px 30px;
                 background: $orange; 
-                box-shadow: 0px 10px 15px $orange; 
+                box-shadow: 0px 0px 15px $orange; 
                 border-radius: 10px; 
                 border-color: transparent;
                 justify-content: center; 
                 align-items: center; 
                 gap: 10px; 
                 display: inline-flex;
+                &:hover {
+                    background-color: $orangeDark;
+                    box-shadow: 0px 0px 10px 2px $orange; 
+                }
 
                 .booknow-text {
                     color: $black; 

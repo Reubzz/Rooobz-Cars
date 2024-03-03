@@ -76,6 +76,10 @@ header nav .register-button {
   border-radius: 5px;
   box-shadow: #FF4C30 0px 0px 10px;
 }
+header nav .register-button:hover {
+  background-color: #e64229;
+  box-shadow: 0px 0px 10px 1px #FF4C30;
+}
 header nav .dropdown {
   position: relative;
   display: inline-block;
@@ -264,10 +268,13 @@ footer div .phone-number, footer div .email {
   align-items: center;
   gap: 10px;
 }
-footer div .phone-number .fa-phone-volume, footer div .phone-number .fa-envelope, footer div .email .fa-phone-volume, footer div .email .fa-envelope {
-  color: #FF4C30;
+footer div .phone-number i, footer div .email i {
+  color: #0c0c0c;
 }
 footer div .phone-number:hover, footer div .email:hover {
+  color: #FF4C30;
+}
+footer div .phone-number:hover i, footer div .email:hover i {
   color: #FF4C30;
 }
 footer div #subscribe-form {
@@ -293,6 +300,10 @@ footer div #subscribe-form #subscribe-submit {
   background-color: #FF4C30;
   color: #f1f1f1;
   font-size: 1rem;
+}
+footer div #subscribe-form #subscribe-submit:hover {
+  background-color: #e64229;
+  box-shadow: 0px 0px 6px 1px #FF4C30;
 }
 footer div #confirm-message {
   display: none;
@@ -407,6 +418,10 @@ footer div .show {
 #faq .data-container .faq-data .faq-question-wrapper::-webkit-details-marker {
   display: none;
 }
+#faq .data-container .faq-data .faq-question-wrapper:hover {
+  background-color: #e0e0e0;
+  box-shadow: 0px 0px 10px 1px #d5d5d5;
+}
 #faq .data-container .faq-data[open] {
   border-width: 2px;
   border-color: #FF4C30;
@@ -417,6 +432,10 @@ footer div .show {
   background-color: #FF4C30;
   color: #f1f1f1;
   box-shadow: 0px 0px 16px #FF4C30;
+}
+#faq .data-container .faq-data[open] .faq-question-wrapper:hover {
+  background-color: #e64229;
+  box-shadow: 0px 0px 10px 1px #FF4C30;
 }
 #faq .data-container .faq-data .faq-answer-wrapper {
   padding: 20px 30px;
@@ -914,7 +933,7 @@ span.placeholder {
 #contact-us-container .data-wrapper .right-wrapper #contact-us-form #submit {
   padding: 10px 0;
   background: #FF4C30;
-  box-shadow: 0px 10px 15px #FF4C30;
+  box-shadow: 0px 0px 10px #FF4C30;
   border-radius: 10px;
   border-color: transparent;
   justify-content: center;
@@ -924,6 +943,10 @@ span.placeholder {
   font-size: 1.4rem;
   font-weight: 500;
   cursor: pointer;
+}
+#contact-us-container .data-wrapper .right-wrapper #contact-us-form #submit:hover {
+  background-color: #e64229;
+  box-shadow: 0px 0px 10px 3px #FF4C30;
 }
 
 @media screen and (max-width: 1330px) {

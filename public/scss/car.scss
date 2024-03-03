@@ -223,12 +223,17 @@
         #add-review-btn {
             padding: 10px 30px;
             font-size: 1rem;
-            font-family: "Rubik", sans-serif;
-            color: #f1f1f1;
-            background-color: #FF4C30;
+            font-family: $rubik;
+            color: $white;
+            background-color: $orange;
             border-radius: 5px;
-            border: 2px solid #ff4c30;
+            border: 2px solid $orange;
             cursor: pointer;
+
+            &:hover {
+                background-color: $orangeDark;
+                box-shadow: 0px 0px 10px 1px $orange; 
+            }
             
         }
         ul {

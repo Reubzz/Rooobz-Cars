@@ -91,13 +91,17 @@
             .booknow-btn {
                 padding: 20px 30px;
                 background: $orange; 
-                box-shadow: 0px 10px 15px $orange; 
+                box-shadow: 0px 0px 15px $orange; 
                 border-radius: 10px; 
                 justify-content: center; 
                 align-items: center; 
                 gap: 10px; 
                 display: flex;
                 text-decoration: none;
+                &:hover {
+                    background-color: $orangeDark;
+                    box-shadow: 0px 0px 10px 1px $orange; 
+                }
 
                 .booknow-text {
                     color: $black; 

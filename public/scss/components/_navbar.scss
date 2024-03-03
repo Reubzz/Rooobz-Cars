@@ -52,6 +52,10 @@ header {
             padding: 10px 20px;
             border-radius: 5px;
             box-shadow: $orange 0px 0px 10px;
+            &:hover {
+                background-color: $orangeDark;
+                box-shadow: 0px 0px 10px 1px $orange; 
+            }
         }
 
         

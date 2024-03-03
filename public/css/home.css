@@ -76,6 +76,10 @@ header nav .register-button {
   border-radius: 5px;
   box-shadow: #FF4C30 0px 0px 10px;
 }
+header nav .register-button:hover {
+  background-color: #e64229;
+  box-shadow: 0px 0px 10px 1px #FF4C30;
+}
 header nav .dropdown {
   position: relative;
   display: inline-block;
@@ -264,10 +268,13 @@ footer div .phone-number, footer div .email {
   align-items: center;
   gap: 10px;
 }
-footer div .phone-number .fa-phone-volume, footer div .phone-number .fa-envelope, footer div .email .fa-phone-volume, footer div .email .fa-envelope {
-  color: #FF4C30;
+footer div .phone-number i, footer div .email i {
+  color: #0c0c0c;
 }
 footer div .phone-number:hover, footer div .email:hover {
+  color: #FF4C30;
+}
+footer div .phone-number:hover i, footer div .email:hover i {
   color: #FF4C30;
 }
 footer div #subscribe-form {
@@ -293,6 +300,10 @@ footer div #subscribe-form #subscribe-submit {
   background-color: #FF4C30;
   color: #f1f1f1;
   font-size: 1rem;
+}
+footer div #subscribe-form #subscribe-submit:hover {
+  background-color: #e64229;
+  box-shadow: 0px 0px 6px 1px #FF4C30;
 }
 footer div #confirm-message {
   display: none;
@@ -407,6 +418,10 @@ footer div .show {
 #faq .data-container .faq-data .faq-question-wrapper::-webkit-details-marker {
   display: none;
 }
+#faq .data-container .faq-data .faq-question-wrapper:hover {
+  background-color: #e0e0e0;
+  box-shadow: 0px 0px 10px 1px #d5d5d5;
+}
 #faq .data-container .faq-data[open] {
   border-width: 2px;
   border-color: #FF4C30;
@@ -417,6 +432,10 @@ footer div .show {
   background-color: #FF4C30;
   color: #f1f1f1;
   box-shadow: 0px 0px 16px #FF4C30;
+}
+#faq .data-container .faq-data[open] .faq-question-wrapper:hover {
+  background-color: #e64229;
+  box-shadow: 0px 0px 10px 1px #FF4C30;
 }
 #faq .data-container .faq-data .faq-answer-wrapper {
   padding: 20px 30px;
@@ -863,12 +882,20 @@ span.placeholder {
   text-decoration: none;
   color: #0c0c0c;
 }
+#landing-page .landing-page-wrapper .landing-page-left .landing-page-buttons a:hover {
+  background-color: #e64229;
+  box-shadow: 0px 0px 10px 1px #FF4C30;
+}
 #landing-page .landing-page-wrapper .landing-page-left .landing-page-buttons a img {
   width: 16px;
 }
 #landing-page .landing-page-wrapper .landing-page-left .landing-page-buttons .learn-more-button {
   background-color: #0c0c0c !important;
   color: #DADADA;
+}
+#landing-page .landing-page-wrapper .landing-page-left .landing-page-buttons .learn-more-button:hover {
+  background-color: #0c0c0c;
+  box-shadow: 0px 0px 10px 1px #707070;
 }
 #landing-page .landing-page-wrapper .landing-page-right {
   width: 90%;
@@ -889,8 +916,8 @@ span.placeholder {
   width: 100%;
   height: 100%;
   padding: 25px 50px;
-  background: #D0D0D0;
-  box-shadow: 0px 4px 68px 9px rgba(0, 0, 0, 0.25);
+  background: #d5d5d5;
+  box-shadow: 0px 0px 50px 5px #707070;
   border-radius: 10px;
   overflow: hidden;
   flex-direction: column;
@@ -979,12 +1006,16 @@ span.placeholder {
   background-color: #FF4C30;
   border-radius: 10px;
   border-color: #FF4C30;
-  box-shadow: 0px 0px 20px 3px #FF4C30;
   color: #DADADA;
   font-size: 1.6rem;
   font-family: "Rubik", sans-serif;
   font-weight: 500;
   word-wrap: break-word;
+}
+#quick-booking .wrapper .form-data .search-button:hover {
+  background-color: #e64229;
+  box-shadow: 0px 0px 10px 1px #FF4C30;
+  cursor: pointer;
 }
 
 #choose-us-container {
@@ -1048,13 +1079,17 @@ span.placeholder {
   height: 60px;
   padding: 20px 30px;
   background: #FF4C30;
-  box-shadow: 0px 10px 15px #FF4C30;
+  box-shadow: 0px 0px 15px #FF4C30;
   border-radius: 10px;
   border-color: transparent;
   justify-content: center;
   align-items: center;
   gap: 10px;
   display: inline-flex;
+}
+#choose-us-container .wcu-data .wcu-wrapper-left .booknow-btn:hover {
+  background-color: #e64229;
+  box-shadow: 0px 0px 10px 2px #FF4C30;
 }
 #choose-us-container .wcu-data .wcu-wrapper-left .booknow-btn .booknow-text {
   color: #0c0c0c;

@@ -76,6 +76,10 @@ header nav .register-button {
   border-radius: 5px;
   box-shadow: #FF4C30 0px 0px 10px;
 }
+header nav .register-button:hover {
+  background-color: #e64229;
+  box-shadow: 0px 0px 10px 1px #FF4C30;
+}
 header nav .dropdown {
   position: relative;
   display: inline-block;
@@ -264,10 +268,13 @@ footer div .phone-number, footer div .email {
   align-items: center;
   gap: 10px;
 }
-footer div .phone-number .fa-phone-volume, footer div .phone-number .fa-envelope, footer div .email .fa-phone-volume, footer div .email .fa-envelope {
-  color: #FF4C30;
+footer div .phone-number i, footer div .email i {
+  color: #0c0c0c;
 }
 footer div .phone-number:hover, footer div .email:hover {
+  color: #FF4C30;
+}
+footer div .phone-number:hover i, footer div .email:hover i {
   color: #FF4C30;
 }
 footer div #subscribe-form {
@@ -293,6 +300,10 @@ footer div #subscribe-form #subscribe-submit {
   background-color: #FF4C30;
   color: #f1f1f1;
   font-size: 1rem;
+}
+footer div #subscribe-form #subscribe-submit:hover {
+  background-color: #e64229;
+  box-shadow: 0px 0px 6px 1px #FF4C30;
 }
 footer div #confirm-message {
   display: none;
@@ -535,6 +546,9 @@ span.placeholder {
 }
 .container .search-header .searchbar .search-btn:hover, .container .search-header .searchbar .search-btn:focus {
   border-color: 2px solid #FF4C30;
+  background-color: #e64229;
+  box-shadow: 0px 0px 10px 1px #FF4C30;
+  cursor: pointer;
 }
 .container .search-header .sort-dropdown {
   height: 100%;
@@ -574,6 +588,10 @@ span.placeholder {
   color: #f1f1f1;
   text-decoration: none;
   font-size: 1rem;
+}
+.container .search-header .show-all-button-wrapper:hover {
+  background-color: #e64229;
+  box-shadow: 0px 0px 10px 1px #FF4C30;
 }
 .container .data-wrapper {
   width: 100%;
@@ -717,7 +735,11 @@ span.placeholder {
   font-family: "Rubik", sans-serif;
   border: none;
   border-radius: 10px;
-  box-shadow: 0px 10px 15px #FF4C30;
+  box-shadow: 0px 0px 10px #FF4C30;
+}
+.container #show-more-btn:hover {
+  background-color: #e64229;
+  box-shadow: 0px 0px 10px 1px #FF4C30;
 }
 
 @media screen and (max-width: 900px) {
