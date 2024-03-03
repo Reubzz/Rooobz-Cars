@@ -42,3 +42,29 @@ function openTab(titleElement, tabname) {
     content.style.display = 'block'
 }
 openTab(document.getElementById('included-tab-title'), 'included')
+
+function bookNow(id) {
+    if (!user.id) {
+        showLoginModal();
+        return;
+    }
+    else {
+        return window.location.href = `/booking?id=${id}`;
+    }
+}
+
+
+function showLoginModal() {
+    const loginModal = document.getElementById('login-register-modal');
+    loginModal.style.display = 'flex';
+}
+function closeLoginModal() {
+    const loginModal = document.getElementById('login-register-modal');
+    loginModal.style.display = 'none';
+}
+window.onclick = function(event) {
+    const loginModal = document.getElementById('login-register-modal');
+    if (event.target == loginModal) {
+        closeLoginModal()
+    }
+}
