@@ -85,8 +85,7 @@ function showError({ code, message}) {
 
 
 // * Image Upload Section
-const formElement = imageFormWrapper = document.getElementById('image-form-wrapper');
-
+const formElement = document.getElementById('image-form-wrapper');
 function openPfpDialog() {
     formElement.classList.add('open');
 }
