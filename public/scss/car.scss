@@ -3,11 +3,7 @@
 @import "./components/navbar";
 @import "./components/footer";
 @import "./components/scrollbar";
-@import "./components/faq";
 @import "./components/save-banner";
-@import "./components/call-banner";
-@import "./components/testimonials";
-@import "./components/plans";
 @import "./components/animated-span";
 @import "./components/animations";
 @import "./components/title-banner";
@@ -96,7 +92,7 @@
             /* Fading animation */
             .fade {
                 animation-name: fade;
-                animation-duration: 1.5s;
+                animation-duration: 1s;
 
             }
 
@@ -171,9 +167,14 @@
                 color: $white;
                 background-color: $orange;
                 border-radius: 10px;
-                box-shadow: 0px 0px 15px 5px $orange;
                 border-color: $orangeFadded;
+                box-shadow: 0px 0px 10px 2px $orange;
                 cursor: pointer;
+                
+                &:hover {
+                    background-color: $orangeDark;
+                    box-shadow: 0px 0px 5px 2px $orange;
+                }
             }
         }
     }
