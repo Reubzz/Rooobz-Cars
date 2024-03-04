@@ -10,8 +10,14 @@ const usersDB = require('../../models/schemas/users');
 // MiddleWares
 const { authCheck } = require("../../middleware/authentication/authentication")
 
-router.get('/', authCheck, (req, res) => {    
-    res.render('home/home', {})
+router.get('/', authCheck, async (req, res) => {    
+    const allBrands = await carsDB.find().distinct('brand').sort({ brand: 1 })
+    // const vehiclesBrands = allCars.distinct('brand').sort({ brand: 1 })
+    
+    res.render('home/home', {
+        allBrands: allBrands,
+        allTypes: null // ! Fix Later
+    })
 })
 
 router.get('/about', authCheck, (req, res) => {    

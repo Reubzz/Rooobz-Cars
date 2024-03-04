@@ -108,3 +108,4 @@
 - Added Booking Page (part 1) [pay now flow yet to do]
 - Completed Car Page UI
 - User must log in or register to access this booking page
+- Fixed Homepage quick booking section - Removed Date Picker as not needed atm.

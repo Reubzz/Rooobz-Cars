@@ -958,6 +958,7 @@ span.placeholder {
   width: 100%;
   display: inline-flex;
   gap: 30px;
+  justify-content: end;
 }
 #quick-booking .wrapper .form-data .data-wrapper {
   flex-direction: column;

@@ -104,51 +104,21 @@
                                     <option value="hatchback">Hatchback</option>
                                 </select>
                             </div>
+                        </div>
+                        <div class="form-center form-column">
                             <div class="data-wrapper">
                                 <div class="form-data-title">
                                     <h2>Select your Car Brand <span>*</span></h2>
                                 </div>
                                 <select class="dropdown" name="brand" id="car-brand">
                                     <option value="placeholder" class="placeholder-text">Select a Car Brand</option>
-                                    <option value="maruti">Maruti</option>
-                                    <option value="audi">Audi</option>
-                                    <option value="bmw">Bmw</option>
-                                    <option value="nissan">Nissan</option>
-                                    <option value="mercedes">Mercedes</option>
-                                    <option value="toyota">Toyota</option>
-                                    <option value="tata">Tata Nano</option>
-                                    <option value="maruti">Maruti</option>
-                                    <option value="jeep">Jeep</option>
-                                    <option value="hyundai">Hyundai</option>
-                                    <option value="honda">Honda</option>
+                                    <% allBrands.forEach((brand) => { %>
+                                        <option value="<%= brand %>"><%= brand %></option>
+                                    <% }) %>
                                 </select>
-                            </div>
-                        </div>
-                        <div class="form-center form-column">
-                            <div class="data-wrapper">
-                                <div class="form-data-title">
-                                    <h2>Pickup Date <span>*</span></h2>
-                                </div>
-                                <input class="dropdown" name="pickup" id="pickup-date" onfocus="(this.type = 'datetime-local')" type="text" placeholder="dd/mm/yyyy HH:MM">
-                            </div>
-                            <div class="data-wrapper">
-                                <div class="form-data-title">
-                                    <h2>Drop-off Date <span>*</span></h2>
-                                </div>
-                                <input class="dropdown" name="dropoff" id="dropoff-date" type="text" onfocus="(this.type = 'datetime-local')" placeholder="dd / mm / yyyy, HH : MM">
                             </div>
                         </div>
                         <div class="form-right form-column">
-                            <div class="data-wrapper">
-                                <div class="form-data-title">
-                                    <h2>Pickup Type <span>*</span></h2>
-                                </div>
-                                <select class="dropdown" name="pickup-type" id="pickup-type">
-                                    <option value="placeholder" class="placeholder-text">Select Pickup Type</option>
-                                    <option value="store-pickup">In-Store Pickup</option>
-                                    <option value="home-delivery">Home Delivery</option>
-                                </select>
-                            </div>
                             <button class="search-button" type="submit">Search</button>
                         </div>
                     </form>
