@@ -1,0 +1,730 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
+body {
+  font-size: 62.5%;
+  font-family: "Rubik", sans-serif;
+}
+
+.underlineText {
+  position: relative;
+}
+.underlineText:hover {
+  animation: hoverIcon 0.2s ease-in-out both;
+}
+.underlineText:hover:before {
+  visibility: visible;
+  transform: scale(1);
+}
+.underlineText:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #FF4C30;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+}
+
+body {
+  font-size: 62.5%;
+  font-family: "Rubik", sans-serif;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+header nav {
+  background-color: #DADADA;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  z-index: 2;
+  /* The container <div> - needed to position the dropdown content */
+}
+header nav img {
+  width: 150px;
+}
+header nav ul {
+  justify-content: center;
+  text-align: center;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  width: 100%;
+  font-size: 1rem;
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+}
+header nav .navbar-item {
+  text-decoration: none;
+  color: #0c0c0c;
+  width: 100%;
+  cursor: pointer;
+}
+header nav .register-button {
+  background-color: #FF4C30;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: #FF4C30 0px 0px 10px;
+}
+header nav .register-button:hover {
+  background-color: #e64229;
+  box-shadow: 0px 0px 10px 1px #FF4C30;
+}
+header nav .dropdown {
+  position: relative;
+  display: inline-block;
+  /* Dropdown Content (Hidden by Default) */
+  /* Show the dropdown menu on hover */
+}
+header nav .dropdown .dropbtn {
+  background-color: #d5d5d5;
+  color: #0c0c0c;
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  padding: 16px;
+  font-size: 1.2rem !important;
+  border: none;
+  border-radius: 5px;
+}
+header nav .dropdown .dropbtn .wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+header nav .dropdown .dropbtn img {
+  width: 42px;
+  margin: auto;
+}
+header nav .dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  right: 0;
+  width: -moz-max-content;
+  width: max-content;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  /* Links inside the dropdown */
+}
+header nav .dropdown .dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: flex;
+  gap: 10px;
+  font-size: 1.2rem !important;
+  /* Change color of dropdown links on hover */
+}
+header nav .dropdown .dropdown-content a:hover {
+  background-color: #DADADA;
+}
+header nav .dropdown:hover {
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+}
+header nav .dropdown:hover .dropdown-content {
+  display: block;
+}
+header nav .dropdown:hover .dropbtn {
+  background-color: #FF4C30;
+  color: #DADADA;
+}
+header nav #hamburger-menu {
+  display: none;
+}
+header nav #hamburger-menu .bar1, header nav #hamburger-menu .bar2, header nav #hamburger-menu .bar3 {
+  width: 25px;
+  height: 2px;
+  background-color: #0c0c0c;
+  margin: 6px 0;
+  transition: 0.5s;
+}
+header nav #hamburger-menu.open .bar1 {
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+header nav #hamburger-menu.open .bar2 {
+  opacity: 0;
+}
+header nav #hamburger-menu.open .bar3 {
+  transform: rotate(45deg) translate(-5px, -5px);
+}
+header nav #hamburger-menu.open .mobile-menu {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+header nav #hamburger-menu .mobile-menu {
+  display: none;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  padding: 50px 30px;
+  background-color: #DADADA;
+  z-index: 999;
+  height: 100%;
+  position: fixed;
+  gap: 50px;
+}
+header nav #hamburger-menu .mobile-menu .mob-navbar-start {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+}
+header nav #hamburger-menu .mobile-menu .mob-navbar-end {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  flex: 1;
+}
+header nav #hamburger-menu .mobile-menu li {
+  list-style: none;
+  text-align: center;
+}
+header nav #hamburger-menu .mobile-menu li .login-button {
+  border-color: #FF4C30;
+  border-width: 2px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: #FF4C30 0px 0px 3px 3px;
+}
+header nav #hamburger-menu .mobile-menu li a {
+  color: #0c0c0c;
+  font-size: 1.6rem;
+}
+
+@media screen and (max-width: 980px) {
+  nav .navbar-center, nav .navbar-end {
+    display: none !important;
+  }
+  nav #hamburger-menu {
+    display: block !important;
+  }
+}
+footer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: -moz-max-content;
+  height: max-content;
+  background-color: #DADADA;
+  flex-direction: row;
+  padding: 30px 40px;
+}
+footer div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+footer div .title {
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 0;
+  width: 100%;
+}
+footer div .title .brand-image {
+  width: auto;
+}
+footer div .brand-data {
+  max-width: 400px;
+  width: 100%;
+}
+footer div .data {
+  list-style-type: none;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+footer div .data a {
+  text-decoration: none;
+  color: #0c0c0c;
+}
+footer div .data a:hover {
+  color: #FF4C30;
+}
+footer div .phone-number, footer div .email {
+  font-size: 1rem;
+  color: #0c0c0c;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+footer div .phone-number i, footer div .email i {
+  color: #0c0c0c;
+}
+footer div .phone-number:hover, footer div .email:hover {
+  color: #FF4C30;
+}
+footer div .phone-number:hover i, footer div .email:hover i {
+  color: #FF4C30;
+}
+footer div #subscribe-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+footer div #subscribe-form #subscribe-email {
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+}
+footer div #subscribe-form #subscribe-email:focus {
+  outline: 2px solid #FF4C30;
+}
+footer div #subscribe-form #subscribe-submit {
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #FF4C30;
+  color: #f1f1f1;
+  font-size: 1rem;
+}
+footer div #subscribe-form #subscribe-submit:hover {
+  background-color: #e64229;
+  box-shadow: 0px 0px 6px 1px #FF4C30;
+}
+footer div #confirm-message {
+  display: none;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: "Rubik", sans-serif;
+  color: #f1f1f1;
+  background-color: rgba(255, 76, 48, 0.5490196078);
+  padding: 10px;
+  border-radius: 5px;
+}
+footer div .show {
+  display: block !important;
+}
+
+@media screen and (max-width: 980px) {
+  footer {
+    flex-direction: column-reverse;
+    gap: 30px;
+  }
+  footer .brand-image {
+    width: 100% !important;
+  }
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #FF4C30;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #DADADA;
+  border-radius: 0.2em;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FF4C30;
+  border-radius: 0.2em;
+  border: 2px #252525;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #147efb;
+}
+
+.save-banner-container {
+  background-color: #eeeeee;
+  height: 100%;
+}
+.save-banner-container .save-banner {
+  background: #2B2B2B;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  padding: 50px 5px;
+  width: 100%;
+}
+.save-banner-container .save-banner h1 {
+  text-align: center;
+  font-family: "Rubik", sans-serif;
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #f1f1f1;
+}
+.save-banner-container .save-banner h3 {
+  text-align: center;
+  font-family: "Rubik", sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #f1f1f1;
+}
+.save-banner-container .save-banner h3 span {
+  color: #FF4C30;
+}
+
+span.actual {
+  color: #FF4C30;
+  animation: popup 2s ease-in-out 0s infinite alternate forwards;
+  position: absolute;
+}
+span.placeholder {
+  opacity: 0;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translate3d(0, 0px, 0);
+  }
+  15% {
+    transform: scale(1.5);
+  }
+  25% {
+    transform: translate3d(0, 50px, 0);
+  }
+  50%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes popup {
+  from {
+    transform: scale3d(1.2, 1.4, 1);
+  }
+  50% {
+    transform: scale3d(1, 1, 1);
+  }
+  to {
+    transform: scale3d(1, 1, 1), translateZ();
+  }
+}
+@keyframes autoHide {
+  70% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.important-note-banner {
+  padding: 20px 40px;
+  width: 100%;
+  background-color: #e64229;
+}
+.important-note-banner h3 {
+  color: #f1f1f1;
+  font-size: 1.4rem;
+}
+
+.title h2 {
+  color: #FF4C30;
+  font-size: 2rem;
+  font-family: "Rubik", sans-serif;
+  font-weight: 600;
+}
+
+.container {
+  width: 100%;
+  padding: 3% 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.container .car-name {
+  font-size: 3rem;
+  color: #FF4C30;
+  font-family: "Rubik", sans-serif;
+  font-weight: 600;
+}
+.container form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 60px;
+}
+.container .top-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  gap: 20px;
+  align-items: normal;
+  flex: 1;
+}
+.container .top-wrapper .left-data-wrapper {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.container .top-wrapper .left-data-wrapper .title h2 {
+  color: #FF4C30;
+  font-size: 2rem;
+  font-family: "Rubik", sans-serif;
+  font-weight: 600;
+}
+.container .top-wrapper .left-data-wrapper .field {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.container .top-wrapper .left-data-wrapper .field .title-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 1.2rem;
+  gap: 10px;
+}
+.container .top-wrapper .left-data-wrapper .field .title-wrapper h3 {
+  font-size: 1.2rem;
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
+}
+.container .top-wrapper .left-data-wrapper .field .title-wrapper h3 span {
+  color: #FF4C30;
+  font-size: 1.2rem;
+  font-weight: 500;
+  word-wrap: break-word;
+}
+.container .top-wrapper .left-data-wrapper .field .title-wrapper i {
+  color: #FF4C30;
+}
+.container .top-wrapper .left-data-wrapper .field .input-wrapper {
+  width: 100%;
+}
+.container .top-wrapper .left-data-wrapper .field .input-wrapper input, .container .top-wrapper .left-data-wrapper .field .input-wrapper select {
+  width: 100%;
+  padding: 15px 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: #f1f1f1;
+  font-size: 1rem;
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  color: #0c0c0c;
+  outline: 2px solid #DADADA;
+}
+.container .top-wrapper .left-data-wrapper .field .input-wrapper input:hover, .container .top-wrapper .left-data-wrapper .field .input-wrapper select:hover {
+  background-color: #e0e0e0;
+  box-shadow: 0px 0px 2px 1px #FF4C30;
+  cursor: pointer;
+  outline: 2px solid #FF4C30;
+}
+.container .top-wrapper .left-data-wrapper .field .input-wrapper input:focus, .container .top-wrapper .left-data-wrapper .field .input-wrapper select:focus {
+  outline: 2px solid #FF4C30;
+  background-color: #f1f1f1;
+  box-shadow: 0px 0px 3px 2px #FF4C30;
+}
+.container .top-wrapper .right-data-wrapper {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.container .top-wrapper .right-data-wrapper .car-data-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+}
+.container .top-wrapper .right-data-wrapper .car-data-wrapper .additional-offers {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.container .top-wrapper .right-data-wrapper .car-data-wrapper .additional-offers .offer {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 5px;
+  background-color: #f1f1f1;
+}
+.container .top-wrapper .right-data-wrapper .car-data-wrapper .additional-offers .offer:hover {
+  background-color: #e0e0e0;
+  cursor: default;
+}
+.container .top-wrapper .right-data-wrapper .car-data-wrapper .additional-offers .offer .offer-name {
+  font-size: 1.4rem;
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
+}
+.container .top-wrapper .right-data-wrapper .car-data-wrapper .additional-offers .offer .offer-name i {
+  color: #FF4C30;
+}
+.container .top-wrapper .right-data-wrapper .car-data-wrapper .additional-offers .offer .offer-button button {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
+  background-color: #FF4C30;
+  border-radius: 5px;
+  border: none;
+  color: #f1f1f1;
+}
+.container .top-wrapper .right-data-wrapper .car-data-wrapper .additional-offers .offer .offer-button button:hover {
+  background-color: #e64229;
+  cursor: pointer;
+}
+.container .top-wrapper .right-data-wrapper .car-data-wrapper .additional-offers .offer .offer-button .offer-remove {
+  background-color: #d5d5d5 !important;
+  color: #0c0c0c !important;
+}
+.container .top-wrapper .right-data-wrapper .car-data-wrapper #pricing-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.container .top-wrapper .right-data-wrapper .car-data-wrapper #pricing-box table {
+  width: 100%;
+}
+.container .top-wrapper .right-data-wrapper .car-data-wrapper #pricing-box table h3 {
+  font-size: 1.2rem;
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  color: black;
+}
+.container .top-wrapper .right-data-wrapper .car-data-wrapper #pricing-box table tr:last-child {
+  background-color: #e0e0e0;
+}
+.container .top-wrapper .right-data-wrapper .car-data-wrapper #pricing-box table tr {
+  background-color: #f1f1f1;
+  border-bottom: 1px solid black;
+}
+.container .top-wrapper .right-data-wrapper .car-data-wrapper #pricing-box table td {
+  padding: 15px;
+}
+.container .top-wrapper .right-data-wrapper .car-data-wrapper #pricing-box table .highlight-title {
+  font-weight: 500;
+}
+.container .top-wrapper .right-data-wrapper .car-data-wrapper #pricing-box table .highlight-orange {
+  font-weight: 500;
+  color: #FF4C30 !important;
+}
+.container .top-wrapper .right-data-wrapper .car-data-wrapper #pricing-box table span {
+  font-size: 0.6rem;
+}
+.container .orange-line {
+  height: 3px;
+  background-color: #FF4C30;
+  width: 80%;
+  align-self: center;
+  border: none;
+  border-radius: 5px;
+}
+.container .bottom-wrapper .personal-data-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.container .bottom-wrapper .personal-data-wrapper .title-wrapper h2 {
+  color: #FF4C30;
+  font-size: 2rem;
+  font-family: "Rubik", sans-serif;
+  font-weight: 600;
+}
+.container .bottom-wrapper .personal-data-wrapper .fields-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.container .bottom-wrapper .personal-data-wrapper .fields-container .form-single-row {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  width: 100%;
+}
+.container .bottom-wrapper .personal-data-wrapper .fields-container .form-field {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  width: 100%;
+}
+.container .bottom-wrapper .personal-data-wrapper .fields-container .form-field label {
+  color: #0c0c0c;
+  font-family: "Rubik", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  word-wrap: break-word;
+}
+.container .bottom-wrapper .personal-data-wrapper .fields-container .form-field label span {
+  color: #FF4C30;
+  font-size: 1.2rem;
+  font-weight: 500;
+  word-wrap: break-word;
+}
+.container .bottom-wrapper .personal-data-wrapper .fields-container .form-field input {
+  background-color: #f1f1f1;
+  border: none;
+  border-radius: 5px;
+  padding: 15px 10px;
+  color: #0c0c0c;
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  outline: 2px solid #DADADA;
+}
+.container .bottom-wrapper .personal-data-wrapper .fields-container .form-field input:hover {
+  background-color: #e0e0e0;
+  outline: 2px solid #FF4C30;
+}
+.container .bottom-wrapper .personal-data-wrapper .fields-container .form-field input:focus {
+  outline: 2px solid #FF4C30;
+  box-shadow: 0px 0px 3px 2px #FF4C30;
+}
+
+.book-now-btn-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.book-now-btn-wrapper #book-now-btn {
+  padding: 20px;
+  font-weight: 500;
+  font-size: 1.6rem;
+  font-family: "Rubik", sans-serif;
+  color: #f1f1f1;
+  background-color: #FF4C30;
+  border-radius: 10px;
+  border-color: rgba(255, 76, 48, 0.5490196078);
+  box-shadow: 0px 0px 10px 2px #FF4C30;
+  cursor: pointer;
+  width: -moz-max-content;
+  width: max-content;
+}
+.book-now-btn-wrapper #book-now-btn:hover {
+  background-color: #e64229;
+  box-shadow: 0px 0px 5px 2px #FF4C30;
+}

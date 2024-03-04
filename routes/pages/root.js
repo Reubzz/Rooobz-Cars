@@ -60,11 +60,25 @@ router.get('/vehicles/:brand/:name', authCheck, async (req, res) => {
     const name = req.params.name;
 
     let carData = await carsDB.findOne({ name: name, brand: brand })
-    // console.log(carData)
     res.render("vehicles/car", {
         car: carData,
         user: res.locals,
     })
+})
+
+router.get('/booking', authCheck, async (req, res) => {
+    const carId = req.query.id;
+
+    if(req.cookies.jwt) {
+        const carData = await carsDB.findOne({ id: carId });
+        res.render('vehicles/booking', {
+            user: res.locals,
+            car: carData
+        })
+    }
+    else {
+        res.redirect('/login')
+    }
 })
 router.get('/contact', authCheck, (req, res) => {    
     res.render('contact/contact', {})

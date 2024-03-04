@@ -103,3 +103,8 @@
 ### 3/3/2024 - Update v0.1.7 
 - Added Login Modal to Car Page (such that a logged in user is required to continue booking)
 - Fixed All Buttons across website - design changed for it to pop more on hover. 
+
+### 5/3/2024 - Update v0.1.8 
+- Added Booking Page (part 1) [pay now flow yet to do]
+- Completed Car Page UI
+- User must log in or register to access this booking page

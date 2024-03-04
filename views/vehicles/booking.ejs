@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="language" content="en">
+
+    <!-- Website Title -->
+    <title>
+        Confirm Booking <%= car.brand %> <%= car.name %> - Rooobz Cars
+    </title>
+
+    <!-- Icon -->
+    <link rel="shortcut icon" href="https://project.reubz.io/imgs/logo.png" type="image/x-icon">
+
+    <!-- Primary Tags -->
+    <meta name="title" content="Rooobz Cars">
+    <meta name="description" content="Best Car Rental Website on the planet">
+
+
+    <!-- Open Graph / Facebook / Insta -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://project.reubz.io/">
+    <meta property="og:title" content="Rooobz Cars">
+    <meta property="og:description" content="Best Car Rental Website on the planet">
+    <meta property="og:image" itemprop="image" content="https://project.reubz.io/imgs/logo-with-text.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://project.reubz.io/">
+    <meta property="twitter:title" content="Rooobz Cars">
+    <meta property="twitter:description" content="Best Car Rental Website on the planet">
+    <meta property="twitter:image" content="https://project.reubz.io/imgs/logo-with-text.png">
+
+    <!-- For Discord Embeds -->
+    <meta content="#FF4C30" data-react-helmet="true" name="theme-color" />
+
+    <link rel="stylesheet" href="/css/booking.css">
+
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- Fontawesome Link -->
+    <!-- <script src="https://kit.fontawesome.com/4d3f484b6f.js" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-thin.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-solid.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css">
+
+</head>
+
+<body>
+    <div data-include="navbar"></div>
+    <section class="important-note-banner">
+        <h3><i class="fas fa-circle-exclamation-check"></i> Upon Completion you will receive a confirmation email</h3>
+    </section>
+    
+    <section class="container">
+        <h1 class="car-name"><%= car.brand %> <%= car.name %></h1>
+        <form id="pay-now-form" action="">
+            <div class="top-wrapper">
+                <div class="left-data-wrapper">
+                    <div class="title">
+                        <h2>Location & Date</h2>
+                    </div>
+                    <div class="field">
+                        <div class="title-wrapper">
+                            <i class="fad fa-calendar-clock"></i>
+                            <h3> Pickup Date and Time <span>*</span></h3>
+                        </div>
+                        <div class="input-wrapper">
+                            <input 
+                                type="datetime-local" 
+                                min="<%= new Date(Date.now() + 0 * 24 * 60 * 60 * 1000).toISOString().slice(0, -8) %>" 
+                                value="<%= new Date(Date.now() + 0 * 24 * 60 * 60 * 1000).toISOString().slice(0, -8) %>" 
+                                name="pickup-date" 
+                                id="pickup-date"
+                                required
+                            >
+                        </div>
+                    </div>                
+                    <div class="field">
+                        <div class="title-wrapper">
+                            <i class="fad fa-calendar-clock"></i>
+                            <h3> Dropoff Date and Time <span>*</span></h3>
+                        </div>
+                        <div class="input-wrapper">
+                            <input 
+                                type="datetime-local" 
+                                min="<%= new Date(Date.now() + 3 * 24 * 60 * 60 * 1000).toISOString().slice(0, -8) %>" 
+                                value="<%= new Date(Date.now() + 3 * 24 * 60 * 60 * 1000).toISOString().slice(0, -8) %>" 
+                                name="dropoff-date" 
+                                id="dropoff-date"
+                                required
+                            >
+                        </div>
+                    </div>                
+                    <div class="field">
+                        <div class="title-wrapper">
+                            <i class="fad fa-map-location-dot"></i>
+                            <h3> Pickup Location <span>*</span></h3>
+                        </div>
+                        <div class="input-wrapper">
+                            <select class="dropdown" name="pickup-location" id="pickup-location" required>
+                                <option value="placeholder" class="placeholder-text">Select Pickup Location</option>
+                                <option value="store-pickup">In-Store Pickup</option>
+                                <option value="home-delivery">Home Delivery</option>
+                            </select>                       
+                        </div>
+                    </div>                
+                    <div class="field">
+                        <div class="title-wrapper">
+                            <i class="fad fa-map-location-dot"></i>
+                            <h3> Dropoff Location <span>*</span></h3>
+                        </div>
+                        <div class="input-wrapper">
+                            <select class="dropdown" name="dropoff-location" id="dropoff-location" required>
+                                <option value="placeholder" class="placeholder-text">Select Dropoff Location</option>
+                                <option value="store-pickup">In-Store Pickup</option>
+                                <option value="home-delivery">Home Delivery</option>
+                            </select>  
+                        </div>
+                    </div>                
+                </div>
+    
+                <div class="right-data-wrapper">
+                    <div class="title">
+                        <h2>Additional Offers</h2>
+                    </div>
+                    <div class="car-data-wrapper">
+                        <div class="additional-offers">
+                            <div class="offer" data-offer-price="1000" onmouseout="offerHoverRemove(this)" onmouseover="offerHover(this)">
+                                <div class="offer-name">
+                                    <i class="far fa-truck-tow"></i> Roadside Assistance
+                                </div>
+                                <div class="offer-button">
+                                    <button class="offer-add" data-add-text="Add +" data-remove-text="Remove" onclick="offerAddRemove(event, this)">Add +</button>
+                                </div>
+                            </div>
+                            <div class="offer" data-offer-price="500" onmouseout="offerHoverRemove(this)" onmouseover="offerHover(this)">
+                                <div class="offer-name">
+                                    <i class="far fa-trash-can-xmark"></i> Anytime Cancellation
+                                </div>
+                                <div class="offer-button">
+                                    <button class="offer-add" data-add-text="Add +" data-remove-text="Remove" onclick="offerAddRemove(event, this)">Add +</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="pricing-box">
+                            <div class="title">
+                                <h2>Pricing</h2>
+                            </div>
+                            <table class="car-features-table">
+                                <tr>
+                                    <td><h3 class="highlight-title">Extra Offers</h3></td>
+                                    <td><h3 id="offers-final-price" class="highlight-title">0</h3></td>
+                                </tr>
+                                <tr>
+                                    <td><h3 class="highlight-title">Rental Price <span>(Exclusive of 18% Additional Tax)</span></h3></td>
+                                    <td><h3 class="highlight-title"><%= car.price %></h3></td>
+                                </tr>
+                                <tr>
+                                    <td><h3 class="highlight-orange">Total</h3></td>
+                                    <td><h3 class="highlight-orange" id="total-display"><%= car.price + car.price*18/100 %></h3></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="orange-line">
+
+
+            <div class="bottom-wrapper">
+                <div class="personal-data-wrapper">
+                    <div class="title-wrapper">
+                        <h2>Additional Personal Information</h2>
+                    </div>
+                    <div class="fields-container">
+                        <div class="address form-field">
+                            <label for="address">Address <span>*</span></label>
+                            <input type="text" name="address" id="address" required>
+                        </div>
+                        <div class="city-state form-single-row">
+                            <div class="city form-field">
+                                <label for="city">City <span>*</span></label>
+                                <input type="text" name="city" id="city" required>
+                            </div>
+                            <div class="state form-field">
+                                <label for="state">State <span>*</span></label>
+                                <input type="text" name="state" id="state" required>
+                            </div>
+                        </div>
+                        <div class="pin-phone form-single-row">
+                            <div class="pin form-field">
+                                <label for="pin">Pin Code <span>*</span></label>
+                                <input type="text" name="pin" id="pin" required>
+                            </div>
+                            <div class="phone form-field">
+                                <label for="phone">Phone <span>*</span></label>
+                                <input type="tel" name="phone" id="phone" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="book-now-btn-wrapper">
+                <button id="book-now-btn" type="submit">
+                    Pay Now • Rs. <%= car.price + car.price*18/100 %> 
+                </button>
+            </div>
+        </form>
+    </section>
+
+
+    <div data-include="save-banner"></div>
+
+    <div data-include="footer"></div>
+
+    <!-- ! Javascript -->
+    <script>
+        const user = JSON.parse('<%- JSON.stringify(user) %> ') 
+        const car = JSON.parse('<%- JSON.stringify(car) %>')
+    </script>
+    <script src="/js/booking.js"></script>
+    <script src="/js/navbar.js"></script>
+    <script src="/js/footer.js"></script>
+    <script src="/js/import-html.js"></script>
+</body>
+
+</html>
