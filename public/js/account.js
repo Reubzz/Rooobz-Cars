@@ -71,18 +71,6 @@ async function submitField(inputElement, fieldName, button) {
     }
 }
 
-// * Show Error Popup
-function showError({ code, message}) {
-    const display = document.getElementById('error')
-    display.classList.add("error")
-    display.textContent = `Error ${code} - ${(code != 100) ? message : ''}`
-    setTimeout(() => {
-        display.classList.remove('error')
-    }, 10 * 1000)
-    return;
-}
-
-
 // * Image Upload Section
 const formElement = document.getElementById('image-form-wrapper');
 function openPfpDialog() {

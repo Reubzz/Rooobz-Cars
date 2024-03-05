@@ -89,12 +89,3 @@ function deleteCookie(cookieName) {
     // Set the cookie's expiration date to a past date
     document.cookie = cookieName + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
 }
-
-function showError({ code, message}) {
-    display.classList.add("error")
-    display.textContent = `Error ${code} - ${(code != 100) ? message : ''}`
-    setTimeout(() => {
-        display.classList.remove('error')
-    }, 10 * 1000)
-    return;
-}
