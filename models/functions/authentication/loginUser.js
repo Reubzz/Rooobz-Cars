@@ -1,10 +1,8 @@
+// Functions
+const { jwtSign, setJwtCookie } = require('../jwt/jwtSign')
+
 // Databases
 const User = require('../../schemas/users')
-const jwtSecret = process.env.JWT
-const jwt = require('jsonwebtoken')
-
-// Config File
-const { loginMaxAge } = require('../../../config.json')
 
 /**
  * 
@@ -87,26 +85,8 @@ exports.loginUser = async (req, res, next) => {
 
         // All good - username + password correct
         if (check1.password == password) {
-            // Generate JWT
-            const token = jwt.sign({ 
-                    _id: check1._id, 
-                    id: check1.id, 
-                    username: check1.username, 
-                    name: check1.name, 
-                    role: check1.role, 
-                    email: check1.email,
-                    profileImg: check1.profileImg 
-                },
-                jwtSecret,
-                { expiresIn: loginMaxAge } // 1 day in secs 
-            );
-
-            // Setting the Cookie - creating session
-            res.cookie("jwt", token, {
-                httpOnly: true,
-                maxAge: loginMaxAge * 1000,
-                sameSite: 'lax'
-            });
+            // Generate JWT & Setting the Cookie - creating session
+            setJwtCookie(jwtSign(check1), res);
 
             // ** Sucessful Login ** 
             res.status(200).json({ error: error[100], status: status[200], user: check1 })

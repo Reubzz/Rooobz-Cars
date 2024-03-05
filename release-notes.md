@@ -109,3 +109,4 @@
 - Completed Car Page UI
 - User must log in or register to access this booking page
 - Fixed Homepage quick booking section - Removed Date Picker as not needed atm.
+- Added `jwtSign.js` to `/models/functions/jwt/jwtSign.js` for easier cookie signing process to login / refresh user data. Reduced Repeated Code.

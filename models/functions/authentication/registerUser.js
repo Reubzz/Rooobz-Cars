@@ -1,12 +1,10 @@
+// Functions
+const { jwtSign } = require('../jwt/jwtSign')
+
 // Database
 const User = require('../../schemas/users')
 const { v4: uuidv4 } = require('uuid')
-const jwt = require('jsonwebtoken')
-require('dotenv').config();
-const jwtSecret = process.env.JWT
 
-// Config file
-const { loginMaxAge } = require('../../../config.json')
 /**
  * @error codes
  *  100 = No Errors
@@ -87,24 +85,8 @@ exports.registerUser = async (req, res, next) => {
             createdDate: new Date()
         }).then((user) => {
             // Creating JWT Token 
-            const token = jwt.sign({ 
-                    _id: user._id,
-                    id: user.id,
-                    name: user.name,
-                    username: user.username,
-                    email: user.email,
-                    role: user.role,
-                    profileImg:  user.profileImg,
-                },
-                jwtSecret,
-                { expiresIn: loginMaxAge } // 1 day in secs 
-            );
-
             // Setting the Cookie - creating session
-            res.cookie("jwt", token, {
-                httpOnly: true,
-                maxAge: loginMaxAge * 1000, // 3hrs in ms
-            });
+            setJwtCookie(jwtSign(user), res);
             res.status(200).json({
                 error: error[100],
                 status: status[200],

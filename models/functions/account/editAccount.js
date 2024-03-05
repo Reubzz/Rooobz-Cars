@@ -13,9 +13,9 @@
  * ! 104 - Database Error
  * ! 105 - Unknown Error
 */
-const jwtSecret = process.env.JWT
-const jwt = require('jsonwebtoken')
-const { loginMaxAge } = require('../../../config.json')
+
+// Functions
+const { jwtSign, setJwtCookie } = require('../jwt/jwtSign')
 
 const User = require('../../schemas/users')
 
@@ -86,8 +86,7 @@ exports.editAccount = async (req, res, next) => {
         }
         currentUser[fieldName] = fieldValue;
         currentUser.save();
-        console.log(currentUser)
-        refreshJwtToken(req, res, currentUser);
+        setJwtCookie(jwtSign(currentUser), res);
         return res.status(200).json({ error: error[100], status: status[200] })
     } catch (err) {
         res.status(400).json({
@@ -96,22 +95,4 @@ exports.editAccount = async (req, res, next) => {
         })
         return console.log('edit user api - ' + err);
     }
-}
-
-async function refreshJwtToken(req, res, refreshedData) {
-    const token = jwt.sign({    
-        id: refreshedData.id,
-        username: refreshedData.username,
-        name: refreshedData.name,
-        role: refreshedData.role,
-        email: refreshedData.email,
-        profileImg: refreshedData.profileImg
-    },
-    jwtSecret,
-    { expiresIn: loginMaxAge})
-    res.cookie('jwt', token, {
-        httpOnly: true,
-        maxAge: loginMaxAge * 1000,
-        sameSite: 'lax'
-    })
 }

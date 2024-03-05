@@ -15,12 +15,12 @@ function editButtonClick(button) {
     if(button.id == `${button.dataset.fieldname}-edit`) {
         inputElement.disabled = false;
     }   
-    if(button.id == `${button.dataset.fieldname}-submit`) {
+    else if(button.id == `${button.dataset.fieldname}-submit`) {
         inputElement.disabled = true;
         submitField(inputElement, button.dataset.fieldname, button);
     }
     changeButton(button.dataset.fieldname, button)
-}   
+}
 
 
 
@@ -30,7 +30,7 @@ function changeButton(fieldName, button) {
     if (button.id == `${fieldName}-edit`) {
         button.innerHTML = 'Save <i class="fas fa-save"></i>';
         button.id = `${fieldName}-submit`;
-        button.type = 'submit'
+        // button.type = 'submit'
     }
     else if (button.id == `${fieldName}-submit`) {
         button.innerHTML = 'Edit <i class="fas fa-pen"></i>'
@@ -40,7 +40,6 @@ function changeButton(fieldName, button) {
 
 // * When User Submits the Data
 async function submitField(inputElement, fieldName, button) {
-
     try {
         const res = await fetch(`/api/account/edit`, {
             method: 'POST',
@@ -68,7 +67,7 @@ async function submitField(inputElement, fieldName, button) {
         }
     } catch (error) {
         // ! If Unknown Errors
-        console.log(error.message)
+        console.log('error in submitField() in account.js in public/js', error.message)
     }
 }
 
