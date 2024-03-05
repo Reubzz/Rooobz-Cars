@@ -1,4 +1,4 @@
-// Edits user's details in the database. 
+// ? Edits user's details in the database. 
 
 /**
  * @status codes
@@ -79,17 +79,16 @@ exports.editAccount = async (req, res, next) => {
         }
 
         // * If other field or username is unique
-        else {
-            if (fieldValue == null || fieldValue == '') {
-                // * Field not provided, remove it from update object
-                if (requiredFields.includes(fieldName))
-                    return res.status(400).json({ error: error[101], status: status[201] })
-            }
-            currentUser[fieldName] = fieldValue;
-            currentUser.save();
-            refreshJwtToken(req, res, currentUser);
-            return res.status(200).json({ error: error[100], status: status[200] })
+        if (fieldValue == null || fieldValue == '') {
+            // * Field not provided, remove it from update object
+            if (requiredFields.includes(fieldName))
+                return res.status(400).json({ error: error[101], status: status[201] })
         }
+        currentUser[fieldName] = fieldValue;
+        currentUser.save();
+        console.log(currentUser)
+        refreshJwtToken(req, res, currentUser);
+        return res.status(200).json({ error: error[100], status: status[200] })
     } catch (err) {
         res.status(400).json({
             error: error[105], 
