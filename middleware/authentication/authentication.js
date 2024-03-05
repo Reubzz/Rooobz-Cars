@@ -27,6 +27,7 @@ exports.authCheck = async (req, res, next) => {
             else {
                 res.locals.role = decodedToken.role;
                 res.locals.id = decodedToken.id;
+                res.locals._id = decodedToken._id;
                 res.locals.username = decodedToken.username;
                 res.locals.name = decodedToken.name;
                 res.locals.email = decodedToken.email;

@@ -88,6 +88,7 @@ exports.registerUser = async (req, res, next) => {
         }).then((user) => {
             // Creating JWT Token 
             const token = jwt.sign({ 
+                    _id: user._id,
                     id: user.id,
                     name: user.name,
                     username: user.username,

@@ -89,6 +89,7 @@ exports.loginUser = async (req, res, next) => {
         if (check1.password == password) {
             // Generate JWT
             const token = jwt.sign({ 
+                    _id: check1._id, 
                     id: check1.id, 
                     username: check1.username, 
                     name: check1.name, 
