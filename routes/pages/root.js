@@ -3,9 +3,15 @@ const router = express.Router();
 const path = require('path');
 const config = require('../../config.json');
 
+// Stripe Payment Gateway 
+const stripe = require('stripe')('sk_test_51OriCPSJAPyxY5J13cG7iIOc4vfrtsmWXQcMOnfnswH9QyshknBm0joFrLYRCycXHwSuKnQSo8IGNqu0sPHo5CGu00IOrjeNtG')
+
 // Databases
 const carsDB = require('../../models/schemas/cars');
 const usersDB = require('../../models/schemas/users');
+const offersDB = require('../../models/schemas/offers');
+const ordersDB = require('../../models/schemas/orders');
+const transactionsDB = require('../../models/schemas/transactions');
 
 // MiddleWares
 const { authCheck } = require("../../middleware/authentication/authentication")
@@ -77,14 +83,36 @@ router.get('/booking', authCheck, async (req, res) => {
 
     if(req.cookies.jwt) {
         const carData = await carsDB.findOne({ id: carId });
+        const offersData = await offersDB.find();
         res.render('vehicles/booking', {
             user: res.locals,
-            car: carData
+            car: carData,
+            offers: offersData
         })
     }
     else {
         res.redirect('/login')
     }
+})
+
+router.get('/booking/pay', authCheck, async (req, res) => {
+    const orderId = req.query.id;
+
+    if(!req.cookies.jwt) 
+        return res.redirect("/login");
+    const orderData = await ordersDB.findOne({ _id:  orderId }).populate('car offers user transaction');
+
+    // TODO: Check if order is completed or failed and redirect back.
+
+    const paymentIntent = await stripe.paymentIntents.create({
+        amount: orderData.totalCost,
+        currency: 'inr'
+    });
+
+    res.render('vehicles/payment', {
+        client_secret: paymentIntent.client_secret,
+        orderData: orderData
+    })
 })
 router.get('/contact', authCheck, (req, res) => {    
     res.render('contact/contact', {})

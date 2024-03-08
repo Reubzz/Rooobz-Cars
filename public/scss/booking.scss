@@ -6,6 +6,7 @@
 @import "./components/save-banner";
 @import "./components/animated-span";
 @import "./components/animations";
+@import "./components/error-popup";
 
 .important-note-banner {
     padding: 20px 40px;
@@ -38,7 +39,7 @@
         font-family: $rubik;
         font-weight: $semiBold;
     }
-    form {
+    #pay-now-form {
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -69,60 +70,72 @@
                     font-weight: $semiBold;
                 }
             }
-            .field {
-                width: 100%;
+            .fields-container {
                 display: flex;
+                width: 100%;
                 flex-direction: column;
-                gap: 10px;
-                .title-wrapper {
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-                    font-size: 1.2rem;
-                    gap: 10px;
-                    h3 {
-                        font-size: 1.2rem;
-                        font-family: $rubik;
-                        font-weight: $medium;
-                        span {
-                            color: $orange; 
-                            font-size: 1.2rem; 
-                            font-weight: $medium; 
-                            word-wrap: break-word
-                        }
-                    }
-                    i {
-                        color: $orange;
-                    }
-                }
-                .input-wrapper {
+                gap: 50px;
+                .field-wrapper {
                     width: 100%;
-
-                    input, select {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    .field {
                         width: 100%;
-                        padding: 15px 20px;
-                        border-radius: 5px;
-                        border: none;
-                        background-color: $white;
-                        font-size: 1rem;
-                        font-family: $rubik;
-                        font-weight: $regular;
-                        color: $black;
-                        outline: 2px solid $smokedWhite;
-
-                        &:hover {
-                            background-color: $smokedWhiteLight;
-                            box-shadow: 0px 0px 2px 1px $orange;
-                            cursor: pointer;
-                            outline: 2px solid $orange;
-
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+                        .title-wrapper {
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            font-size: 1.2rem;
+                            gap: 10px;
+                            h3 {
+                                font-size: 1.2rem;
+                                font-family: $rubik;
+                                font-weight: $medium;
+                                span {
+                                    color: $orange; 
+                                    font-size: 1.2rem; 
+                                    font-weight: $medium; 
+                                    word-wrap: break-word
+                                }
+                            }
+                            i {
+                                color: $orange;
+                            }
                         }
-
-                        &:focus {
-                            outline: 2px solid $orange;
-                            background-color: $white;
-                            box-shadow: 0px 0px 3px 2px $orange;
-
+                        .input-wrapper {
+                            width: 100%;
+        
+                            input, select {
+                                width: 100%;
+                                padding: 15px 20px;
+                                border-radius: 5px;
+                                border: none;
+                                background-color: $white;
+                                font-size: 1rem;
+                                font-family: $rubik;
+                                font-weight: $regular;
+                                color: $black;
+                                outline: 2px solid $smokedWhite;
+        
+                                &:hover {
+                                    background-color: $smokedWhiteLight;
+                                    box-shadow: 0px 0px 2px 1px $orange;
+                                    cursor: pointer;
+                                    outline: 2px solid $orange;
+        
+                                }
+        
+                                &:focus {
+                                    outline: 2px solid $orange;
+                                    background-color: $white;
+                                    box-shadow: 0px 0px 3px 2px $orange;
+        
+                                }
+                            }
                         }
                     }
                 }
@@ -157,6 +170,9 @@
                         justify-content: space-between;
                         border-radius: 5px;
                         background-color: $white;
+                        .hidden {
+                            display: none;
+                        }
                         &:hover {
                             background-color: $smokedWhiteLight;
                             cursor: default;
@@ -225,6 +241,7 @@
                         }
                         span {
                             font-size: 0.6rem;
+                            font-weight: $regular;
                         }
                     }
                 }
@@ -262,6 +279,18 @@
                     flex-direction: row;
                     gap: 20px;
                     width: 100%;
+                    .flat {
+                        width: max-content;
+                    }
+                    .address {
+                        width: 100%;
+                    }
+                    .phone {
+                        min-width: max-content;
+                    }
+                    .name {
+                        display: none;
+                    }
                 }
                 .form-field {
                     display: flex;
@@ -278,7 +307,10 @@
                             color: $orange; 
                             font-size: 1.2rem; 
                             font-weight: $medium; 
-                            word-wrap: break-word
+                            word-wrap: break-word;
+                            &.optional-tag {
+                                font-size: 0.8rem;
+                            }
                         }
                     }
                     input {
@@ -303,6 +335,96 @@
                         }
                     }
                 }
+                .save-info-wrapper {
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                    label {
+                        font-size: 1rem;
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                    input {
+                        width: 15px;
+                        height: 15px;
+                        &:hover {
+                            cursor: pointer;
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }
+}
+
+#payment-form-container {
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    width: 60%;
+    align-self: center;
+    .title-wrapper {
+        text-align: center;
+        h1 {
+            font-size: 3rem;
+            font-weight: $semiBold;
+            font-family: $rubik;
+            color: $orange;
+            
+        }
+    }
+    #payment-form {
+        padding: 30px;
+        background-color: $white;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        h2 {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: $regular;
+            font-family: $rubik;
+            color: $black;
+        }
+        
+        input {
+            background-color: $white;
+            font-size: 1.2rem;
+            font-weight: $regular;
+            font-family: $rubik;
+            padding: 10px;
+        }
+        .Label {
+            font-size: 1.2rem !important;
+            font-weight: $medium;
+            font-family: $rubik;
+
+        }
+        #error-message {
+            font-weight: $regular;
+            font-size: 1rem;
+            font-family: $rubik;
+        }
+        #submit { 
+            padding: 10px 30px;
+            font-weight: $medium;
+            font-size: 1.4rem;
+            font-family: $rubik;
+            color: $white;
+            background-color: $orange;
+            border-radius: 10px;
+            border-color: $orangeFadded;
+            box-shadow: 0px 0px 10px 2px $orange;
+            cursor: pointer;
+            width: max-content;
+            align-self: center;
+            
+            &:hover {
+                background-color: $orangeDark;
+                box-shadow: 0px 0px 5px 2px $orange;
             }
         }
     }
@@ -328,5 +450,25 @@
             background-color: $orangeDark;
             box-shadow: 0px 0px 5px 2px $orange;
         }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .top-wrapper {
+        flex-direction: column !important;
+        .offer-name {
+            font-size: 1.2rem !important;
+        }
+    }
+    .bottom-wrapper {
+        .form-single-row {
+            flex-direction: column !important;
+            .flat {
+                width: 100% !important;
+            }
+        }
+    }
+    #payment-form-container {
+        width: 100%;
     }
 }

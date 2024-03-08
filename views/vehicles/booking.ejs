@@ -52,80 +52,80 @@
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css">
 
+    <!-- ! Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBt0zUtQlyaddQoeNCB-gTStQLKK0Y6ccA&libraries=places"></script>
+    <!-- ! Stripe Payments API -->
+    <script src="https://js.stripe.com/v3/"></script>
+
+
 </head>
 
 <body>
     <div data-include="navbar"></div>
+
+    <div data-include="error-popup"></div>
     <section class="important-note-banner">
         <h3><i class="fas fa-circle-exclamation-check"></i> Upon Completion you will receive a confirmation email</h3>
     </section>
     
     <section class="container">
-        <h1 class="car-name"><%= car.brand %> <%= car.name %></h1>
         <form id="pay-now-form" action="">
+            <h1 class="car-name"><%= car.brand %> <%= car.name %></h1>
             <div class="top-wrapper">
                 <div class="left-data-wrapper">
                     <div class="title">
                         <h2>Location & Date</h2>
                     </div>
-                    <div class="field">
-                        <div class="title-wrapper">
-                            <i class="fad fa-calendar-clock"></i>
-                            <h3> Pickup Date and Time <span>*</span></h3>
+                    <div class="fields-container">
+                        <div class="field-wrapper">
+                            <div class="field">
+                                <label class="title-wrapper" for="pickupDate">
+                                    <i class="fad fa-calendar-clock"></i>
+                                    <h3> Pickup Date and Time <span>*</span></h3>
+                                </label>
+                                <div class="input-wrapper">
+                                    <input 
+                                        type="datetime-local" 
+                                        min="<%= new Date(Date.now() + 0 * 24 * 60 * 60 * 1000).toISOString().slice(0, -8) %>" 
+                                        value="<%= new Date(Date.now() + 0 * 24 * 60 * 60 * 1000).toISOString().slice(0, -8) %>" 
+                                        name="pickupDate" 
+                                        id="pickupDate"
+                                        required
+                                    >
+                                </div>
+                            </div>                
+                            <div class="field">
+                                <label class="title-wrapper" for="dropoffDate">
+                                    <i class="fad fa-calendar-clock"></i>
+                                    <h3> Dropoff Date and Time <span>*</span></h3>
+                                </label>
+                                <div class="input-wrapper">
+                                    <input 
+                                        type="datetime-local" 
+                                        min="<%= new Date(Date.now() + 3 * 24 * 60 * 60 * 1000).toISOString().slice(0, -8) %>" 
+                                        value="<%= new Date(Date.now() + 3 * 24 * 60 * 60 * 1000).toISOString().slice(0, -8) %>" 
+                                        name="dropoffDate" 
+                                        id="dropoffDate"
+                                        required
+                                    >
+                                </div>
+                            </div>                
                         </div>
-                        <div class="input-wrapper">
-                            <input 
-                                type="datetime-local" 
-                                min="<%= new Date(Date.now() + 0 * 24 * 60 * 60 * 1000).toISOString().slice(0, -8) %>" 
-                                value="<%= new Date(Date.now() + 0 * 24 * 60 * 60 * 1000).toISOString().slice(0, -8) %>" 
-                                name="pickup-date" 
-                                id="pickup-date"
-                                required
-                            >
+                        <div class="field-wrapper">
+                            <div class="field">
+                                <label class="title-wrapper" for="location">
+                                    <i class="fad fa-map-location-dot"></i>
+                                    <h3> Pickup / Return Location <span>*</span></h3>
+                                </label>
+                                <div class="input-wrapper">
+                                    <select class="dropdown" name="location" id="location" required>
+                                        <option value="store-pickup">In-Store Pickup</option>
+                                        <option value="home-delivery">Home Delivery</option>
+                                    </select>                       
+                                </div>
+                            </div>                
                         </div>
-                    </div>                
-                    <div class="field">
-                        <div class="title-wrapper">
-                            <i class="fad fa-calendar-clock"></i>
-                            <h3> Dropoff Date and Time <span>*</span></h3>
-                        </div>
-                        <div class="input-wrapper">
-                            <input 
-                                type="datetime-local" 
-                                min="<%= new Date(Date.now() + 3 * 24 * 60 * 60 * 1000).toISOString().slice(0, -8) %>" 
-                                value="<%= new Date(Date.now() + 3 * 24 * 60 * 60 * 1000).toISOString().slice(0, -8) %>" 
-                                name="dropoff-date" 
-                                id="dropoff-date"
-                                required
-                            >
-                        </div>
-                    </div>                
-                    <div class="field">
-                        <div class="title-wrapper">
-                            <i class="fad fa-map-location-dot"></i>
-                            <h3> Pickup Location <span>*</span></h3>
-                        </div>
-                        <div class="input-wrapper">
-                            <select class="dropdown" name="pickup-location" id="pickup-location" required>
-                                <option value="placeholder" class="placeholder-text">Select Pickup Location</option>
-                                <option value="store-pickup">In-Store Pickup</option>
-                                <option value="home-delivery">Home Delivery</option>
-                            </select>                       
-                        </div>
-                    </div>                
-                    <div class="field">
-                        <div class="title-wrapper">
-                            <i class="fad fa-map-location-dot"></i>
-                            <h3> Dropoff Location <span>*</span></h3>
-                        </div>
-                        <div class="input-wrapper">
-                            <select class="dropdown" name="dropoff-location" id="dropoff-location" required>
-                                <option value="placeholder" class="placeholder-text">Select Dropoff Location</option>
-                                <option value="store-pickup">In-Store Pickup</option>
-                                <option value="home-delivery">Home Delivery</option>
-                            </select>  
-                        </div>
-                    </div>                
+                    </div>
                 </div>
     
                 <div class="right-data-wrapper">
@@ -134,22 +134,19 @@
                     </div>
                     <div class="car-data-wrapper">
                         <div class="additional-offers">
-                            <div class="offer" data-offer-price="1000" onmouseout="offerHoverRemove(this)" onmouseover="offerHover(this)">
-                                <div class="offer-name">
-                                    <i class="far fa-truck-tow"></i> Roadside Assistance
-                                </div>
-                                <div class="offer-button">
-                                    <button class="offer-add" data-add-text="Add +" data-remove-text="Remove" onclick="offerAddRemove(event, this)">Add +</button>
-                                </div>
-                            </div>
-                            <div class="offer" data-offer-price="500" onmouseout="offerHoverRemove(this)" onmouseover="offerHover(this)">
-                                <div class="offer-name">
-                                    <i class="far fa-trash-can-xmark"></i> Anytime Cancellation
-                                </div>
-                                <div class="offer-button">
-                                    <button class="offer-add" data-add-text="Add +" data-remove-text="Remove" onclick="offerAddRemove(event, this)">Add +</button>
-                                </div>
-                            </div>
+                            <% offers.forEach(offer => { %>
+                                <% if (offer.active == true) { %>
+                                    <div class="offer" data-offer-price="<%= offer.price %>" onmouseout="offerHoverRemove(this)" onmouseover="offerHover(this)">
+                                        <div class="offer-name">
+                                            <%- offer.icon %> <%= offer.name %>
+                                        </div>
+                                        <div class="offer-button">
+                                            <button class="offer-add" data-offer-id="<%= offer._id %>" data-add-text="Add +" data-remove-text="Remove" onclick="offerAddRemove(event, this)">Add +</button>
+                                            <input type="checkbox" name="offer-<%= offer._id %>" id="offer-<%= offer._id %>" class="hidden">
+                                        </div>
+                                    </div>
+                                <% } %>
+                            <% }); %>
                         </div>
                         <div id="pricing-box">
                             <div class="title">
@@ -161,7 +158,7 @@
                                     <td><h3 id="offers-final-price" class="highlight-title">0</h3></td>
                                 </tr>
                                 <tr>
-                                    <td><h3 class="highlight-title">Rental Price <span>(Exclusive of 18% Additional Tax)</span></h3></td>
+                                    <td><h3 class="highlight-title">Rental Price <span>(Exclusive of 18% Tax)</span></h3></td>
                                     <td><h3 class="highlight-title"><%= car.price %></h3></td>
                                 </tr>
                                 <tr>
@@ -182,29 +179,54 @@
                         <h2>Additional Personal Information</h2>
                     </div>
                     <div class="fields-container">
-                        <div class="address form-field">
-                            <label for="address">Address <span>*</span></label>
-                            <input type="text" name="address" id="address" required>
+                        <div class="form-single-row">
+                            <div class="flat form-field">
+                                <label for="flat">Flat Number <span>*</span></label>
+                                <input type="text" name="flat" id="flat" required placeholder="ABC123">
+                            </div>
+                            <div class="name form-field">
+                                <input type="text" name="placename" id="placename">
+                            </div>
+                            <div class="address form-field">
+                                <label for="address">Address <span>*</span></label>
+                                <input type="text" name="address" id="address" required>
+                            </div>
                         </div>
-                        <div class="city-state form-single-row">
+                        <div class="form-single-row">
+                            <div class="locality form-field">
+                                <label for="locality">Local Area <span>*</span></label>
+                                <input type="text" name="locality" id="locality" required placeholder="Enter City">
+                            </div>
                             <div class="city form-field">
                                 <label for="city">City <span>*</span></label>
-                                <input type="text" name="city" id="city" required>
+                                <input type="text" name="city" id="city" required placeholder="Enter City">
+                            </div>
+                            <div class="pin form-field">
+                                <label for="pin">Pin Code <span>*</span></label>
+                                <input type="text" name="pin" id="pin" required placeholder="Enter pin code">
                             </div>
                             <div class="state form-field">
                                 <label for="state">State <span>*</span></label>
-                                <input type="text" name="state" id="state" required>
+                                <input type="text" name="state" id="state" required placeholder="Enter State">
                             </div>
                         </div>
-                        <div class="pin-phone form-single-row">
-                            <div class="pin form-field">
-                                <label for="pin">Pin Code <span>*</span></label>
-                                <input type="text" name="pin" id="pin" required>
+                        <div class="form-single-row">
+                            <div class="country form-field">
+                                <label for="country">Country <span>*</span></label>
+                                <input type="text" name="country" id="country" required placeholder="Enter Country">
                             </div>
                             <div class="phone form-field">
                                 <label for="phone">Phone <span>*</span></label>
-                                <input type="tel" name="phone" id="phone" required>
+                                <input type="tel" name="phone" id="phone" required placeholder="0123456789">
                             </div>
+                            <div class="landmark form-field">
+                                <label for="landmark">Landmark <span class="optional-tag">(Optional)</span></label>
+                                <input type="text" name="landmark" id="landmark" placeholder="Enter Landmark">
+                            </div>
+                        </div>
+                        <div class="save-info-wrapper">
+                            <input type="checkbox" name="saveInfo" id="saveInfo" checked> 
+                            <label for="saveInfo"> Save my information for future bookings.</label>
                         </div>
                     </div>
                 </div>
@@ -215,7 +237,25 @@
                 </button>
             </div>
         </form>
+
+        <div id="payment-form-container">
+            <div class="title-wrapper">
+                <h1><%= car.brand %> <%= car.name %></h1>
+            </div>
+            <form id="payment-form">
+                <h2>Enter Payment Details</h2>
+                <div id="payment-element">
+                    <!-- Elements will create form elements here -->
+                </div>
+                <button id="submit">Pay</button>
+                <div id="error-message">
+                    <!-- Display error message to your customers here -->
+                </div>
+            </form>
+        </div>
     </section>
+
+    
 
 
     <div data-include="save-banner"></div>
@@ -228,6 +268,7 @@
         const car = JSON.parse('<%- JSON.stringify(car) %>')
     </script>
     <script src="/js/booking.js"></script>
+    <script src="/js/error-popup.js"></script>
     <script src="/js/navbar.js"></script>
     <script src="/js/footer.js"></script>
     <script src="/js/import-html.js"></script>

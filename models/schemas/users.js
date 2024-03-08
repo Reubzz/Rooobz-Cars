@@ -20,15 +20,32 @@ const model = db.MAIN_DB.model(
         createdDate: { type: Date, required: true }, // ! Date of Account Creation
         phone: { type: Number, required: false }, // * Contact Number of the user
         age: { type: Date, required: false }, // * Date of birth 
-        location: { type: String, required: false }, // * Location of the user
-        address: { type: String, required: false }, // * Exact Address of the user
-        city: { type: String, required: false }, // * City of the user 
-        state: { type: String, required: false }, // * State of the user
-        pinCode: { type: Number, required: false}, // * Pin Code of the user
+        address: { 
+            address: { type: String, required: false }, // * Street of the user
+            flat: { type: String, required: false }, // * Flat Number / Room Number
+            name: { type: String, required: false }, // * Name of the building
+            locality: { type: String, required: false }, // * Locality / Area 
+            city: { type: String, required: false }, // * City of the user 
+            state: { type: String, required: false }, // * State of the user
+            country: { type: String, required: false }, // * Country of the user
+            pin: { type: Number, required: false}, // * Pin Code of the user
+            landmark: { type: String, required: false }, // * Nearby Landmark
+        },
         profileImg: { type: String, required: false, default: "https://reubz.s3.ap-south-1.amazonaws.com/default-user-img.png"}, // ? Profile Image of the user. Defualts to basic image if not provided.
 
-        transanctions: { type: Array, required: false }, // * Array of Transactions ID from "transactions collection"
-        reviews: { type: Array, required: false }, // * Array of Reviews ID from "reviews collection"
+        transanctions: [
+            { 
+                type: mongoose.Schema.Types.ObjectId, 
+                ref: 'transaction', 
+                required: false 
+            }
+        ], // * Array of Transactions ID from "transactions collection"
+        reviews: [
+            { 
+                type: mongoose.Schema.Types.ObjectId, 
+                ref: 'review', required: false 
+            }
+        ], // * Array of Reviews ID from "reviews collection"
 
         license: { type: String, required: false }, // ! Driving license Image Link
         

@@ -20,6 +20,7 @@ app.use('/api/auth', require(path.join(__dirname, "/routes/api/authentication.js
 app.use('/api/cars', require(path.join(__dirname, "/routes/api/create-cars-data.js")));
 app.use('/api/subscribe', require(path.join(__dirname, "/routes/api/email-subscribe.js")));
 app.use('/api/account', require(path.join(__dirname, "/routes/api/account.js")));
+app.use('/api/booking', require(path.join(__dirname, "/routes/api/booking.js")));
 
 
 app.listen(port, () => {

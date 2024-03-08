@@ -110,3 +110,11 @@
 - User must log in or register to access this booking page
 - Fixed Homepage quick booking section - Removed Date Picker as not needed atm.
 - Added `jwtSign.js` to `/models/functions/jwt/jwtSign.js` for easier cookie signing process to login / refresh user data. Reduced Repeated Code.
+
+## 8/3/2024 - Update v0.2.0
+- Order Creation and Transaction Creation API route : `api/booking/order-create`
+- Added Stripe API as Payment Gateway
+- Added `offers` schema to dynamically add and remove offers available while booking cars.
+- Created `orders` and `transactions` schemas in database.
+- Completed Booking Page
+- Added a new Payment Page
