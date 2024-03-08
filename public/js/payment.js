@@ -28,16 +28,20 @@ const elements = stripe.elements(options);
 const paymentElement = elements.create('payment');
 paymentElement.mount('#payment-element');
 const paymentForm = document.getElementById('payment-form');
+const orderId = new URLSearchParams(window.location.search).get(
+    'id'
+);
 
 
 paymentForm.addEventListener('submit', async (event) => {
     event.preventDefault();
+    
 
     const { error } = await stripe.confirmPayment({
         //`Elements` instance that was used to create the Payment Element
         elements,
         confirmParams: {
-            return_url: 'http://localhost/booking/complete',
+            return_url: `http://localhost/booking/complete?orderid=${orderId}`,
         },
     });
 
