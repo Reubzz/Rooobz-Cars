@@ -1,0 +1,106 @@
+// ? Imports
+@import "./components/variables";
+@import "./components/navbar";
+@import "./components/footer";
+@import "./components/scrollbar";
+@import "./components/save-banner";
+@import "./components/call-banner";
+@import "./components/animated-span";
+@import "./components/animations";
+@import "./components/error-popup";
+
+
+.container {
+    padding: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    gap: 30px;
+
+    .title-bar {
+        text-align: center;
+
+        h2 {
+            font-size: 3rem;
+            font-weight: $semiBold;
+            font-family: $rubik;
+            color: $orange;
+        }
+    }
+
+    .data-container {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .title-wrapper {
+            h2 {
+                font-size: 1.6rem;
+                font-weight: $medium;
+                font-family: $rubik;
+            }
+        }
+
+        .data {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+
+            .text-data {
+                p {
+                    font-size: 1rem;
+                    font-weight: $regular;
+                    font-family: $rubik;
+
+                    span {
+                        color: $orange;
+
+                        &:hover {
+                            color: $orangeDark;
+                            cursor: pointer;
+                        }
+                    }
+
+                }
+            }
+
+            .button-wrapper {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                .order-confirmation-btn {
+                    padding: 15px 20px;
+                    background-color: $orange;
+                    border-radius: 5px;
+                    text-decoration: none;
+                    color: #f1f1f1;
+
+                    font-size: 1rem;
+                    font-weight: $regular;
+                    font-family: $rubik;
+                }
+
+                .read-terms {
+                    color: $orange;
+                    text-decoration: none;
+
+                    font-size: 1rem;
+                    font-weight: $regular;
+                    font-family: $rubik;
+
+                    &:hover {
+                        color: $orangeDark;
+                    }
+
+                }
+
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 990px) {}

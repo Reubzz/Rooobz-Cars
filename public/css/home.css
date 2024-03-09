@@ -111,7 +111,6 @@ header nav .dropdown .dropdown-content {
   position: absolute;
   background-color: #f1f1f1;
   right: 0;
-  width: -moz-max-content;
   width: max-content;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
@@ -150,12 +149,14 @@ header nav #hamburger-menu .bar1, header nav #hamburger-menu .bar2, header nav #
   transition: 0.5s;
 }
 header nav #hamburger-menu.open .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-6px, 6px);
   transform: rotate(-45deg) translate(-6px, 6px);
 }
 header nav #hamburger-menu.open .bar2 {
   opacity: 0;
 }
 header nav #hamburger-menu.open .bar3 {
+  -webkit-transform: rotate(45deg) translate(-6px, 6px);
   transform: rotate(45deg) translate(-5px, -5px);
 }
 header nav #hamburger-menu.open .mobile-menu {
@@ -221,7 +222,6 @@ footer {
   width: 100%;
   justify-content: space-between;
   align-items: flex-start;
-  height: -moz-max-content;
   height: max-content;
   background-color: #DADADA;
   flex-direction: row;
@@ -874,7 +874,6 @@ span.placeholder {
   align-items: center;
   gap: 10px;
   font-size: 1rem;
-  width: -moz-max-content;
   width: max-content;
   background-color: #FF4C30;
   padding: 10px 10px;
@@ -1185,4 +1184,4 @@ span.placeholder {
   #choose-us-container .wcu-data .wcu-wrapper-right .deal .deal-details {
     text-align: center;
   }
-}
+}/*# sourceMappingURL=home.css.map */

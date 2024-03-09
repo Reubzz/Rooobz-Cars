@@ -16,20 +16,20 @@ const transactionsDB = require('../../models/schemas/transactions');
 // MiddleWares
 const { authCheck } = require("../../middleware/authentication/authentication")
 
-router.get('/', authCheck, async (req, res) => {    
+router.get('/', authCheck, async (req, res) => {
     const allBrands = await carsDB.find().distinct('brand').sort({ brand: 1 })
     // const vehiclesBrands = allCars.distinct('brand').sort({ brand: 1 })
-    
+
     res.render('home/home', {
         allBrands: allBrands,
         allTypes: null // ! Fix Later
     })
 })
 
-router.get('/about', authCheck, (req, res) => {    
+router.get('/about', authCheck, (req, res) => {
     res.render('about/about', {})
 })
-router.get('/vehicles', authCheck, async (req, res) => {   
+router.get('/vehicles', authCheck, async (req, res) => {
     let vehiclesArr = await carsDB.find();
     if (req.query.sort == 'price-high-to-low') {
         vehiclesArr.sort((a, b) => b.price - a.price);
@@ -55,7 +55,7 @@ router.get('/vehicles', authCheck, async (req, res) => {
     }
     if (req.query.type == 'brand') {
         vehiclesArr.sort(function (a, b) {
-            let carA = a.brand.toLowerCase() 
+            let carA = a.brand.toLowerCase()
             let carB = b.brand.toLowerCase();
             // if ()
         })
@@ -81,7 +81,7 @@ router.get('/vehicles/:brand/:name', authCheck, async (req, res) => {
 router.get('/booking', authCheck, async (req, res) => {
     const carId = req.query.id;
 
-    if(req.cookies.jwt) {
+    if (req.cookies.jwt) {
         const carData = await carsDB.findOne({ id: carId });
         const offersData = await offersDB.find();
         res.render('vehicles/booking', {
@@ -98,9 +98,9 @@ router.get('/booking', authCheck, async (req, res) => {
 router.get('/booking/pay', authCheck, async (req, res) => {
     const orderId = req.query.id;
 
-    if(!req.cookies.jwt) 
+    if (!req.cookies.jwt)
         return res.redirect("/login");
-    const orderData = await ordersDB.findOne({ _id:  orderId }).populate('car offers user transaction');
+    const orderData = await ordersDB.findOne({ _id: orderId }).populate('car offers user transaction');
 
     // TODO: Check if order is completed or failed and redirect back.
 
@@ -114,37 +114,48 @@ router.get('/booking/pay', authCheck, async (req, res) => {
         orderData: orderData
     })
 })
-router.get('/contact', authCheck, (req, res) => {    
+
+router.get('/booking/complete', async (req, res) => {
+    const orderId = req.query.orderid;
+
+    const orderData = await ordersDB.findOne({ _id: orderId }).populate('car user transaction offers');
+    console.log(orderData)
+    res.render('vehicles/complete', {
+        order: orderData,
+    })
+})
+
+router.get('/contact', authCheck, (req, res) => {
     res.render('contact/contact', {})
 })
-router.get('/terms', authCheck, (req, res) => {    
+router.get('/terms', authCheck, (req, res) => {
     res.render('terms/terms', {})
 })
-router.get('/how-we-work', authCheck, (req, res) => {    
+router.get('/how-we-work', authCheck, (req, res) => {
     res.render('how-we-work/how-we-work', {})
 })
 
-router.get('/account', authCheck, async (req, res) => { 
+router.get('/account', authCheck, async (req, res) => {
     if (req.cookies.jwt) {
         res.render('account/account', {
             user: await usersDB.findOne({ id: res.locals.id })
         })
-    }   
+    }
     else {
         res.redirect('/login')
     }
 })
 
-router.get('/login', (req, res) => {   
-    if(req.cookies.jwt) {
-        return res.redirect('back') 
-    } 
+router.get('/login', (req, res) => {
+    if (req.cookies.jwt) {
+        return res.redirect('back')
+    }
     res.render('authentication/login', {})
 })
-router.get('/register', (req, res) => {   
-    if(req.cookies.jwt) {
-        return res.redirect('back') 
-    }  
+router.get('/register', (req, res) => {
+    if (req.cookies.jwt) {
+        return res.redirect('back')
+    }
     res.render('authentication/register', {})
 })
 
