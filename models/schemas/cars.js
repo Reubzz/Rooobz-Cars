@@ -28,6 +28,7 @@ const model = db.MAIN_DB.model(
         imgUrls: [{ type: String }], // * Array of Images 
         createTime: { type: Date, default: Date.now() }, // ? Time this car dataset was created - [ defaults to current date if not provided ]
         updateTime: { type: Date, default: Date.now() }, // ? Time this car dataset was updated - [ defaults to current date if not provided ]
+        bookedDates: { type: Array, required: false } // * Dates when the car is already booked by users
     })
 )
 module.exports = model;

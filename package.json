@@ -1,6 +1,6 @@
 {
   "name": "rooobz-cars",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Final Year Project - A Car Rental Website",
   "main": "index.js",
   "scripts": {
@@ -18,6 +18,7 @@
     "express": "^4.18.2",
     "express-static": "^1.2.6",
     "jsonwebtoken": "^9.0.2",
+    "moment": "^2.30.1",
     "mongoose": "^8.0.0",
     "stripe": "^14.20.0",
     "uuid": "^9.0.1"

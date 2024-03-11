@@ -87,7 +87,7 @@ router.get('/booking', authCheck, async (req, res) => {
         res.render('vehicles/booking', {
             user: res.locals,
             car: carData,
-            offers: offersData
+            offers: offersData,
         })
     }
     else {
@@ -119,7 +119,6 @@ router.get('/booking/complete', async (req, res) => {
     const orderId = req.query.orderid;
 
     const orderData = await ordersDB.findOne({ _id: orderId }).populate('car user transaction offers');
-    console.log(orderData)
     res.render('vehicles/complete', {
         order: orderData,
     })

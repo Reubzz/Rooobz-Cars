@@ -40,9 +40,7 @@
 
 // Imports
 const mongoose = require('mongoose');
-
-// Stripe 
-const stripe = require('stripe')('sk_test_51OriCPSJAPyxY5J13cG7iIOc4vfrtsmWXQcMOnfnswH9QyshknBm0joFrLYRCycXHwSuKnQSo8IGNqu0sPHo5CGu00IOrjeNtG')
+const moment = require('moment');
 
 
 // Databases
@@ -91,8 +89,16 @@ const error = {
 
 exports.orderCreate = async (req, res, next) => {
     const formData = req.body;
-    console.log('pay api function - ', formData) // ! DeBuG
     
+    const pickupDate = moment(formData.pickupDate, 'DD-MM-YYYY')
+    const dropoffDate = moment(formData.dropoffDate, 'DD-MM-YYYY')
+    
+    const dateArray = [];
+    
+    while (pickupDate.isSameOrBefore(dropoffDate, 'day')) {
+        dateArray.push(pickupDate.format('DD-MM-YYYY'));
+        pickupDate.add(1, 'days');
+    }
     if (formData.saveInfo == 'on') {
         try {
             await UsersDB.updateOne(
@@ -138,11 +144,12 @@ exports.orderCreate = async (req, res, next) => {
             _id: orderId,
             car: formData.carId,
             user: formData.userId,
-            transaction: transactionId, // TODO: Add trasaction ID
+            transaction: transactionId,
             offers: JSON.parse(formData.offers),
             totalCost: formData.finalPrice,
             startDate: formData.pickupDate,
             endDate: formData.dropoffDate,
+            bookedDates: dateArray,
             location: formData.location,
             address: {
                 address: formData.address,
@@ -159,13 +166,6 @@ exports.orderCreate = async (req, res, next) => {
             orderDate: new Date(),
         })
         
-        // // TODO: Add Transaction System Stripe API / RazorPay 
-        // const paymentIntent = await stripe.paymentIntents.create({
-        //     amount: formData.finalPrice,
-        //     currency: 'inr'
-        // });
-
-        // res.json({client_secret: paymentIntent.client_secret});
         res.json({
             orderId: orderId,
             transactionId: transactionId

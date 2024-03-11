@@ -38,8 +38,9 @@ const model = db.MAIN_DB.model(
         
         totalCost: { type: String, required: true }, // ! Total Cost of the transaction
 
-        startDate: { type: Date, required: true }, // ! Start Date of Car Booking 
-        endDate: { type: Date, required: true }, // ! Ending Date of Car Booking 
+        startDate: { type: String, required: true }, // ! Start Date of Car Booking 
+        endDate: { type: String, required: true }, // ! Ending Date of Car Booking 
+        bookedDays: { type: Array, required: true }, // ! Array of Dates between start and end date
 
         location: { type: String , required: true}, // ! Pickup / Dropoff Location of Car Booking
         

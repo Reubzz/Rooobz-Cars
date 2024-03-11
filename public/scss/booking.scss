@@ -137,6 +137,17 @@
                                 }
                             }
                         }
+                        .datepicker {
+                            padding: 15px;
+                            font-size: 16px;
+                            border: 1px solid $smokedWhite;
+                            background-color: $white;
+                            border-radius: 5px;
+                            cursor: pointer;
+                        }
+                    }
+                    .note {
+                        font-size: 0.8rem;
                     }
                 }
             }

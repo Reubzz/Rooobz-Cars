@@ -118,3 +118,17 @@
 - Created `orders` and `transactions` schemas in database.
 - Completed Booking Page
 - Added a new Payment Page
+
+### 12/3/2024 - Update v0.2.1 
+- Updated Datepicker in Booking page to block past dates and already booked dates 
+- Changed Datepicker to use package `pikaday` and `moment.js` datepicker rather than browser's native datepicker 
+- Fixed Bug where dropoff date was earlier than pickup date
+- Added a new Array Field in Cars Schema that holds all the dates that the car is already booked 
+- Added a new Array Field in Order Schema that holds all the dates that the car is booked for
+- Added Payment Complete page that updates transaction to sucess and books the dates of the car.
+- Added new API routes 
+    - `/api/booking/order-create` - creates a order 
+    - `/api/booking/order-complete` - Completes an order
+    - `/api/booking/transaction-complete` - Completes a Transaction
+    - `/api/booking/book-car-dates` - Books Car's Dates
+- Added `moment.js` to help deal with dates 

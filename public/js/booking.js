@@ -1,5 +1,5 @@
-const stripe = Stripe('pk_test_51OriCPSJAPyxY5J1IDelmX4MbtJeX6fxbMQwe6IvPydOiWEZOVW6nCFWg9ayvTbN8NjjqpGe3R3AZNtMq1PERyEW00xa8FcsYe');
 
+// ! Offer Settings 
 function offerHover(element) {
     element.children[1].children[0].innerHTML = `Rs. ${element.dataset.offerPrice}`
 }
@@ -13,12 +13,10 @@ function offerAddRemove(event, element) {
     event.preventDefault();
     const offerPrice = Number.parseInt(element.parentNode.parentNode.dataset.offerPrice);
     const finalOffersPrice = document.getElementById('offers-final-price');
-    const checkBoxElem = document.getElementById(`offer-${element.dataset.offerId}`)
 
     // ! For Removing the Offer to Cart 
     if(element.classList[0] == 'offer-remove') {
         finalOffersPrice.innerHTML = Number.parseInt(finalOffersPrice.innerHTML) - offerPrice
-        checkBoxElem.checked = false;
         if ( allOffers.indexOf(`${element.dataset.offerId}`) != -1 ) allOffers.splice(allOffers.indexOf(`${element.dataset.offerId}`), 1)
         element.innerHTML = element.dataset.addText;
         element.classList.remove('offer-remove')
@@ -30,9 +28,7 @@ function offerAddRemove(event, element) {
     // ! For Adding the Offer to Cart 
     if(element.classList[0] == 'offer-add') {
         finalOffersPrice.innerHTML = Number.parseInt(finalOffersPrice.innerHTML) + offerPrice
-        checkBoxElem.checked = true;
         allOffers.push(`${element.dataset.offerId}`)
-        console.log(allOffers)
         element.innerHTML = element.dataset.removeText;
         element.classList.remove('offer-add')
         element.classList.add('offer-remove')
@@ -41,6 +37,7 @@ function offerAddRemove(event, element) {
     }    
 }
 
+// ! Update Final Price.
 function updateFinalPrice() {
     const bookNowBtn = document.getElementById('book-now-btn');
     const totalDisplay = document.getElementById('total-display');
@@ -48,7 +45,17 @@ function updateFinalPrice() {
     const carPrice = car.price;
     const gst = 18/100;
 
-    const finalAmount = Number.parseInt(finalOffersPrice) + carPrice + (carPrice * gst); 
+    // Get Number of Days
+    const startDate = moment(pickupDatePicker.value, "DD-MM-YYYY"); 
+    const dropDate = moment(dropoffDatePicker.value, "DD-MM-YYYY"); 
+
+    let diffDays = dropDate.diff(startDate, "days");
+    if (diffDays <= 0) {
+        diffDays = 1;
+    }
+
+    const finalCarPrice = carPrice * diffDays; 
+    const finalAmount = Number.parseInt(finalOffersPrice) + finalCarPrice + (finalCarPrice * gst); 
     bookNowBtn.innerHTML = `Pay Now • Rs. ${finalAmount}`
     totalDisplay.innerHTML = finalAmount
     return finalAmount;
@@ -113,6 +120,17 @@ payNowFrom.addEventListener('submit', async (e) => {
     formData.append('offers', JSON.stringify(allOffers))
 
     // Validate fields
+    // Check Date - If dropoff date is earlier  than pickup date, return an error message
+    const startDate = moment(pickupDatePicker.value, "DD-MM-YYYY"); 
+    const dropDate = moment(dropoffDatePicker.value, "DD-MM-YYYY"); 
+    const  diffDays = dropDate.diff(startDate, "days");
+    if (diffDays <= 0) {
+        showError({
+            error: 104,
+            message: 'Drop off date must be later than Pick up date. Both Also cannot be the same date'
+        })
+        return;
+    }
     try {
         const res = await fetch('/api/booking/order-create', {
             method: 'POST',
@@ -131,66 +149,6 @@ payNowFrom.addEventListener('submit', async (e) => {
             })
             return;
         }
-
-        // // ! If Successful 
-        // if(res.status == 200) {
-        //     // TODO: Add success response function here
-        //     payNowFrom.style.display = 'none'
-        //     document.getElementById('payment-form-container').style.display = "flex";
-
-        //     const options = {
-        //         clientSecret: `${data.client_secret}`,
-        //         // Fully customizable with appearance API.
-        //         appearance: {
-        //             theme: 'stripe',
-        //             variables: {
-        //                 colorPrimary: '#FF4C30',
-        //                 colorBackground: '#ffffff',
-        //                 colorText: '#FF4C30',
-        //                 colorDanger: '#df1b41',
-        //                 fontFamily: 'Rubik, sans-serif',
-        //                 spacingUnit: '5px',
-        //                 borderRadius: '10px',
-        //                 fontSizeSm: '1.4rem',
-        //                 fontSizeBase: '1rem',
-        //                 gridColumnSpacing: '20px',
-        //                 gridRowSpacing: '20px',
-        //             },
-        //         },
-        //     };
-              
-        //     // Set up Stripe.js and Elements to use in checkout form, passing the client secret obtained in a previous step
-        //     const elements = stripe.elements(options);
-            
-        //     // Create and mount the Payment Element
-        //     const paymentElement = elements.create('payment');
-        //     paymentElement.mount('#payment-element');
-            
-        //     paymentForm.addEventListener('submit', async (event) => {
-        //         event.preventDefault();
-            
-        //         const {error} = await stripe.confirmPayment({
-        //                 //`Elements` instance that was used to create the Payment Element
-        //                 elements,
-        //                 confirmParams: {
-        //                 return_url: 'http://localhost/order/complete',
-        //             },
-        //         });
-            
-        //         if (error) {
-        //             // This point will only be reached if there is an immediate error when
-        //             // confirming the payment. Show error to your customer (for example, payment
-        //             // details incomplete)
-        //             const messageContainer = document.querySelector('#error-message');
-        //             messageContainer.textContent = error.message;
-        //         } else {
-        //             // Your customer will be redirected to your `return_url`. For some payment
-        //             // methods like iDEAL, your customer will be redirected to an intermediate
-        //             // site first to authorize the payment, then redirected to the `return_url`.
-        //         }
-        //     });
-        //     return;
-        // }
 
         if(res.status == 200) {
             window.location.href = `/booking/pay?id=${data.orderId}`;

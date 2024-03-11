@@ -71,8 +71,11 @@
                 display: flex;
                 flex-direction: column;
                 gap: 20px;
+                justify-content: center;
+                align-items: center;
 
                 .order-confirmation-btn {
+                    width: 100%;
                     padding: 15px 20px;
                     background-color: $orange;
                     border-radius: 5px;
@@ -85,6 +88,7 @@
                 }
 
                 .read-terms {
+                    width: max-content;
                     color: $orange;
                     text-decoration: none;
 
