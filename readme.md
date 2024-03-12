@@ -11,7 +11,7 @@
     - HTML
     - CSS
     - JS
-    - AJAX
+    - JQuery
 
 - Database: 
     - MongoDB
