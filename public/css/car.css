@@ -112,7 +112,6 @@ header nav .dropdown .dropdown-content {
   position: absolute;
   background-color: #f1f1f1;
   right: 0;
-  width: -moz-max-content;
   width: max-content;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
@@ -151,12 +150,14 @@ header nav #hamburger-menu .bar1, header nav #hamburger-menu .bar2, header nav #
   transition: 0.5s;
 }
 header nav #hamburger-menu.open .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-6px, 6px);
   transform: rotate(-45deg) translate(-6px, 6px);
 }
 header nav #hamburger-menu.open .bar2 {
   opacity: 0;
 }
 header nav #hamburger-menu.open .bar3 {
+  -webkit-transform: rotate(45deg) translate(-6px, 6px);
   transform: rotate(45deg) translate(-5px, -5px);
 }
 header nav #hamburger-menu.open .mobile-menu {
@@ -222,7 +223,6 @@ footer {
   width: 100%;
   justify-content: space-between;
   align-items: flex-start;
-  height: -moz-max-content;
   height: max-content;
   background-color: #DADADA;
   flex-direction: row;
@@ -578,9 +578,7 @@ body {
   font-size: 18px;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
   background-color: #707070;
 }
 .container .top-wrapper .images-wrapper .next {
@@ -716,25 +714,13 @@ body {
 .main-container .content-wrapper {
   padding: 10px;
 }
-.main-container .content-wrapper #included-content, .main-container .content-wrapper #extras-content, .main-container .content-wrapper #ratings-content {
+.main-container .content-wrapper #included-content,
+.main-container .content-wrapper #extras-content,
+.main-container .content-wrapper #ratings-content {
   display: none;
 }
 .main-container .content-wrapper .active {
   display: block;
-}
-.main-container .content-wrapper #add-review-btn {
-  padding: 10px 30px;
-  font-size: 1rem;
-  font-family: "Rubik", sans-serif;
-  color: #f1f1f1;
-  background-color: #FF4C30;
-  border-radius: 5px;
-  border: 2px solid #FF4C30;
-  cursor: pointer;
-}
-.main-container .content-wrapper #add-review-btn:hover {
-  background-color: #e64229;
-  box-shadow: 0px 0px 10px 1px #FF4C30;
 }
 .main-container .content-wrapper ul {
   text-decoration: none;
@@ -752,13 +738,98 @@ body {
   font-family: "Rubik", sans-serif;
   color: #0c0c0c;
 }
-.main-container .content-wrapper #ratings-content .rating {
-  display: block;
-  block-size: 3rem;
-  inline-size: 15rem;
-  position: relative;
-  touch-action: manipulation;
+.main-container .content-wrapper #ratings-content #add-review-btn {
+  padding: 10px 30px;
+  font-size: 1rem;
+  font-family: "Rubik", sans-serif;
+  color: #f1f1f1;
+  background-color: #FF4C30;
+  border-radius: 5px;
+  border: 2px solid #FF4C30;
+  cursor: pointer;
+}
+.main-container .content-wrapper #ratings-content #add-review-btn:hover {
+  background-color: #e64229;
+  box-shadow: 0px 0px 10px 1px #FF4C30;
+}
+.main-container .content-wrapper #ratings-content hr {
+  width: 70%;
+  background-color: #FF4C30;
+  height: 3px;
+  align-self: center;
+  border: none;
+  border-radius: 5px;
+}
+.main-container .content-wrapper #ratings-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px 0px;
+}
+.main-container .content-wrapper #ratings-content form .rating-wrapper {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.main-container .content-wrapper #ratings-content form .rating-wrapper .rating-star-number {
+  display: none;
+}
+.main-container .content-wrapper #ratings-content form .rating-wrapper .rating-label {
+  font-size: 1.2rem;
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
+}
+.main-container .content-wrapper #ratings-content form .rating-wrapper .rating-stars {
+  color: #d5d5d5;
+}
+.main-container .content-wrapper #ratings-content form .rating-wrapper .rating-stars i {
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.main-container .content-wrapper #ratings-content form .review-submit button {
+  padding: 15px 25px;
+  background-color: #FF4C30;
+  color: #f1f1f1;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  cursor: pointer;
+}
+.main-container .content-wrapper #ratings-content form .review-submit button:hover {
+  background-color: #e64229;
+  box-shadow: 0px 0px 10px 2px #FF4C30;
+}
+.main-container .content-wrapper #ratings-content form .message-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.main-container .content-wrapper #ratings-content form .message-box label {
+  font-size: 1.2rem;
+  font-weight: 500;
+  font-family: "Rubik", sans-serif;
+  color: #0c0c0c;
+}
+.main-container .content-wrapper #ratings-content form .message-box #review-message {
+  width: 100%;
+  background-color: white;
+  padding: 15px 10px;
+  border: 2px solid #d5d5d5;
+  font-family: "Rubik", sans-serif;
+  font-size: 1rem;
+  color: #0c0c0c;
+  border-radius: 5px;
+  cursor: pointer;
   -webkit-appearance: none;
+  appearance: none;
+}
+.main-container .content-wrapper #ratings-content form .message-box #review-message#message {
+  resize: horizontal;
+}
+.main-container .content-wrapper #ratings-content form .message-box #review-message:focus {
+  outline: 2px solid #FF4C30;
 }
 .main-container .content-wrapper #ratings-content .review {
   display: flex;
@@ -809,4 +880,4 @@ body {
   .top-wrapper {
     flex-direction: column;
   }
-}
+}/*# sourceMappingURL=car.css.map */

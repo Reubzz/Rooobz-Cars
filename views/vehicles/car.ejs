@@ -63,24 +63,27 @@
     <section class="container">
         <div class="top-wrapper">
             <div class="images-wrapper">
-                <% for( let index = 0; index < car.imgUrls.length; index++ ) { %>
+                <% for( let index=0; index < car.imgUrls.length; index++ ) { %>
                     <div class="image-slideshow fade">
                         <img src="<%= car.imgUrls[index] %>" alt="<%= car.name %> Image">
                     </div>
-                    
-                <% } %>
-                <!-- Next and previous buttons -->
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                <div class="dots-container">
-                <% for( let index = 0; index < car.imgUrls.length; index++ ) { %>
-                    <!-- The dots/circles -->
-                    <span class="dot"  onclick="currentSlide('<%= index+1 %>')"></span>
-                <% } %>
-                </div>
+
+                    <% } %>
+                        <!-- Next and previous buttons -->
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                        <div class="dots-container">
+                            <% for( let index=0; index < car.imgUrls.length; index++ ) { %>
+                                <!-- The dots/circles -->
+                                <span class="dot" onclick="currentSlide('<%= index+1 %>')"></span>
+                                <% } %>
+                        </div>
             </div>
             <div class="main-data-wrapper">
-                <h1 class="car-name"><%= car.brand %> <%= car.name %></h1>
+                <h1 class="car-name">
+                    <%= car.brand %>
+                        <%= car.name %>
+                </h1>
                 <div class="car-data-wrapper">
                     <table class="car-features-table">
                         <tr>
@@ -88,34 +91,42 @@
                                 <h3>Brand</h3>
                             </td>
                             <td>
-                                <h3><%= car.brand %></h3>
+                                <h3>
+                                    <%= car.brand %>
+                                </h3>
                             </td>
                         </tr>
-                        
+
                         <tr>
                             <td>
                                 <h3>Transmission</h3>
                             </td>
                             <td>
-                                <h3><%= car.transmission %></h3>
+                                <h3>
+                                    <%= car.transmission %>
+                                </h3>
                             </td>
                         </tr>
-                        
+
                         <tr>
                             <td>
                                 <h3>Fuel Type</h3>
                             </td>
                             <td>
-                                <h3><%= car.fuelType %></h3>
+                                <h3>
+                                    <%= car.fuelType %>
+                                </h3>
                             </td>
                         </tr>
-                        
+
                         <tr>
                             <td>
                                 <h3>Seats</h3>
                             </td>
                             <td>
-                                <h3><%= car.seats %></h3>
+                                <h3>
+                                    <%= car.seats %>
+                                </h3>
                             </td>
                         </tr>
                         <tr>
@@ -123,7 +134,9 @@
                                 <h3>Colour</h3>
                             </td>
                             <td>
-                                <h3><%= car.color %></h3>
+                                <h3>
+                                    <%= car.color %>
+                                </h3>
                             </td>
                         </tr>
                         <tr>
@@ -131,23 +144,35 @@
                                 <h3>Condition</h3>
                             </td>
                             <td>
-                                <h3><%= car.condition %></h3>
+                                <h3>
+                                    <%= car.condition %>
+                                </h3>
                             </td>
                         </tr>
                         <tr>
-                            <td><h3 class="highlight-title">Rental Price</h3></td>
-                            <td><h3 class="highlight-orange"><%= car.price %></h3></td>
+                            <td>
+                                <h3 class="highlight-title">Rental Price</h3>
+                            </td>
+                            <td>
+                                <h3 class="highlight-orange">
+                                    <%= car.price %>
+                                </h3>
+                            </td>
                         </tr>
                         <tr>
-                            <td><h3 class="highlight-title">GST</h3></td>
-                            <td><h3 class="highlight-title">18%</h3></td>
+                            <td>
+                                <h3 class="highlight-title">GST</h3>
+                            </td>
+                            <td>
+                                <h3 class="highlight-title">18%</h3>
+                            </td>
                         </tr>
                     </table>
                 </div>
                 <button id="book-now-btn" onclick="bookNow('<%=car.id%>')">BOOK
-                    Rs. <%= car.price + car.price*18/100 %> • Book Now 
+                    Rs. <%= car.price + car.price*18/100 %> • Book Now
                 </button>
-                
+
 
             </div>
         </div>
@@ -178,67 +203,60 @@
                 </div>
 
                 <div id="ratings-content" class="content">
-                    <% if (user.id != undefined) { %>
+                    <% if (user.id !=undefined) { %>
                         <button id="add-review-btn">Add a Review <i class="fas fa-pen"></i></button>
                         <br>
                         <br>
-                        <form>
-                            <label class="rating-label"></strong>
-                                <input
-                                  class="rating rating--nojs"
-                                  max="5"
-                                  step="1"
-                                  type="range"
-                                  value="3">
-                              </label>
+                        <form id="add-review">
+                            <div class="rating-wrapper">
+                                <label class="rating-label">Add Rating: </label>
+                                <input id="rating-star-number" class="rating-star-number" type="number" value="0">
+                                <div class="rating-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="message-box">
+                                <label for="review-message">Type your message here</label>
+                                <textarea name="review-message" id="review-message"
+                                    placeholder="Really amazing service!!! " rows="3"></textarea>
+                            </div>
+
+                            <div class="review-submit">
+                                <button type="submit">Add Review <i class="fas fa-check-circle"></i> </button>
+                            </div>
                         </form>
-                    <% } %>
-                    <div class="review">
-                        <div class="review-top">
-                            <div class="review-user-image">
-                                <img src="/imgs/default-user-img.png" alt="User Profile Image">
-                            </div>
-                            <div class="user-data">
-                                <h3>John Doe</h3>
-                                <h4>Rating: 7/10</h4>
-                            </div>
-                        </div>
-                        <div class="review-message">
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse, modi repellendus numquam architecto deserunt placeat consequatur repellat delectus eius hic corporis cumque aut, magnam facilis, maxime sit blanditiis quis. Nihil earum labore alias suscipit! Deleniti debitis perferendis rerum sequi iusto deserunt quidem hic, enim nemo.
-                        </div>
-                    </div>
-                    <br>
-                    <br>
-                    <div class="review">
-                        <div class="review-top">
-                            <div class="review-user-image">
-                                <img src="/imgs/default-user-img.png" alt="User Profile Image">
-                            </div>
-                            <div class="user-data">
-                                <h3>John Doe</h3>
-                                <h4>Rating: 7/10</h4>
-                            </div>
-                        </div>
-                        <div class="review-message">
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse, modi repellendus numquam architecto deserunt placeat consequatur repellat delectus eius hic corporis cumque aut, magnam facilis, maxime sit blanditiis quis. Nihil earum labore alias suscipit! Deleniti debitis perferendis rerum sequi iusto deserunt quidem hic, enim nemo.
-                        </div>
-                    </div>
-                    <br>
-                    <br>
-                    <div class="review">
-                        <div class="review-top">
-                            <div class="review-user-image">
-                                <img src="/imgs/default-user-img.png" alt="User Profile Image">
-                            </div>
-                            <div class="user-data">
-                                <h3>John Doe</h3>
-                                <h4>Rating: 7/10</h4>
-                            </div>
-                        </div>
-                        <div class="review-message">
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse, modi repellendus numquam architecto deserunt placeat consequatur repellat delectus eius hic corporis cumque aut, magnam facilis, maxime sit blanditiis quis. Nihil earum labore alias suscipit! Deleniti debitis perferendis rerum sequi iusto deserunt quidem hic, enim nemo.
-                        </div>
-                    </div>
+
+                        <% } %>
+
+                            <hr>
+                            <br>
+                            <br>
+                            <% for( let index=0; index < 3; index++ ) { %>
+                                <div class="review">
+                                    <div class="review-top">
+                                        <div class="review-user-image">
+                                            <img src="/imgs/default-user-img.png" alt="User Profile Image">
+                                        </div>
+                                        <div class="user-data">
+                                            <h3>John Doe</h3>
+                                            <h4>Rating: 7/10</h4>
+                                        </div>
+                                    </div>
+                                    <div class="review-message">
+                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse, modi repellendus
+                                        numquam architecto deserunt placeat consequatur repellat delectus eius hic
+                                        corporis cumque aut, magnam facilis, maxime sit blanditiis quis. Nihil earum
+                                        labore alias suscipit! Deleniti debitis perferendis rerum sequi iusto deserunt
+                                        quidem hic, enim nemo.
+                                    </div>
+                                </div>
+                                <br>
+                                <br>
+                                <% } %>
                 </div>
             </div>
         </div>
@@ -252,7 +270,7 @@
 
     <!-- ! Javascript -->
     <script>
-        const user = JSON.parse('<%- JSON.stringify(user) %> ') 
+        const user = JSON.parse('<%- JSON.stringify(user) %> ')
         const car = JSON.parse('<%- JSON.stringify(car) %>')
     </script>
     <script src="/js/car.js"></script>

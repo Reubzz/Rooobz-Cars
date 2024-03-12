@@ -30,12 +30,12 @@ function showSlides(n) {
 }
 
 function openTab(titleElement, tabname) {
-    const content = document.getElementById(tabname+'-content')
+    const content = document.getElementById(tabname + '-content')
     const contentWrapper = document.getElementsByClassName('content')
     const tabsWrapper = document.getElementsByClassName('tab-title')
     // Hide all tabs and set clicked one to display block
-    for (let i=0; i<contentWrapper.length; i++){
-        contentWrapper[i].style.display='none'
+    for (let i = 0; i < contentWrapper.length; i++) {
+        contentWrapper[i].style.display = 'none'
         tabsWrapper[i].classList.remove('active')
     }
     titleElement.classList.add('active')
@@ -62,9 +62,42 @@ function closeLoginModal() {
     const loginModal = document.getElementById('login-register-modal');
     loginModal.style.display = 'none';
 }
-window.onclick = function(event) {
+window.onclick = function (event) {
     const loginModal = document.getElementById('login-register-modal');
     if (event.target == loginModal) {
         closeLoginModal()
     }
 }
+
+let stars = document.getElementsByClassName("fa-star");
+let starsNumber = document.getElementById('rating-star-number');
+
+var currentRating = 0;
+
+stars = Array.prototype.slice.call(stars);
+
+stars.forEach((star, index) => {
+    star.addEventListener("click", (e) => {
+        for (let i = 0; i < stars.length; i++) {
+            stars[i].style.color = "";
+        }
+        colorStar(index);
+        currentRating = index + 1
+        starsNumber.value = currentRating
+    },
+        false
+    );
+});
+
+const colorStar = (n) => {
+    if (n < 0) return;
+    stars[n].style.color = "#fc0";
+    colorStar(n - 1);
+};
+
+const reviewForm = document.getElementById('add-review')
+reviewForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    // TODO: Add API 
+})
