@@ -2,6 +2,7 @@
 // Databases
 const ordersDB = require('../../schemas/orders')
 const carsDB = require('../../schemas/cars')
+const usersDB = require('../../schemas/users')
 
 // imports 
 const moment = require('moment');
@@ -31,6 +32,7 @@ const error = {
 exports.carBookDates = async (req, res, next) => {
     const orderId = req.query.orderid;
     const order = await ordersDB.findOne({ _id: orderId }).populate('car')
+    const user = await usersDB.findOne({ _id: res.locals._id })
     const startDate = moment(order.startDate, 'DD-MM-YYYY')
     const endDate = moment(order.endDate, 'DD-MM-YYYY')
     
@@ -47,10 +49,20 @@ exports.carBookDates = async (req, res, next) => {
                 _id: order.car._id,
             },
             {
-                bookedDates: dateArray,
+                orders: order._id,
             }
         )
         order.bookedDates = dateArray
+
+        
+        await usersDB.updateOne(
+            {
+                _id: res.locals._id
+            },
+            {
+                orders: [`${orderId}`]
+            }
+        )
         res.status(200).json({
             error: error[100],
             status: status[200]

@@ -33,13 +33,13 @@ const model = db.MAIN_DB.model(
         },
         profileImg: { type: String, required: false, default: "https://reubz.s3.ap-south-1.amazonaws.com/default-user-img.png"}, // ? Profile Image of the user. Defualts to basic image if not provided.
 
-        transanctions: [
+        orders: [
             { 
                 type: mongoose.Schema.Types.ObjectId, 
-                ref: 'transaction', 
+                ref: 'order', 
                 required: false 
             }
-        ], // * Array of Transactions ID from "transactions collection"
+        ], // * Array of order IDs from "orders collection"
         reviews: [
             { 
                 type: mongoose.Schema.Types.ObjectId, 

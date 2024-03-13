@@ -141,3 +141,4 @@
     - if already created, returns the Base64 string of the pdf file from mongodb.
     - Added a `force=1` parameter which will create a new Invoice even if one exists.
 - Added Cancellation Policy page.
+- Order Bookings now reflect on usersDB

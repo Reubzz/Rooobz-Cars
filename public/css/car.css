@@ -112,6 +112,7 @@ header nav .dropdown .dropdown-content {
   position: absolute;
   background-color: #f1f1f1;
   right: 0;
+  width: -moz-max-content;
   width: max-content;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
@@ -150,14 +151,12 @@ header nav #hamburger-menu .bar1, header nav #hamburger-menu .bar2, header nav #
   transition: 0.5s;
 }
 header nav #hamburger-menu.open .bar1 {
-  -webkit-transform: rotate(-45deg) translate(-6px, 6px);
   transform: rotate(-45deg) translate(-6px, 6px);
 }
 header nav #hamburger-menu.open .bar2 {
   opacity: 0;
 }
 header nav #hamburger-menu.open .bar3 {
-  -webkit-transform: rotate(45deg) translate(-6px, 6px);
   transform: rotate(45deg) translate(-5px, -5px);
 }
 header nav #hamburger-menu.open .mobile-menu {
@@ -223,6 +222,7 @@ footer {
   width: 100%;
   justify-content: space-between;
   align-items: flex-start;
+  height: -moz-max-content;
   height: max-content;
   background-color: #DADADA;
   flex-direction: row;
@@ -578,7 +578,9 @@ body {
   font-size: 18px;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   background-color: #707070;
 }
 .container .top-wrapper .images-wrapper .next {
@@ -823,7 +825,8 @@ body {
   border-radius: 5px;
   cursor: pointer;
   -webkit-appearance: none;
-  appearance: none;
+  -moz-appearance: none;
+       appearance: none;
 }
 .main-container .content-wrapper #ratings-content form .message-box #review-message#message {
   resize: horizontal;
@@ -880,4 +883,4 @@ body {
   .top-wrapper {
     flex-direction: column;
   }
-}/*# sourceMappingURL=car.css.map */
+}
