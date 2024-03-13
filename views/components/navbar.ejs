@@ -28,11 +28,12 @@
                                 </div>
                             </button>
                             <div class="dropdown-content">
-                                <a href="/account"><i class="fad fa-user"></i> Account</a>
+                                <a href="/account/profile"><i class="fad fa-user"></i> Account</a>
+                                <a href="/account/bookings"><i class="fad fa-bags-shopping"></i> Bookings</a>
                                 <% if (user.role == "admin") { %>
                                     <a href="/admin"><i class="fad fa-sliders"></i> Dashboard</a>
                                 <% } %>
-                                <a href="/api/auth/logout" class="logout-button"><i class="fa-duotone fa-right-from-bracket"></i> Logout</a>
+                                <a href="/api/auth/logout" class="logout-button"><i class="fad fa-right-from-bracket"></i> Logout</a>
                             </div>
                         </div>
                     </li>
@@ -69,7 +70,8 @@
                                     </div>
                                 </button>
                                 <div class="dropdown-content">
-                                    <a href="/account"><i class="fad fa-user"></i> Account</a>
+                                    <a href="/account/profile"><i class="fad fa-user"></i> Account</a>
+                                    <a href="/account/bookings"><i class="fad fa-bags-shopping"></i> Bookings</a>
                                     <% if (user.role == "admin") { %>
                                         <a href="/admin"><i class="fad fa-sliders"></i> Dashboard</a>
                                     <% } %>
