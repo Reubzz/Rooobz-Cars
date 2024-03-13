@@ -77,22 +77,6 @@
                     </div>
                     <div class="fields-container">
                         <div class="field-wrapper">
-                            <!-- <div class="field">
-                                <label class="title-wrapper" for="pickupDate">
-                                    <i class="fad fa-calendar-clock"></i>
-                                    <h3> Pickup Date and Time <span>*</span></h3>
-                                </label>
-                                <div class="input-wrapper">
-                                    <input 
-                                        type="datetime-local" 
-                                        min="<%= new Date(Date.now() + 0 * 24 * 60 * 60 * 1000).toISOString().slice(0, -8) %>" 
-                                        value="<%= new Date(Date.now() + 0 * 24 * 60 * 60 * 1000).toISOString().slice(0, -8) %>" 
-                                        name="pickupDate" 
-                                        id="pickupDate"
-                                        required
-                                    >
-                                </div>
-                            </div>                 -->
                             <div class="field">
                                 <label for="pickupDate" class="title-wrapper">
                                     <i class="fad fa-calendar-clock"></i>
@@ -109,23 +93,7 @@
                             </div>   
                             <div class="note">
                                 <p><strong>Note:</strong> Time for Pickup and Dropoff is fixed at 10 AM. Exceeding this time for dropoff will count as an additional Day.</p>
-                            </div>             
-                            <!-- <div class="field">
-                                <label class="title-wrapper" for="dropoffDate">
-                                    <i class="fad fa-calendar-clock"></i>
-                                    <h3> Dropoff Date and Time <span>*</span></h3>
-                                </label>
-                                <div class="input-wrapper">
-                                    <input 
-                                        type="datetime-local" 
-                                        min="<%= new Date(Date.now() + 3 * 24 * 60 * 60 * 1000).toISOString().slice(0, -8) %>" 
-                                        value="<%= new Date(Date.now() + 3 * 24 * 60 * 60 * 1000).toISOString().slice(0, -8) %>" 
-                                        name="dropoffDate" 
-                                        id="dropoffDate"
-                                        required
-                                    >
-                                </div>
-                            </div>                 -->
+                            </div>
                         </div>
                         <div class="field-wrapper">
                             <div class="field">
@@ -252,22 +220,6 @@
                 </button>
             </div>
         </form>
-
-        <div id="payment-form-container">
-            <div class="title-wrapper">
-                <h1><%= car.brand %> <%= car.name %></h1>
-            </div>
-            <form id="payment-form">
-                <h2>Enter Payment Details</h2>
-                <div id="payment-element">
-                    <!-- Elements will create form elements here -->
-                </div>
-                <button id="submit">Pay</button>
-                <div id="error-message">
-                    <!-- Display error message to your customers here -->
-                </div>
-            </form>
-        </div>
     </section>
 
     
@@ -280,9 +232,6 @@
     <!-- ! Javascript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.8.0/pikaday.min.js"></script>
-    <script>
-        
-    </script>
     <script>
         const user = JSON.parse('<%- JSON.stringify(user) %> ') 
         const car = JSON.parse('<%- JSON.stringify(car) %>')
@@ -306,7 +255,7 @@
                     
                     // Disable booked dates
                     const formattedDate = moment(date).format('DD-MM-YYYY');
-                    return car.bookedDates.includes(formattedDate);
+                    return bookedDates.includes(formattedDate);
                 },
                 onSelect: function() {updateFinalPrice()},
             });
@@ -324,7 +273,7 @@
                     
                     // Disable booked dates
                     const formattedDate = moment(date).format('DD-MM-YYYY');
-                    return car.bookedDates.includes(formattedDate);
+                    return bookedDates.includes(formattedDate);
                 },
                 onSelect: function() {updateFinalPrice()},
             });

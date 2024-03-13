@@ -146,3 +146,4 @@
 - Added `/cancellation-policy` url
 - Changed `/account` url to `/account/profile`
 - Added View All Bookings page - `/account/bookings` 
+- Additional Minor Changes / Fixes / Quality of Life Changes
