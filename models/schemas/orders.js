@@ -40,7 +40,7 @@ const model = db.MAIN_DB.model(
 
         startDate: { type: String, required: true }, // ! Start Date of Car Booking 
         endDate: { type: String, required: true }, // ! Ending Date of Car Booking 
-        bookedDays: { type: Array, required: true }, // ! Array of Dates between start and end date
+        bookedDates: { type: Array, required: true }, // ! Array of Dates between start and end date
 
         location: { type: String , required: true}, // ! Pickup / Dropoff Location of Car Booking
         
@@ -59,6 +59,8 @@ const model = db.MAIN_DB.model(
         status: { type: String, required: true }, // ! Ongoing  / Completed / Cancelled
         
         orderDate: { type: Date, required: true }, // ! Date of Transaction Done
+
+        invoice: { type: String, required: false } // * Invoice of the transaction - Only created after Payment is Completed.
     })
 )
 module.exports = model;

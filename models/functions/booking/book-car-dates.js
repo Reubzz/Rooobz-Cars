@@ -50,6 +50,7 @@ exports.carBookDates = async (req, res, next) => {
                 bookedDates: dateArray,
             }
         )
+        order.bookedDates = dateArray
         res.status(200).json({
             error: error[100],
             status: status[200]
