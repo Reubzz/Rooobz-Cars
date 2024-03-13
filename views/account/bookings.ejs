@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Meta Tags -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Language" content="en">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="language" content="en">
+
+        <!-- Website Title -->
+        <title><%= user.username %> Bookings - Rooobz Cars</title>
+
+        <!-- Icon -->
+        <link rel="shortcut icon" href="https://project.reubz.io/imgs/logo.png" type="image/x-icon">
+
+        <!-- Primary Tags -->
+        <meta name="title" content="<%= user.username %> Bookings - Rooobz Cars">
+        <meta name="description" content="<%= user.username %> all Bookings Page">
+            
+
+        <!-- Open Graph / Facebook / Insta -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://project.reubz.io/account/bookings">
+        <meta property="og:title" content="<%= user.username %> Bookings - Rooobz Cars">
+        <meta property="og:description" content="<%= user.username %> all Bookings page">
+        <meta property="og:image" itemprop="image" content="https://project.reubz.io/imgs/logo-with-text.png">
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="https://project.reubz.io/account/bookings">
+        <meta property="twitter:title" content="<%= user.username %> Bookings - Rooobz Cars">
+        <meta property="twitter:description" content="<%= user.username %> all Bookings page">
+        <meta property="twitter:image" content="https://project.reubz.io/imgs/logo-with-text.png">
+
+        <!-- For Discord Embeds -->
+        <meta content="#FF4C30" data-react-helmet="true" name="theme-color" />
+        
+        <link rel="stylesheet" href="/css/bookings.css">
+
+        <!-- Jquery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        
+        <!-- Fontawesome Link -->
+        <!-- <script src="https://kit.fontawesome.com/4d3f484b6f.js" crossorigin="anonymous"></script> -->
+        <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
+        <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-thin.css">
+        <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-solid.css">
+        <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css">
+        <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css">
+    </head>
+<body>
+
+    <div data-include="navbar"></div>
+
+    <div data-include="title-banner?title=Bookings&description=View%20Bookings%20/%20Cancel%20Bookings"></div>
+
+    <section class="data-wrapper">
+        <section id="tabs-container">
+            <div class="tabs-wrapper">
+                <div onclick="changeTab(this, 'completed')" class="tab-title selected">
+                    Booked
+                </div>
+                <div onclick="changeTab(this, 'pending')" class="tab-title">
+                    Pending
+                </div>
+                <div onclick="changeTab(this, 'cancelled')" class="tab-title">
+                    Cancelled
+                </div>
+            </div>
+        </section>
+        <section id="bookings-data">
+            <!-- <div id="bookings-booked" class="bookings-wrapper">
+                <% orders.forEach((order) => { %>
+                    <% if(order.transaction.status == 'completed') {%>
+                        <div class="booking">
+                            <div class="left-wrapper">
+                                <div class="icon">
+                                    <img src="<%= order.car.imgUrls[0] %>" alt="Car Image Icon">
+                                </div>
+                                <div class="booking-details">
+                                    <div class="car-details">
+                                        <%= order.car.brand %> <%= order.car.name %></h2>
+                                    </div>
+                                    <div class="booking-period">
+                                        <span><%= order.startDate %></span> - <span><%= order.endDate %></span></h2>
+                                    </div>
+                                    <div class="offers">
+                                        <% order.offers.forEach(offer => { %>
+                                            <span><%= offer.name %></span>
+                                        <% }) %>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="right-wrapper">
+                                <button onclick="getPDF('<%= order._id %>')" id="show-invoice-btn">Show Invoice</button>
+                                <button onclick="cancelBooking()">Cancel Booking</button>
+                            </div>
+                        </div>
+                    <% } %>
+                <% }) %>
+            </div> -->
+            <!-- <div id="bookings-pending" class="hidden bookings-wrapper">
+                <% orders.forEach((order) => { %>
+                    <% if(order.transaction.status == 'Pending') {%>
+                        <div class="booking">
+                            <div class="left-wrapper">
+                                <div class="icon">
+                                    <img src="<%= order.car.imgUrls[0] %>" alt="Car Image Icon">
+                                </div>
+                                <div class="booking-details">
+                                    <div class="car-details">
+                                        <%= order.car.brand %> <%= order.car.name %></h2>
+                                    </div>
+                                    <div class="booking-period">
+                                        <span><%= order.startDate %></span> - <span><%= order.endDate %></span></h2>
+                                    </div>
+                                    <div class="offers">
+                                        <% order.offers.forEach(offer => { %>
+                                            <span><%= offer.name %></span>
+                                        <% }) %>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="right-wrapper">
+                                <button onclick="payNow('<%= order._id %>')" id="pay-now-btn">Pay Now</button>
+                                <button onclick="cancelBooking()">Cancel Booking</button>
+                            </div>
+                        </div>
+                    <% } %>
+                <% }) %>
+            </div> -->
+            <div id="bookings" class="bookings-wrapper">
+                <% orders.forEach((order) => { %>
+                    <div class="booking booking-<%=order.transaction.status%>">
+                        <div class="left-wrapper">
+                            <div class="icon">
+                                <img src="<%= order.car.imgUrls[0] %>" onerror="this.src = '<%=config.logo.secondary.path%>'" alt="Car Image Icon">
+                            </div>
+                            <div class="booking-details">
+                                <div class="car-details">
+                                    <%= order.car.brand %> <%= order.car.name %></h2>
+                                </div>
+                                <div class="booking-period">
+                                    <span><%= order.startDate %></span> - <span><%= order.endDate %></span></h2>
+                                </div>
+                                <div class="offers">
+                                    <% order.offers.forEach(offer => { %>
+                                        <span><%= offer.name %></span>
+                                    <% }) %>
+                                </div>
+                            </div>
+                        </div>
+                        <% if(order.transaction.status == 'pending') {%>
+                            <div class="right-wrapper">
+                                <button onclick="payNow('<%= order._id %>')" id="pay-now-btn">Pay Now</button>
+                                <button onclick="cancelBooking()">Cancel Booking</button>
+                            </div>
+                        <% } else if (order.transaction.status == 'completed') { %>
+                            <div class="right-wrapper">
+                                <button onclick="getPDF('<%= order._id %>')" id="show-invoice-btn">Show Invoice</button>
+                                <button onclick="cancelBooking()">Cancel Booking</button>
+                            </div>
+                        <% } %>
+                    </div>
+                    <!-- <div class="no-data">
+                        <h2>No cancelled bookings yet.</h2>
+                    </div> -->
+                <% }) %>
+            </div>
+            
+        </section>
+    </section>
+
+    <div data-include="footer"></div>
+    <!-- ! Javascript -->
+    <script src="/js/bookings.js"></script>
+    <script src="/js/import-html.js"></script>
+    <script src="/js/footer.js"></script>
+    <script src="/js/navbar.js"></script>
+    <script src="/js/error-popup.js"></script>
+    <script src="/js/invoice.js"></script>
+</body>
+</html>

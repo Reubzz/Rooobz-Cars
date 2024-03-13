@@ -1,4 +1,8 @@
 
+let arrayOfBookings = []
+if (car.orders) car.orders.forEach((x) => arrayOfBookings.push(x.bookedDates))
+const bookedDates = [].concat(...arrayOfBookings);
+
 // ! Offer Settings 
 function offerHover(element) {
     element.children[1].children[0].innerHTML = `Rs. ${element.dataset.offerPrice}`
@@ -131,6 +135,22 @@ payNowFrom.addEventListener('submit', async (e) => {
         })
         return;
     }
+
+    // Check if the car is already booked on the days selected.
+    // TODO : TO BE FIXED
+    const dateArray = [];
+    while (startDate.isSameOrBefore(dropDate, 'day')) {
+        dateArray.push(startDate.format('DD-MM-YYYY'));
+        startDate.add(1, 'days');
+    }
+    if (bookedDates.includes(dateArray)) {
+        showError({
+            error: 105, 
+            message:'This car is already booked one of these dates.'
+        })
+        return;
+    }
+    
     try {
         const res = await fetch('/api/booking/order-create', {
             method: 'POST',
