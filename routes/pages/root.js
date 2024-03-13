@@ -82,7 +82,7 @@ router.get('/booking', authCheck, async (req, res) => {
     const carId = req.query.id;
 
     if (req.cookies.jwt) {
-        const carData = await carsDB.findOne({ id: carId });
+        const carData = await carsDB.findOne({ id: carId }).populate('orders');
         const offersData = await offersDB.find();
         res.render('vehicles/booking', {
             user: res.locals,
@@ -130,19 +130,38 @@ router.get('/contact', authCheck, (req, res) => {
 router.get('/terms', authCheck, (req, res) => {
     res.render('terms/terms', {})
 })
+router.get('/cancellation-policy', authCheck, (req, res) => {
+    res.render('terms/cancellation-policy', {
+        config: config
+    })
+})
 router.get('/how-we-work', authCheck, (req, res) => {
     res.render('how-we-work/how-we-work', {})
 })
 
-router.get('/account', authCheck, async (req, res) => {
+router.get('/account/profile', authCheck, async (req, res) => {
     if (req.cookies.jwt) {
         res.render('account/account', {
-            user: await usersDB.findOne({ id: res.locals.id })
+            user: await usersDB.findOne({ _id: res.locals._id })
         })
     }
     else {
         res.redirect('/login')
     }
+})
+
+router.get("/account/bookings", authCheck, async (req, res) => {
+    if (!req.cookies.jwt) return res.redirect('/login');
+
+    res.render('account/bookings', {
+        orders: await ordersDB.find({ user: res.locals._id }).populate('car transaction user offers'),
+        user: await usersDB.findOne({ _id: res.locals._id }),
+        config: config
+    })
+})
+router.get("/admin", authCheck, async (req, res) => {
+    if (res.locals.username != "admin")  return res.redirect('back');
+
 })
 
 router.get('/login', (req, res) => {

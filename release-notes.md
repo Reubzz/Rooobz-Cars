@@ -143,3 +143,6 @@
 - Added Cancellation Policy page.
 - Order Bookings now reflect on usersDB
 - Booking page now dynamically takes booked dates from the ordersDB by using the carID as foriegn key query parameter.
+- Added `/cancellation-policy` url
+- Changed `/account` url to `/account/profile`
+- Added View All Bookings page - `/account/bookings` 
