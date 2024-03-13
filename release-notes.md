@@ -132,3 +132,11 @@
     - `/api/booking/transaction-complete` - Completes a Transaction
     - `/api/booking/book-car-dates` - Books Car's Dates
 - Added `moment.js` to help deal with dates 
+
+## 14/3/2024 - Update v0.3.0
+- Added Invoice package `easyinvoice` 
+- Added field for Invoices in mongodb.
+- Added new Invoice API - `/api/invoice` 
+    - Creates a new Invoice PDF in `Base64` format if not already created.
+    - if already created, returns the Base64 string of the pdf file from mongodb.
+    - Added a `force=1` parameter which will create a new Invoice even if one exists.
