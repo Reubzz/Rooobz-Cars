@@ -146,4 +146,7 @@
 - Added `/cancellation-policy` url
 - Changed `/account` url to `/account/profile`
 - Added View All Bookings page - `/account/bookings` 
+- Added option to cancel orders 
+- Added new API route `/api/cancel-order` which cancels an order by ID
+- Added All Bookings Page in Accounts Section
 - Additional Minor Changes / Fixes / Quality of Life Changes

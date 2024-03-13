@@ -159,7 +159,7 @@
                         <% } else if (order.transaction.status == 'completed') { %>
                             <div class="right-wrapper">
                                 <button onclick="getPDF('<%= order._id %>')" id="show-invoice-btn">Show Invoice</button>
-                                <button onclick="cancelBooking()">Cancel Booking</button>
+                                <button onclick="cancelBooking('<%= order._id %>')">Cancel Booking</button>
                             </div>
                         <% } %>
                     </div>
