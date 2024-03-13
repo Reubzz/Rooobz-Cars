@@ -90,7 +90,6 @@ exports.registerUser = async (req, res, next) => {
             res.status(200).json({
                 error: error[100],
                 status: status[200],
-                user: token,
             })
         })
     }
