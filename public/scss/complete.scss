@@ -80,11 +80,18 @@
                     background-color: $orange;
                     border-radius: 5px;
                     text-decoration: none;
-                    color: #f1f1f1;
+                    color: $white;
+                    border: none;
 
                     font-size: 1rem;
                     font-weight: $regular;
                     font-family: $rubik;
+
+                    &:hover {
+                        background-color: $orangeDark;
+                        cursor: pointer;
+                        box-shadow: 0px 0px 10px 0px $orange;
+                    }
                 }
 
                 .read-terms {

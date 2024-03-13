@@ -140,3 +140,4 @@
     - Creates a new Invoice PDF in `Base64` format if not already created.
     - if already created, returns the Base64 string of the pdf file from mongodb.
     - Added a `force=1` parameter which will create a new Invoice even if one exists.
+- Added Cancellation Policy page.

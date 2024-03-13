@@ -1,0 +1,65 @@
+// ? Imports
+@import "./components/variables";
+@import "./components/navbar";
+@import "./components/footer";
+@import "./components/scrollbar";
+@import "./components/save-banner";
+@import "./components/animated-span";
+@import "./components/animations";
+@import "./components/title-banner";
+
+.container {
+    padding: 5% 10%;
+
+    
+    ol {
+        font-size: 1.6rem;
+        font-family: $rubik;
+        font-weight: $regular;
+        li {
+            font-size: 1rem;
+            font-family: $rubik;
+            font-weight: $regular;
+            &::marker {
+                font-size: 1.2rem;
+                font-family: $rubik;
+                font-weight: $medium;
+
+            }
+
+            h4 {
+                font-size: 1.2rem;
+                font-family: $rubik;
+                font-weight: $medium;
+                
+            }
+            ul {
+                padding: 0px 20px;
+                li {
+                    padding: 3px 0px;
+                }
+                a {
+                    color: $orange;
+                    text-decoration: none;
+                    &:hover {
+                        color: $orangeDark;
+                        cursor: pointer;
+                    }
+                }   
+                span {
+                    color: $orange;
+                    text-decoration: none;
+                    &:hover {
+                        color: $orangeDark;
+                        cursor: pointer;
+                    }
+                }   
+            }
+        }
+    }
+    p {
+        font-size: 1rem;
+        font-family: $rubik;
+        font-weight: $regular;
+    }
+}
