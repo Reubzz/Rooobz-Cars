@@ -5,14 +5,35 @@
         "instagram": ""
     },
     "phone": "(+91) 012 345 6789",
-    "address": "Roooobz Cars, Mumbai, India",
     "email": "contact@rooobzcars.com",
     "domain": "rooobzcars.reubz.io",
-    "logo": "/imgs/logo-with-text-long-alternate.png",
+    "logo": {
+        "main": {
+            "path": "/imgs/logo.png",
+            "url": "https://project.reubz.io/imgs/logo.png"
+        },
+        "alternate": {
+            "path": "/imgs/logo-with-text-long-alternate.png",
+            "url": "https://project.reubz.io/imgs/logo-with-text-long-alternate.png"
+        },
+        "secondary": {
+            "path": "/imgs/logo-with-text.png",
+            "url": "https://project.reubz.io/imgs/logo-with-text.png"
+        }
+    },
     "working_hours": {
         "Monday_Friday": "8AM - 10PM",
         "Saturday": "8AM - 7PM",
         "Sunday": "Closed"
+    },
+
+    "address": {
+        "company":  "Roooobz Cars Private Limited",
+        "address": "Plot No. 12, Sector 16",
+        "zip": "123456",
+        "city": "Mumbai",
+        "state": "Maharashtra",
+        "country": "India"
     },
 
     "loginMaxAge": 1296000
