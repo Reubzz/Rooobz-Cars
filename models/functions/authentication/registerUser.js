@@ -1,5 +1,5 @@
 // Functions
-const { jwtSign } = require('../jwt/jwtSign')
+const { jwtSign, setJwtCookie } = require('../jwt/jwtSign')
 
 // Database
 const User = require('../../schemas/users')
