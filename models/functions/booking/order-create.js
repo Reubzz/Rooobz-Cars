@@ -134,7 +134,7 @@ exports.orderCreate = async (req, res, next) => {
         await transactionsDB.create({
             _id: transactionId,
             order: orderId,
-            status: "Pending",
+            status: "pending",
             date: {
                 initiated: new Date()
             }
@@ -162,7 +162,7 @@ exports.orderCreate = async (req, res, next) => {
                 pin: formData.pin,
                 landmark: formData.landmark,
             },
-            status:  'Initiated',
+            status:  'active',
             orderDate: new Date(),
         })
         
