@@ -111,7 +111,6 @@ header nav .dropdown .dropdown-content {
   position: absolute;
   background-color: #f1f1f1;
   right: 0;
-  width: -moz-max-content;
   width: max-content;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
@@ -142,7 +141,9 @@ header nav .dropdown:hover .dropbtn {
 header nav #hamburger-menu {
   display: none;
 }
-header nav #hamburger-menu .bar1, header nav #hamburger-menu .bar2, header nav #hamburger-menu .bar3 {
+header nav #hamburger-menu .bar1,
+header nav #hamburger-menu .bar2,
+header nav #hamburger-menu .bar3 {
   width: 25px;
   height: 2px;
   background-color: #0c0c0c;
@@ -150,12 +151,14 @@ header nav #hamburger-menu .bar1, header nav #hamburger-menu .bar2, header nav #
   transition: 0.5s;
 }
 header nav #hamburger-menu.open .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-6px, 6px);
   transform: rotate(-45deg) translate(-6px, 6px);
 }
 header nav #hamburger-menu.open .bar2 {
   opacity: 0;
 }
 header nav #hamburger-menu.open .bar3 {
+  -webkit-transform: rotate(45deg) translate(-6px, 6px);
   transform: rotate(45deg) translate(-5px, -5px);
 }
 header nav #hamburger-menu.open .mobile-menu {
@@ -187,7 +190,6 @@ header nav #hamburger-menu .mobile-menu .mob-navbar-start {
 header nav #hamburger-menu .mobile-menu .mob-navbar-end {
   display: flex;
   justify-content: center;
-  align-items: center;
   gap: 20px;
   width: 100%;
   flex: 1;
@@ -209,7 +211,8 @@ header nav #hamburger-menu .mobile-menu li a {
 }
 
 @media screen and (max-width: 980px) {
-  nav .navbar-center, nav .navbar-end {
+  nav .navbar-center,
+  nav .navbar-end {
     display: none !important;
   }
   nav #hamburger-menu {
@@ -221,7 +224,6 @@ footer {
   width: 100%;
   justify-content: space-between;
   align-items: flex-start;
-  height: -moz-max-content;
   height: max-content;
   background-color: #DADADA;
   flex-direction: row;
@@ -580,7 +582,6 @@ span.placeholder {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  width: -moz-max-content;
   width: max-content;
   border-radius: 5px;
 }
@@ -751,4 +752,4 @@ span.placeholder {
   .card .details-data p {
     font-size: 1.2rem !important;
   }
-}
+}/*# sourceMappingURL=vehicles.css.map */

@@ -1,0 +1,74 @@
+// ? Imports
+@import "./components/variables";
+@import "./components/navbar";
+@import "./components/footer";
+@import "./components/scrollbar";
+@import "./components/save-banner";
+@import "./components/animated-span";
+@import "./components/animations";
+@import "./components/title-banner";
+@import "./components/login-modal";
+
+.data-wrapper {
+    padding: 2% 5%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+#tabs-container {
+    height: 100%;
+
+    .tabs-wrapper {
+        padding: 10px;
+        background-color: $smokedWhiteLight;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: max-content;
+
+        .tab-title {
+            font-family: $rubik;
+            font-weight: $medium;
+            font-size: 1.6rem;
+            padding: 10px 30px;
+            border-radius: 8px;
+
+            &.selected {
+                background-color: $orange;
+                color: $white;
+
+                &:hover {
+                    background-color: $orangeDark;
+                }
+            }
+
+            &:hover {
+                cursor: pointer;
+                background-color: $smokedWhite;
+            }
+        }
+    }
+}
+
+#data {
+    width: 100%;
+    background-color: $smokedWhiteLight;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+#all-bookings {
+    .bookings-card {
+        width: 100%;
+        background-color: $white;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        .left-wrapper {}
+    }
+}

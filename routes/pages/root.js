@@ -12,6 +12,8 @@ const usersDB = require('../../models/schemas/users');
 const offersDB = require('../../models/schemas/offers');
 const ordersDB = require('../../models/schemas/orders');
 const transactionsDB = require('../../models/schemas/transactions');
+const emailsDB = require('../../models/schemas/email-subscribe');
+
 
 // MiddleWares
 const { authCheck } = require("../../middleware/authentication/authentication")
@@ -160,8 +162,15 @@ router.get("/account/bookings", authCheck, async (req, res) => {
     })
 })
 router.get("/admin", authCheck, async (req, res) => {
-    if (res.locals.username != "admin")  return res.redirect('back');
+    if (res.locals.username != "admin") return res.redirect('back');
 
+    res.render('admin/admin', {
+        orders: await ordersDB.find(),
+        user: await usersDB.findOne(),
+        vehicles: await carsDB.find(),
+        transactions: await transactionsDB.find(),
+        subscribers: await emailsDB.find()
+    })
 })
 
 router.get('/login', (req, res) => {

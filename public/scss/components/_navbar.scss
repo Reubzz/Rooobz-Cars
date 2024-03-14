@@ -2,12 +2,13 @@
 @import "./underlined-text";
 @import "./variables";
 
-.sticky { 
+.sticky {
     position: fixed;
     top: 0;
     width: 100%;
 
 }
+
 header {
     nav {
         background-color: $smokedWhite;
@@ -19,10 +20,10 @@ header {
 
         // position: fixed;
         // width: 100%;
-        
+
         z-index: 2;
-        
-        
+
+
         img {
             width: 150px;
         }
@@ -39,7 +40,7 @@ header {
             font-family: $rubik;
             font-weight: $regular;
         }
-        
+
         .navbar-item {
             text-decoration: none;
             color: $black;
@@ -52,17 +53,19 @@ header {
             padding: 10px 20px;
             border-radius: 5px;
             box-shadow: $orange 0px 0px 10px;
+
             &:hover {
                 background-color: $orangeDark;
-                box-shadow: 0px 0px 10px 1px $orange; 
+                box-shadow: 0px 0px 10px 1px $orange;
             }
         }
 
-        
+
         /* The container <div> - needed to position the dropdown content */
         .dropdown {
             position: relative;
             display: inline-block;
+
             // float: right;
             .dropbtn {
                 background-color: $smokedWhiteDark;
@@ -74,6 +77,7 @@ header {
                 border: none;
                 // width: 200px;
                 border-radius: 5px;
+
                 .wrapper {
                     display: flex;
                     justify-content: center;
@@ -81,13 +85,14 @@ header {
                     gap: 20px;
 
                 }
-                
+
                 img {
                     width: 42px;
-                    margin:auto;
+                    margin: auto;
                 }
-                
+
             }
+
             /* Dropdown Content (Hidden by Default) */
             .dropdown-content {
                 display: none;
@@ -98,7 +103,7 @@ header {
                 // min-width: 160px;
                 // width: 100%;
                 // overflow: auto;
-                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
                 z-index: 1;
 
                 /* Links inside the dropdown */
@@ -109,29 +114,34 @@ header {
                     display: flex;
                     gap: 10px;
                     font-size: 1.2rem !important;
-                    
+
                     /* Change color of dropdown links on hover */
                     &:hover {
                         background-color: $smokedWhite;
                     }
                 }
             }
+
             /* Show the dropdown menu on hover */
             &:hover {
                 .dropdown-content {
                     display: block;
                 }
+
                 /* Change the background color of the dropdown button when the dropdown content is shown */
                 .dropbtn {
                     background-color: $orange;
                     color: $smokedWhite;
                 }
-            } 
+            }
         }
-        
+
         #hamburger-menu {
             display: none;
-            .bar1, .bar2, .bar3 {
+
+            .bar1,
+            .bar2,
+            .bar3 {
                 width: 25px;
                 height: 2px;
                 background-color: $black;
@@ -143,11 +153,12 @@ header {
                 .bar1 {
                     -webkit-transform: rotate(-45deg) translate(-6px, 6px);
                     transform: rotate(-45deg) translate(-6px, 6px);
-                }  
+                }
+
                 .bar2 {
                     opacity: 0;
                 }
-    
+
                 .bar3 {
                     -webkit-transform: rotate(45deg) translate(-6px, 6px);
                     transform: rotate(45deg) translate(-5px, -5px);
@@ -159,7 +170,7 @@ header {
                     align-items: center;
                     flex-direction: column;
                 }
-            } 
+            }
 
             .mobile-menu {
                 display: none;
@@ -174,7 +185,7 @@ header {
                 position: fixed;
 
                 gap: 50px;
-                
+
                 .mob-navbar-start {
                     display: flex;
                     justify-content: space-around;
@@ -183,25 +194,29 @@ header {
                     gap: 20px;
                     flex: 1;
                 }
+
                 .mob-navbar-end {
                     display: flex;
                     justify-content: center;
-                    align-items: center;
+                    // align-items: center;
                     gap: 20px;
                     width: 100%;
                     flex: 1;
 
                 }
+
                 li {
                     list-style: none;
-                    text-align: center; 
+                    text-align: center;
+
                     .login-button {
                         border-color: $orange;
                         border-width: 2px;
                         padding: 10px 20px;
                         border-radius: 5px;
                         box-shadow: $orange 0px 0px 3px 3px;
-                    }                   
+                    }
+
                     a {
                         color: $black;
                         font-size: 1.6rem;
@@ -215,9 +230,12 @@ header {
 // !! 990 PX - Mobile Layout
 @media screen and (max-width: 980px) {
     nav {
-        .navbar-center, .navbar-end {
+
+        .navbar-center,
+        .navbar-end {
             display: none !important;
         }
+
         #hamburger-menu {
             display: block !important;
         }
