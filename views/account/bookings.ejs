@@ -154,7 +154,7 @@
                         <% if(order.transaction.status == 'pending') {%>
                             <div class="right-wrapper">
                                 <button onclick="payNow('<%= order._id %>')" id="pay-now-btn">Pay Now</button>
-                                <button onclick="cancelBooking()">Cancel Booking</button>
+                                <button onclick="cancelBooking('<%= order._id %>')">Cancel Booking</button>
                             </div>
                         <% } else if (order.transaction.status == 'completed') { %>
                             <div class="right-wrapper">
