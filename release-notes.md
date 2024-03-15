@@ -150,3 +150,11 @@
 - Added new API route `/api/cancel-order` which cancels an order by ID
 - Added All Bookings Page in Accounts Section
 - Additional Minor Changes / Fixes / Quality of Life Changes
+
+### 16/3/2024 - Update v0.3.1 
+- Added Address autocomplete for users who have it saved
+- Added Gst display to booking page 
+- Fixed Cancel button in account bookings page
+- Updated Invoice design - Added background template and changed format. 
+- Added phone field in orders schema
+- Minor Changes / Fixes / Quality of Life Changes
