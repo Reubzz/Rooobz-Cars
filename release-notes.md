@@ -158,3 +158,4 @@
 - Updated Invoice design - Added background template and changed format. 
 - Added phone field in orders schema
 - Minor Changes / Fixes / Quality of Life Changes
+- Restricted Booking page datepicker to allow dates 60 days ahead only. 
