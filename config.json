@@ -10,16 +10,20 @@
     "logo": {
         "main": {
             "path": "/imgs/logo.png",
-            "url": "https://project.reubz.io/imgs/logo.png"
+            "url": "https://rooobzcars.reubz.io/imgs/logo.png"
         },
         "alternate": {
             "path": "/imgs/logo-with-text-long-alternate.png",
-            "url": "https://project.reubz.io/imgs/logo-with-text-long-alternate.png"
+            "url": "https://rooobzcars.reubz.io/imgs/logo-with-text-long-alternate.png"
         },
         "secondary": {
             "path": "/imgs/logo-with-text.png",
-            "url": "https://project.reubz.io/imgs/logo-with-text.png"
+            "url": "https://rooobzcars.reubz.io/imgs/logo-with-text.png"
         }
+    },
+    "invoice-template" : {
+        "path": "/files/invoice-template.pdf",
+        "url": "https://rooobzcars.reubz.io/files/invoice-template.pdf"
     },
     "working_hours": {
         "Monday_Friday": "8AM - 10PM",
@@ -28,9 +32,9 @@
     },
 
     "address": {
-        "company":  "Roooobz Cars Private Limited",
+        "company":  "Roooobz Cars LTD",
         "address": "Plot No. 12, Sector 16",
-        "zip": "123456",
+        "zip": "400001",
         "city": "Mumbai",
         "state": "Maharashtra",
         "country": "India"
