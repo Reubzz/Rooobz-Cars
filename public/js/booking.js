@@ -1,6 +1,8 @@
 
 let arrayOfBookings = []
-if (car.orders) car.orders.forEach((x) => arrayOfBookings.push(x.bookedDates))
+if (car.orders) car.orders.forEach((order) => {
+    if (order.status != 'cancelled') arrayOfBookings.push(order.bookedDates)
+});
 const bookedDates = [].concat(...arrayOfBookings);
 
 // ! Offer Settings 
