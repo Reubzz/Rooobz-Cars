@@ -27,6 +27,37 @@
     }
 }
 
+.pika-single {
+    font-family: $rubik; 
+    font-size: 1rem; 
+      
+    .pika-prev, .pika-next {
+        font-size: 1.2rem; 
+    }
+    
+    .pika-table {
+        border-collapse: collapse; /* Ensure cells are flush against each other */
+    }
+    
+    .is-today {
+        button {
+            background-color: $orangeFadded !important; 
+            color: white !important;
+        }
+    }
+    .is-selected {
+        button {
+            background-color: $orange !important;
+        }
+    }
+    .pika-button {
+        background-color: $white !important; 
+        &:hover {
+            background-color: $orangeFadded !important;
+        }
+    }
+}
+
 .container {
     width: 100%;
     padding: 3% 5%;

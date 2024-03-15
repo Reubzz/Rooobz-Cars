@@ -250,7 +250,7 @@
                 field: pickupDatePicker,
                 format: 'DD-MM-YYYY',
                 minDate: moment().toDate(),
-                yearRange: [moment().year(), moment().year() + 1],
+                maxDate: moment().add(60, 'days').toDate(),
                 disableDayFn: function (date) {
                     // Disable past dates
                     if (moment(date).isBefore(moment(), 'day')) {
@@ -268,6 +268,7 @@
                 field: dropoffDatePicker,
                 format: 'DD-MM-YYYY',
                 minDate: moment().add(1, "days").toDate(),
+                maxDate: moment().add(60, 'days').toDate(),
                 yearRange: [moment().year(), moment().year() + 1],
                 disableDayFn: function (date) {
                     // Disable past dates
