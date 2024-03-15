@@ -48,8 +48,9 @@ function updateFinalPrice() {
     const bookNowBtn = document.getElementById('book-now-btn');
     const totalDisplay = document.getElementById('total-display');
     const finalOffersPrice = document.getElementById('offers-final-price').innerHTML;
+    const gstDisplay = document.getElementById('gst-display');
     const carPrice = car.price;
-    const gst = 18/100;
+    const gstPercent = 18/100;
 
     // Get Number of Days
     const startDate = moment(pickupDatePicker.value, "DD-MM-YYYY"); 
@@ -61,7 +62,8 @@ function updateFinalPrice() {
     }
 
     const finalCarPrice = carPrice * diffDays; 
-    const finalAmount = Number.parseInt(finalOffersPrice) + finalCarPrice + (finalCarPrice * gst); 
+    gstDisplay.innerHTML = finalCarPrice * gstPercent
+    const finalAmount = Number.parseInt(finalOffersPrice) + finalCarPrice + (finalCarPrice * gstPercent); 
     bookNowBtn.innerHTML = `Pay Now • Rs. ${finalAmount}`
     totalDisplay.innerHTML = finalAmount
     return finalAmount;
