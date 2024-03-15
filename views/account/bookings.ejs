@@ -70,66 +70,6 @@
             </div>
         </section>
         <section id="bookings-data">
-            <!-- <div id="bookings-booked" class="bookings-wrapper">
-                <% orders.forEach((order) => { %>
-                    <% if(order.transaction.status == 'completed') {%>
-                        <div class="booking">
-                            <div class="left-wrapper">
-                                <div class="icon">
-                                    <img src="<%= order.car.imgUrls[0] %>" alt="Car Image Icon">
-                                </div>
-                                <div class="booking-details">
-                                    <div class="car-details">
-                                        <%= order.car.brand %> <%= order.car.name %></h2>
-                                    </div>
-                                    <div class="booking-period">
-                                        <span><%= order.startDate %></span> - <span><%= order.endDate %></span></h2>
-                                    </div>
-                                    <div class="offers">
-                                        <% order.offers.forEach(offer => { %>
-                                            <span><%= offer.name %></span>
-                                        <% }) %>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="right-wrapper">
-                                <button onclick="getPDF('<%= order._id %>')" id="show-invoice-btn">Show Invoice</button>
-                                <button onclick="cancelBooking()">Cancel Booking</button>
-                            </div>
-                        </div>
-                    <% } %>
-                <% }) %>
-            </div> -->
-            <!-- <div id="bookings-pending" class="hidden bookings-wrapper">
-                <% orders.forEach((order) => { %>
-                    <% if(order.transaction.status == 'Pending') {%>
-                        <div class="booking">
-                            <div class="left-wrapper">
-                                <div class="icon">
-                                    <img src="<%= order.car.imgUrls[0] %>" alt="Car Image Icon">
-                                </div>
-                                <div class="booking-details">
-                                    <div class="car-details">
-                                        <%= order.car.brand %> <%= order.car.name %></h2>
-                                    </div>
-                                    <div class="booking-period">
-                                        <span><%= order.startDate %></span> - <span><%= order.endDate %></span></h2>
-                                    </div>
-                                    <div class="offers">
-                                        <% order.offers.forEach(offer => { %>
-                                            <span><%= offer.name %></span>
-                                        <% }) %>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="right-wrapper">
-                                <button onclick="payNow('<%= order._id %>')" id="pay-now-btn">Pay Now</button>
-                                <button onclick="cancelBooking()">Cancel Booking</button>
-                            </div>
-                        </div>
-                    <% } %>
-                <% }) %>
-            </div> -->
             <div id="bookings" class="bookings-wrapper">
                 <% orders.forEach((order) => { %>
                     <div class="booking booking-<%=order.transaction.status%>">
