@@ -137,12 +137,16 @@
                             </div>
                             <table class="car-features-table">
                                 <tr>
+                                    <td><h3 class="highlight-title">Rental Price Per Day</h3></td>
+                                    <td><h3 class="highlight-title"><%= car.price %></h3></td>
+                                </tr>
+                                <tr>
                                     <td><h3 class="highlight-title">Extra Offers</h3></td>
                                     <td><h3 id="offers-final-price" class="highlight-title">0</h3></td>
                                 </tr>
                                 <tr>
-                                    <td><h3 class="highlight-title">Rental Price Per Day <span>(Exclusive of 18% Tax)</span></h3></td>
-                                    <td><h3 class="highlight-title"><%= car.price %></h3></td>
+                                    <td><h3 class="highlight-title">Tax 18%</h3></td>
+                                    <td><h3 id="gst-display" class="highlight-title"><%= car.price*18/100 %></h3></td>
                                 </tr>
                                 <tr>
                                     <td><h3 class="highlight-orange">Total</h3></td>
@@ -165,46 +169,46 @@
                         <div class="form-single-row">
                             <div class="flat form-field">
                                 <label for="flat">Flat Number <span>*</span></label>
-                                <input type="text" name="flat" id="flat" required placeholder="ABC123">
+                                <input type="text" name="flat" id="flat" required placeholder="ABC123" value="<%= user.address.flat %>">
                             </div>
                             <div class="name form-field">
-                                <input type="text" name="placename" id="placename">
+                                <input type="text" name="placename" id="placename" value="<%= user.address.name %>">
                             </div>
                             <div class="address form-field">
                                 <label for="address">Address <span>*</span></label>
-                                <input type="text" name="address" id="address" required>
+                                <input type="text" name="address" id="address" required value="<%= user.address.address %>">
                             </div>
                         </div>
                         <div class="form-single-row">
                             <div class="locality form-field">
                                 <label for="locality">Local Area <span>*</span></label>
-                                <input type="text" name="locality" id="locality" required placeholder="Enter City">
+                                <input type="text" name="locality" id="locality" required placeholder="Enter Locality" value="<%= user.address.locality %>">
                             </div>
                             <div class="city form-field">
                                 <label for="city">City <span>*</span></label>
-                                <input type="text" name="city" id="city" required placeholder="Enter City">
+                                <input type="text" name="city" id="city" required placeholder="Enter City" value="<%= user.address.city %>">
                             </div>
                             <div class="pin form-field">
                                 <label for="pin">Pin Code <span>*</span></label>
-                                <input type="text" name="pin" id="pin" required placeholder="Enter pin code">
+                                <input type="text" name="pin" id="pin" required placeholder="Enter pin code" value="<%= user.address.pin %>">
                             </div>
                             <div class="state form-field">
                                 <label for="state">State <span>*</span></label>
-                                <input type="text" name="state" id="state" required placeholder="Enter State">
+                                <input type="text" name="state" id="state" required placeholder="Enter State" value="<%= user.address.state %>">
                             </div>
                         </div>
                         <div class="form-single-row">
                             <div class="country form-field">
                                 <label for="country">Country <span>*</span></label>
-                                <input type="text" name="country" id="country" required placeholder="Enter Country">
+                                <input type="text" name="country" id="country" required placeholder="Enter Country" value="<%= user.address.country %>">
                             </div>
                             <div class="phone form-field">
                                 <label for="phone">Phone <span>*</span></label>
-                                <input type="tel" name="phone" id="phone" required placeholder="0123456789">
+                                <input type="tel" name="phone" id="phone" required placeholder="0123456789" value="<%= user.phone %>">
                             </div>
                             <div class="landmark form-field">
                                 <label for="landmark">Landmark <span class="optional-tag">(Optional)</span></label>
-                                <input type="text" name="landmark" id="landmark" placeholder="Enter Landmark">
+                                <input type="text" name="landmark" id="landmark" placeholder="Enter Landmark" value="<%= user.address.landmark %>">
                             </div>
                         </div>
                         <div class="save-info-wrapper">

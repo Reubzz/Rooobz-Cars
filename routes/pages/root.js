@@ -87,7 +87,7 @@ router.get('/booking', authCheck, async (req, res) => {
         const carData = await carsDB.findOne({ id: carId }).populate('orders');
         const offersData = await offersDB.find();
         res.render('vehicles/booking', {
-            user: res.locals,
+            user: await usersDB.findOne({ _id: res.locals._id }),
             car: carData,
             offers: offersData,
         })
