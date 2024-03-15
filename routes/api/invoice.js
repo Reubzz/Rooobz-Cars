@@ -41,7 +41,7 @@ const status = {
 router.post('/', async (req, res) => {    
     const orderId = req.query.orderid;
     const force = req.query.force;
-    const order = await ordersDB.findOne({ _id: orderId }).populate('transaction user car')
+    const order = await ordersDB.findOne({ _id: orderId }).populate('transaction user car offers')
 
     // * If Payment is incomplete so Invoice cannot be generated
     if(order.transaction.status == 'Pending' && force != true) {
@@ -61,20 +61,24 @@ router.post('/', async (req, res) => {
         return;
     }
 
+    // ! Check if there are additional offers added 
+    let offersData = "";
+    if (order.offers) {
+        offersData = order.offers.map(item => ({
+            description: item.name,
+            price: item.price,
+        }));
+    }
+
+
     try {
         data = {
             mode: "development",
 
-            sender: {
-                company: 'Rooobz Cars',
-                address: 'Kandivali',
-                zip: '400067',
-                city: 'Mumbai',
-                country: 'India'
-            },
+            sender: config.address,
             images: {
-                logo: config.logo.alternate.url,
-                // background: config.logo.main.url
+                // logo: config.logo.alternate.url,
+                background: config['invoice-template'].url
             },
             client: {
                 company: order.user.name,
@@ -87,15 +91,29 @@ router.post('/', async (req, res) => {
                 number: order._id,
                 date: `${moment(order.orderDate).format("DD-MM-YYYY")}`,
             },
-            setting: {
+            settings: {
                 currency: 'INR',
-                locale: 'en-in'
+                "tax-notation": "tax",
+                // locale: 'en-in',
+                "margin-top": 50,
+                "margin-right": 50,
+                "margin-left": 50,
+                "margin-bottom": 25
+            },
+            translate: {
+                "quantity": "Days",
+                taxNotation: "GST",
+                price: "Daily Rate",
+                "products": "Car"
             },
             products: [
                 {
                     description: `${order.car.brand} ${order.car.name}`,
-                    price: `${order.totalCost}`
-                }
+                    price: `${order.car.price}`,
+                    "tax-rate": 18,
+                    quantity: order.bookedDates.length - 1
+                },
+                ...offersData
             ]
         }
         easyinvoice.createInvoice(data, async function (result) {
@@ -107,7 +125,7 @@ router.post('/', async (req, res) => {
                     invoice: result.pdf
                 }
             )
-            console.log('new pdf created')
+            // console.log('new pdf created')
             res.status(200).json({
                 data: result.pdf,
                 error: error[100], 
