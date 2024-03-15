@@ -4,9 +4,6 @@ function changeTab(tab, contentTab) {
 
     tab.classList.add('selected');
     
-    
-    
-    // const orderData = document.getElementsByClassName('bookings-wrapper');
     const orderData = document.getElementsByClassName('booking');
     for(i=0; i<orderData.length; i++) orderData[i].classList.add('hidden'); 
     
