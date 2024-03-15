@@ -116,7 +116,8 @@ exports.orderCreate = async (req, res, next) => {
                         country: formData.country,
                         pin: formData.pin,
                         landmark: formData.landmark,
-                    }
+                    },
+                    phone: formData.phone
                 },
             )
         } catch (err) {
@@ -162,6 +163,7 @@ exports.orderCreate = async (req, res, next) => {
                 pin: formData.pin,
                 landmark: formData.landmark,
             },
+            phone: formData.phone,
             status:  'active',
             orderDate: new Date(),
         })

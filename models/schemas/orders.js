@@ -55,6 +55,7 @@ const model = db.MAIN_DB.model(
             pin: { type: Number, required: true}, // * Pin Code of the user
             landmark: { type: String, required: false }, // * Nearby Landmark
         },
+        phone: { type: Number, required: true }, // ! Phone number of the user who made
 
         status: { type: String, required: true }, // ! Ongoing  / Completed / Cancelled
         
