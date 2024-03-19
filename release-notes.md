@@ -159,3 +159,10 @@
 - Added phone field in orders schema
 - Minor Changes / Fixes / Quality of Life Changes
 - Restricted Booking page datepicker to allow dates 60 days ahead only. 
+
+### 20/3/2024 - Update v0.3.2
+- Added Admin Page - Update 1
+- Updated email subscribers API - To now be able to delete users on `DELETE` Method
+- Completed Frontend Code for Admin page
+- Updated `root.js` with  admin routes and routes needed for admin page
+- Updated `paymentsIntent` page with *100 as stripe takes last two numbers in decimal. 

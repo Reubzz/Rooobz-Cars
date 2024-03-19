@@ -531,11 +531,15 @@ body {
   background-color: #e64229;
 }
 
-.data-wrapper {
+.section-data-wrapper {
   padding: 2% 5%;
   display: flex;
   flex-direction: row;
   gap: 20px;
+}
+
+.hidden {
+  display: none !important;
 }
 
 #tabs-container {
@@ -557,32 +561,152 @@ body {
   font-size: 1.6rem;
   padding: 10px 30px;
   border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
 }
-#tabs-container .tabs-wrapper .tab-title.selected {
-  background-color: #FF4C30;
-  color: #f1f1f1;
-}
-#tabs-container .tabs-wrapper .tab-title.selected:hover {
-  background-color: #e64229;
+#tabs-container .tabs-wrapper .tab-title i {
+  color: #0c0c0c;
 }
 #tabs-container .tabs-wrapper .tab-title:hover {
   cursor: pointer;
   background-color: #DADADA;
 }
+#tabs-container .tabs-wrapper .tab-group .dropdown .dropdown-element {
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
+  font-size: 1.4rem;
+  padding: 10px 50px;
+  border-radius: 8px;
+}
+#tabs-container .tabs-wrapper .tab-group .dropdown .dropdown-element:hover {
+  background-color: #DADADA;
+  cursor: pointer;
+}
+#tabs-container .tabs-wrapper .selected {
+  background-color: #FF4C30 !important;
+  color: #f1f1f1;
+}
+#tabs-container .tabs-wrapper .selected:hover {
+  background-color: #e64229 !important;
+}
+#tabs-container .tabs-wrapper .selected i {
+  transform: rotate(180deg);
+  color: #f1f1f1 !important;
+}
 
-#data {
+#data-container {
   width: 100%;
-  background-color: #e0e0e0;
+  background-color: #f1f1f1;
   border-radius: 10px;
   padding: 20px;
 }
 
-#all-bookings .bookings-card {
+#all-data {
   width: 100%;
-  background-color: #f1f1f1;
-  border-radius: 5px;
+}
+#all-data .data-wrapper {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+#all-data .data-wrapper .data-card {
   display: flex;
   flex-direction: row;
+  background-color: #f3f3f3;
+  border: 2px solid #DADADA;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
   justify-content: space-between;
+  align-items: center;
+}
+#all-data .data-wrapper .data-card .left-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+}
+#all-data .data-wrapper .data-card .left-wrapper .icon img {
+  width: 150px;
+  border-radius: 5px;
+}
+#all-data .data-wrapper .data-card .left-wrapper .details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-around;
+}
+#all-data .data-wrapper .data-card .left-wrapper .details .detail-title {
+  color: #FF4C30;
+  font-size: 2rem;
+  font-weight: 600;
+  font-family: "Rubik", sans-serif;
+}
+#all-data .data-wrapper .data-card .left-wrapper .details .detail-subtitle {
+  color: #0c0c0c;
+  font-size: 1.2rem;
+  font-weight: 500;
+  font-family: "Rubik", sans-serif;
+}
+#all-data .data-wrapper .data-card .left-wrapper .details .detail-subtitle span {
+  color: #0c0c0c;
+}
+#all-data .data-wrapper .data-card .left-wrapper .details .detail-subtitle span.orange-span {
+  color: #FF4C30 !important;
+}
+#all-data .data-wrapper .data-card .left-wrapper .details .detail-tags span {
+  color: #0c0c0c;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: "Rubik", sans-serif;
+  padding: 5px 10px;
+  background-color: #b9b9b9;
+  border-radius: 5px;
+}
+#all-data .data-wrapper .data-card .left-wrapper .details .detail-tags span:hover {
+  background-color: rgba(255, 76, 48, 0.5490196078);
+  cursor: pointer;
+  color: #f1f1f1;
+}
+#all-data .data-wrapper .data-card .right-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#all-data .data-wrapper .data-card .right-wrapper button {
+  background-color: #f1f1f1;
+  border: 2px solid #b9b9b9;
+  border-radius: 5px;
+  padding: 10px 30px;
+  color: #0c0c0c;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: "Rubik", sans-serif;
+}
+#all-data .data-wrapper .data-card .right-wrapper button:hover {
+  cursor: pointer;
+  border: 2px solid #FF4C30;
+  background-color: #DADADA;
+  box-shadow: 0px 0px 3px 0px #707070;
+}
+#all-data .data-wrapper .data-card .right-wrapper button.orange-button {
+  background-color: #FF4C30;
+  color: #f1f1f1;
+  border: 2px solid #FF4C30;
+}
+#all-data .data-wrapper .data-card .right-wrapper button.orange-button:hover {
+  background-color: #e64229;
+  box-shadow: 0px 0px 5px 0px #FF4C30;
+}
+#all-data .data-wrapper .no-data {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
   align-items: center;
 }

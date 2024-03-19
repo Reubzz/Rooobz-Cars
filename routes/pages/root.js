@@ -107,7 +107,10 @@ router.get('/booking/pay', authCheck, async (req, res) => {
     // TODO: Check if order is completed or failed and redirect back.
 
     const paymentIntent = await stripe.paymentIntents.create({
-        amount: orderData.totalCost,
+        // ! *100 as stripe takes last two numbers in decimal.
+        // ! For eg: if price is 2455 - normally it would be taken as 24.55 
+        // ! Hence the *100 to make the number 245500 which is 2455.00 acc to stripe
+        amount: orderData.totalCost * 100, 
         currency: 'inr'
     });
 
@@ -162,14 +165,35 @@ router.get("/account/bookings", authCheck, async (req, res) => {
     })
 })
 router.get("/admin", authCheck, async (req, res) => {
+    const { orders, users, cars, transactions, subscribers } = req.query;
+
+    
     if (res.locals.username != "admin") return res.redirect('back');
 
+    const ordersData = await ordersDB.find().populate('car transaction user offers');
+    const usersData = await usersDB.find().populate('orders'); // ! Add Reviews Here later
+    const carsData = await carsDB.find().populate('orders'); 
+    const transactionsData = await transactionsDB.find().populate({
+        path: 'order',
+        populate: { 
+            path: 'car user offers'
+        }
+    })
+    const subscribersData = await emailsDB.find(); 
+
+    if (orders) return res.json({ orders: ordersData });
+    if (users) return res.json({ users: usersData });
+    if (cars) return res.json({ cars: carsData });
+    if (transactions) return res.json({ transactions: transactionsData });
+    if (subscribers) return res.json({ subscribers: subscribersData });
+    
     res.render('admin/admin', {
-        orders: await ordersDB.find(),
-        user: await usersDB.findOne(),
-        vehicles: await carsDB.find(),
-        transactions: await transactionsDB.find(),
-        subscribers: await emailsDB.find()
+        orders: ordersData,
+        users: usersData, 
+        cars: carsData,
+        transactions: transactionsData,
+        subscribers: subscribersData,
+        config: config
     })
 })
 

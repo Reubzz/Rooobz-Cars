@@ -9,13 +9,15 @@
 @import "./components/title-banner";
 @import "./components/login-modal";
 
-.data-wrapper {
+.section-data-wrapper {
     padding: 2% 5%;
     display: flex;
     flex-direction: row;
     gap: 20px;
 }
-
+.hidden {
+    display: none !important;
+}
 #tabs-container {
     height: 100%;
 
@@ -28,47 +30,179 @@
         gap: 10px;
         width: max-content;
 
+        
         .tab-title {
             font-family: $rubik;
             font-weight: $medium;
             font-size: 1.6rem;
             padding: 10px 30px;
             border-radius: 8px;
-
-            &.selected {
-                background-color: $orange;
-                color: $white;
-
-                &:hover {
-                    background-color: $orangeDark;
-                }
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            align-items: center;
+            justify-content: space-between;
+            i {
+                color: $black;
             }
-
             &:hover {
                 cursor: pointer;
                 background-color: $smokedWhite;
             }
         }
+        .tab-group {
+            .dropdown {
+                // background-color: $orangeFadded;
+                .dropdown-element {
+                    font-family: $rubik;
+                    font-weight: $medium;
+                    font-size: 1.4rem;
+                    padding: 10px 50px;
+                    border-radius: 8px;
+                    &:hover {
+                        background-color: $smokedWhite;
+                        cursor: pointer;
+                        
+                    }             
+                }
+            }
+        }
+
+        .selected {
+            background-color: $orange !important;
+            color: $white;
+            
+            &:hover {
+                background-color: $orangeDark !important;
+            }
+            i {
+                transform: rotate(180deg);
+                color: $white !important;
+            }
+        }
     }
 }
 
-#data {
+#data-container {
     width: 100%;
-    background-color: $smokedWhiteLight;
+    background-color: $white;
     border-radius: 10px;
     padding: 20px;
 }
 
-#all-bookings {
-    .bookings-card {
-        width: 100%;
-        background-color: $white;
-        border-radius: 5px;
+#all-data {
+    width: 100%;
+    .data-wrapper {
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+        width: 100%;
+        flex-direction: column;
         align-items: center;
+        gap: 20px;
+        .data-card {
+            display: flex;
+            flex-direction: row;
+            background-color: $whiteDark;
+            border: 2px solid $smokedWhite;
+            width: 100%;
+            padding: 10px;
+            border-radius: 10px;
 
-        .left-wrapper {}
+            justify-content: space-between;
+            align-items: center;
+            .left-wrapper {
+                display: flex;
+                flex-direction: row;
+                gap: 20px;
+                align-items: center;
+                .icon {
+                    img {
+                        width: 150px;
+                        border-radius: 5px;
+                    }
+                }
+                .details {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    justify-content: space-around;
+                    .detail-title {
+                        color: $orange;
+                        font-size: 2rem;
+                        font-weight: $semiBold;
+                        font-family: $rubik;
+                    }
+                    .detail-subtitle {
+                        color: $black;
+                        font-size: 1.2rem;
+                        font-weight: $medium;
+                        font-family: $rubik;
+                        span {
+                            color: $black;
+                            &.orange-span {
+                                color: $orange !important;
+                            }
+                        }
+                    }
+                    .detail-tags {
+                        span {
+                            color: $black;
+                            font-size: 1rem;
+                            font-weight: $medium;
+                            font-family: $rubik;
+                            padding: 5px 10px;
+                            background-color: $greyLight;
+                            border-radius: 5px;
+                            &:hover {
+                                background-color: $orangeFadded;
+                                cursor: pointer;
+                                color: $white;
+                            }
+                        }
+                    }
+                }
+            }
+            .right-wrapper {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                button {
+                    background-color: $white;
+                    border: 2px solid $greyLight;
+                    border-radius: 5px;
+                    padding: 10px 30px;
+                    
+                    color: $black;
+                    font-size: 1rem;
+                    font-weight: $medium;
+                    font-family: $rubik;
+                    
+                    &:hover {
+                        cursor: pointer;
+                        border: 2px solid $orange;
+                        background-color: $smokedWhite;
+                        box-shadow: 0px 0px 3px 0px $grey;
+                    }
+                    
+                    &.orange-button {
+                        background-color: $orange;
+                        color: $white;
+                        border: 2px solid $orange;
+                        &:hover {
+                            background-color: $orangeDark;
+                            box-shadow: 0px 0px 5px 0px $orange;
+                            
+                        }
+                    }
+                }
+            }
+        }
+        .no-data {
+            width: 100%;
+            height: 100%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     }
 }
