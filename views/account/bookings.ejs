@@ -58,7 +58,7 @@
     <section class="data-wrapper">
         <section id="tabs-container">
             <div class="tabs-wrapper">
-                <div onclick="changeTab(this, 'completed')" class="tab-title selected">
+                <div onclick="changeTab(this, 'active')" class="tab-title selected">
                     Booked
                 </div>
                 <div onclick="changeTab(this, 'pending')" class="tab-title">
@@ -72,7 +72,7 @@
         <section id="bookings-data">
             <div id="bookings" class="bookings-wrapper">
                 <% orders.forEach((order) => { %>
-                    <div class="booking booking-<%=order.transaction.status%>">
+                    <div class="booking booking-<%=order.status%>">
                         <div class="left-wrapper">
                             <div class="icon">
                                 <img src="<%= order.car.imgUrls[0] %>" onerror="this.src = '<%=config.logo.secondary.path%>'" alt="Car Image Icon">
