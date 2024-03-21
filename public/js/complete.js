@@ -51,7 +51,7 @@ async function transactionComplete() {
         const orderId = new URLSearchParams(window.location.search).get(
             'orderid'
         );
-        const res = await fetch(`/api/booking/transaction-complete?orderid=${orderId}`, {
+        const res = await fetch(`/api/transaction/complete?orderid=${orderId}`, {
             method: 'POST',
             body: JSON.stringify({ orderId: orderId }),
             headers: { 'Content-Type': 'application/json' },

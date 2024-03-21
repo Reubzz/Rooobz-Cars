@@ -28,15 +28,35 @@ const error = {
 };
 
 exports.transactionComplete = async (req, res, next) => {
+    let tId;
+    let oId;
+    
     const orderId = req.query.orderid;
-    const order = await ordersDB.findOne({ _id: orderId }).populate('transaction')
+    const { id } = req.body;
+
+    if (orderId) {
+        const order = await ordersDB.findOne({ _id: orderId }).populate('transaction')
+        tId = order.transaction._id;
+    }
+    else if (id) {
+        let temp = await transactionsDB.findOne({ _id: tId }).populate('order')
+        oId = temp.order._id
+    }
     try {
         await transactionsDB.updateOne(
             {
-                _id: order.transaction._id
+                _id: tId || id
             },
             {
                 status: 'completed'
+            }
+        )
+        await ordersDB.updateOne(
+            {
+                _id: oId || orderId
+            },
+            {
+                status: 'active'
             }
         )
         res.status(200).json({

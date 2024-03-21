@@ -166,3 +166,8 @@
 - Completed Frontend Code for Admin page
 - Updated `root.js` with  admin routes and routes needed for admin page
 - Updated `paymentsIntent` page with *100 as stripe takes last two numbers in decimal. 
+
+### 21/3/2024 - Update v0.3.3
+- Added new api route for transaction related data `/api/transaction`
+- Changed Trasaction Complete API from `/api/booking/transaction-complete` to `/api/transaction/complete`
+- Added minor change that now allows transaction complete api to allow transaction id or order id any one to complete the transaction. 
