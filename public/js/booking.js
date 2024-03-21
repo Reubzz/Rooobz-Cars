@@ -1,7 +1,7 @@
 
 let arrayOfBookings = []
 if (car.orders) car.orders.forEach((order) => {
-    if (order.status != 'cancelled') arrayOfBookings.push(order.bookedDates)
+    if (order.status != 'cancelled' || order.status != 'refunded') arrayOfBookings.push(order.bookedDates)
 });
 const bookedDates = [].concat(...arrayOfBookings);
 
