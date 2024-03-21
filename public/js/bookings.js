@@ -11,7 +11,7 @@ function changeTab(tab, contentTab) {
     for(i=0; i<contentElems.length; i++) contentElems[i].classList.remove('hidden');
     
 }
-changeTab(document.getElementsByClassName('tab-title')[0], 'completed')
+changeTab(document.getElementsByClassName('tab-title')[0], 'active')
 
 function payNow(orderid) {
     window.location.href = `/booking/pay?id=${orderid}`
