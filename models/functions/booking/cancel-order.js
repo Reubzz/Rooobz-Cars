@@ -36,6 +36,10 @@ exports.orderCancel = async (req, res, next) => {
     const orderId = req.query.orderid
     const order = await ordersDB.findOne({ _id : orderId }).populate('transaction car')
 
+    let transactionStatus;
+    if (order.transaction.status == 'completed') transactionStatus = 'refunded'
+    else if (order.transaction.status == 'pending') transactionStatus = 'cancelled'
+    
     try {
         await ordersDB.updateOne(
             {
@@ -50,7 +54,7 @@ exports.orderCancel = async (req, res, next) => {
                 _id: order.transaction._id
             },
             {
-                status: 'cancelled'
+                status: transactionStatus
             }
         )
 

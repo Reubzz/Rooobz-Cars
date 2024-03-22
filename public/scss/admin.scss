@@ -18,12 +18,22 @@
 .hidden {
     display: none !important;
 }
+.page-title {
+    padding: 1% 5%;
+
+    h1 {
+        font-size: 3rem;
+        color: $orange;
+        font-weight: $bold;
+        font-family: $rubik;
+    }
+}
 #tabs-container {
     height: 100%;
 
     .tabs-wrapper {
         padding: 10px;
-        background-color: $smokedWhiteLight;
+        background-color: $whiteDark;
         border-radius: 5px;
         display: flex;
         flex-direction: column;
@@ -31,27 +41,28 @@
         width: max-content;
 
         
-        .tab-title {
-            font-family: $rubik;
-            font-weight: $medium;
-            font-size: 1.6rem;
-            padding: 10px 30px;
-            border-radius: 8px;
-            display: flex;
-            flex-direction: row;
-            gap: 20px;
-            align-items: center;
-            justify-content: space-between;
-            i {
-                color: $black;
-            }
-            &:hover {
-                cursor: pointer;
-                background-color: $smokedWhite;
-            }
-        }
         .tab-group {
-            .dropdown {
+            .tab-title {
+                font-family: $rubik;
+                font-weight: $medium;
+                font-size: 1.6rem;
+                padding: 10px 30px;
+                border-radius: 8px;
+                display: flex;
+                flex-direction: row;
+                gap: 20px;
+                align-items: center;
+                justify-content: space-between;
+                i {
+                    color: $black;
+                }
+                &:hover {
+                    cursor: pointer;
+                    background-color: $smokedWhite;
+                }
+                
+            }
+            .menu-dropdown {
                 // background-color: $orangeFadded;
                 .dropdown-element {
                     font-family: $rubik;
@@ -62,24 +73,29 @@
                     &:hover {
                         background-color: $smokedWhite;
                         cursor: pointer;
-                        
                     }             
+                }
+            }
+            .selected {
+                background-color: $orange !important;
+                color: $white;
+                
+                &:hover {
+                    background-color: $orangeDark !important;
+                }
+                i {
+                    transform: rotate(180deg);
+                    color: $white !important;
+                }
+                &.dropdown-element {
+                    & + .tab-title  {
+                        background-color: $orange !important;
+                        color: $white;
+                    }
                 }
             }
         }
 
-        .selected {
-            background-color: $orange !important;
-            color: $white;
-            
-            &:hover {
-                background-color: $orangeDark !important;
-            }
-            i {
-                transform: rotate(180deg);
-                color: $white !important;
-            }
-        }
     }
 }
 

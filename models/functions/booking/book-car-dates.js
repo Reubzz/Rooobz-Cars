@@ -31,8 +31,7 @@ const error = {
 
 exports.carBookDates = async (req, res, next) => {
     const orderId = req.query.orderid;
-    const order = await ordersDB.findOne({ _id: orderId }).populate('car')
-    const user = await usersDB.findOne({ _id: res.locals._id })
+    const order = await ordersDB.findOne({ _id: orderId }).populate('car user')
     const startDate = moment(order.startDate, 'DD-MM-YYYY')
     const endDate = moment(order.endDate, 'DD-MM-YYYY')
     
@@ -57,7 +56,7 @@ exports.carBookDates = async (req, res, next) => {
         
         await usersDB.updateOne(
             {
-                _id: res.locals._id
+                _id: order.user._id
             },
             {
                 orders: [`${orderId}`]

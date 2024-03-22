@@ -5,6 +5,7 @@ const config = require('../../config.json')
 const carsDB = require('../../models/schemas/cars')
 const { v4: uuidv4 } = require('uuid')
 const { authCheck } = require('../../middleware/authentication/authentication');
+const { error } = require('console');
 
 
 // ! Cars Add api
@@ -56,12 +57,15 @@ router.post('/add', authCheck, async (req, res) => {
                 console.log(car.name + "saved ")
             })
         } catch (error) {
+            console.log('/api/cars.js - add car route - '+ error)
+
         }
     })
     res.status(200).send("Data Saved")
 })
 
-router.delete('/delete', async (req, res) => {
+// ! Cars Delete API
+router.delete('/', async (req, res) => {
     const { id } = req.body;
     try {
         let car = await carsDB.find(id);
@@ -72,9 +76,48 @@ router.delete('/delete', async (req, res) => {
             .then((deletedCar) => {
                 res.status(200).send("Car Deleted with ID - " + id + " - " + deletedCar)
             })
+
+        res.status(200).json({
+            erorr: {
+                code: 100,
+                message: "No Error"
+            },
+            status: {
+                code: 200,
+                message: "Sucessfully Deleted"
+            }
+        })
     }
     catch (error){
-        console.log('creat-cars-data - '+ error)
+        console.log('/api/cars.js delete route- '+ error)
+    }
+})
+
+router.post('/status', async (req, res) => {
+    const { id } = req.body;
+
+    try {
+        const car = await carsDB.findOne({ _id: id });
+        await carsDB.updateOne(
+            {
+                _id: id
+            },
+            {
+                status: car.status == "available" ? "unavailable" : "available"
+            }
+        )
+        res.status(200).json({
+            erorr: {
+                code: 100,
+                message: "No Error"
+            },
+            status: {
+                code: 200,
+                message: "Sucessfully Updated Status"
+            }
+        })
+    } catch (err) {
+        console.log('/api/cars.js - status route - ' + err)
     }
 })
 

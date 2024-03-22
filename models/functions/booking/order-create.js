@@ -164,7 +164,7 @@ exports.orderCreate = async (req, res, next) => {
                 landmark: formData.landmark,
             },
             phone: formData.phone,
-            status:  'active',
+            status:  'pending',
             orderDate: new Date(),
         })
         

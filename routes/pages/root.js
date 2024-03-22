@@ -84,7 +84,7 @@ router.get('/booking', authCheck, async (req, res) => {
     const carId = req.query.id;
 
     if (req.cookies.jwt) {
-        const carData = await carsDB.findOne({ id: carId }).populate('orders');
+        const carData = await carsDB.findOne({ _id: carId }).populate('orders');
         const offersData = await offersDB.find();
         res.render('vehicles/booking', {
             user: await usersDB.findOne({ _id: res.locals._id }),
@@ -168,7 +168,7 @@ router.get("/admin", authCheck, async (req, res) => {
     const { orders, users, cars, transactions, subscribers } = req.query;
 
     
-    if (res.locals.username != "admin") return res.redirect('back');
+    if (res.locals.role != "admin") return res.redirect('back');
 
     const ordersData = await ordersDB.find().populate('car transaction user offers');
     const usersData = await usersDB.find().populate('orders'); // ! Add Reviews Here later

@@ -41,7 +41,7 @@ paymentForm.addEventListener('submit', async (event) => {
         //`Elements` instance that was used to create the Payment Element
         elements,
         confirmParams: {
-            return_url: `https://rooobzcars.reubz.io/booking/complete?orderid=${orderId}`,
+            return_url: `${window.location.origin}/booking/complete?orderid=${orderId}`,
         },
     });
 

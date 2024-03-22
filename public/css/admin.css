@@ -542,12 +542,22 @@ body {
   display: none !important;
 }
 
+.page-title {
+  padding: 1% 5%;
+}
+.page-title h1 {
+  font-size: 3rem;
+  color: #FF4C30;
+  font-weight: 700;
+  font-family: "Rubik", sans-serif;
+}
+
 #tabs-container {
   height: 100%;
 }
 #tabs-container .tabs-wrapper {
   padding: 10px;
-  background-color: #e0e0e0;
+  background-color: #f3f3f3;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -555,7 +565,7 @@ body {
   width: -moz-max-content;
   width: max-content;
 }
-#tabs-container .tabs-wrapper .tab-title {
+#tabs-container .tabs-wrapper .tab-group .tab-title {
   font-family: "Rubik", sans-serif;
   font-weight: 500;
   font-size: 1.6rem;
@@ -567,34 +577,38 @@ body {
   align-items: center;
   justify-content: space-between;
 }
-#tabs-container .tabs-wrapper .tab-title i {
+#tabs-container .tabs-wrapper .tab-group .tab-title i {
   color: #0c0c0c;
 }
-#tabs-container .tabs-wrapper .tab-title:hover {
+#tabs-container .tabs-wrapper .tab-group .tab-title:hover {
   cursor: pointer;
   background-color: #DADADA;
 }
-#tabs-container .tabs-wrapper .tab-group .dropdown .dropdown-element {
+#tabs-container .tabs-wrapper .tab-group .menu-dropdown .dropdown-element {
   font-family: "Rubik", sans-serif;
   font-weight: 500;
   font-size: 1.4rem;
   padding: 10px 50px;
   border-radius: 8px;
 }
-#tabs-container .tabs-wrapper .tab-group .dropdown .dropdown-element:hover {
+#tabs-container .tabs-wrapper .tab-group .menu-dropdown .dropdown-element:hover {
   background-color: #DADADA;
   cursor: pointer;
 }
-#tabs-container .tabs-wrapper .selected {
+#tabs-container .tabs-wrapper .tab-group .selected {
   background-color: #FF4C30 !important;
   color: #f1f1f1;
 }
-#tabs-container .tabs-wrapper .selected:hover {
+#tabs-container .tabs-wrapper .tab-group .selected:hover {
   background-color: #e64229 !important;
 }
-#tabs-container .tabs-wrapper .selected i {
+#tabs-container .tabs-wrapper .tab-group .selected i {
   transform: rotate(180deg);
   color: #f1f1f1 !important;
+}
+#tabs-container .tabs-wrapper .tab-group .selected.dropdown-element + .tab-title {
+  background-color: #FF4C30 !important;
+  color: #f1f1f1;
 }
 
 #data-container {

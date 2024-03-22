@@ -111,7 +111,7 @@
 - Fixed Homepage quick booking section - Removed Date Picker as not needed atm.
 - Added `jwtSign.js` to `/models/functions/jwt/jwtSign.js` for easier cookie signing process to login / refresh user data. Reduced Repeated Code.
 
-## 8/3/2024 - Update v0.2.0
+# 8/3/2024 - Update v0.2.0 [Major]
 - Order Creation and Transaction Creation API route : `api/booking/order-create`
 - Added Stripe API as Payment Gateway
 - Added `offers` schema to dynamically add and remove offers available while booking cars.
@@ -133,7 +133,7 @@
     - `/api/booking/book-car-dates` - Books Car's Dates
 - Added `moment.js` to help deal with dates 
 
-## 14/3/2024 - Update v0.3.0
+# 14/3/2024 - Update v0.3.0 [Major]
 - Added Invoice package `easyinvoice` 
 - Added field for Invoices in mongodb.
 - Added new Invoice API - `/api/invoice` 
@@ -160,14 +160,33 @@
 - Minor Changes / Fixes / Quality of Life Changes
 - Restricted Booking page datepicker to allow dates 60 days ahead only. 
 
-### 20/3/2024 - Update v0.3.2
+# 20/3/2024 - Update v0.4.0 [Major]
 - Added Admin Page - Update 1
 - Updated email subscribers API - To now be able to delete users on `DELETE` Method
 - Completed Frontend Code for Admin page
 - Updated `root.js` with  admin routes and routes needed for admin page
 - Updated `paymentsIntent` page with *100 as stripe takes last two numbers in decimal. 
 
-### 21/3/2024 - Update v0.3.3
-- Added new api route for transaction related data `/api/transaction`
+### 22/3/2024 - Update v0.4.1
+- Changed Styles (scss/css) of Admin Page.
+- Changed functions and layout of Admin page - `admin.ejs`
+- Added `/public/js/admin.js`
+    - Created a common `callAPI()` dynamic function with serves all action buttons of the admin panel
+    - Added dynamic query - which reloads/refreshes the page with fresh data and opens the same tab page that was opened before clicking the action button
+    
+- Added new api route for transaction related data `/api/transactions`
+- Changed car api route from `/api/create-car-data` to `/api/cars`
+- Added new routes to cars api - `delete`, `status` 
+- Changed Cars Schema - `status` field from a @Boolean to @String - true = available & false = unavailable. 
+- Updated other pages according to the Change above.
+- Changed Cars Schema - `id` field to required false. Making custom Ids obselete. 
+- Added new routes to `/api/account` - `role` and `delete`
+- Added new files with functions for the above route `changeRole.js` and `deleteUser.js`
 - Changed Trasaction Complete API from `/api/booking/transaction-complete` to `/api/transaction/complete`
 - Added minor change that now allows transaction complete api to allow transaction id or order id any one to complete the transaction. 
+- Added new routes to `/api/transaction` route - `/reactivate` `/refund` `/cancel`
+- Added functions in folder - `/functions/transactions/` - `cancel.js` `complete.js` `reactivate.js` `refund.js`
+- Changed Logic of `cancel-order.js` - Added Refunded and Cancelled Orders logic
+- Changed Logic of `order-create.js` - New Orders are now status as `pending`
+- Changed `root.js` for admin panel route to be accessable only by people having `admin` role. 
+- Changed `return_url` in `/public/js/payment.js` - made it dynamic so it works with all domains and development automatically. 

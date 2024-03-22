@@ -3,9 +3,6 @@
 const transactionsDB = require('../../schemas/transactions')
 const ordersDB = require('../../schemas/orders')
 
-// Imports
-const { carBookDates } = require('./book-car-dates')
-
 const status = {
     200: {
         message: "Transaction Status Update Success",
@@ -22,12 +19,12 @@ const error = {
         code: 100
     },
     101: {
-        message: "Transaction DB Error - Couldn't update transaction status to 'Completed'",
+        message: "Transaction DB Error - Couldn't update transaction status to 'Pending'",
         code: 101
     }
 };
 
-exports.transactionComplete = async (req, res, next) => {
+exports.transactionReactivate = async (req, res, next) => {
     let tId;
     let oId;
     
@@ -39,7 +36,7 @@ exports.transactionComplete = async (req, res, next) => {
         tId = order.transaction._id;
     }
     else if (id) {
-        let temp = await transactionsDB.findOne({ _id: tId }).populate('order')
+        let temp = await transactionsDB.findOne({ _id: id }).populate('order')
         oId = temp.order._id
     }
     try {
@@ -48,7 +45,7 @@ exports.transactionComplete = async (req, res, next) => {
                 _id: tId || id
             },
             {
-                status: 'completed'
+                status: 'pending'
             }
         )
         await ordersDB.updateOne(
@@ -56,7 +53,7 @@ exports.transactionComplete = async (req, res, next) => {
                 _id: oId || orderId
             },
             {
-                status: 'active'
+                status: 'pending'
             }
         )
         res.status(200).json({
