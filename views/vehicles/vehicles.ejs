@@ -87,7 +87,7 @@
         </div>
         <div class="data-wrapper">
             <% vehicles.forEach(car => { %>
-                <% if (car.status == true) { %>
+                <% if (car.status == "available") { %>
                     <a href="vehicles/<%= car.brand %>/<%= car.name %>" class="card">
                         <div class="image-container">
                             <img src="<%= car.imgUrls[0] %>" />
