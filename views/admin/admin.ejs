@@ -133,6 +133,9 @@
                                     <div class="detail-subtitle">
                                         <span><%= order.startDate %></span> - <span><%= order.endDate %></span> | User - <span class="orange-span"><%= order.user.username %></span></h2>
                                     </div>
+                                    <div class="detail-subtitle">
+                                        ID - <span class="orange-span"><%= order._id %></span> </h2>
+                                    </div>
                                     <div class="detail-tags">
                                         <% order.offers.forEach(offer => { %>
                                             <span><%= offer.name %></span>
@@ -142,13 +145,12 @@
                             </div>
                             <% if(order.status == 'pending') {%>
                                 <div class="right-wrapper">
-                                    <button onclick="payNow('<%= order._id %>')" class="orange-button" id="pay-now-btn">Pay Now</button>
-                                    <button onclick="cancelBooking('<%= order._id %>')">Cancel Booking</button>
+                                    <button onclick="callAPI('<%= order._id %>', this, 'booking/cancel-order', 'POST', false)">Cancel Booking</button>
                                 </div>
                             <% } else if (order.status == 'active') { %>
                                 <div class="right-wrapper">
                                     <button onclick="getPDF('<%= order._id %>')" class="orange-button" id="show-invoice-btn">Show Invoice</button>
-                                    <button onclick="cancelBooking('<%= order._id %>')">Cancel Booking</button>
+                                    <button onclick="callAPI('<%= order._id %>', this, 'booking/cancel-order', 'POST', false)">Cancel Booking</button>
                                 </div>
                             <% } %>
                         </div>

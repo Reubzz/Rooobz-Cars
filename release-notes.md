@@ -190,3 +190,5 @@
 - Changed Logic of `order-create.js` - New Orders are now status as `pending`
 - Changed `root.js` for admin panel route to be accessable only by people having `admin` role. 
 - Changed `return_url` in `/public/js/payment.js` - made it dynamic so it works with all domains and development automatically. 
+- Fixed Cancel Booking Button in Admin Panel. 
+- Fixed `cancel-order.js` to allow id in body and query both.

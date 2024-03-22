@@ -33,7 +33,8 @@ const error = {
 };
 
 exports.orderCancel = async (req, res, next) => {
-    const orderId = req.query.orderid
+    const { id } = req.body;
+    const orderId = id || req.query.orderid
     const order = await ordersDB.findOne({ _id : orderId }).populate('transaction car')
 
     let transactionStatus;
