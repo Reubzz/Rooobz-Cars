@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="language" content="en">
+
+    <!-- Website Title -->
+    <title>Add Car - Rooobz Cars</title>
+
+    <!-- Icon -->
+    <link rel="shortcut icon" href="https://project.reubz.io/imgs/logo.png" type="image/x-icon">
+
+    <!-- Primary Tags -->
+    <meta name="title" content="Add Car - Rooobz Cars">
+    <meta name="description" content="Add Car to Rooobz Cars Renting List">
+
+
+    <!-- Open Graph / Facebook / Insta -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://project.reubz.io/admin/add-car">
+    <meta property="og:title" content="Add Car - Rooobz Cars">
+    <meta property="og:description" content="Add Car to Rooobz Cars Renting List">
+    <meta property="og:image" itemprop="image" content="https://project.reubz.io/imgs/logo-with-text.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://project.reubz.io/admin/add-car">
+    <meta property="twitter:title" content="Add Car - Rooobz Cars">
+    <meta property="twitter:description" content="Add Car to Rooobz Cars Renting List">
+    <meta property="twitter:image" content="https://project.reubz.io/imgs/logo-with-text.png">
+
+    <!-- For Discord Embeds -->
+    <meta content="#FF4C30" data-react-helmet="true" name="theme-color" />
+
+    <link rel="stylesheet" href="/css/add-car.css">
+
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- Fontawesome Link -->
+    <!-- <script src="https://kit.fontawesome.com/4d3f484b6f.js" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-thin.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-solid.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css">
+</head>
+
+<body>
+
+    <div data-include="navbar"></div>
+
+    <section class="section-data-wrapper">
+        <div class="page-title">
+            <h1>Add New Car</h1>
+        </div>
+
+        <div class="content-wrapper">
+            <form id="carForm" enctype="multipart/form-data">
+                <div class="form-row">
+                    <div class="form-group-element">
+                        <label for="brand">Brand</label>
+                        <input type="text" name="brand" placeholder="Car Brand" required>
+                    </div>
+                    <div class="form-group-element">
+                        <label for="name">Model</label>
+                        <input type="text" name="name" placeholder="Car Name (Model)" required>
+                    </div>
+                    <div class="form-group-element">
+                        <label for="color">Colour</label>
+                        <input type="text" name="color" placeholder="Color" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group-element">
+                        <label for="description">Description</label>
+                        <textarea name="description" maxlength="128" placeholder="Description" required></textarea>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group-element">
+                        <label for="condition">Condition</label>
+                        <select name="condition" required>
+                            <option value="New">New</option>
+                            <option value="Best">Best</option>
+                            <option value="Good">Good</option>
+                            <option value="Moderate">Moderate</option>
+                            <option value="Poor">Poor</option>
+                        </select>
+                    </div>
+                    <div class="form-group-element">
+                        <label for="doors">Number of Doors</label>
+                        <select name="doors" required>
+                            <option value="2">2</option>
+                            <option value="4" selected>4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <div class="form-group-element">
+                        <label for="seats">Number of Seats</label>
+                        <select name="seats" required>
+                            <option value="2">2</option>
+                            <option value="4" selected>4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group-element">
+                        <label for="transmission">Transmission Type</label>
+                        <select name="transmission" required>
+                            <option value="Automatic">Automatic</option>
+                            <option value="Manual">Manual</option>
+                            <option value="Semi-Automatic">Semi-Automatic</option>
+                            <option value="Hybrid">Hybrid</option>
+                        </select>
+                    </div>
+                    <div class="form-group-element">
+                        <label for="fuelType">Fuel Type</label>
+                        <select name="fuelType" required>
+                            <option value="Petrol">Petrol</option>
+                            <option value="Diesel">Diesel</option>
+                            <option value="Electric">Electric</option>
+                            <option value="Hybrid">Hybrid</option>
+                        </select>
+                    </div>
+                    <div class="form-group-element">
+                        <label for="status">Availability</label>
+                        <select name="status" required>
+                            <option value="available">Available</option>
+                            <option value="unavailable">Unavailable</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group-element">
+                        <label for="price">Price</label>
+                        <input type="number" name="price" placeholder="Price" required>
+                    </div>
+                    <div class="form-group-element">
+                        <label for="discount">Discount</label>
+                        <input type="number" name="discount" placeholder="Discount">
+                    </div>
+                </div>
+                <div class="form-group-element">
+                    <label for="images">Images</label>
+                    <input type="file" name="images" multiple required>
+                </div>
+                <div class="form-group-element">
+                    <button id="form-submit-btn" type="submit">Submit</button>
+                </div>
+            </form>
+            
+        </div>
+    </section>
+
+    <div data-include="footer"></div>
+
+    <!-- ! Javascript -->
+    <script src="/js/add-car.js"></script>
+    <script src="/js/import-html.js"></script>
+    <script src="/js/footer.js"></script>
+    <script src="/js/navbar.js"></script>
+    <script src="/js/error-popup.js"></script>
+</body>
+
+</html>

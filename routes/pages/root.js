@@ -197,6 +197,15 @@ router.get("/admin", authCheck, async (req, res) => {
     })
 })
 
+router.get('/admin/add-car', authCheck, async (req, res) => {
+    // Check if user admin
+    const user = await usersDB.findOne({ _id: res.locals._id });
+    if(user.role != 'admin') return res.redirect('back');
+
+    res.render('admin/add-car', {})
+    
+})
+
 router.get('/login', (req, res) => {
     if (req.cookies.jwt) {
         return res.redirect('back')

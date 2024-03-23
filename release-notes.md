@@ -192,3 +192,12 @@
 - Changed `return_url` in `/public/js/payment.js` - made it dynamic so it works with all domains and development automatically. 
 - Fixed Cancel Booking Button in Admin Panel. 
 - Fixed `cancel-order.js` to allow id in body and query both.
+
+### 23/3/2024 - Update v0.4.1 - Part 2
+- Added Add Car feature. 
+- Added `add-car.ejs`, `add-car.scss`, `add-car.css`, `add-car.js` - For above.
+- Completed API Route for adding cars.
+- Added AWS s3 connection using - `aws-sdk` package.
+- Added `aws-sdk` package.
+- Added `multer` package to manage image uploads. 
+- Added 100mb limit for all forms with file uploads

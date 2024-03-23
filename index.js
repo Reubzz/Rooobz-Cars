@@ -1,7 +1,6 @@
 require("dotenv").config();
 const express = require("express");
 const path = require("path");
-const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 
 const port = process.env.PORT;
@@ -9,8 +8,9 @@ const app = express();
 
 app.set('view engine', 'ejs');
 app.use(express.static("public"));
-app.use(express.json());
-app.use(cookieParser())
+app.use(express.json({ limit: '100mb' }));
+app.use(cookieParser());
+app.use(express.urlencoded({ limit: '100mb', extended: true }))
 
 
 // page segregation .. App use statments
