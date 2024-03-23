@@ -37,7 +37,7 @@ exports.authCheck = async (req, res, next) => {
         })
     }
     else {
-        res.locals.userRole = "default"
+        res.locals.role = "default"
         next()
     }
 }
