@@ -40,5 +40,6 @@
         "country": "India"
     },
 
-    "loginMaxAge": 1296000
+    "loginMaxAge": 1296000,
+    "allowed_hosts": ["rooobzcars.reubz.io", "reubz.io", "localhost"]
 }

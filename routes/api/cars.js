@@ -62,7 +62,7 @@ router.post('/add', upload.array('images'), apiAuthCheck, checkOrigin, async (re
 })
 
 // ! Cars Delete API
-router.delete('/', async (req, res) => {
+router.delete('/', apiAuthCheck, checkOrigin, async (req, res) => {
     const { id } = req.body;
     try {
         let car = await carsDB.find(id);
@@ -90,7 +90,7 @@ router.delete('/', async (req, res) => {
     }
 })
 
-router.post('/status', async (req, res) => {
+router.post('/status', apiAuthCheck, checkOrigin, async (req, res) => {
     const { id } = req.body;
 
     try {

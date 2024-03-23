@@ -5,6 +5,7 @@ const easyinvoice = require('easyinvoice');
 const fs = require('fs');
 const config = require('../../config.json')
 const moment = require('moment');
+const { checkOrigin } = require('../../middleware/authentication/checkOrigin');
 
 // Databases
 const ordersDB = require('../../models/schemas/orders');
@@ -38,7 +39,7 @@ const status = {
         code: 201,
     },
 }
-router.post('/', async (req, res) => {    
+router.post('/', checkOrigin, async (req, res) => {    
     const orderId = req.query.orderid;
     const force = req.query.force;
     const order = await ordersDB.findOne({ _id: orderId }).populate('transaction user car offers')

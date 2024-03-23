@@ -201,3 +201,11 @@
 - Added `aws-sdk` package.
 - Added `multer` package to manage image uploads. 
 - Added 100mb limit for all forms with file uploads
+
+### 23/3/2024 - Update v0.4.2 
+- Added additional security measures for all API. 
+- Added ACL method middleware `/middleware/checkOrigin.js` - to only allow `localhost` and `reubz.io` domains. (config.json)
+- Added a new Auth Check middleware `/middleware/apiAuthentication.js` - where only admin are allowed access to api. 
+- Updated all API's to use the above new methods. 
+- Removed `body-parser` from authentication API. Using express.json now instead of bodyparser
+- Removed `body-parser` from packages and Node modules.

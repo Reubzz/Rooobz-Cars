@@ -5,15 +5,16 @@ const { transactionComplete } = require('../../models/functions/transactions/com
 const { transactionReactivate } = require('../../models/functions/transactions/reactivate.js')
 const { transactionRefund } = require('../../models/functions/transactions/refund.js')
 const { transactionCancel } = require('../../models/functions/transactions/cancel.js')
+const { apiAuthCheck } = require('../../middleware/authentication/apiAuthentication');
+const { checkOrigin } = require('../../middleware/authentication/checkOrigin');
 
-// ! Order Complete API Endpoint
-// ! Order Payment Complete API Endpoint
-router.post('/complete', authCheck, transactionComplete)
+// ! Transaction API Endpoint
+router.post('/complete', authCheck, checkOrigin, transactionComplete)
 
-router.post('/reactivate', authCheck, transactionReactivate)
+router.post('/reactivate', apiAuthCheck, checkOrigin, transactionReactivate)
 
-router.post('/refund', authCheck, transactionRefund)
+router.post('/refund', apiAuthCheck, checkOrigin, transactionRefund)
 
-router.post('/cancel', authCheck, transactionCancel)
+router.post('/cancel', apiAuthCheck, checkOrigin, transactionCancel)
 
 module.exports = router;

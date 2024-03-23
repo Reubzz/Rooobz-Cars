@@ -168,7 +168,7 @@ router.get("/admin", authCheck, async (req, res) => {
     const { orders, users, cars, transactions, subscribers } = req.query;
 
     
-    if (res.locals.role != "admin") return res.redirect('back');
+    if (res.locals.role != "admin") return res.redirect('/login');
 
     const ordersData = await ordersDB.find().populate('car transaction user offers');
     const usersData = await usersDB.find().populate('orders'); // ! Add Reviews Here later
@@ -199,11 +199,8 @@ router.get("/admin", authCheck, async (req, res) => {
 
 router.get('/admin/add-car', authCheck, async (req, res) => {
     // Check if user admin
-    const user = await usersDB.findOne({ _id: res.locals._id });
-    if(user.role != 'admin') return res.redirect('back');
-
+    if(res.locals.role != 'admin') return res.redirect('/login');
     res.render('admin/add-car', {})
-    
 })
 
 router.get('/login', (req, res) => {

@@ -2,7 +2,8 @@ const express = require('express');
 const router = express.Router();
 const { v4: uuidv4 } = require('uuid')
 const emailList = require('../../models/schemas/email-subscribe');
-
+const { apiAuthCheck } = require('../../middleware/authentication/apiAuthentication');
+const { checkOrigin } = require('../../middleware/authentication/checkOrigin');
 const error = {
     100: {
         message: 'No error',
@@ -44,7 +45,7 @@ const status = {
         code: 203,
     },
 }
-router.post('/', async (req, res) => {    
+router.post('/', checkOrigin, async (req, res) => {    
     const { email } = req.body;
 
     if (!email) {
