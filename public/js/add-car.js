@@ -3,11 +3,8 @@ const addCarForm = document.getElementById('carForm');
 addCarForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const formData = new FormData(addCarForm);
-    console.log(formData)
 
     // ! Validate fields
-    
-
     try {
         const res = await fetch('/api/cars/add', {
             method: 'POST',
