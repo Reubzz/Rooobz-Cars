@@ -498,7 +498,7 @@ span.placeholder {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 5% 10%;
+  padding: 5% 5%;
   gap: 50px;
 }
 .container .title-wrapper .title {
@@ -597,22 +597,24 @@ span.placeholder {
 }
 .container .data-wrapper {
   width: 100%;
-  height: 100%;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: center;
-  display: flex;
-  gap: 20px;
+  overflow: hidden;
+  padding: 5px;
+  position: relative;
+  display: grid;
+  grid-gap: 0.6em 0.75em;
+  grid-template-columns: repeat(auto-fill, minmax(270px, max-content));
+  padding-right: 2px;
 }
 .container .data-wrapper .card {
-  flex: 1;
-  width: 100%;
-  max-width: 370px;
+  margin: 0 !important;
+  max-height: none;
+  max-width: 100%;
+  width: 30em;
   padding: 10px;
   background: #DADADA;
   border-radius: 5px;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 10px;
   display: flex;
@@ -632,15 +634,18 @@ span.placeholder {
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
+  height: 150px;
   gap: 10px;
   background-color: #f1f1f1;
 }
 .container .data-wrapper .card .image-container img {
-  align-self: stretch;
+  align-self: center;
   border-radius: 10px;
   width: 100%;
   height: 100%;
   aspect-ratio: 16/9;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .container .data-wrapper .card .details-container {
   align-self: stretch;
