@@ -217,3 +217,9 @@
 - Added PFP Update/Edit Feature. 
 - Added new api route `/api/account/edit` - `PUT` Req - for PFP edits.
 - Changed existing account details editing to the same API Route but with `PATCH` Req. 
+
+### 27/3/2024 - Update v0.4.4
+- Added Auto Inoice Emails on Transaction Completion 
+- Added nodemailer module to send emails. 
+- Added new `sendEmail.js` file in `/models/functions` to dynamically send emails from any other file. Just Import it and send emails. 
+- Added `email.ejs` in new `/templates` folder. Template for Invoice Email Messages.

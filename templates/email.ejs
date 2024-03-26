@@ -1,0 +1,97 @@
+<html lang="en">
+<head>
+    <title>Rooobz Cars Booking Invoice</title>
+    <style>
+        /* Styles for invoice layout */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: #FF4C30;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f4f4f4;
+            text-align: left;
+        }
+        .invoice-info {
+            margin-bottom: 20px;
+        }
+        .thank-you {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="<%= logoUrl %>" alt="Rooobz Cars Logo">
+        <div class="invoice-info">
+            <h2>Payment Complete</h2>
+            <h3>THANK YOU!</h3>
+            <p><strong>Order ID:</strong> <%= invoiceNumber %></p>
+            <p><strong>Date:</strong> <%= date %></p>
+            <p><strong>Billed To:</strong> <%= billedTo %></p>
+            <p><strong>Email:</strong> <%= email %></p>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Car</th>
+                    <th>Days</th>
+                    <th>Daily Rate</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><%= carName %></td>
+                    <td><%= carDays %> days</td>
+                    <td>₹ <%= carPrice %></td>
+                    <td>₹ <%= parseFloat(carPrice + (carPrice*0.18)).toFixed(2) %></td>
+                </tr>
+                <% offers.forEach(offer => { %>
+                    <tr>
+                        <td><%= offer.name %></td>
+                        <td>1 day</td>
+                        <td>-</td>
+                        <td>₹ <%= offer.price %></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="3">Total</th>
+                    <td>₹ <%= total %> </td>
+                </tr>
+            </tfoot>
+        </table>
+        <div class="thank-you">
+            <p>Attached below, you'll find your invoice for your recent purchase. Please download and keep it safe for your records.</p>
+            <p>For your convenience, we've included our <a href="https://rooobzcars.reubz.io/cancellation-policy">Cancellation Policy [Click here]</a></p>
+            <br>
+            <p>Thank you for choosing Rooobz Cars for your rental needs!</p>
+        </div>
+    </div>
+</body>
+</html>
