@@ -58,19 +58,19 @@
         <div class="main-container">
             <div class="left-container">
                 <div class="image-container">
-                    <img src="<%= user.profileImg %>" alt="Profile Image">
+                    <img src="<%= user.profileImg %>" onerror="this.src = '/imgs/default-user-img.png'" alt="Profile Image">
                 </div>
                 <div class="buttons-wrapper">
                     <button id="change-btn" onclick="openPfpDialog()">Change Image <i class="fa-duotone fa-file-pen"></i></button>
                     <div class="form-wrapper" id="image-form-wrapper">
-                        <form class="open" id="image-upload" action="/api/account/image-update" enctype="multipart/form-data" method="post">
+                        <form id="image-upload">
                             <div class="content-wrapper">
                                 <div class="title-wrapper">
                                     <h2>Upload your custom profile image</h2>
                                     <i class="fad fa-circle-xmark" onclick="closePfpDialog()"></i>
                                 </div>
                                 <div class="file-upload-wrapper">
-                                    <input id="image" type="file" accept=".png, .jpg"/>
+                                    <input id="image" name="image" type="file" accept=".png, .jpg"/>
                                 </div>
                                 <button id="upload-button" type="submit">Upload</button>
                             </div>

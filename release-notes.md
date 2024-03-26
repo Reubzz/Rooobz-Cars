@@ -214,3 +214,6 @@
 - Added Changes to `db.js` to integrate Mongoose and AWS S3 configuration into one DB File. 
 - Made Changes in all Mongoose Schema Files to integrate this Change. 
 - Changed CSS Styles to for pfp to fit container element in Navbar and Account Edit Screen. 
+- Added PFP Update/Edit Feature. 
+- Added new api route `/api/account/edit` - `PUT` Req - for PFP edits.
+- Changed existing account details editing to the same API Route but with `PATCH` Req. 

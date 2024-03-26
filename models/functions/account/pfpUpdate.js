@@ -6,7 +6,7 @@ const { jwtSign, setJwtCookie } = require('../jwt/jwtSign')
 const User = require('../../schemas/users')
 
 // Imports 
-const { s3 } = require('../../db');
+const { s3 } = require('../../../db');
 
 const status = {
     200: {
@@ -33,10 +33,9 @@ const error = {
     },
 };
 
-exports.editAccount = async (req, res, next) => {
-
+exports.pfpUpdate = async (req, res, next) => {
     const image = req.file; // Uploaded images
-    
+
     // * Get current User Account from Database 
     const currentUser = await User.findOne({ id: res.locals.id})
 
@@ -50,12 +49,12 @@ exports.editAccount = async (req, res, next) => {
         const uploadResult = await s3.upload(uploadParams).promise();
         
 
-        currentUser.profileImg = uploadResult;
+        currentUser.profileImg = uploadResult.Location;
         currentUser.save();
         setJwtCookie(jwtSign(currentUser), res);
         return res.status(200).json({ error: error[100], status: status[200] })
     } catch (err) {
-        res.status(400).json({
+        res.status(401).json({
             error: error[103], 
             status: status[201]
         })

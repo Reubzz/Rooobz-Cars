@@ -42,7 +42,7 @@ function changeButton(fieldName, button) {
 async function submitField(inputElement, fieldName, button) {
     try {
         const res = await fetch(`/api/account/edit`, {
-            method: 'POST',
+            method: 'PATCH',
             body: JSON.stringify({
                 [fieldName]: inputElement.value
             }),
@@ -62,7 +62,7 @@ async function submitField(inputElement, fieldName, button) {
 
         // ! If Sucess
         if (res.status == 200) {
-            window.location.reload();
+            window.location.reload(true);
             return; 
         }
     } catch (error) {
@@ -85,3 +85,33 @@ window.onclick = function(event) {
         closePfpDialog()
     }
 }
+
+// /api/account/pfp-update
+const form = document.getElementById('image-upload')
+form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const formData = new FormData(form);
+
+    try {
+        const response = await fetch('/api/account/edit', {
+            method: 'PUT',
+            body: formData
+        })
+        const data = await response.json();
+        if(response.status == 200) {
+            // Success
+            window.location.reload();
+            return;
+        }
+        showError({
+            error: data.error.code,
+            message: data.error.message
+        })
+    } catch (err) {
+        showError({
+            error: 103,
+            message: err.message
+        })
+        console.log('error in PFP Form in account.js in public/js', err.message)
+    }
+})
