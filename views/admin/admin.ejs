@@ -164,7 +164,7 @@
                     <% users.forEach((user) => { %>
                         <div class="data-card user user-<%=user.role%> hidden" data-cardtype="user-<%=user.role%>">
                             <div class="left-wrapper">
-                                <div class="icon">
+                                <div class="icon pfp">
                                     <img src="<%= user.profileImg %>" onerror="this.src = '<%=config.logo.secondary.path%>'" alt="Car Image Icon">
                                 </div>
                                 <div class="details">
@@ -223,12 +223,12 @@
                             <% if(car.status == "available") {%>
                                 <div class="right-wrapper">
                                     <button onclick="callAPI('<%= car._id %>', this, 'cars/status', 'POST', false)" class="orange-button">Make Unavailable</button>
-                                    <button onclick="callAPI('<%= car._id %>', this, 'cars/delete', 'DELETE', true)">Delete Car</button>
+                                    <button onclick="callAPI('<%= car._id %>', this, 'cars', 'DELETE', true)">Delete Car</button>
                                 </div>
                             <% } else { %>
                                 <div class="right-wrapper">
                                     <button onclick="callAPI('<%= car._id %>', this, 'cars/status', 'POST', false)" class="orange-button">Make Available</button>
-                                    <button onclick="callAPI('<%= car._id %>', this, 'cars/delete', 'DELETE', true)">Delete Car</button>
+                                    <button onclick="callAPI('<%= car._id %>', this, 'cars', 'DELETE', true)">Delete Car</button>
                                 </div>
                             <% } %>
                         </div>

@@ -657,6 +657,10 @@ body {
   -o-object-fit: cover;
      object-fit: cover;
 }
+#all-data .data-wrapper .data-card .left-wrapper .icon.pfp img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
 #all-data .data-wrapper .data-card .left-wrapper .details {
   display: flex;
   flex-direction: column;

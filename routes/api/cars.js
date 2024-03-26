@@ -57,15 +57,11 @@ router.post('/add', upload.array('images'), apiAuthCheck, checkOrigin, async (re
 router.delete('/', apiAuthCheck, checkOrigin, async (req, res) => {
     const { id } = req.body;
     try {
-        let car = await carsDB.find(id);
+        const car = await carsDB.find({ _id: id});
         if(!car) {
             return res.status(400).send("Cannot Delete No Car Found with ID = " + id);
         }
-        carsDB.deleteOne(id)
-            .then((deletedCar) => {
-                res.status(200).send("Car Deleted with ID - " + id + " - " + deletedCar)
-            })
-
+        await carsDB.deleteOne({ _id: id})
         res.status(200).json({
             erorr: {
                 code: 100,
