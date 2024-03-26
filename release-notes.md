@@ -213,3 +213,4 @@
 ### 26/3/2024 - Update v0.4.3 
 - Added Changes to `db.js` to integrate Mongoose and AWS S3 configuration into one DB File. 
 - Made Changes in all Mongoose Schema Files to integrate this Change. 
+- Changed CSS Styles to for pfp to fit container element in Navbar and Account Edit Screen. 

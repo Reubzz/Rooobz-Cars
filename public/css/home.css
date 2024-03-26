@@ -104,7 +104,12 @@ header nav .dropdown .dropbtn .wrapper {
 }
 header nav .dropdown .dropbtn img {
   width: 42px;
+  aspect-ratio: 1/1;
   margin: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 2px solid #d5d5d5;
+  border-radius: 50%;
 }
 header nav .dropdown .dropdown-content {
   display: none;

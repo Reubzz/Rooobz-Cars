@@ -38,6 +38,10 @@
         width: 80%;
         img {
             width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border: 2px solid $smokedWhiteDark;
+            border-radius: 50%;
         }
     }
     .buttons-wrapper {

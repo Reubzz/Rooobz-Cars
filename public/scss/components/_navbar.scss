@@ -88,7 +88,11 @@ header {
 
                 img {
                     width: 42px;
+                    aspect-ratio: 1/1;
                     margin: auto;
+                    object-fit: cover;
+                    border: 2px solid $smokedWhiteDark;
+                    border-radius: 50%;
                 }
 
             }
