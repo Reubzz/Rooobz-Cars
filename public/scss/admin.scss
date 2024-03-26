@@ -134,6 +134,8 @@
                     img {
                         width: 150px;
                         border-radius: 5px;
+                        aspect-ratio: 1.7/1;
+                        object-fit: cover;  
                     }
                 }
                 .details {

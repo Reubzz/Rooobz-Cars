@@ -653,6 +653,9 @@ body {
 #all-data .data-wrapper .data-card .left-wrapper .icon img {
   width: 150px;
   border-radius: 5px;
+  aspect-ratio: 1.7/1;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 #all-data .data-wrapper .data-card .left-wrapper .details {
   display: flex;
