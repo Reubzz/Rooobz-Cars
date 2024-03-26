@@ -1,5 +1,4 @@
-const mongoose = require('mongoose')
-const db = require('../../db.js')
+const { mongoose } = require('../../db.js')
 
 /**
  * 
@@ -9,7 +8,7 @@ const db = require('../../db.js')
  *      * Additional Data not compulsory but needed. 
  */
 
-const model = db.MAIN_DB.model(
+const model = mongoose.MAIN_DB.model(
     'transaction',
     new mongoose.Schema({
         order: { 

@@ -209,3 +209,7 @@
 - Updated all API's to use the above new methods. 
 - Removed `body-parser` from authentication API. Using express.json now instead of bodyparser
 - Removed `body-parser` from packages and Node modules.
+
+### 26/3/2024 - Update v0.4.3 
+- Added Changes to `db.js` to integrate Mongoose and AWS S3 configuration into one DB File. 
+- Made Changes in all Mongoose Schema Files to integrate this Change. 
