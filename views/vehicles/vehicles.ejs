@@ -1,60 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <!-- Meta Tags -->
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta http-equiv="Content-Language" content="en">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="language" content="en">
 
-        <!-- Website Title -->
-        <title>Rooobz Cars</title>
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="language" content="en">
 
-        <!-- Icon -->
-        <link rel="shortcut icon" href="https://project.reubz.io/imgs/logo.png" type="image/x-icon">
+    <!-- Website Title -->
+    <title>Rooobz Cars</title>
 
-        <!-- Primary Tags -->
-        <meta name="title" content="Rooobz Cars">
-        <meta name="description" content="Best Car Rental Website on the planet">
-            
+    <!-- Icon -->
+    <link rel="shortcut icon" href="https://rooobzcars.reubz.io/imgs/logo.png" type="image/x-icon">
 
-        <!-- Open Graph / Facebook / Insta -->
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="https://project.reubz.io/">
-        <meta property="og:title" content="Rooobz Cars">
-        <meta property="og:description" content="Best Car Rental Website on the planet">
-        <meta property="og:image" itemprop="image" content="https://project.reubz.io/imgs/logo-with-text.png">
+    <!-- Primary Tags -->
+    <meta name="title" content="Rooobz Cars">
+    <meta name="description" content="Best Car Rental Website on the planet">
 
-        <!-- Twitter -->
-        <meta property="twitter:card" content="summary_large_image">
-        <meta property="twitter:url" content="https://project.reubz.io/">
-        <meta property="twitter:title" content="Rooobz Cars">
-        <meta property="twitter:description" content="Best Car Rental Website on the planet">
-        <meta property="twitter:image" content="https://project.reubz.io/imgs/logo-with-text.png">
 
-        <!-- For Discord Embeds -->
-        <meta content="#FF4C30" data-react-helmet="true" name="theme-color" />
-        
-        <link rel="stylesheet" href="/css/vehicles.css">
+    <!-- Open Graph / Facebook / Insta -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rooobzcars.reubz.io/">
+    <meta property="og:title" content="Rooobz Cars">
+    <meta property="og:description" content="Best Car Rental Website on the planet">
+    <meta property="og:image" itemprop="image" content="https://rooobzcars.reubz.io/imgs/logo-with-text.png">
 
-        <!-- Jquery -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-        
-        <!-- Fontawesome Link -->
-        <!-- <script src="https://kit.fontawesome.com/4d3f484b6f.js" crossorigin="anonymous"></script> -->
-        <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
-        <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-thin.css">
-        <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-solid.css">
-        <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css">
-        <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://rooobzcars.reubz.io/">
+    <meta property="twitter:title" content="Rooobz Cars">
+    <meta property="twitter:description" content="Best Car Rental Website on the planet">
+    <meta property="twitter:image" content="https://rooobzcars.reubz.io/imgs/logo-with-text.png">
 
-    </head>
+    <!-- For Discord Embeds -->
+    <meta content="#FF4C30" data-react-helmet="true" name="theme-color" />
+
+    <link rel="stylesheet" href="/css/vehicles.css">
+
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- Fontawesome Link -->
+    <!-- <script src="https://kit.fontawesome.com/4d3f484b6f.js" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-thin.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-solid.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css">
+
+</head>
+
 <body>
     <div data-include="navbar"></div>
 
     <div data-include="title-banner?title=Vehicles&description=All%20Cars%20available%20for%20Renting"></div>
-    
+
 
     <section class="container">
         <!-- <div class="title-wrapper">
@@ -62,13 +64,14 @@
         </div> -->
         <div class="search-header">
             <div class="searchbar">
-                <input type="search" name="search" onkeyup="search(value)" id="searchInput" placeholder="Search for a car..."/>
+                <input type="search" name="search" onkeyup="search(value)" id="searchInput"
+                    placeholder="Search for a car..." />
                 <button class="search-btn" type="submit">
                     <i class="fas fa-search searchIcon"></i>
                 </button>
             </div>
             <div class="sort-dropdown">
-                
+
                 <select name="sort" placeholder="Sort By:" id="sort" onchange="sortBy()">
                     <option id="placeholder-text" value="none">Sort By:</option>
                     <option value="none">Default</option>
@@ -79,15 +82,15 @@
                 </select>
             </div>
 
-            <% if (showAllBtn == true) { %>
+            <% if (showAllBtn==true) { %>
                 <div class="show-all-button-wrapper">
                     <a href="/vehicles">Show All Cars</a>
                 </div>
-            <% } %>
+                <% } %>
         </div>
         <div class="data-wrapper">
-            <% vehicles.forEach(car => { %>
-                <% if (car.status == "available") { %>
+            <% vehicles.forEach(car=> { %>
+                <% if (car.status=="available" ) { %>
                     <a href="vehicles/<%= car.brand %>/<%= car.name %>" class="card">
                         <div class="image-container">
                             <img src="<%= car.imgUrls[0] %>" />
@@ -95,53 +98,69 @@
                         <div class="details-container">
                             <div class="details-title-container">
                                 <div class="model">
-                                    <h2><%= car.name %></h2>
+                                    <h2>
+                                        <%= car.name %>
+                                    </h2>
                                 </div>
                                 <div class="price">
-                                    <h2>₹<%= car.price %></h2>
+                                    <h2>₹<%= car.price %>
+                                    </h2>
                                 </div>
                             </div>
                             <div class="details-data">
                                 <div class="top-wrapper">
                                     <div class="left-wrapper">
-                                        <i class="fa-duotone fa-car-wrench fa-3x" style="--fa-primary-color: #FF4C30; --fa-primary-opacity: 0.6; --fa-secondary-color: #FF4C30; --fa-secondary-opacity: 2;"></i>
-                                        <p> <%= car.brand %></p>
+                                        <i class="fa-duotone fa-car-wrench fa-3x"
+                                            style="--fa-primary-color: #FF4C30; --fa-primary-opacity: 0.6; --fa-secondary-color: #FF4C30; --fa-secondary-opacity: 2;"></i>
+                                        <p>
+                                            <%= car.brand %>
+                                        </p>
                                     </div>
                                     <div class="right-wrapper">
-                                        <p><%= car.fuelType %> </p>
-                                        <i class="fa-duotone fa-gas-pump fa-3x" style="--fa-primary-color: #FF4C30; --fa-primary-opacity: 0.6; --fa-secondary-color: #FF4C30; --fa-secondary-opacity: 2;"></i>
+                                        <p>
+                                            <%= car.fuelType %>
+                                        </p>
+                                        <i class="fa-duotone fa-gas-pump fa-3x"
+                                            style="--fa-primary-color: #FF4C30; --fa-primary-opacity: 0.6; --fa-secondary-color: #FF4C30; --fa-secondary-opacity: 2;"></i>
                                     </div>
                                 </div>
                                 <div class="bottom-wrapper">
                                     <div class="left-wrapper">
-                                        <i class="fa-duotone fa-gear fa-3x" style="--fa-primary-color: #FF4C30; --fa-primary-opacity: 0.6; --fa-secondary-color: #FF4C30; --fa-secondary-opacity: 2;"></i>
-                                        <p><%= car.transmission %> </p>
+                                        <i class="fa-duotone fa-gear fa-3x"
+                                            style="--fa-primary-color: #FF4C30; --fa-primary-opacity: 0.6; --fa-secondary-color: #FF4C30; --fa-secondary-opacity: 2;"></i>
+                                        <p>
+                                            <%= car.transmission %>
+                                        </p>
                                     </div>
                                     <div class="right-wrapper">
-                                        <p><%= car.seats %> Seats</p>
-                                        <i class="fa-duotone fa-person-seat fa-4x" style="--fa-primary-color: #FF4C30; --fa-secondary-color: #FF4C30; --fa-secondary-opacity: 0.6;"></i>
+                                        <p>
+                                            <%= car.seats %> Seats
+                                        </p>
+                                        <i class="fa-duotone fa-person-seat fa-4x"
+                                            style="--fa-primary-color: #FF4C30; --fa-secondary-color: #FF4C30; --fa-secondary-opacity: 0.6;"></i>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </a>
-                <% } %>
-            <% });  %>
-            
+                    <% } %>
+                        <% }); %>
+
 
         </div>
         <!-- <button id="show-more-btn">Show More</button> -->
     </section>
-    
-    
+
+
     <div data-include="save-banner"></div>
 
     <div data-include="footer"></div>
-    
+
     <!-- ! Javascript -->
     <script src="/js/vehicles.js"></script>
     <script src="/js/navbar.js"></script>
     <script src="/js/footer.js"></script>
     <script src="/js/import-html.js"></script>
-</body> 
-</html>  
+</body>
+
+</html>

@@ -13,7 +13,7 @@
     <title>Admin Panel - Rooobz Cars</title>
 
     <!-- Icon -->
-    <link rel="shortcut icon" href="https://project.reubz.io/imgs/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="https://rooobzcars.reubz.io/imgs/logo.png" type="image/x-icon">
 
     <!-- Primary Tags -->
     <meta name="title" content="Admin Panel - Rooobz Cars">
@@ -22,17 +22,17 @@
 
     <!-- Open Graph / Facebook / Insta -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://project.reubz.io/admin">
+    <meta property="og:url" content="https://rooobzcars.reubz.io/admin">
     <meta property="og:title" content="Admin Panel - Rooobz Cars">
     <meta property="og:description" content="Admin Panel">
-    <meta property="og:image" itemprop="image" content="https://project.reubz.io/imgs/logo-with-text.png">
+    <meta property="og:image" itemprop="image" content="https://rooobzcars.reubz.io/imgs/logo-with-text.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://project.reubz.io/admin">
+    <meta property="twitter:url" content="https://rooobzcars.reubz.io/admin">
     <meta property="twitter:title" content="Admin Panel - Rooobz Cars">
     <meta property="twitter:description" content="Admin Panel">
-    <meta property="twitter:image" content="https://project.reubz.io/imgs/logo-with-text.png">
+    <meta property="twitter:image" content="https://rooobzcars.reubz.io/imgs/logo-with-text.png">
 
     <!-- For Discord Embeds -->
     <meta content="#FF4C30" data-react-helmet="true" name="theme-color" />
@@ -64,48 +64,74 @@
         <section id="tabs-container">
             <div class="tabs-wrapper">
                 <div class="tab-group">
-                    <div id="bookings-dropdown-button" onclick="openDropDown(this)" data-dropdown="bookings-dropdown" class="tab-title clickable-element">
+                    <div id="bookings-dropdown-button" onclick="openDropDown(this)" data-dropdown="bookings-dropdown"
+                        class="tab-title clickable-element">
                         All Bookings <i class="far fa-circle-chevron-down"></i>
                     </div>
                     <div id="bookings-dropdown" class="menu-dropdown hidden">
-                        <div id="booking-active-tab" class="dropdown-element clickable-element" onclick="changeTab(this)" data-dropdownparent="bookings-dropdown" data-category="booking" data-type="active">Active</div>
-                        <div id="booking-pending-tab" class="dropdown-element clickable-element" onclick="changeTab(this)" data-dropdownparent="bookings-dropdown" data-category="booking" data-type="pending">Pending</div>
-                        <div id="booking-cancelled-tab" class="dropdown-element clickable-element" onclick="changeTab(this)" data-dropdownparent="bookings-dropdown"  data-category="booking" data-type="cancelled">Cancelled</div>
+                        <div id="booking-active-tab" class="dropdown-element clickable-element"
+                            onclick="changeTab(this)" data-dropdownparent="bookings-dropdown" data-category="booking"
+                            data-type="active">Active</div>
+                        <div id="booking-pending-tab" class="dropdown-element clickable-element"
+                            onclick="changeTab(this)" data-dropdownparent="bookings-dropdown" data-category="booking"
+                            data-type="pending">Pending</div>
+                        <div id="booking-cancelled-tab" class="dropdown-element clickable-element"
+                            onclick="changeTab(this)" data-dropdownparent="bookings-dropdown" data-category="booking"
+                            data-type="cancelled">Cancelled</div>
                     </div>
                 </div>
                 <div class="tab-group">
-                    <div id="users-dropdown-button" onclick="openDropDown(this)" data-dropdown="users-dropdown" class="tab-title clickable-element">
+                    <div id="users-dropdown-button" onclick="openDropDown(this)" data-dropdown="users-dropdown"
+                        class="tab-title clickable-element">
                         All Users <i class="far fa-circle-chevron-down"></i>
-                    </div>    
+                    </div>
                     <div id="users-dropdown" class="menu-dropdown hidden">
-                        <div id="user-basic-tab" class="dropdown-element clickable-element" onclick="changeTab(this)" data-dropdownparent="users-dropdown" data-category="user" data-type="basic">Regular</div>
-                        <div id="user-admin-tab" class="dropdown-element clickable-element" onclick="changeTab(this)" data-dropdownparent="users-dropdown" data-category="user" data-type="admin">Admins</div>
+                        <div id="user-basic-tab" class="dropdown-element clickable-element" onclick="changeTab(this)"
+                            data-dropdownparent="users-dropdown" data-category="user" data-type="basic">Regular</div>
+                        <div id="user-admin-tab" class="dropdown-element clickable-element" onclick="changeTab(this)"
+                            data-dropdownparent="users-dropdown" data-category="user" data-type="admin">Admins</div>
                     </div>
                 </div>
                 <div class="tab-group">
-                    <div id="cars-dropdown-button" onclick="openDropDown(this)" data-dropdown="cars-dropdown" class="tab-title clickable-element">
+                    <div id="cars-dropdown-button" onclick="openDropDown(this)" data-dropdown="cars-dropdown"
+                        class="tab-title clickable-element">
                         All Cars <i class="far fa-circle-chevron-down"></i>
                     </div>
                     <div id="cars-dropdown" class="menu-dropdown hidden">
-                        <div class="dropdown-element clickable-element" onclick="window.location.href = '/admin/add-car'">Add Car</div>
-                        <div id="car-available-tab" class="dropdown-element clickable-element" onclick="changeTab(this)" data-dropdownparent="cars-dropdown" data-category="car" data-type="available">Available</div>
-                        <div id="car-unavailable-tab" class="dropdown-element clickable-element" onclick="changeTab(this)" data-dropdownparent="cars-dropdown" data-category="car" data-type="unavailable">Unavailable</div>
+                        <div class="dropdown-element clickable-element"
+                            onclick="window.location.href = '/admin/add-car'">Add Car</div>
+                        <div id="car-available-tab" class="dropdown-element clickable-element" onclick="changeTab(this)"
+                            data-dropdownparent="cars-dropdown" data-category="car" data-type="available">Available
+                        </div>
+                        <div id="car-unavailable-tab" class="dropdown-element clickable-element"
+                            onclick="changeTab(this)" data-dropdownparent="cars-dropdown" data-category="car"
+                            data-type="unavailable">Unavailable</div>
                     </div>
 
                 </div>
                 <div class="tab-group">
-                    <div id="transactions-dropdown-button" onclick="openDropDown(this)" data-dropdown="transactions-dropdown" class="tab-title clickable-element">
+                    <div id="transactions-dropdown-button" onclick="openDropDown(this)"
+                        data-dropdown="transactions-dropdown" class="tab-title clickable-element">
                         All Transactions <i class="far fa-circle-chevron-down"></i>
                     </div>
                     <div id="transactions-dropdown" class="menu-dropdown hidden">
-                        <div id="transaction-completed-tab" class="dropdown-element clickable-element" onclick="changeTab(this)" data-dropdownparent="transactions-dropdown" data-category="transaction" data-type="completed">Completed</div>
-                        <div id="transaction-pending-tab" class="dropdown-element clickable-element" onclick="changeTab(this)" data-dropdownparent="transactions-dropdown" data-category="transaction" data-type="pending">Pending</div>
-                        <div id="transaction-cancelled-tab" class="dropdown-element clickable-element" onclick="changeTab(this)" data-dropdownparent="transactions-dropdown" data-category="transaction" data-type="cancelled">Cancelled</div>
-                        <div id="transaction-refunded-tab" class="dropdown-element clickable-element" onclick="changeTab(this)" data-dropdownparent="transactions-dropdown" data-category="transaction" data-type="refunded">Refunded</div>
+                        <div id="transaction-completed-tab" class="dropdown-element clickable-element"
+                            onclick="changeTab(this)" data-dropdownparent="transactions-dropdown"
+                            data-category="transaction" data-type="completed">Completed</div>
+                        <div id="transaction-pending-tab" class="dropdown-element clickable-element"
+                            onclick="changeTab(this)" data-dropdownparent="transactions-dropdown"
+                            data-category="transaction" data-type="pending">Pending</div>
+                        <div id="transaction-cancelled-tab" class="dropdown-element clickable-element"
+                            onclick="changeTab(this)" data-dropdownparent="transactions-dropdown"
+                            data-category="transaction" data-type="cancelled">Cancelled</div>
+                        <div id="transaction-refunded-tab" class="dropdown-element clickable-element"
+                            onclick="changeTab(this)" data-dropdownparent="transactions-dropdown"
+                            data-category="transaction" data-type="refunded">Refunded</div>
                     </div>
                 </div>
                 <div class="tab-group">
-                    <div id="email-subscribers-tab" onclick="changeTab(this)" data-category="email" data-type="subscribers" class="tab-title clickable-element">
+                    <div id="email-subscribers-tab" onclick="changeTab(this)" data-category="email"
+                        data-type="subscribers" class="tab-title clickable-element">
                         All Subscribers
                     </div>
                 </div>
@@ -120,186 +146,269 @@
                     <!-- ! ----------- Orders Data ------------>
                     <!-- ! ----------- Orders Data ------------>
                     <!-- ! ----------- Orders Data ------------>
-                    <% orders.forEach((order) => { %>
-                        <div class="data-card booking booking-<%=order.status%> hidden" data-cardtype="booking-<%=order.status%>">
+                    <% orders.forEach((order)=> { %>
+                        <div class="data-card booking booking-<%=order.status%> hidden"
+                            data-cardtype="booking-<%=order.status%>">
                             <div class="left-wrapper">
                                 <div class="icon">
-                                    <img src="<%= order.car.imgUrls[0] %>" onerror="this.src = '<%=config.logo.secondary.path%>'" alt="Car Image Icon">
+                                    <img src="<%= order.car.imgUrls[0] %>"
+                                        onerror="this.src = '<%=config.logo.secondary.path%>'" alt="Car Image Icon">
                                 </div>
                                 <div class="details">
                                     <div class="detail-title">
-                                        <%= order.car.brand %> <%= order.car.name %></h2>
+                                        <%= order.car.brand %>
+                                            <%= order.car.name %>
+                                                </h2>
                                     </div>
                                     <div class="detail-subtitle">
-                                        <span><%= order.startDate %></span> - <span><%= order.endDate %></span> | User - <span class="orange-span"><%= order.user.username %></span></h2>
+                                        <span>
+                                            <%= order.startDate %>
+                                        </span> - <span>
+                                            <%= order.endDate %>
+                                        </span> | User - <span class="orange-span">
+                                            <%= order.user.username %>
+                                        </span></h2>
                                     </div>
                                     <div class="detail-subtitle">
-                                        ID - <span class="orange-span"><%= order._id %></span> </h2>
+                                        ID - <span class="orange-span">
+                                            <%= order._id %>
+                                        </span> </h2>
                                     </div>
                                     <div class="detail-tags">
-                                        <% order.offers.forEach(offer => { %>
-                                            <span><%= offer.name %></span>
+                                        <% order.offers.forEach(offer=> { %>
+                                            <span>
+                                                <%= offer.name %>
+                                            </span>
+                                            <% }) %>
+                                    </div>
+                                </div>
+                            </div>
+                            <% if(order.status=='pending' ) {%>
+                                <div class="right-wrapper">
+                                    <button
+                                        onclick="callAPI('<%= order._id %>', this, 'booking/cancel-order', 'POST', false)">Cancel
+                                        Booking</button>
+                                </div>
+                                <% } else if (order.status=='active' ) { %>
+                                    <div class="right-wrapper">
+                                        <button onclick="getPDF('<%= order._id %>')" class="orange-button"
+                                            id="show-invoice-btn">Show Invoice</button>
+                                        <button
+                                            onclick="callAPI('<%= order._id %>', this, 'booking/cancel-order', 'POST', false)">Cancel
+                                            Booking</button>
+                                    </div>
+                                    <% } %>
+                        </div>
+                        <% }) %>
+
+                            <!-- ! ----------- Users Data ------------>
+                            <!-- ! ----------- Users Data ------------>
+                            <!-- ! ----------- Users Data ------------>
+                            <!-- ! ----------- Users Data ------------>
+                            <!-- ! ----------- Users Data ------------>
+                            <% users.forEach((user)=> { %>
+                                <div class="data-card user user-<%=user.role%> hidden"
+                                    data-cardtype="user-<%=user.role%>">
+                                    <div class="left-wrapper">
+                                        <div class="icon pfp">
+                                            <img src="<%= user.profileImg %>"
+                                                onerror="this.src = '<%=config.logo.secondary.path%>'"
+                                                alt="Car Image Icon">
+                                        </div>
+                                        <div class="details">
+                                            <div class="detail-title">
+                                                <%= user.name %> (<%= user.username %>)</h2>
+                                            </div>
+                                            <div class="detail-subtitle">
+                                                Email: <span class="orange-span">
+                                                    <%= user.email %>
+                                                </span> | Phone: <span class="orange-span">
+                                                    <%= user.phone %>
+                                                </span></h2>
+                                            </div>
+                                            <div class="detail-tags">
+                                                <span>
+                                                    <%= user._id %>
+                                                </span>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <% if(user.role=='admin' ) {%>
+                                        <div class="right-wrapper">
+                                            <button
+                                                onclick="callAPI('<%= user._id %>', this, 'account/role', 'POST', false)"
+                                                class="orange-button">Make Regular</button>
+                                            <button
+                                                onclick="callAPI('<%= user._id %>', this, 'account', 'DELETE', true)">Delete
+                                                User</button>
+                                        </div>
+                                        <% } else { %>
+                                            <div class="right-wrapper">
+                                                <button
+                                                    onclick="callAPI('<%= user._id %>', this, 'account/role', 'POST', false)"
+                                                    class="orange-button">Make Admin</button>
+                                                <button
+                                                    onclick="callAPI('<%= user._id %>', this, 'account', 'DELETE', true)">Delete
+                                                    User</button>
+                                            </div>
+                                            <% } %>
+                                </div>
+                                <% }) %>
+
+                                    <!-- ! ----------- Cars Data ------------>
+                                    <!-- ! ----------- Cars Data ------------>
+                                    <!-- ! ----------- Cars Data ------------>
+                                    <!-- ! ----------- Cars Data ------------>
+                                    <!-- ! ----------- Cars Data ------------>
+                                    <% cars.forEach((car)=> { %>
+                                        <div class="data-card car car-<%=car.status%> hidden"
+                                            data-cardtype="car-<%=car.status%>">
+                                            <div class="left-wrapper">
+                                                <div class="icon">
+                                                    <img src="<%= car.imgUrls[0] %>"
+                                                        onerror="this.src = '<%=config.logo.secondary.path%>'"
+                                                        alt="Car Image Icon">
+                                                </div>
+                                                <div class="details">
+                                                    <div class="detail-title">
+                                                        <%= car.brand %> - <%= car.name %>
+                                                                </h2>
+                                                    </div>
+                                                    <div class="detail-subtitle">
+                                                        <span>Price: Rs. <%= car.price %></span> - Discount: <span>
+                                                            <%= car.discount %>
+                                                        </span></h2>
+                                                    </div>
+                                                    <div class="detail-tags">
+                                                        <span>
+                                                            <%= car._id %>
+                                                        </span>
+                                                        <span>
+                                                            <%= car.color %>
+                                                        </span>
+                                                        <span>
+                                                            <%= car.condition %>
+                                                        </span>
+                                                        <span>
+                                                            <%= car.fuelType %>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <% if(car.status=="available" ) {%>
+                                                <div class="right-wrapper">
+                                                    <button
+                                                        onclick="callAPI('<%= car._id %>', this, 'cars/status', 'POST', false)"
+                                                        class="orange-button">Make Unavailable</button>
+                                                    <button
+                                                        onclick="callAPI('<%= car._id %>', this, 'cars', 'DELETE', true)">Delete
+                                                        Car</button>
+                                                </div>
+                                                <% } else { %>
+                                                    <div class="right-wrapper">
+                                                        <button
+                                                            onclick="callAPI('<%= car._id %>', this, 'cars/status', 'POST', false)"
+                                                            class="orange-button">Make Available</button>
+                                                        <button
+                                                            onclick="callAPI('<%= car._id %>', this, 'cars', 'DELETE', true)">Delete
+                                                            Car</button>
+                                                    </div>
+                                                    <% } %>
+                                        </div>
                                         <% }) %>
-                                    </div>
-                                </div>
-                            </div>
-                            <% if(order.status == 'pending') {%>
-                                <div class="right-wrapper">
-                                    <button onclick="callAPI('<%= order._id %>', this, 'booking/cancel-order', 'POST', false)">Cancel Booking</button>
-                                </div>
-                            <% } else if (order.status == 'active') { %>
-                                <div class="right-wrapper">
-                                    <button onclick="getPDF('<%= order._id %>')" class="orange-button" id="show-invoice-btn">Show Invoice</button>
-                                    <button onclick="callAPI('<%= order._id %>', this, 'booking/cancel-order', 'POST', false)">Cancel Booking</button>
-                                </div>
-                            <% } %>
-                        </div>
-                    <% }) %>
 
-                    <!-- ! ----------- Users Data ------------>
-                    <!-- ! ----------- Users Data ------------>
-                    <!-- ! ----------- Users Data ------------>
-                    <!-- ! ----------- Users Data ------------>
-                    <!-- ! ----------- Users Data ------------>
-                    <% users.forEach((user) => { %>
-                        <div class="data-card user user-<%=user.role%> hidden" data-cardtype="user-<%=user.role%>">
-                            <div class="left-wrapper">
-                                <div class="icon pfp">
-                                    <img src="<%= user.profileImg %>" onerror="this.src = '<%=config.logo.secondary.path%>'" alt="Car Image Icon">
-                                </div>
-                                <div class="details">
-                                    <div class="detail-title">
-                                        <%= user.name %> (<%= user.username %>)</h2>
-                                    </div>
-                                    <div class="detail-subtitle">
-                                        Email: <span class="orange-span"><%= user.email %></span> | Phone: <span class="orange-span"><%= user.phone %></span></h2>
-                                    </div>
-                                    <div class="detail-tags">
-                                        <span><%= user._id %></span>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            <% if(user.role == 'admin') {%>
-                                <div class="right-wrapper">
-                                    <button onclick="callAPI('<%= user._id %>', this, 'account/role', 'POST', false)" class="orange-button">Make Regular</button>
-                                    <button onclick="callAPI('<%= user._id %>', this, 'account', 'DELETE', true)">Delete User</button>
-                                </div>
-                            <% } else { %>
-                                <div class="right-wrapper">
-                                    <button onclick="callAPI('<%= user._id %>', this, 'account/role', 'POST', false)" class="orange-button">Make Admin</button>
-                                    <button onclick="callAPI('<%= user._id %>', this, 'account', 'DELETE', true)">Delete User</button>
-                                </div>
-                            <% } %>
-                        </div>
-                    <% }) %>
-
-                    <!-- ! ----------- Cars Data ------------>
-                    <!-- ! ----------- Cars Data ------------>
-                    <!-- ! ----------- Cars Data ------------>
-                    <!-- ! ----------- Cars Data ------------>
-                    <!-- ! ----------- Cars Data ------------>
-                    <% cars.forEach((car) => { %>
-                        <div class="data-card car car-<%=car.status%> hidden" data-cardtype="car-<%=car.status%>">
-                            <div class="left-wrapper">
-                                <div class="icon">
-                                    <img src="<%= car.imgUrls[0] %>" onerror="this.src = '<%=config.logo.secondary.path%>'" alt="Car Image Icon">
-                                </div>
-                                <div class="details">
-                                    <div class="detail-title">
-                                        <%= car.brand %> - <%= car.name %></h2>
-                                    </div>
-                                    <div class="detail-subtitle">
-                                        <span>Price: Rs. <%= car.price %></span> - Discount: <span><%= car.discount %></span></h2>
-                                    </div>
-                                    <div class="detail-tags">
-                                        <span><%= car._id %></span>
-                                        <span><%= car.color %></span>
-                                        <span><%= car.condition %></span>
-                                        <span><%= car.fuelType %></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <% if(car.status == "available") {%>
-                                <div class="right-wrapper">
-                                    <button onclick="callAPI('<%= car._id %>', this, 'cars/status', 'POST', false)" class="orange-button">Make Unavailable</button>
-                                    <button onclick="callAPI('<%= car._id %>', this, 'cars', 'DELETE', true)">Delete Car</button>
-                                </div>
-                            <% } else { %>
-                                <div class="right-wrapper">
-                                    <button onclick="callAPI('<%= car._id %>', this, 'cars/status', 'POST', false)" class="orange-button">Make Available</button>
-                                    <button onclick="callAPI('<%= car._id %>', this, 'cars', 'DELETE', true)">Delete Car</button>
-                                </div>
-                            <% } %>
-                        </div>
-                    <% }) %>
-                    
-                    <!-- ! ----------- Transactions Data ------------>
-                    <!-- ! ----------- Transactions Data ------------>
-                    <!-- ! ----------- Transactions Data ------------>
-                    <!-- ! ----------- Transactions Data ------------>
-                    <!-- ! ----------- Transactions Data ------------>
-                    <% transactions.forEach((transaction) => { %>
-                        <div class="data-card transaction transaction-<%=transaction.status%> hidden" data-cardtype="transaction-<%=transaction.status%>">
-                            <div class="left-wrapper">
-                                <!-- <div class="icon">
+                                            <!-- ! ----------- Transactions Data ------------>
+                                            <!-- ! ----------- Transactions Data ------------>
+                                            <!-- ! ----------- Transactions Data ------------>
+                                            <!-- ! ----------- Transactions Data ------------>
+                                            <!-- ! ----------- Transactions Data ------------>
+                                            <% transactions.forEach((transaction)=> { %>
+                                                <div class="data-card transaction transaction-<%=transaction.status%> hidden"
+                                                    data-cardtype="transaction-<%=transaction.status%>">
+                                                    <div class="left-wrapper">
+                                                        <!-- <div class="icon">
                                     <img src="<%= transaction._id %>" onerror="this.src = '<%=config.logo.secondary.path%>'" alt="transaction Image Icon">
                                 </div> -->
-                                <div class="details">
-                                    <div class="detail-title">
-                                        <%= transaction.order.car.brand %> <%= transaction.order.car.name %></h2>
-                                    </div>
-                                    <div class="detail-subtitle">
-                                        ID:<span class="orange-span"> <%= transaction._id %></span> | By User: <span class="orange-span"><%= transaction.order.user.username %></span></h2>
-                                    </div>
-                                    <!-- <div class="detail-tags">
+                                                        <div class="details">
+                                                            <div class="detail-title">
+                                                                <%= transaction.order.car.brand %>
+                                                                    <%= transaction.order.car.name %>
+                                                                        </h2>
+                                                            </div>
+                                                            <div class="detail-subtitle">
+                                                                ID:<span class="orange-span">
+                                                                    <%= transaction._id %>
+                                                                </span> | By User: <span class="orange-span">
+                                                                    <%= transaction.order.user.username %>
+                                                                </span></h2>
+                                                            </div>
+                                                            <!-- <div class="detail-tags">
                                         <span><%= transaction._id %></span>
                                     </div> -->
-                                </div>
-                            </div>
-                            <% if (transaction.status == 'completed') {%>
-                                <div class="right-wrapper">
-                                    <button onclick="callAPI('<%= transaction._id %>', this, 'transaction/refund', 'POST', false)" class="orange-button">Refund Transaction</button>
-                                </div>
-                            <% } else if (transaction.status == 'pending') { %>
-                                <div class="right-wrapper">
-                                    <button onclick="callAPI('<%= transaction._id %>', this, 'transaction/complete', 'POST', false)" class="orange-button">Complete Transaction</button>
-                                    <button onclick="callAPI('<%= transaction._id %>', this, 'transaction/cancel', 'POST', false)">Cancel Transaction</button>
-                                </div>
-                            <% } else if (transaction.status == 'cancelled') { %>
-                                <div class="right-wrapper">
-                                    <button onclick="callAPI('<%= transaction._id %>', this, 'transaction/reactivate', 'POST', false)" class="orange-button">Reactivate Transaction</button>
-                                </div>
-                            <% } else { %>
-                                <div class="right-wrapper">
-                                    <button onclick="callAPI('<%= transaction._id %>', this, 'transaction/reactivate', 'POST', false)" class="orange-button">Reactivate Transaction</button>
-                                </div>
-                            <% } %>
-                        </div>
-                    <% }) %>
+                                                        </div>
+                                                    </div>
+                                                    <% if (transaction.status=='completed' ) {%>
+                                                        <div class="right-wrapper">
+                                                            <button
+                                                                onclick="callAPI('<%= transaction._id %>', this, 'transaction/refund', 'POST', false)"
+                                                                class="orange-button">Refund Transaction</button>
+                                                        </div>
+                                                        <% } else if (transaction.status=='pending' ) { %>
+                                                            <div class="right-wrapper">
+                                                                <button
+                                                                    onclick="callAPI('<%= transaction._id %>', this, 'transaction/complete', 'POST', false)"
+                                                                    class="orange-button">Complete Transaction</button>
+                                                                <button
+                                                                    onclick="callAPI('<%= transaction._id %>', this, 'transaction/cancel', 'POST', false)">Cancel
+                                                                    Transaction</button>
+                                                            </div>
+                                                            <% } else if (transaction.status=='cancelled' ) { %>
+                                                                <div class="right-wrapper">
+                                                                    <button
+                                                                        onclick="callAPI('<%= transaction._id %>', this, 'transaction/reactivate', 'POST', false)"
+                                                                        class="orange-button">Reactivate
+                                                                        Transaction</button>
+                                                                </div>
+                                                                <% } else { %>
+                                                                    <div class="right-wrapper">
+                                                                        <button
+                                                                            onclick="callAPI('<%= transaction._id %>', this, 'transaction/reactivate', 'POST', false)"
+                                                                            class="orange-button">Reactivate
+                                                                            Transaction</button>
+                                                                    </div>
+                                                                    <% } %>
+                                                </div>
+                                                <% }) %>
 
-                    <!-- ! ----------- Subscribers Data ------------>
-                    <!-- ! ----------- Subscribers Data ------------>
-                    <!-- ! ----------- Subscribers Data ------------>
-                    <!-- ! ----------- Subscribers Data ------------>
-                    <!-- ! ----------- Subscribers Data ------------>
-                    <% subscribers.forEach((subscriber) => { %>
-                        <div class="data-card subscriber email-subscribers hidden" data-cardtype="email-subscribers">
-                            <div class="left-wrapper">
-                                <div class="details">
-                                    <div class="detail-title">
-                                        <%= subscriber.email %></h2>
-                                    </div>
-                                    <div class="detail-subtitle">
-                                        ID:<span class="orange-span"> <%= subscriber._id %></span> </h2>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="right-wrapper">
-                                <button onclick="callAPI('<%= subscriber._id %>', this, 'subscribe', 'DELETE', true)" class="orange-button">Unsubscribe User</button>
-                            </div>
-                        </div>
-                    <% }) %>
+                                                    <!-- ! ----------- Subscribers Data ------------>
+                                                    <!-- ! ----------- Subscribers Data ------------>
+                                                    <!-- ! ----------- Subscribers Data ------------>
+                                                    <!-- ! ----------- Subscribers Data ------------>
+                                                    <!-- ! ----------- Subscribers Data ------------>
+                                                    <% subscribers.forEach((subscriber)=> { %>
+                                                        <div class="data-card subscriber email-subscribers hidden"
+                                                            data-cardtype="email-subscribers">
+                                                            <div class="left-wrapper">
+                                                                <div class="details">
+                                                                    <div class="detail-title">
+                                                                        <%= subscriber.email %>
+                                                                            </h2>
+                                                                    </div>
+                                                                    <div class="detail-subtitle">
+                                                                        ID:<span class="orange-span">
+                                                                            <%= subscriber._id %>
+                                                                        </span> </h2>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="right-wrapper">
+                                                                <button
+                                                                    onclick="callAPI('<%= subscriber._id %>', this, 'subscribe', 'DELETE', true)"
+                                                                    class="orange-button">Unsubscribe User</button>
+                                                            </div>
+                                                        </div>
+                                                        <% }) %>
                 </div>
             </section>
 

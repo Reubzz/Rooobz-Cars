@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Meta Tags -->
     <meta charset="UTF-8">
@@ -7,39 +8,39 @@
     <meta http-equiv="Content-Language" content="en">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="language" content="en">
-    
+
     <!-- Website Title -->
     <title>Account Login - Rooobz Cars</title>
-    
+
     <!-- Icon -->
-    <link rel="shortcut icon" href="https://project.reubz.io/imgs/logo.png" type="image/x-icon">
-    
+    <link rel="shortcut icon" href="https://rooobzcars.reubz.io/imgs/logo.png" type="image/x-icon">
+
     <!-- Primary Tags -->
     <meta name="title" content="Account Login - Rooobz Cars">
     <meta name="description" content="Log in to your account">
-        
+
     <!-- Open Graph / Facebook / Insta -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://project.reubz.io/login">
+    <meta property="og:url" content="https://rooobzcars.reubz.io/login">
     <meta property="og:title" content="Account Login - Rooobz Cars">
     <meta property="og:description" content="Log in to your account">
-    <meta property="og:image" itemprop="image" content="https://project.reubz.io/imgs/logo-with-text.png">
-    
+    <meta property="og:image" itemprop="image" content="https://rooobzcars.reubz.io/imgs/logo-with-text.png">
+
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://project.reubz.io/login">
+    <meta property="twitter:url" content="https://rooobzcars.reubz.io/login">
     <meta property="twitter:title" content="Account Login - Rooobz Cars">
     <meta property="twitter:description" content="Log in to your account">
-    <meta property="twitter:image" content="https://project.reubz.io/imgs/logo-with-text.png">
-    
+    <meta property="twitter:image" content="https://rooobzcars.reubz.io/imgs/logo-with-text.png">
+
     <!-- For Discord Embeds -->
     <meta content="#FF4C30" data-react-helmet="true" name="theme-color" />
-    
+
     <link rel="stylesheet" href="/css/login-register.css">
-    
+
     <!-- Jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    
+
     <!-- Fontawesome Link -->
     <!-- <script src="https://kit.fontawesome.com/4d3f484b6f.js" crossorigin="anonymous"></script> -->
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
@@ -48,50 +49,52 @@
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css">
 </head>
+
 <body>
 
     <%- include('../components/error-popup') %>
 
-    <button onclick="window.location.replace(document.referrer)" id="back-btn">
-        <i class="fad fa-arrow-left"></i> Back
-        <!-- <i class="fad fa-circle-xmark"></i> -->
-        <!-- <i class="fal fa-xmark"></i> Back -->
-    </button>
-    
-    <section class="data-wrapper">
-        <div class="left-wrapper">
-            <div>
-                <img id="logo" src="/imgs/logo-with-text.png" alt="Brand Logo Image"/>
-            </div>
-        </div>
+        <button onclick="window.location.replace(document.referrer)" id="back-btn">
+            <i class="fad fa-arrow-left"></i> Back
+            <!-- <i class="fad fa-circle-xmark"></i> -->
+            <!-- <i class="fal fa-xmark"></i> Back -->
+        </button>
 
-        <div class="right-wrapper">
-            <h1 class="title">Log in to your account</h1>
-            <form id="form" action="">
-                <div class="username">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username" required><br/>
+        <section class="data-wrapper">
+            <div class="left-wrapper">
+                <div>
+                    <img id="logo" src="/imgs/logo-with-text.png" alt="Brand Logo Image" />
                 </div>
-
-                <div class="password">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-
-                <button type="submit" value="login" id="submit">Login</button>
-            </form>
-
-            <hr class="line">
-            <div class="redirect-wrapper">
-                <p id="redirect-text">Don't have an account?</p>
-                <a href="/register" id="redirect-btn">Create Account</a>
             </div>
-        </div>
-    </section>
 
-    <!-- ! Javascript -->
-    <script src="/js/auth-page.js"></script>
-    <script src="/js/import-html.js"></script>
-    <script src="/js/error-popup.js"></script>
+            <div class="right-wrapper">
+                <h1 class="title">Log in to your account</h1>
+                <form id="form" action="">
+                    <div class="username">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" required><br />
+                    </div>
+
+                    <div class="password">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+
+                    <button type="submit" value="login" id="submit">Login</button>
+                </form>
+
+                <hr class="line">
+                <div class="redirect-wrapper">
+                    <p id="redirect-text">Don't have an account?</p>
+                    <a href="/register" id="redirect-btn">Create Account</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ! Javascript -->
+        <script src="/js/auth-page.js"></script>
+        <script src="/js/import-html.js"></script>
+        <script src="/js/error-popup.js"></script>
 </body>
+
 </html>

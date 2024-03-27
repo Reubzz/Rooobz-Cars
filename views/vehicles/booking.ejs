@@ -11,11 +11,12 @@
 
     <!-- Website Title -->
     <title>
-        Confirm Booking <%= car.brand %> <%= car.name %> - Rooobz Cars
+        Confirm Booking <%= car.brand %>
+            <%= car.name %> - Rooobz Cars
     </title>
 
     <!-- Icon -->
-    <link rel="shortcut icon" href="https://project.reubz.io/imgs/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="https://rooobzcars.reubz.io/imgs/logo.png" type="image/x-icon">
 
     <!-- Primary Tags -->
     <meta name="title" content="Rooobz Cars">
@@ -24,17 +25,17 @@
 
     <!-- Open Graph / Facebook / Insta -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://project.reubz.io/">
+    <meta property="og:url" content="https://rooobzcars.reubz.io/">
     <meta property="og:title" content="Rooobz Cars">
     <meta property="og:description" content="Best Car Rental Website on the planet">
-    <meta property="og:image" itemprop="image" content="https://project.reubz.io/imgs/logo-with-text.png">
+    <meta property="og:image" itemprop="image" content="https://rooobzcars.reubz.io/imgs/logo-with-text.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://project.reubz.io/">
+    <meta property="twitter:url" content="https://rooobzcars.reubz.io/">
     <meta property="twitter:title" content="Rooobz Cars">
     <meta property="twitter:description" content="Best Car Rental Website on the planet">
-    <meta property="twitter:image" content="https://project.reubz.io/imgs/logo-with-text.png">
+    <meta property="twitter:image" content="https://rooobzcars.reubz.io/imgs/logo-with-text.png">
 
     <!-- For Discord Embeds -->
     <meta content="#FF4C30" data-react-helmet="true" name="theme-color" />
@@ -54,7 +55,8 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
 
     <!-- ! Google Maps API -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBt0zUtQlyaddQoeNCB-gTStQLKK0Y6ccA&libraries=places"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBt0zUtQlyaddQoeNCB-gTStQLKK0Y6ccA&libraries=places"></script>
 
 
 </head>
@@ -66,10 +68,13 @@
     <section class="important-note-banner">
         <h3><i class="fas fa-circle-exclamation-check"></i> Upon Completion you will receive a confirmation email</h3>
     </section>
-    
+
     <section class="container">
         <form id="pay-now-form" action="">
-            <h1 class="car-name"><%= car.brand %> <%= car.name %></h1>
+            <h1 class="car-name">
+                <%= car.brand %>
+                    <%= car.name %>
+            </h1>
             <div class="top-wrapper">
                 <div class="left-data-wrapper">
                     <div class="title">
@@ -83,16 +88,17 @@
                                     <h3> Pickup Date <span>*</span></h3>
                                 </label>
                                 <input type="text" id="pickupDate" class="datepicker" name="pickupDate" />
-                            </div>                
+                            </div>
                             <div class="field">
                                 <label class="title-wrapper" for="dropoffDate">
                                     <i class="fad fa-calendar-clock"></i>
                                     <h3> Dropoff Date <span>*</span></h3>
                                 </label>
                                 <input type="text" id="dropoffDate" class="datepicker" name="dropoffDate" />
-                            </div>   
+                            </div>
                             <div class="note">
-                                <p><strong>Note:</strong> Time for Pickup and Dropoff is fixed at 10 AM. Exceeding this time for dropoff will count as an additional Day.</p>
+                                <p><strong>Note:</strong> Time for Pickup and Dropoff is fixed at 10 AM. Exceeding this
+                                    time for dropoff will count as an additional Day.</p>
                             </div>
                         </div>
                         <div class="field-wrapper">
@@ -105,31 +111,35 @@
                                     <select class="dropdown" name="location" id="location" required>
                                         <option value="store-pickup">In-Store Pickup</option>
                                         <option value="home-delivery">Home Delivery</option>
-                                    </select>                       
+                                    </select>
                                 </div>
-                            </div>                
+                            </div>
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="right-data-wrapper">
                     <div class="title">
                         <h2>Additional Offers</h2>
                     </div>
                     <div class="car-data-wrapper">
                         <div class="additional-offers">
-                            <% offers.forEach(offer => { %>
-                                <% if (offer.active == true) { %>
-                                    <div class="offer" data-offer-price="<%= offer.price %>" onmouseout="offerHoverRemove(this)" onmouseover="offerHover(this)">
+                            <% offers.forEach(offer=> { %>
+                                <% if (offer.active==true) { %>
+                                    <div class="offer" data-offer-price="<%= offer.price %>"
+                                        onmouseout="offerHoverRemove(this)" onmouseover="offerHover(this)">
                                         <div class="offer-name">
-                                            <%- offer.icon %> <%= offer.name %>
+                                            <%- offer.icon %>
+                                                <%= offer.name %>
                                         </div>
                                         <div class="offer-button">
-                                            <button class="offer-add" data-offer-id="<%= offer._id %>" data-add-text="Add +" data-remove-text="Remove" onclick="offerAddRemove(event, this)">Add +</button>
+                                            <button class="offer-add" data-offer-id="<%= offer._id %>"
+                                                data-add-text="Add +" data-remove-text="Remove"
+                                                onclick="offerAddRemove(event, this)">Add +</button>
                                         </div>
                                     </div>
-                                <% } %>
-                            <% }); %>
+                                    <% } %>
+                                        <% }); %>
                         </div>
                         <div id="pricing-box">
                             <div class="title">
@@ -137,20 +147,42 @@
                             </div>
                             <table class="car-features-table">
                                 <tr>
-                                    <td><h3 class="highlight-title">Rental Price Per Day</h3></td>
-                                    <td><h3 class="highlight-title"><%= car.price %></h3></td>
+                                    <td>
+                                        <h3 class="highlight-title">Rental Price Per Day</h3>
+                                    </td>
+                                    <td>
+                                        <h3 class="highlight-title">
+                                            <%= car.price %>
+                                        </h3>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td><h3 class="highlight-title">Extra Offers</h3></td>
-                                    <td><h3 id="offers-final-price" class="highlight-title">0</h3></td>
+                                    <td>
+                                        <h3 class="highlight-title">Extra Offers</h3>
+                                    </td>
+                                    <td>
+                                        <h3 id="offers-final-price" class="highlight-title">0</h3>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td><h3 class="highlight-title">Tax 18%</h3></td>
-                                    <td><h3 id="gst-display" class="highlight-title"><%= car.price*18/100 %></h3></td>
+                                    <td>
+                                        <h3 class="highlight-title">Tax 18%</h3>
+                                    </td>
+                                    <td>
+                                        <h3 id="gst-display" class="highlight-title">
+                                            <%= car.price*18/100 %>
+                                        </h3>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td><h3 class="highlight-orange">Total</h3></td>
-                                    <td><h3 class="highlight-orange" id="total-display"><%= car.price + car.price*18/100 %></h3></td>
+                                    <td>
+                                        <h3 class="highlight-orange">Total</h3>
+                                    </td>
+                                    <td>
+                                        <h3 class="highlight-orange" id="total-display">
+                                            <%= car.price + car.price*18/100 %>
+                                        </h3>
+                                    </td>
                                 </tr>
                             </table>
                         </div>
@@ -169,50 +201,59 @@
                         <div class="form-single-row">
                             <div class="flat form-field">
                                 <label for="flat">Flat Number <span>*</span></label>
-                                <input type="text" name="flat" id="flat" required placeholder="ABC123" value="<%= user.address.flat %>">
+                                <input type="text" name="flat" id="flat" required placeholder="ABC123"
+                                    value="<%= user.address.flat %>">
                             </div>
                             <div class="name form-field">
                                 <input type="text" name="placename" id="placename" value="<%= user.address.name %>">
                             </div>
                             <div class="address form-field">
                                 <label for="address">Address <span>*</span></label>
-                                <input type="text" name="address" id="address" required value="<%= user.address.address %>">
+                                <input type="text" name="address" id="address" required
+                                    value="<%= user.address.address %>">
                             </div>
                         </div>
                         <div class="form-single-row">
                             <div class="locality form-field">
                                 <label for="locality">Local Area <span>*</span></label>
-                                <input type="text" name="locality" id="locality" required placeholder="Enter Locality" value="<%= user.address.locality %>">
+                                <input type="text" name="locality" id="locality" required placeholder="Enter Locality"
+                                    value="<%= user.address.locality %>">
                             </div>
                             <div class="city form-field">
                                 <label for="city">City <span>*</span></label>
-                                <input type="text" name="city" id="city" required placeholder="Enter City" value="<%= user.address.city %>">
+                                <input type="text" name="city" id="city" required placeholder="Enter City"
+                                    value="<%= user.address.city %>">
                             </div>
                             <div class="pin form-field">
                                 <label for="pin">Pin Code <span>*</span></label>
-                                <input type="text" name="pin" id="pin" required placeholder="Enter pin code" value="<%= user.address.pin %>">
+                                <input type="text" name="pin" id="pin" required placeholder="Enter pin code"
+                                    value="<%= user.address.pin %>">
                             </div>
                             <div class="state form-field">
                                 <label for="state">State <span>*</span></label>
-                                <input type="text" name="state" id="state" required placeholder="Enter State" value="<%= user.address.state %>">
+                                <input type="text" name="state" id="state" required placeholder="Enter State"
+                                    value="<%= user.address.state %>">
                             </div>
                         </div>
                         <div class="form-single-row">
                             <div class="country form-field">
                                 <label for="country">Country <span>*</span></label>
-                                <input type="text" name="country" id="country" required placeholder="Enter Country" value="<%= user.address.country %>">
+                                <input type="text" name="country" id="country" required placeholder="Enter Country"
+                                    value="<%= user.address.country %>">
                             </div>
                             <div class="phone form-field">
                                 <label for="phone">Phone <span>*</span></label>
-                                <input type="tel" name="phone" id="phone" required placeholder="0123456789" value="<%= user.phone %>">
+                                <input type="tel" name="phone" id="phone" required placeholder="0123456789"
+                                    value="<%= user.phone %>">
                             </div>
                             <div class="landmark form-field">
                                 <label for="landmark">Landmark <span class="optional-tag">(Optional)</span></label>
-                                <input type="text" name="landmark" id="landmark" placeholder="Enter Landmark" value="<%= user.address.landmark %>">
+                                <input type="text" name="landmark" id="landmark" placeholder="Enter Landmark"
+                                    value="<%= user.address.landmark %>">
                             </div>
                         </div>
                         <div class="save-info-wrapper">
-                            <input type="checkbox" name="saveInfo" id="saveInfo" checked> 
+                            <input type="checkbox" name="saveInfo" id="saveInfo" checked>
                             <label for="saveInfo"> Save my information for future bookings.</label>
                         </div>
                     </div>
@@ -220,13 +261,13 @@
             </div>
             <div class="book-now-btn-wrapper">
                 <button id="book-now-btn" type="submit">
-                    Pay Now • Rs. <%= car.price + car.price*18/100 %> 
+                    Pay Now • Rs. <%= car.price + car.price*18/100 %>
                 </button>
             </div>
         </form>
     </section>
 
-    
+
 
 
     <div data-include="save-banner"></div>
@@ -237,12 +278,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.8.0/pikaday.min.js"></script>
     <script>
-        const user = JSON.parse('<%- JSON.stringify(user) %> ') 
+        const user = JSON.parse('<%- JSON.stringify(user) %> ')
         const car = JSON.parse('<%- JSON.stringify(car) %>')
 
         const dropoffDatePicker = document.getElementById('dropoffDate')
         const pickupDatePicker = document.getElementById('pickupDate')
-        
+
         pickupDatePicker.value = moment().format('DD-MM-YYYY')
         dropoffDatePicker.value = moment().add(1, "days").format('DD-MM-YYYY')
         document.addEventListener('DOMContentLoaded', function () {
@@ -256,14 +297,14 @@
                     if (moment(date).isBefore(moment(), 'day')) {
                         return true;
                     }
-                    
+
                     // Disable booked dates
                     const formattedDate = moment(date).format('DD-MM-YYYY');
                     return bookedDates.includes(formattedDate);
                 },
-                onSelect: function() {updateFinalPrice()},
+                onSelect: function () { updateFinalPrice() },
             });
-            
+
             new Pikaday({
                 field: dropoffDatePicker,
                 format: 'DD-MM-YYYY',
@@ -275,12 +316,12 @@
                     if (moment(date).isBefore(moment(), 'day')) {
                         return true;
                     }
-                    
+
                     // Disable booked dates
                     const formattedDate = moment(date).format('DD-MM-YYYY');
                     return bookedDates.includes(formattedDate);
                 },
-                onSelect: function() {updateFinalPrice()},
+                onSelect: function () { updateFinalPrice() },
             });
         });
     </script>
