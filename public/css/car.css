@@ -107,8 +107,7 @@ header nav .dropdown .dropbtn img {
   width: 42px;
   aspect-ratio: 1/1;
   margin: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border: 2px solid #d5d5d5;
   border-radius: 50%;
 }
@@ -117,7 +116,6 @@ header nav .dropdown .dropdown-content {
   position: absolute;
   background-color: #f1f1f1;
   right: 0;
-  width: -moz-max-content;
   width: max-content;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
@@ -158,12 +156,14 @@ header nav #hamburger-menu .bar3 {
   transition: 0.5s;
 }
 header nav #hamburger-menu.open .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-6px, 6px);
   transform: rotate(-45deg) translate(-6px, 6px);
 }
 header nav #hamburger-menu.open .bar2 {
   opacity: 0;
 }
 header nav #hamburger-menu.open .bar3 {
+  -webkit-transform: rotate(45deg) translate(-6px, 6px);
   transform: rotate(45deg) translate(-5px, -5px);
 }
 header nav #hamburger-menu.open .mobile-menu {
@@ -229,7 +229,6 @@ footer {
   width: 100%;
   justify-content: space-between;
   align-items: flex-start;
-  height: -moz-max-content;
   height: max-content;
   background-color: #DADADA;
   flex-direction: row;
@@ -572,8 +571,7 @@ body {
 .container .top-wrapper .images-wrapper .image-slideshow img {
   width: 100%;
   aspect-ratio: 1.3/1;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .container .top-wrapper .images-wrapper .prev,
 .container .top-wrapper .images-wrapper .next {
@@ -588,9 +586,7 @@ body {
   font-size: 18px;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
   background-color: #707070;
 }
 .container .top-wrapper .images-wrapper .next {
@@ -750,7 +746,7 @@ body {
   font-family: "Rubik", sans-serif;
   color: #0c0c0c;
 }
-.main-container .content-wrapper #ratings-content #add-review-btn {
+.main-container .content-wrapper #reviews-content #add-review-btn {
   padding: 10px 30px;
   font-size: 1rem;
   font-family: "Rubik", sans-serif;
@@ -760,11 +756,11 @@ body {
   border: 2px solid #FF4C30;
   cursor: pointer;
 }
-.main-container .content-wrapper #ratings-content #add-review-btn:hover {
+.main-container .content-wrapper #reviews-content #add-review-btn:hover {
   background-color: #e64229;
   box-shadow: 0px 0px 10px 1px #FF4C30;
 }
-.main-container .content-wrapper #ratings-content hr {
+.main-container .content-wrapper #reviews-content hr {
   width: 70%;
   background-color: #FF4C30;
   height: 3px;
@@ -772,33 +768,33 @@ body {
   border: none;
   border-radius: 5px;
 }
-.main-container .content-wrapper #ratings-content form {
+.main-container .content-wrapper #reviews-content form {
   display: flex;
   flex-direction: column;
   gap: 20px;
   padding: 30px 0px;
 }
-.main-container .content-wrapper #ratings-content form .rating-wrapper {
+.main-container .content-wrapper #reviews-content form .rating-wrapper {
   display: flex;
   gap: 20px;
   align-items: center;
 }
-.main-container .content-wrapper #ratings-content form .rating-wrapper .rating-star-number {
+.main-container .content-wrapper #reviews-content form .rating-wrapper .rating-star-number {
   display: none;
 }
-.main-container .content-wrapper #ratings-content form .rating-wrapper .rating-label {
+.main-container .content-wrapper #reviews-content form .rating-wrapper .rating-label {
   font-size: 1.2rem;
   font-family: "Rubik", sans-serif;
   font-weight: 500;
 }
-.main-container .content-wrapper #ratings-content form .rating-wrapper .rating-stars {
+.main-container .content-wrapper #reviews-content form .rating-wrapper .rating-stars {
   color: #d5d5d5;
 }
-.main-container .content-wrapper #ratings-content form .rating-wrapper .rating-stars i {
+.main-container .content-wrapper #reviews-content form .rating-wrapper .rating-stars i {
   font-size: 1.2rem;
   cursor: pointer;
 }
-.main-container .content-wrapper #ratings-content form .review-submit button {
+.main-container .content-wrapper #reviews-content form .review-submit button {
   padding: 15px 25px;
   background-color: #FF4C30;
   color: #f1f1f1;
@@ -809,22 +805,22 @@ body {
   font-weight: 400;
   cursor: pointer;
 }
-.main-container .content-wrapper #ratings-content form .review-submit button:hover {
+.main-container .content-wrapper #reviews-content form .review-submit button:hover {
   background-color: #e64229;
   box-shadow: 0px 0px 10px 2px #FF4C30;
 }
-.main-container .content-wrapper #ratings-content form .message-box {
+.main-container .content-wrapper #reviews-content form .message-box {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.main-container .content-wrapper #ratings-content form .message-box label {
+.main-container .content-wrapper #reviews-content form .message-box label {
   font-size: 1.2rem;
   font-weight: 500;
   font-family: "Rubik", sans-serif;
   color: #0c0c0c;
 }
-.main-container .content-wrapper #ratings-content form .message-box #review-message {
+.main-container .content-wrapper #reviews-content form .message-box #review-message {
   width: 100%;
   background-color: white;
   padding: 15px 10px;
@@ -835,16 +831,15 @@ body {
   border-radius: 5px;
   cursor: pointer;
   -webkit-appearance: none;
-  -moz-appearance: none;
-       appearance: none;
+  appearance: none;
 }
-.main-container .content-wrapper #ratings-content form .message-box #review-message#message {
+.main-container .content-wrapper #reviews-content form .message-box #review-message#message {
   resize: horizontal;
 }
-.main-container .content-wrapper #ratings-content form .message-box #review-message:focus {
+.main-container .content-wrapper #reviews-content form .message-box #review-message:focus {
   outline: 2px solid #FF4C30;
 }
-.main-container .content-wrapper #ratings-content .review {
+.main-container .content-wrapper #reviews-content .review {
   display: flex;
   flex-direction: column;
   background-color: #DADADA;
@@ -852,38 +847,60 @@ body {
   border-radius: 5px;
   gap: 10px;
 }
-.main-container .content-wrapper #ratings-content .review:hover {
+.main-container .content-wrapper #reviews-content .review:hover {
   box-shadow: 0px 0px 5px #DADADA;
   cursor: pointer;
 }
-.main-container .content-wrapper #ratings-content .review .review-top {
+.main-container .content-wrapper #reviews-content .review .review-top {
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+.main-container .content-wrapper #reviews-content .review .review-top .left-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
   align-items: center;
 }
-.main-container .content-wrapper #ratings-content .review .review-top .review-user-image {
+.main-container .content-wrapper #reviews-content .review .review-top .left-wrapper .review-user-image {
   width: 64px;
 }
-.main-container .content-wrapper #ratings-content .review .review-top .review-user-image img {
+.main-container .content-wrapper #reviews-content .review .review-top .left-wrapper .review-user-image img {
   width: 100%;
 }
-.main-container .content-wrapper #ratings-content .review .review-top .user-data {
+.main-container .content-wrapper #reviews-content .review .review-top .left-wrapper .user-data {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
-.main-container .content-wrapper #ratings-content .review .review-top .user-data h3 {
+.main-container .content-wrapper #reviews-content .review .review-top .left-wrapper .user-data h3 {
   font-size: 1.4rem;
   font-weight: 400;
   font-family: "Rubik", sans-serif;
 }
-.main-container .content-wrapper #ratings-content .review .review-top .user-data h4 {
+.main-container .content-wrapper #reviews-content .review .review-top .left-wrapper .user-data h4 {
   font-size: 1rem;
   font-weight: 400;
   font-family: "Rubik", sans-serif;
 }
-.main-container .content-wrapper #ratings-content .review .review-message {
+.main-container .content-wrapper #reviews-content .review .review-top .right-wrapper .delete-review-btn button {
+  padding: 10px 25px;
+  background-color: #FF4C30;
+  color: #f1f1f1;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  cursor: pointer;
+}
+.main-container .content-wrapper #reviews-content .review .review-top .right-wrapper .delete-review-btn button:hover {
+  background-color: #e64229;
+  box-shadow: 0px 0px 10px 2px #FF4C30;
+}
+.main-container .content-wrapper #reviews-content .review .review-message {
   font-size: 1rem;
   font-weight: 400;
   font-family: "Rubik", sans-serif;
@@ -894,3 +911,6 @@ body {
     flex-direction: column;
   }
 }
+.hidden {
+  display: none !important;
+}/*# sourceMappingURL=car.css.map */

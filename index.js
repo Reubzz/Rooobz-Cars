@@ -23,6 +23,7 @@ app.use('/api/account', require(path.join(__dirname, "/routes/api/account.js")))
 app.use('/api/booking', require(path.join(__dirname, "/routes/api/booking.js")));
 app.use('/api/invoice', require(path.join(__dirname, "/routes/api/invoice.js")));
 app.use('/api/transaction', require(path.join(__dirname, "/routes/api/transaction.js")));
+app.use('/api/reviews', require(path.join(__dirname, "/routes/api/reviews.js")));
 
 
 app.listen(port, () => {

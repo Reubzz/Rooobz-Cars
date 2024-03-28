@@ -223,3 +223,11 @@
 - Added nodemailer module to send emails. 
 - Added new `sendEmail.js` file in `/models/functions` to dynamically send emails from any other file. Just Import it and send emails. 
 - Added `email.ejs` in new `/templates` folder. Template for Invoice Email Messages.
+
+### 29/3/2024 - Update v0.4.5
+- Added Reviews & Ratings System. 
+- Created a new Model Schema called `reviews`.
+- Added `reviews.js` api route (Post = Add review , Delete = Delete Review).
+- Updated Design of Reviews Screen
+- Added ability for Admins to delete any and everyones reviews, while a user can delete only their own comment.
+- Updated frontend `car.js` to delete/add reviews and show/hide the add review form for logged in users. 

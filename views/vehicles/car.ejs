@@ -60,6 +60,8 @@
 
     <div data-include="login-modal"></div>
 
+    <div data-include="error-popup"></div>
+
     <section class="container">
         <div class="top-wrapper">
             <div class="images-wrapper">
@@ -180,7 +182,7 @@
             <div class="navigation-bar">
                 <a id="included-tab-title" class="tab-title" onclick="openTab(this, 'included')">Included</a>
                 <a id="extras-tab-title" class="tab-title" onclick="openTab(this, 'extras')">Extras</a>
-                <a id="ratings-tab-title" class="tab-title" onclick="openTab(this, 'ratings')">Ratings</a>
+                <a id="ratings-tab-title" class="tab-title" onclick="openTab(this, 'reviews')">Reviews</a>
             </div>
             <div class="content-wrapper">
                 <div id="included-content" class="content">
@@ -202,15 +204,15 @@
                     </ul>
                 </div>
 
-                <div id="ratings-content" class="content">
+                <div id="reviews-content" class="content">
                     <% if (user.id !=undefined) { %>
-                        <button id="add-review-btn">Add a Review <i class="fas fa-pen"></i></button>
+                        <button id="add-review-btn" onclick="toggleReviewForm()">Add a Review <i class="fas fa-pen"></i></button>
                         <br>
                         <br>
-                        <form id="add-review">
+                        <form id="add-review" class="hidden">
                             <div class="rating-wrapper">
                                 <label class="rating-label">Add Rating: </label>
-                                <input id="rating-star-number" class="rating-star-number" type="number" value="0">
+                                <input id="rating-star-number" name="rating" class="rating-star-number" type="number" value="0" required>
                                 <div class="rating-stars">
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
@@ -220,43 +222,47 @@
                                 </div>
                             </div>
                             <div class="message-box">
-                                <label for="review-message">Type your message here</label>
-                                <textarea name="review-message" id="review-message"
-                                    placeholder="Really amazing service!!! " rows="3"></textarea>
+                                <label for="content">Type your message here</label>
+                                <textarea name="content" id="review-message" placeholder="Really amazing service!!! " rows="3" required></textarea>
                             </div>
 
                             <div class="review-submit">
                                 <button type="submit">Add Review <i class="fas fa-check-circle"></i> </button>
                             </div>
+                            <hr>
                         </form>
 
-                        <% } %>
-
-                            <hr>
-                            <br>
-                            <br>
-                            <% for( let index=0; index < 3; index++ ) { %>
-                                <div class="review">
-                                    <div class="review-top">
-                                        <div class="review-user-image">
-                                            <img src="/imgs/default-user-img.png" alt="User Profile Image">
-                                        </div>
-                                        <div class="user-data">
-                                            <h3>John Doe</h3>
-                                            <h4>Rating: 7/10</h4>
-                                        </div>
+                    <% } %>
+                    <br>
+                    <br>
+                    <% reviews.forEach(review => { %>
+                        <div class="review">
+                            <div class="review-top">
+                                <div class="left-wrapper">
+                                    <div class="review-user-image">
+                                        <img src="<%= review.user.profileImg %>" alt="User Profile Image">
                                     </div>
-                                    <div class="review-message">
-                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse, modi repellendus
-                                        numquam architecto deserunt placeat consequatur repellat delectus eius hic
-                                        corporis cumque aut, magnam facilis, maxime sit blanditiis quis. Nihil earum
-                                        labore alias suscipit! Deleniti debitis perferendis rerum sequi iusto deserunt
-                                        quidem hic, enim nemo.
+                                    <div class="user-data">
+                                        <h3><%= review.user.username %></h3>
+                                        <h4>Rating: <%= review.rating %>/5</h4>
                                     </div>
                                 </div>
-                                <br>
-                                <br>
-                                <% } %>
+                                <div class="right-wrapper">
+                                    <% if ((review.user._id == user._id) || (user.role == 'admin')) { %>
+                                        <div class="delete-review-btn">
+                                            <button onclick="deleteReview('<%=review._id%>')">Delete Review</button>
+                                        </div>
+                                    <% } %>
+                                        
+                                </div>
+                            </div>
+                            <div class="review-message">
+                                <%- review.content.replace(/\r?\n/g, '<br>') %>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                    <% }) %>
                 </div>
             </div>
         </div>
@@ -277,6 +283,8 @@
     <script src="/js/navbar.js"></script>
     <script src="/js/footer.js"></script>
     <script src="/js/import-html.js"></script>
+    <script src="/js/error-popup.js"></script>
+
 </body>
 
 </html>

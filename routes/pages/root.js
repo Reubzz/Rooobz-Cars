@@ -13,6 +13,7 @@ const offersDB = require('../../models/schemas/offers');
 const ordersDB = require('../../models/schemas/orders');
 const transactionsDB = require('../../models/schemas/transactions');
 const emailsDB = require('../../models/schemas/email-subscribe');
+const reviewsDB = require('../../models/schemas/reviews');
 
 
 // MiddleWares
@@ -77,6 +78,7 @@ router.get('/vehicles/:brand/:name', authCheck, async (req, res) => {
     res.render("vehicles/car", {
         car: carData,
         user: res.locals,
+        reviews: await reviewsDB.find({ car: carData._id }).populate('user car'),
     })
 })
 

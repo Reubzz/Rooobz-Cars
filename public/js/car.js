@@ -95,9 +95,57 @@ const colorStar = (n) => {
     colorStar(n - 1);
 };
 
+
+
+
+function toggleReviewForm() {
+    reviewForm.classList.toggle("hidden")
+    const reviewToggleBtn = document.getElementById('add-review-btn')
+    reviewToggleBtn.innerHTML = (reviewToggleBtn.innerHTML == "Close Review Form") ? 'Add a Review <i class="fas fa-pen"></i>' : "Close Review Form"
+}
+
 const reviewForm = document.getElementById('add-review')
 reviewForm.addEventListener('submit', async (event) => {
     event.preventDefault();
+    const formData = new FormData(reviewForm)
+    formData.append('carid', car._id)
 
-    // TODO: Add API 
+    const res = await fetch('/api/reviews', {
+        method: "POST",
+        body: formData,
+    })
+
+    const data = await res.json();
+
+    if (data.status.code != 200) {
+        showError({
+            code: data.error.code,
+            message: data.error.message
+        })
+        return;
+    }
+    window.location.reload();
+    return;
 })
+
+async function deleteReview(id) {
+    const res = await fetch('/api/reviews', {
+        method: "DELETE",
+        body: JSON.stringify({ 
+            user: user._id,
+            id: id 
+        }),
+        headers: { "Content-Type": "application/json" },
+    })
+
+    const data = await res.json();
+    if (data.status.code != 200) {
+        showError({
+            code: data.error.code,
+            message: data.error.message
+        })
+        return;
+    }
+    window.location.reload();
+    return;
+}
