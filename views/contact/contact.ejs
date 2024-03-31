@@ -54,6 +54,8 @@
 <body>
     <header data-include="navbar"></header>
 
+    <div data-include="error-popup"></div>
+
     <section class="data-wrapper">
         <section data-include="title-banner?title=Contact%20Us&description=Home%20/%20Contact"></section>
         <section class="main-data">
@@ -73,7 +75,7 @@
                         </a>
                     </div>
                     <div class="right-wrapper">
-                        <form id="contact-us-form" action="">
+                        <form id="contact-us-form">
                             <div class="form-element">
                                 <label for="name">Full Name <span>*</span></label>
                                 <input type="text" name="name" id="name" placeholder="Reubz Rizzly">
@@ -100,9 +102,7 @@
             <!-- <section id="testimonials" data-include="testimonials"></section> -->
         </section>
 
-        <section data-include="call-banner">
-            <p>hello world</p>
-        </section>
+        <section data-include="call-banner"></section>
     </section>
 
     <footer data-include="footer"></footer>
@@ -111,6 +111,7 @@
     <script src="/js/import-html.js"></script>
     <script src="/js/footer.js"></script>
     <script src="/js/navbar.js"></script>
+    <script src="/js/error-popup.js"></script>
 </body>
 
 </html>

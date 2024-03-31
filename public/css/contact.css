@@ -106,8 +106,7 @@ header nav .dropdown .dropbtn img {
   width: 42px;
   aspect-ratio: 1/1;
   margin: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border: 2px solid #d5d5d5;
   border-radius: 50%;
 }
@@ -116,7 +115,6 @@ header nav .dropdown .dropdown-content {
   position: absolute;
   background-color: #f1f1f1;
   right: 0;
-  width: -moz-max-content;
   width: max-content;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
@@ -157,12 +155,14 @@ header nav #hamburger-menu .bar3 {
   transition: 0.5s;
 }
 header nav #hamburger-menu.open .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-6px, 6px);
   transform: rotate(-45deg) translate(-6px, 6px);
 }
 header nav #hamburger-menu.open .bar2 {
   opacity: 0;
 }
 header nav #hamburger-menu.open .bar3 {
+  -webkit-transform: rotate(45deg) translate(-6px, 6px);
   transform: rotate(45deg) translate(-5px, -5px);
 }
 header nav #hamburger-menu.open .mobile-menu {
@@ -228,7 +228,6 @@ footer {
   width: 100%;
   justify-content: space-between;
   align-items: flex-start;
-  height: -moz-max-content;
   height: max-content;
   background-color: #DADADA;
   flex-direction: row;
@@ -812,6 +811,30 @@ span.placeholder {
   word-wrap: break-word;
 }
 
+.error-wrapper {
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  z-index: 3;
+}
+.error-wrapper #error {
+  display: none;
+  padding: 20px 50px;
+  position: relative;
+  left: -50%;
+  border: 2px solid #FF4C30;
+  font-size: 1.4rem;
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  color: white;
+  background-color: rgba(255, 76, 48, 0.5490196078);
+  border-radius: 5px;
+}
+.error-wrapper .error {
+  display: block !important;
+  animation: autoHide 10s linear;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -928,8 +951,7 @@ span.placeholder {
   border-radius: 5px;
   cursor: pointer;
   -webkit-appearance: none;
-  -moz-appearance: none;
-       appearance: none;
+  appearance: none;
 }
 #contact-us-container .data-wrapper .right-wrapper #contact-us-form .form-element input#message, #contact-us-container .data-wrapper .right-wrapper #contact-us-form .form-element textarea#message {
   resize: horizontal;
@@ -990,4 +1012,4 @@ span.placeholder {
   #contact-us-container .data-wrapper .right-wrapper #contact-us-form {
     padding: 20px;
   }
-}
+}/*# sourceMappingURL=contact.css.map */

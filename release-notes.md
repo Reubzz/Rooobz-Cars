@@ -231,3 +231,8 @@
 - Updated Design of Reviews Screen
 - Added ability for Admins to delete any and everyones reviews, while a user can delete only their own comment.
 - Updated frontend `car.js` to delete/add reviews and show/hide the add review form for logged in users. 
+
+### 29/3/2024 - Update v0.4.6 
+- Completed Contact Us Form. 
+- Added new Api Route - `/api/contact` which on POST req. Forwards the message with all the details of the form to `contact@reubz.io`.
+- Updated `contact.js` in front end to Use this Above api and respond apropriately. 
