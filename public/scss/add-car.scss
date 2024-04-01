@@ -8,10 +8,11 @@
 @import "./components/title-banner";
 
 .section-data-wrapper {
-    padding: 2% 5%;
+    padding: 5%;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    background-color: $bgColor;
 }
 .page-title {
     h1 {
@@ -38,6 +39,7 @@
             font-family: $rubik;
             font-weight: $medium;
             gap: 10px;
+            color: $black;
         }
         input, select, textarea {
             width: 100%;

@@ -30,19 +30,31 @@
 .pika-single {
     font-family: $rubik; 
     font-size: 1rem; 
+    background-color: $white !important;
       
     .pika-prev, .pika-next {
         font-size: 1.2rem; 
+        background-color: $black !important;
     }
     
     .pika-table {
         border-collapse: collapse; /* Ensure cells are flush against each other */
     }
+    .pika-title {
+        background-color: $smokedWhiteDark !important;
+
+    }
+
+    .pika-label {
+        background-color: $smokedWhiteDark !important;
+        color: $black;
+        
+    }
     
     .is-today {
         button {
             background-color: $orangeFadded !important; 
-            color: white !important;
+            color: $white !important;
         }
     }
     .is-selected {
@@ -64,6 +76,8 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    background-color: $bgColor;
+
     .car-name {
         font-size: 3rem;
         color: $orange;
@@ -126,6 +140,7 @@
                                 font-size: 1.2rem;
                                 font-family: $rubik;
                                 font-weight: $medium;
+                                color: $black;
                                 span {
                                     color: $orange; 
                                     font-size: 1.2rem; 
@@ -175,10 +190,13 @@
                             background-color: $white;
                             border-radius: 5px;
                             cursor: pointer;
+                            color: $black;
+
                         }
                     }
                     .note {
                         font-size: 0.8rem;
+                        color: $black;
                     }
                 }
             }
@@ -212,6 +230,8 @@
                         justify-content: space-between;
                         border-radius: 5px;
                         background-color: $white;
+                        color: $black;
+
                         .hidden {
                             display: none;
                         }
@@ -224,6 +244,7 @@
                             font-size: 1.4rem;
                             font-family: $rubik;
                             font-weight: $medium;
+                            
                             i {
                                 color: $orange;
                             }
@@ -237,7 +258,7 @@
                                 background-color: $orange;
                                 border-radius: 5px;
                                 border: none;
-                                color: $white;
+                                color: white;
                                 &:hover {
                                     background-color: $orangeDark;
                                     cursor: pointer;
@@ -262,14 +283,14 @@
                             font-size: 1.2rem;
                             font-family: $rubik;
                             font-weight: $regular;
-                            color: black;
+                            color: $black;
                         }
                         tr:last-child {
                             background-color: $smokedWhiteLight;
                         }
                         tr {
                             background-color: $white;
-                            border-bottom: 1px solid black;
+                            border-bottom: 1px solid $black;
                         }
                         td {
                             padding: 15px;
@@ -383,6 +404,8 @@
                     gap: 5px;
                     label {
                         font-size: 1rem;
+                        color: $black;
+
                         &:hover {
                             cursor: pointer;
                         }
@@ -417,59 +440,6 @@
             
         }
     }
-    #payment-form {
-        padding: 30px;
-        background-color: $white;
-        border-radius: 5px;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        h2 {
-            text-align: center;
-            font-size: 2rem;
-            font-weight: $regular;
-            font-family: $rubik;
-            color: $black;
-        }
-        
-        input {
-            background-color: $white;
-            font-size: 1.2rem;
-            font-weight: $regular;
-            font-family: $rubik;
-            padding: 10px;
-        }
-        .Label {
-            font-size: 1.2rem !important;
-            font-weight: $medium;
-            font-family: $rubik;
-
-        }
-        #error-message {
-            font-weight: $regular;
-            font-size: 1rem;
-            font-family: $rubik;
-        }
-        #submit { 
-            padding: 10px 30px;
-            font-weight: $medium;
-            font-size: 1.4rem;
-            font-family: $rubik;
-            color: $white;
-            background-color: $orange;
-            border-radius: 10px;
-            border-color: $orangeFadded;
-            box-shadow: 0px 0px 10px 2px $orange;
-            cursor: pointer;
-            width: max-content;
-            align-self: center;
-            
-            &:hover {
-                background-color: $orangeDark;
-                box-shadow: 0px 0px 5px 2px $orange;
-            }
-        }
-    }
 }
 .book-now-btn-wrapper {
     display: flex;
@@ -480,7 +450,7 @@
         font-weight: $medium;
         font-size: 1.6rem;
         font-family: $rubik;
-        color: $white;
+        color: white;
         background-color: $orange;
         border-radius: 10px;
         border-color: $orangeFadded;

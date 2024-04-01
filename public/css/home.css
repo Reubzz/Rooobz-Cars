@@ -1,5 +1,31 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
+:root {
+  --background-color: #eeeeee;
+  --smokedWhite: #DADADA;
+  --smokedWhiteLight: #e0e0e0;
+  --smokedWhiteDark: #d5d5d5;
+  --black: #0c0c0c;
+  --white: #f1f1f1;
+  --whiteDark: #f3f3f3;
+  --greyLight: #b9b9b9;
+  --grey: #707070;
+  --greyDark: #2B2B2B;
+}
+
+.dark-theme {
+  --background-color: #1f1f1f;
+  --smokedWhite: #393939;
+  --smokedWhiteLight: #3f3f3f;
+  --smokedWhiteDark: #2b2a2a;
+  --black: #f1f1f1;
+  --white: #1a1a1a;
+  --whiteDark: #222222;
+  --greyLight: #dfdfdf;
+  --grey: #c6c6c6;
+  --greyDark: #b8b8b8;
+}
+
 body {
   font-size: 62.5%;
   font-family: "Rubik", sans-serif;
@@ -28,6 +54,32 @@ body {
   transition: all 0.3s ease-in-out 0s;
 }
 
+:root {
+  --background-color: #eeeeee;
+  --smokedWhite: #DADADA;
+  --smokedWhiteLight: #e0e0e0;
+  --smokedWhiteDark: #d5d5d5;
+  --black: #0c0c0c;
+  --white: #f1f1f1;
+  --whiteDark: #f3f3f3;
+  --greyLight: #b9b9b9;
+  --grey: #707070;
+  --greyDark: #2B2B2B;
+}
+
+.dark-theme {
+  --background-color: #1f1f1f;
+  --smokedWhite: #393939;
+  --smokedWhiteLight: #3f3f3f;
+  --smokedWhiteDark: #2b2a2a;
+  --black: #f1f1f1;
+  --white: #1a1a1a;
+  --whiteDark: #222222;
+  --greyLight: #dfdfdf;
+  --grey: #c6c6c6;
+  --greyDark: #b8b8b8;
+}
+
 body {
   font-size: 62.5%;
   font-family: "Rubik", sans-serif;
@@ -40,7 +92,7 @@ body {
 }
 
 header nav {
-  background-color: #DADADA;
+  background-color: var(--smokedWhiteDark);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -66,7 +118,7 @@ header nav ul {
 }
 header nav .navbar-item {
   text-decoration: none;
-  color: #0c0c0c;
+  color: var(--black);
   width: 100%;
   cursor: pointer;
 }
@@ -87,8 +139,8 @@ header nav .dropdown {
   /* Show the dropdown menu on hover */
 }
 header nav .dropdown .dropbtn {
-  background-color: #d5d5d5;
-  color: #0c0c0c;
+  background-color: var(--smokedWhiteDark);
+  color: var(--black);
   font-family: "Rubik", sans-serif;
   font-weight: 400;
   padding: 16px;
@@ -107,13 +159,13 @@ header nav .dropdown .dropbtn img {
   aspect-ratio: 1/1;
   margin: auto;
   object-fit: cover;
-  border: 2px solid #d5d5d5;
+  border: 2px solid var(--smokedWhiteDark);
   border-radius: 50%;
 }
 header nav .dropdown .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
+  background-color: var(--white);
   right: 0;
   width: max-content;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
@@ -121,7 +173,7 @@ header nav .dropdown .dropdown-content {
   /* Links inside the dropdown */
 }
 header nav .dropdown .dropdown-content a {
-  color: black;
+  color: var(--black);
   padding: 12px 16px;
   text-decoration: none;
   display: flex;
@@ -130,7 +182,7 @@ header nav .dropdown .dropdown-content a {
   /* Change color of dropdown links on hover */
 }
 header nav .dropdown .dropdown-content a:hover {
-  background-color: #DADADA;
+  background-color: var(--smokedWhite);
 }
 header nav .dropdown:hover {
   /* Change the background color of the dropdown button when the dropdown content is shown */
@@ -140,7 +192,7 @@ header nav .dropdown:hover .dropdown-content {
 }
 header nav .dropdown:hover .dropbtn {
   background-color: #FF4C30;
-  color: #DADADA;
+  color: var(--smokedWhite);
 }
 header nav #hamburger-menu {
   display: none;
@@ -150,7 +202,7 @@ header nav #hamburger-menu .bar2,
 header nav #hamburger-menu .bar3 {
   width: 25px;
   height: 2px;
-  background-color: #0c0c0c;
+  background-color: var(--black);
   margin: 6px 0;
   transition: 0.5s;
 }
@@ -177,7 +229,7 @@ header nav #hamburger-menu .mobile-menu {
   left: 0;
   width: 100%;
   padding: 50px 30px;
-  background-color: #DADADA;
+  background-color: var(--smokedWhiteDark);
   z-index: 999;
   height: 100%;
   position: fixed;
@@ -210,7 +262,7 @@ header nav #hamburger-menu .mobile-menu li .login-button {
   box-shadow: #FF4C30 0px 0px 3px 3px;
 }
 header nav #hamburger-menu .mobile-menu li a {
-  color: #0c0c0c;
+  color: var(--black);
   font-size: 1.6rem;
 }
 
@@ -229,7 +281,7 @@ footer {
   justify-content: space-between;
   align-items: flex-start;
   height: max-content;
-  background-color: #DADADA;
+  background-color: var(--smokedWhiteDark);
   flex-direction: row;
   padding: 30px 40px;
 }
@@ -241,6 +293,8 @@ footer div {
 footer div .title {
   font-size: 1.4rem;
   font-weight: 500;
+  font-family: "Rubik", sans-serif;
+  color: var(--black);
   text-transform: uppercase;
   padding: 0;
   width: 100%;
@@ -255,27 +309,29 @@ footer div .brand-data {
 footer div .data {
   list-style-type: none;
   font-size: 1rem;
+  font-family: "Rubik", sans-serif;
+  color: var(--black);
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
 footer div .data a {
   text-decoration: none;
-  color: #0c0c0c;
+  color: var(--black);
 }
 footer div .data a:hover {
   color: #FF4C30;
 }
 footer div .phone-number, footer div .email {
   font-size: 1rem;
-  color: #0c0c0c;
+  color: var(--black);
   text-decoration: none;
   display: flex;
   align-items: center;
   gap: 10px;
 }
 footer div .phone-number i, footer div .email i {
-  color: #0c0c0c;
+  color: var(--black);
 }
 footer div .phone-number:hover, footer div .email:hover {
   color: #FF4C30;
@@ -304,7 +360,7 @@ footer div #subscribe-form #subscribe-submit {
   border: none;
   border-radius: 5px;
   background-color: #FF4C30;
-  color: #f1f1f1;
+  color: var(--white);
   font-size: 1rem;
 }
 footer div #subscribe-form #subscribe-submit:hover {
@@ -316,7 +372,7 @@ footer div #confirm-message {
   font-size: 1rem;
   font-weight: 400;
   font-family: "Rubik", sans-serif;
-  color: #f1f1f1;
+  color: var(--white);
   background-color: rgba(255, 76, 48, 0.5490196078);
   padding: 10px;
   border-radius: 5px;
@@ -348,7 +404,7 @@ footer div .show {
 }
 
 ::-webkit-scrollbar-track {
-  background: #DADADA;
+  background: var(--smokedWhite);
   border-radius: 0.2em;
 }
 
@@ -378,21 +434,21 @@ footer div .show {
   text-align: center;
 }
 #faq .title-wrapper .sub-title {
-  color: #0c0c0c;
+  color: var(--black);
   font-size: 32px;
   font-family: "Rubik", sans-serif;
   font-weight: 500;
   word-wrap: break-word;
 }
 #faq .title-wrapper .title {
-  color: #0c0c0c;
+  color: var(--black);
   font-size: 64px;
   font-family: "Rubik", sans-serif;
   font-weight: 700;
   word-wrap: break-word;
 }
 #faq .title-wrapper .description {
-  color: #707070;
+  color: var(--grey);
   font-size: 24px;
   font-family: "Rubik", sans-serif;
   font-weight: 300;
@@ -406,9 +462,9 @@ footer div .show {
   gap: 20px;
 }
 #faq .data-container .faq-data {
-  background-color: #f1f1f1;
+  background-color: var(--white);
   border-radius: 10px;
-  box-shadow: #707070 0px 5px 2px;
+  box-shadow: var(--grey) 0px 5px 2px;
   cursor: pointer;
 }
 #faq .data-container .faq-data .faq-question-wrapper {
@@ -416,27 +472,28 @@ footer div .show {
   flex-direction: row;
   justify-content: space-between;
   font-size: 1.6rem;
-  background-color: #f1f1f1;
+  background-color: var(--white);
   padding: 20px 20px;
   border-radius: 2px;
+  color: var(--black);
   list-style: none;
 }
 #faq .data-container .faq-data .faq-question-wrapper::-webkit-details-marker {
   display: none;
 }
 #faq .data-container .faq-data .faq-question-wrapper:hover {
-  background-color: #e0e0e0;
-  box-shadow: 0px 0px 10px 1px #d5d5d5;
+  background-color: var(--smokedWhiteLight);
+  box-shadow: 0px 0px 10px 1px var(--smokedWhiteDark);
 }
 #faq .data-container .faq-data[open] {
   border-width: 2px;
   border-color: #FF4C30;
   border-style: solid;
-  box-shadow: 0px 0px 3px #FF4C30 inset, 0px 5px 2px #707070;
+  box-shadow: 0px 0px 3px #FF4C30 inset, 0px 5px 2px var(--greyDark);
 }
 #faq .data-container .faq-data[open] .faq-question-wrapper {
   background-color: #FF4C30;
-  color: #f1f1f1;
+  color: var(--black);
   box-shadow: 0px 0px 16px #FF4C30;
 }
 #faq .data-container .faq-data[open] .faq-question-wrapper:hover {
@@ -447,6 +504,7 @@ footer div .show {
   padding: 20px 30px;
   font-weight: 300;
   font-size: 1.4rem;
+  color: var(--black);
 }
 
 @media screen and (max-width: 980px) {
@@ -455,11 +513,11 @@ footer div .show {
   }
 }
 .save-banner-container {
-  background-color: #eeeeee;
+  background-color: var(--background-color);
   height: 100%;
 }
 .save-banner-container .save-banner {
-  background: #2B2B2B;
+  background: var(--black);
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -473,25 +531,25 @@ footer div .show {
   font-family: "Rubik", sans-serif;
   font-size: 3.5rem;
   font-weight: 800;
-  color: #f1f1f1;
+  color: var(--white);
 }
 .save-banner-container .save-banner h3 {
   text-align: center;
   font-family: "Rubik", sans-serif;
   font-size: 2rem;
   font-weight: 500;
-  color: #f1f1f1;
+  color: var(--white);
 }
 .save-banner-container .save-banner h3 span {
   color: #FF4C30;
 }
 
 .call-banner-container {
-  background-color: #eeeeee;
+  background-color: var(--background-color);
   height: 100%;
 }
 .call-banner-container .call-banner {
-  background: #2B2B2B;
+  background: var(--greyDark);
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -505,14 +563,14 @@ footer div .show {
   font-family: "Rubik", sans-serif;
   font-size: 3.5rem;
   font-weight: 800;
-  color: #f1f1f1;
+  color: var(--white);
 }
 .call-banner-container .call-banner h3 {
   text-align: center;
   font-family: "Rubik", sans-serif;
   font-size: 2rem;
   font-weight: 500;
-  color: #f1f1f1;
+  color: var(--white);
 }
 .call-banner-container .call-banner h3 span {
   color: #FF4C30;
@@ -536,14 +594,14 @@ footer div .show {
   display: flex;
 }
 #testimonials .testimonials-container .title-wrapper .sub-title {
-  color: black;
+  color: var(--black);
   font-size: 32px;
   font-family: "Rubik", sans-serif;
   font-weight: 500;
   word-wrap: break-word;
 }
 #testimonials .testimonials-container .title-wrapper .title {
-  color: black;
+  color: var(--black);
   font-size: 64px;
   font-family: "Rubik", sans-serif;
   font-weight: 700;
@@ -552,7 +610,7 @@ footer div .show {
 #testimonials .testimonials-container .title-wrapper .description {
   width: 1000px;
   text-align: center;
-  color: #707070;
+  color: var(--grey);
   font-size: 24px;
   font-family: "Rubik", sans-serif;
   font-weight: 400;
@@ -572,7 +630,7 @@ footer div .show {
   height: 100%;
   min-height: 380px;
   padding: 40px;
-  background: white;
+  background: var(--white);
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
   flex-direction: column;
@@ -584,7 +642,7 @@ footer div .show {
 }
 #testimonials .testimonials-container .reviews-container .review-wrapper .review-message {
   align-self: stretch;
-  color: black;
+  color: var(--black);
   font-size: 32px;
   font-family: "Rubik", sans-serif;
   font-weight: 400;
@@ -616,13 +674,13 @@ footer div .show {
   display: inline-flex;
 }
 #testimonials .testimonials-container .reviews-container .review-wrapper .review-data-wrapper .review-data-left .review-user-name-wrapper .review-user-name {
-  color: black;
+  color: var(--black);
   font-size: 32px;
   font-family: "Rubik", sans-serif;
   font-weight: 400;
 }
 #testimonials .testimonials-container .reviews-container .review-wrapper .review-data-wrapper .review-data-left .review-user-name-wrapper .review-user-location {
-  color: black;
+  color: var(--black);
   font-size: 24px;
   font-family: "Rubik", sans-serif;
   font-weight: 400;
@@ -665,14 +723,14 @@ footer div .show {
   text-align: center;
 }
 #plans-container .plans-container-title h3 {
-  color: black;
+  color: var(--black);
   font-size: 36px;
   font-family: "Rubik", sans-serif;
   font-weight: 700;
   word-wrap: break-word;
 }
 #plans-container .plans-container-title h1 {
-  color: black;
+  color: var(--black);
   font-size: 48px;
   font-family: "Rubik", sans-serif;
   font-weight: 700;
@@ -706,7 +764,7 @@ footer div .show {
   align-items: flex-start;
   gap: 10px;
   display: flex;
-  color: black;
+  color: var(--black);
   font-size: 36px;
   font-family: "Rubik", sans-serif;
   font-weight: 700;
@@ -720,7 +778,7 @@ footer div .show {
   display: inline-flex;
   width: 100%;
   text-align: center;
-  color: black;
+  color: var(--black);
   font-size: 24px;
   font-family: "Rubik", sans-serif;
   font-weight: 400;
@@ -818,7 +876,7 @@ span.placeholder {
   display: flex;
   flex-direction: column;
   gap: 100px;
-  background-color: #eeeeee;
+  background-color: var(--background-color);
 }
 .main-data-wrapper .main-data-part1 {
   min-height: 100vh;
@@ -861,13 +919,19 @@ span.placeholder {
 #landing-page .landing-page-wrapper .landing-page-left h3 {
   font-size: 2rem;
   margin: 0;
+  color: var(--black);
+  font-family: "Rubik", sans-serif;
 }
 #landing-page .landing-page-wrapper .landing-page-left h1 {
   font-size: 4rem;
   margin: 0;
+  color: var(--black);
+  font-family: "Rubik", sans-serif;
 }
 #landing-page .landing-page-wrapper .landing-page-left p {
   font-size: 1.2rem;
+  color: var(--black);
+  font-family: "Rubik", sans-serif;
 }
 #landing-page .landing-page-wrapper .landing-page-left .landing-page-buttons {
   display: flex;
@@ -885,7 +949,7 @@ span.placeholder {
   padding: 10px 10px;
   border-radius: 5px;
   text-decoration: none;
-  color: #0c0c0c;
+  color: var(--black);
 }
 #landing-page .landing-page-wrapper .landing-page-left .landing-page-buttons a:hover {
   background-color: #e64229;
@@ -895,12 +959,12 @@ span.placeholder {
   width: 16px;
 }
 #landing-page .landing-page-wrapper .landing-page-left .landing-page-buttons .learn-more-button {
-  background-color: #0c0c0c !important;
-  color: #DADADA;
+  background-color: var(--black) !important;
+  color: var(--smokedWhite);
 }
 #landing-page .landing-page-wrapper .landing-page-left .landing-page-buttons .learn-more-button:hover {
-  background-color: #0c0c0c;
-  box-shadow: 0px 0px 10px 1px #707070;
+  background-color: var(--black);
+  box-shadow: 0px 0px 10px 1px var(--grey);
 }
 #landing-page .landing-page-wrapper .landing-page-right {
   width: 90%;
@@ -912,17 +976,20 @@ span.placeholder {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
 }
-#landing-page .arrow img {
+#landing-page .arrow i {
   animation: bounce 2s ease-in-out 0s infinite normal forwards;
+  color: var(--black);
+  font-size: 2rem;
 }
 
 #quick-booking {
   width: 100%;
   height: 100%;
   padding: 25px 50px;
-  background: #d5d5d5;
-  box-shadow: 0px 0px 50px 5px #707070;
+  background: var(--smokedWhiteDark);
+  box-shadow: 0px 0px 20px 0px var(--greyDark);
   border-radius: 10px;
   overflow: hidden;
   flex-direction: column;
@@ -946,7 +1013,7 @@ span.placeholder {
   display: inline-flex;
 }
 #quick-booking .wrapper .title h1 {
-  color: black;
+  color: var(--black);
   font-size: 40px;
   font-weight: 700;
   word-wrap: break-word;
@@ -975,7 +1042,7 @@ span.placeholder {
   flex: 1;
 }
 #quick-booking .wrapper .form-data .data-wrapper .form-data-title h2 {
-  color: #0c0c0c;
+  color: var(--black);
   font-size: 2rem;
   font-weight: 500;
   word-wrap: break-word;
@@ -989,7 +1056,7 @@ span.placeholder {
 #quick-booking .wrapper .form-data .data-wrapper .dropdown {
   width: 100%;
   padding: 16px 10px;
-  background: #f1f1f1;
+  background: var(--white);
   border-radius: 10px;
   justify-content: space-between;
   align-items: center;
@@ -997,9 +1064,11 @@ span.placeholder {
   border: none;
   cursor: pointer;
   -webkit-appearance: none;
+  color: var(--black);
+  font-family: "Rubik", sans-serif;
 }
 #quick-booking .wrapper .form-data .data-wrapper .dropdown .placeholder-text {
-  color: #DADADA;
+  color: var(--smokedWhite);
   font-weight: 500;
   word-wrap: break-word;
 }
@@ -1012,11 +1081,12 @@ span.placeholder {
   background-color: #FF4C30;
   border-radius: 10px;
   border-color: #FF4C30;
-  color: #DADADA;
+  color: var(--smokedWhite);
   font-size: 1.6rem;
   font-family: "Rubik", sans-serif;
   font-weight: 500;
   word-wrap: break-word;
+  color: var(--black);
 }
 #quick-booking .wrapper .form-data .search-button:hover {
   background-color: #e64229;
@@ -1067,7 +1137,7 @@ span.placeholder {
 }
 #choose-us-container .wcu-data .wcu-wrapper-left .title {
   width: 100%;
-  color: black;
+  color: var(--black);
   font-size: 3rem;
   font-family: "Rubik", sans-serif;
   font-weight: 700;
@@ -1075,7 +1145,7 @@ span.placeholder {
 }
 #choose-us-container .wcu-data .wcu-wrapper-left .description {
   align-self: stretch;
-  color: black;
+  color: var(--black);
   font-size: 1.4rem;
   font-family: "Rubik", sans-serif;
   font-weight: 400;
@@ -1099,13 +1169,14 @@ span.placeholder {
   box-shadow: 0px 0px 10px 2px #FF4C30;
 }
 #choose-us-container .wcu-data .wcu-wrapper-left .booknow-btn .booknow-text {
-  color: #0c0c0c;
+  color: white;
   font-size: 1.6rem;
   font-family: "Rubik", sans-serif;
   font-weight: 500;
 }
-#choose-us-container .wcu-data .wcu-wrapper-left .booknow-btn .booknow-icon {
-  width: 30px;
+#choose-us-container .wcu-data .wcu-wrapper-left .booknow-btn i {
+  font-size: 1.6rem;
+  color: white;
 }
 #choose-us-container .wcu-data .wcu-wrapper-right {
   flex-direction: column;
@@ -1136,7 +1207,7 @@ span.placeholder {
   display: inline-flex;
 }
 #choose-us-container .wcu-data .wcu-wrapper-right .deal .deal-details .deal-title {
-  color: black;
+  color: var(--black);
   font-size: 1.6rem;
   font-family: "Rubik", sans-serif;
   font-weight: 700;
@@ -1145,7 +1216,7 @@ span.placeholder {
 }
 #choose-us-container .wcu-data .wcu-wrapper-right .deal .deal-details .deal-description {
   width: 600px;
-  color: black;
+  color: var(--black);
   font-size: 1.4rem;
   font-family: "Rubik", sans-serif;
   font-weight: 400;

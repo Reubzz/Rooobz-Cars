@@ -19,6 +19,8 @@
 
     gap: 30px;
 
+    background-color: $white;
+
     .title-bar {
         text-align: center;
 
@@ -41,6 +43,8 @@
                 font-size: 1.6rem;
                 font-weight: $medium;
                 font-family: $rubik;
+                color: $black;
+
             }
         }
 
@@ -54,6 +58,7 @@
                     font-size: 1rem;
                     font-weight: $regular;
                     font-family: $rubik;
+                    color: $black;
 
                     span {
                         color: $orange;
@@ -80,7 +85,7 @@
                     background-color: $orange;
                     border-radius: 5px;
                     text-decoration: none;
-                    color: $white;
+                    color: white;
                     border: none;
 
                     font-size: 1rem;

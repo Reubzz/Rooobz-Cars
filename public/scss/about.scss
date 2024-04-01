@@ -112,6 +112,10 @@
                 .booknow-icon {
                     width: 30px; 
                 }
+                i {
+                    font-size: 1.8rem; 
+                    color: $black; 
+                }
             }
         }
 
@@ -193,5 +197,9 @@
                 }
             }
         }
+    }
+    .booknow-btn {
+        width: 100%;
+
     }
 }

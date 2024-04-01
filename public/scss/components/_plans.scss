@@ -15,14 +15,14 @@
         display: flex;
         text-align: center;
         h3 {
-            color: black; 
+            color: $black; 
             font-size: 36px; 
             font-family: $rubik; 
             font-weight: 700; 
             word-wrap: break-word;
         }
         h1 {
-            color: black; 
+            color: $black; 
             font-size: 48px; 
             font-family: $rubik; 
             font-weight: 700; 
@@ -55,7 +55,7 @@
                 align-items: flex-start; 
                 gap: 10px; 
                 display: flex;
-                color: black; 
+                color: $black; 
                 font-size: 36px; 
                 font-family: $rubik; 
                 font-weight: 700; 
@@ -69,7 +69,7 @@
                 display: inline-flex;
                 width: 100%; 
                 text-align: center; 
-                color: black; 
+                color: $black; 
                 font-size: 24px; 
                 font-family: $rubik; 
                 font-weight: 400; 

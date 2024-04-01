@@ -4,7 +4,7 @@ footer {
     justify-content: space-between;
     align-items: flex-start;
     height: max-content;
-    background-color: $smokedWhite;
+    background-color: $smokedWhiteDark;
     flex-direction: row;
     padding: 30px 40px;
     // gap: 70px;
@@ -19,6 +19,8 @@ footer {
         .title {
             font-size: 1.4rem;
             font-weight: $medium;
+            font-family: $rubik;
+            color: $black;
             text-transform: uppercase;
             padding: 0;
             width: 100%;
@@ -37,6 +39,8 @@ footer {
         .data {
             list-style-type: none;
             font-size: 1rem;
+            font-family: $rubik;
+            color: $black;
             display: flex;
             flex-direction: column;
             gap: 5px;

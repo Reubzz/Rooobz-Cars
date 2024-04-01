@@ -14,12 +14,14 @@
     display: flex;
     flex-direction: row;
     gap: 20px;
+    background-color: $bgColor;
 }
 .hidden {
     display: none !important;
 }
 .page-title {
     padding: 1% 5%;
+    background-color: $bgColor;
 
     h1 {
         font-size: 3rem;
@@ -33,13 +35,13 @@
 
     .tabs-wrapper {
         padding: 10px;
-        background-color: $whiteDark;
+        background-color: $white;
         border-radius: 5px;
         display: flex;
         flex-direction: column;
         gap: 10px;
         width: max-content;
-
+        color: $black;
         
         .tab-group {
             .tab-title {
@@ -183,7 +185,7 @@
                             font-weight: $medium;
                             font-family: $rubik;
                             padding: 5px 10px;
-                            background-color: $greyLight;
+                            background-color: $smokedWhite;
                             border-radius: 5px;
                             text-align: center;
                             &:hover {

@@ -240,3 +240,9 @@
 - Updated Admin Page layout to work well with Mobile and Improved Accessibility, Added Aditional Data to Cards across all types.
 - Update Meta Tags in few pages for better SEO.
 - Added 404 Page and added 404 route
+- Added Dark Theme for full website
+- Added a Dark Theme Toggle for logged in users in Drop down Menu. 
+- Updated `navbar.js` to handle theme changes.
+- Updated all pages css to allow dark theme. 
+- Updated all variables to allow dark theme. 
+- Removed Unnecessary Icons and replaced them with FontAwesome Icons.

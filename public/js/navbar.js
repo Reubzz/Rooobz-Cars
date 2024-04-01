@@ -40,5 +40,19 @@ window.onscroll = function() {
         navbar.classList.remove("sticky");
     }
 };
-function myFunction() {
-} 
+
+// theme-toggle
+function toggleTheme() {
+    document.body.classList.toggle('dark-theme');
+
+    // Save theme preference
+    localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light');
+};
+
+// Apply stored theme preference on page load
+window.onload = () => {
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark') {
+        document.body.classList.add('dark-theme');
+    }
+};

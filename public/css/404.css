@@ -1,5 +1,31 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
+:root {
+  --background-color: #eeeeee;
+  --smokedWhite: #DADADA;
+  --smokedWhiteLight: #e0e0e0;
+  --smokedWhiteDark: #d5d5d5;
+  --black: #0c0c0c;
+  --white: #f1f1f1;
+  --whiteDark: #f3f3f3;
+  --greyLight: #b9b9b9;
+  --grey: #707070;
+  --greyDark: #2B2B2B;
+}
+
+.dark-theme {
+  --background-color: #1f1f1f;
+  --smokedWhite: #393939;
+  --smokedWhiteLight: #3f3f3f;
+  --smokedWhiteDark: #2b2a2a;
+  --black: #f1f1f1;
+  --white: #1a1a1a;
+  --whiteDark: #222222;
+  --greyLight: #dfdfdf;
+  --grey: #c6c6c6;
+  --greyDark: #b8b8b8;
+}
+
 body {
   font-size: 62.5%;
   font-family: "Rubik", sans-serif;
@@ -28,6 +54,32 @@ body {
   transition: all 0.3s ease-in-out 0s;
 }
 
+:root {
+  --background-color: #eeeeee;
+  --smokedWhite: #DADADA;
+  --smokedWhiteLight: #e0e0e0;
+  --smokedWhiteDark: #d5d5d5;
+  --black: #0c0c0c;
+  --white: #f1f1f1;
+  --whiteDark: #f3f3f3;
+  --greyLight: #b9b9b9;
+  --grey: #707070;
+  --greyDark: #2B2B2B;
+}
+
+.dark-theme {
+  --background-color: #1f1f1f;
+  --smokedWhite: #393939;
+  --smokedWhiteLight: #3f3f3f;
+  --smokedWhiteDark: #2b2a2a;
+  --black: #f1f1f1;
+  --white: #1a1a1a;
+  --whiteDark: #222222;
+  --greyLight: #dfdfdf;
+  --grey: #c6c6c6;
+  --greyDark: #b8b8b8;
+}
+
 body {
   font-size: 62.5%;
   font-family: "Rubik", sans-serif;
@@ -40,7 +92,7 @@ body {
 }
 
 header nav {
-  background-color: #DADADA;
+  background-color: var(--smokedWhiteDark);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -66,7 +118,7 @@ header nav ul {
 }
 header nav .navbar-item {
   text-decoration: none;
-  color: #0c0c0c;
+  color: var(--black);
   width: 100%;
   cursor: pointer;
 }
@@ -87,8 +139,8 @@ header nav .dropdown {
   /* Show the dropdown menu on hover */
 }
 header nav .dropdown .dropbtn {
-  background-color: #d5d5d5;
-  color: #0c0c0c;
+  background-color: var(--smokedWhiteDark);
+  color: var(--black);
   font-family: "Rubik", sans-serif;
   font-weight: 400;
   padding: 16px;
@@ -107,13 +159,13 @@ header nav .dropdown .dropbtn img {
   aspect-ratio: 1/1;
   margin: auto;
   object-fit: cover;
-  border: 2px solid #d5d5d5;
+  border: 2px solid var(--smokedWhiteDark);
   border-radius: 50%;
 }
 header nav .dropdown .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
+  background-color: var(--white);
   right: 0;
   width: max-content;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
@@ -121,7 +173,7 @@ header nav .dropdown .dropdown-content {
   /* Links inside the dropdown */
 }
 header nav .dropdown .dropdown-content a {
-  color: black;
+  color: var(--black);
   padding: 12px 16px;
   text-decoration: none;
   display: flex;
@@ -130,7 +182,7 @@ header nav .dropdown .dropdown-content a {
   /* Change color of dropdown links on hover */
 }
 header nav .dropdown .dropdown-content a:hover {
-  background-color: #DADADA;
+  background-color: var(--smokedWhite);
 }
 header nav .dropdown:hover {
   /* Change the background color of the dropdown button when the dropdown content is shown */
@@ -140,7 +192,7 @@ header nav .dropdown:hover .dropdown-content {
 }
 header nav .dropdown:hover .dropbtn {
   background-color: #FF4C30;
-  color: #DADADA;
+  color: var(--smokedWhite);
 }
 header nav #hamburger-menu {
   display: none;
@@ -150,7 +202,7 @@ header nav #hamburger-menu .bar2,
 header nav #hamburger-menu .bar3 {
   width: 25px;
   height: 2px;
-  background-color: #0c0c0c;
+  background-color: var(--black);
   margin: 6px 0;
   transition: 0.5s;
 }
@@ -177,7 +229,7 @@ header nav #hamburger-menu .mobile-menu {
   left: 0;
   width: 100%;
   padding: 50px 30px;
-  background-color: #DADADA;
+  background-color: var(--smokedWhiteDark);
   z-index: 999;
   height: 100%;
   position: fixed;
@@ -210,7 +262,7 @@ header nav #hamburger-menu .mobile-menu li .login-button {
   box-shadow: #FF4C30 0px 0px 3px 3px;
 }
 header nav #hamburger-menu .mobile-menu li a {
-  color: #0c0c0c;
+  color: var(--black);
   font-size: 1.6rem;
 }
 
@@ -229,7 +281,7 @@ footer {
   justify-content: space-between;
   align-items: flex-start;
   height: max-content;
-  background-color: #DADADA;
+  background-color: var(--smokedWhiteDark);
   flex-direction: row;
   padding: 30px 40px;
 }
@@ -241,6 +293,8 @@ footer div {
 footer div .title {
   font-size: 1.4rem;
   font-weight: 500;
+  font-family: "Rubik", sans-serif;
+  color: var(--black);
   text-transform: uppercase;
   padding: 0;
   width: 100%;
@@ -255,27 +309,29 @@ footer div .brand-data {
 footer div .data {
   list-style-type: none;
   font-size: 1rem;
+  font-family: "Rubik", sans-serif;
+  color: var(--black);
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
 footer div .data a {
   text-decoration: none;
-  color: #0c0c0c;
+  color: var(--black);
 }
 footer div .data a:hover {
   color: #FF4C30;
 }
 footer div .phone-number, footer div .email {
   font-size: 1rem;
-  color: #0c0c0c;
+  color: var(--black);
   text-decoration: none;
   display: flex;
   align-items: center;
   gap: 10px;
 }
 footer div .phone-number i, footer div .email i {
-  color: #0c0c0c;
+  color: var(--black);
 }
 footer div .phone-number:hover, footer div .email:hover {
   color: #FF4C30;
@@ -304,7 +360,7 @@ footer div #subscribe-form #subscribe-submit {
   border: none;
   border-radius: 5px;
   background-color: #FF4C30;
-  color: #f1f1f1;
+  color: var(--white);
   font-size: 1rem;
 }
 footer div #subscribe-form #subscribe-submit:hover {
@@ -316,7 +372,7 @@ footer div #confirm-message {
   font-size: 1rem;
   font-weight: 400;
   font-family: "Rubik", sans-serif;
-  color: #f1f1f1;
+  color: var(--white);
   background-color: rgba(255, 76, 48, 0.5490196078);
   padding: 10px;
   border-radius: 5px;
@@ -348,7 +404,7 @@ footer div .show {
 }
 
 ::-webkit-scrollbar-track {
-  background: #DADADA;
+  background: var(--smokedWhite);
   border-radius: 0.2em;
 }
 
@@ -363,11 +419,11 @@ footer div .show {
 }
 
 .save-banner-container {
-  background-color: #eeeeee;
+  background-color: var(--background-color);
   height: 100%;
 }
 .save-banner-container .save-banner {
-  background: #2B2B2B;
+  background: var(--black);
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -381,19 +437,61 @@ footer div .show {
   font-family: "Rubik", sans-serif;
   font-size: 3.5rem;
   font-weight: 800;
-  color: #f1f1f1;
+  color: var(--white);
 }
 .save-banner-container .save-banner h3 {
   text-align: center;
   font-family: "Rubik", sans-serif;
   font-size: 2rem;
   font-weight: 500;
-  color: #f1f1f1;
+  color: var(--white);
 }
 .save-banner-container .save-banner h3 span {
   color: #FF4C30;
 }
 
+span.actual {
+  color: #FF4C30;
+  animation: popup 2s ease-in-out 0s infinite alternate forwards;
+  position: absolute;
+}
+span.placeholder {
+  opacity: 0;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translate3d(0, 0px, 0);
+  }
+  15% {
+    transform: scale(1.5);
+  }
+  25% {
+    transform: translate3d(0, 50px, 0);
+  }
+  50%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes popup {
+  from {
+    transform: scale3d(1.2, 1.4, 1);
+  }
+  50% {
+    transform: scale3d(1, 1, 1);
+  }
+  to {
+    transform: scale3d(1, 1, 1), translateZ();
+  }
+}
+@keyframes autoHide {
+  70% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
 .container {
   display: flex;
   justify-content: center;
@@ -402,6 +500,7 @@ footer div .show {
   flex-direction: column;
   gap: 20px;
   padding: 100px 20px;
+  background-color: var(--background-color);
 }
 .container img {
   width: 100%;
@@ -411,19 +510,19 @@ footer div .show {
   font-size: 1.2rem;
   font-weight: 700;
   font-family: "Rubik", sans-serif;
-  color: #0c0c0c;
+  color: var(--black);
 }
 .container p {
   font-size: 1rem;
   font-weight: 500;
   font-family: "Rubik", sans-serif;
-  color: #0c0c0c;
+  color: var(--black);
 }
 .container a {
   font-size: 1rem;
   font-weight: 500;
   font-family: "Rubik", sans-serif;
-  color: #f1f1f1;
+  color: var(--white);
   background-color: #FF4C30;
   border-radius: 50px;
   padding: 10px 30px;

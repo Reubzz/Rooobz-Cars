@@ -1,6 +1,32 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
+:root {
+  --background-color: #eeeeee;
+  --smokedWhite: #DADADA;
+  --smokedWhiteLight: #e0e0e0;
+  --smokedWhiteDark: #d5d5d5;
+  --black: #0c0c0c;
+  --white: #f1f1f1;
+  --whiteDark: #f3f3f3;
+  --greyLight: #b9b9b9;
+  --grey: #707070;
+  --greyDark: #2B2B2B;
+}
+
+.dark-theme {
+  --background-color: #1f1f1f;
+  --smokedWhite: #393939;
+  --smokedWhiteLight: #3f3f3f;
+  --smokedWhiteDark: #2b2a2a;
+  --black: #f1f1f1;
+  --white: #1a1a1a;
+  --whiteDark: #222222;
+  --greyLight: #dfdfdf;
+  --grey: #c6c6c6;
+  --greyDark: #b8b8b8;
+}
+
 body {
   font-size: 62.5%;
   font-family: "Rubik", sans-serif;
@@ -29,6 +55,32 @@ body {
   transition: all 0.3s ease-in-out 0s;
 }
 
+:root {
+  --background-color: #eeeeee;
+  --smokedWhite: #DADADA;
+  --smokedWhiteLight: #e0e0e0;
+  --smokedWhiteDark: #d5d5d5;
+  --black: #0c0c0c;
+  --white: #f1f1f1;
+  --whiteDark: #f3f3f3;
+  --greyLight: #b9b9b9;
+  --grey: #707070;
+  --greyDark: #2B2B2B;
+}
+
+.dark-theme {
+  --background-color: #1f1f1f;
+  --smokedWhite: #393939;
+  --smokedWhiteLight: #3f3f3f;
+  --smokedWhiteDark: #2b2a2a;
+  --black: #f1f1f1;
+  --white: #1a1a1a;
+  --whiteDark: #222222;
+  --greyLight: #dfdfdf;
+  --grey: #c6c6c6;
+  --greyDark: #b8b8b8;
+}
+
 body {
   font-size: 62.5%;
   font-family: "Rubik", sans-serif;
@@ -41,7 +93,7 @@ body {
 }
 
 header nav {
-  background-color: #DADADA;
+  background-color: var(--smokedWhiteDark);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -67,7 +119,7 @@ header nav ul {
 }
 header nav .navbar-item {
   text-decoration: none;
-  color: #0c0c0c;
+  color: var(--black);
   width: 100%;
   cursor: pointer;
 }
@@ -88,8 +140,8 @@ header nav .dropdown {
   /* Show the dropdown menu on hover */
 }
 header nav .dropdown .dropbtn {
-  background-color: #d5d5d5;
-  color: #0c0c0c;
+  background-color: var(--smokedWhiteDark);
+  color: var(--black);
   font-family: "Rubik", sans-serif;
   font-weight: 400;
   padding: 16px;
@@ -108,13 +160,13 @@ header nav .dropdown .dropbtn img {
   aspect-ratio: 1/1;
   margin: auto;
   object-fit: cover;
-  border: 2px solid #d5d5d5;
+  border: 2px solid var(--smokedWhiteDark);
   border-radius: 50%;
 }
 header nav .dropdown .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
+  background-color: var(--white);
   right: 0;
   width: max-content;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
@@ -122,7 +174,7 @@ header nav .dropdown .dropdown-content {
   /* Links inside the dropdown */
 }
 header nav .dropdown .dropdown-content a {
-  color: black;
+  color: var(--black);
   padding: 12px 16px;
   text-decoration: none;
   display: flex;
@@ -131,7 +183,7 @@ header nav .dropdown .dropdown-content a {
   /* Change color of dropdown links on hover */
 }
 header nav .dropdown .dropdown-content a:hover {
-  background-color: #DADADA;
+  background-color: var(--smokedWhite);
 }
 header nav .dropdown:hover {
   /* Change the background color of the dropdown button when the dropdown content is shown */
@@ -141,7 +193,7 @@ header nav .dropdown:hover .dropdown-content {
 }
 header nav .dropdown:hover .dropbtn {
   background-color: #FF4C30;
-  color: #DADADA;
+  color: var(--smokedWhite);
 }
 header nav #hamburger-menu {
   display: none;
@@ -151,7 +203,7 @@ header nav #hamburger-menu .bar2,
 header nav #hamburger-menu .bar3 {
   width: 25px;
   height: 2px;
-  background-color: #0c0c0c;
+  background-color: var(--black);
   margin: 6px 0;
   transition: 0.5s;
 }
@@ -178,7 +230,7 @@ header nav #hamburger-menu .mobile-menu {
   left: 0;
   width: 100%;
   padding: 50px 30px;
-  background-color: #DADADA;
+  background-color: var(--smokedWhiteDark);
   z-index: 999;
   height: 100%;
   position: fixed;
@@ -211,7 +263,7 @@ header nav #hamburger-menu .mobile-menu li .login-button {
   box-shadow: #FF4C30 0px 0px 3px 3px;
 }
 header nav #hamburger-menu .mobile-menu li a {
-  color: #0c0c0c;
+  color: var(--black);
   font-size: 1.6rem;
 }
 
@@ -230,7 +282,7 @@ footer {
   justify-content: space-between;
   align-items: flex-start;
   height: max-content;
-  background-color: #DADADA;
+  background-color: var(--smokedWhiteDark);
   flex-direction: row;
   padding: 30px 40px;
 }
@@ -242,6 +294,8 @@ footer div {
 footer div .title {
   font-size: 1.4rem;
   font-weight: 500;
+  font-family: "Rubik", sans-serif;
+  color: var(--black);
   text-transform: uppercase;
   padding: 0;
   width: 100%;
@@ -256,27 +310,29 @@ footer div .brand-data {
 footer div .data {
   list-style-type: none;
   font-size: 1rem;
+  font-family: "Rubik", sans-serif;
+  color: var(--black);
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
 footer div .data a {
   text-decoration: none;
-  color: #0c0c0c;
+  color: var(--black);
 }
 footer div .data a:hover {
   color: #FF4C30;
 }
 footer div .phone-number, footer div .email {
   font-size: 1rem;
-  color: #0c0c0c;
+  color: var(--black);
   text-decoration: none;
   display: flex;
   align-items: center;
   gap: 10px;
 }
 footer div .phone-number i, footer div .email i {
-  color: #0c0c0c;
+  color: var(--black);
 }
 footer div .phone-number:hover, footer div .email:hover {
   color: #FF4C30;
@@ -305,7 +361,7 @@ footer div #subscribe-form #subscribe-submit {
   border: none;
   border-radius: 5px;
   background-color: #FF4C30;
-  color: #f1f1f1;
+  color: var(--white);
   font-size: 1rem;
 }
 footer div #subscribe-form #subscribe-submit:hover {
@@ -317,7 +373,7 @@ footer div #confirm-message {
   font-size: 1rem;
   font-weight: 400;
   font-family: "Rubik", sans-serif;
-  color: #f1f1f1;
+  color: var(--white);
   background-color: rgba(255, 76, 48, 0.5490196078);
   padding: 10px;
   border-radius: 5px;
@@ -349,7 +405,7 @@ footer div .show {
 }
 
 ::-webkit-scrollbar-track {
-  background: #DADADA;
+  background: var(--smokedWhite);
   border-radius: 0.2em;
 }
 
@@ -364,11 +420,11 @@ footer div .show {
 }
 
 .save-banner-container {
-  background-color: #eeeeee;
+  background-color: var(--background-color);
   height: 100%;
 }
 .save-banner-container .save-banner {
-  background: #2B2B2B;
+  background: var(--black);
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -382,14 +438,14 @@ footer div .show {
   font-family: "Rubik", sans-serif;
   font-size: 3.5rem;
   font-weight: 800;
-  color: #f1f1f1;
+  color: var(--white);
 }
 .save-banner-container .save-banner h3 {
   text-align: center;
   font-family: "Rubik", sans-serif;
   font-size: 2rem;
   font-weight: 500;
-  color: #f1f1f1;
+  color: var(--white);
 }
 .save-banner-container .save-banner h3 span {
   color: #FF4C30;
@@ -442,7 +498,7 @@ span.placeholder {
   height: 100%;
   padding: 100px 7%;
   background-image: url("/imgs/top-banner-bg.png");
-  background-color: #eeeeee;
+  background-color: var(--background-color);
   background-position: top;
   background-size: cover;
   flex-direction: column;
@@ -464,6 +520,33 @@ span.placeholder {
   font-family: "Rubik", sans-serif;
   font-weight: 500;
   word-wrap: break-word;
+  color: var(--black);
+}
+
+:root {
+  --background-color: #eeeeee;
+  --smokedWhite: #DADADA;
+  --smokedWhiteLight: #e0e0e0;
+  --smokedWhiteDark: #d5d5d5;
+  --black: #0c0c0c;
+  --white: #f1f1f1;
+  --whiteDark: #f3f3f3;
+  --greyLight: #b9b9b9;
+  --grey: #707070;
+  --greyDark: #2B2B2B;
+}
+
+.dark-theme {
+  --background-color: #1f1f1f;
+  --smokedWhite: #393939;
+  --smokedWhiteLight: #3f3f3f;
+  --smokedWhiteDark: #2b2a2a;
+  --black: #f1f1f1;
+  --white: #1a1a1a;
+  --whiteDark: #222222;
+  --greyLight: #dfdfdf;
+  --grey: #c6c6c6;
+  --greyDark: #b8b8b8;
 }
 
 body {
@@ -487,9 +570,9 @@ body {
   align-items: center;
   gap: 20px;
   z-index: 9;
-  background-color: #f1f1f1;
+  background-color: var(--white);
   padding: 30px;
-  box-shadow: 0px 0px 15px 5px #707070;
+  box-shadow: 0px 0px 15px 5px var(--grey);
   border-radius: 5px;
 }
 .login-register-modal .content-wrapper .popup-title-wrapper {
@@ -503,7 +586,10 @@ body {
   font-size: 1.4rem;
   font-family: "Rubik", sans-serif;
   font-weight: 600;
-  color: #0c0c0c;
+  color: var(--black);
+}
+.login-register-modal .content-wrapper .popup-title-wrapper i {
+  color: var(--black);
 }
 .login-register-modal .content-wrapper .popup-title-wrapper i:hover {
   font-size: 1.4rem;
@@ -518,14 +604,15 @@ body {
 }
 .login-register-modal .content-wrapper .buttons-wrapper .modal-element {
   padding: 10px;
-  background-color: #DADADA;
+  background-color: var(--smokedWhite);
   border-radius: 5px;
   font-size: 1.2rem;
   font-family: "Rubik", sans-serif;
   font-weight: 500;
+  color: var(--black);
 }
 .login-register-modal .content-wrapper .buttons-wrapper .modal-element:hover {
-  background-color: #d5d5d5;
+  background-color: var(--smokedWhiteDark);
   cursor: pointer;
 }
 .login-register-modal .content-wrapper .buttons-wrapper .modal-element.register-btn {
@@ -567,6 +654,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 80px;
+  background-color: var(--white);
 }
 .container .top-wrapper {
   display: flex;
@@ -594,8 +682,8 @@ body {
   position: relative;
   margin: auto;
   border-radius: 10px;
-  border: 2px solid #d5d5d5;
-  background-color: #DADADA;
+  border: 2px solid var(--smokedWhiteDark);
+  background-color: var(--smokedWhite);
   /* Fading animation */
 }
 .container .top-wrapper .images-wrapper .image-slideshow {
@@ -620,7 +708,7 @@ body {
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
-  background-color: #707070;
+  background-color: var(--grey);
 }
 .container .top-wrapper .images-wrapper .next {
   right: 0;
@@ -678,14 +766,14 @@ body {
   font-size: 1.2rem;
   font-family: "Rubik", sans-serif;
   font-weight: 400;
-  color: black;
+  color: var(--black);
 }
 .container .top-wrapper .main-data-wrapper .car-data-wrapper table tr:nth-child(even) {
-  background-color: #DADADA;
+  background-color: var(--smokedWhiteLight);
 }
 .container .top-wrapper .main-data-wrapper .car-data-wrapper table tr {
-  background-color: #f1f1f1;
-  border-bottom: 1px solid black;
+  background-color: var(--smokedWhiteDark);
+  border-bottom: 1px solid var(--black);
 }
 .container .top-wrapper .main-data-wrapper .car-data-wrapper table td {
   padding: 15px;
@@ -702,7 +790,7 @@ body {
   font-weight: 500;
   font-size: 1.6rem;
   font-family: "Rubik", sans-serif;
-  color: #f1f1f1;
+  color: white;
   background-color: #FF4C30;
   border-radius: 10px;
   border-color: rgba(255, 76, 48, 0.5490196078);
@@ -720,8 +808,8 @@ body {
   flex-direction: column;
   gap: 20px;
   border-radius: 10px;
-  background-color: #f1f1f1;
-  box-shadow: 0px 0px 15px #707070;
+  background-color: var(--white);
+  box-shadow: 0px 0px 15px var(--grey);
 }
 .main-container .navigation-bar {
   border-radius: 10px;
@@ -732,19 +820,20 @@ body {
 }
 .main-container .navigation-bar a {
   border-radius: 5px;
-  background-color: #DADADA;
+  background-color: var(--smokedWhite);
   width: 100%;
   text-align: center;
   font-size: 1.4rem;
   padding: 20px;
   cursor: pointer;
+  color: var(--black);
 }
 .main-container .navigation-bar a:hover {
   background-color: rgba(255, 76, 48, 0.5490196078);
 }
 .main-container .navigation-bar a.active {
   background-color: #FF4C30;
-  color: #f1f1f1;
+  color: white;
 }
 .main-container .content-wrapper {
   padding: 10px;
@@ -771,13 +860,13 @@ body {
   font-size: 1.2rem;
   font-weight: 400;
   font-family: "Rubik", sans-serif;
-  color: #0c0c0c;
+  color: var(--black);
 }
 .main-container .content-wrapper #reviews-content #add-review-btn {
   padding: 10px 30px;
   font-size: 1rem;
   font-family: "Rubik", sans-serif;
-  color: #f1f1f1;
+  color: white;
   background-color: #FF4C30;
   border-radius: 5px;
   border: 2px solid #FF4C30;
@@ -813,9 +902,10 @@ body {
   font-size: 1.2rem;
   font-family: "Rubik", sans-serif;
   font-weight: 500;
+  color: var(--black);
 }
 .main-container .content-wrapper #reviews-content form .rating-wrapper .rating-stars {
-  color: #d5d5d5;
+  color: var(--smokedWhiteDark);
 }
 .main-container .content-wrapper #reviews-content form .rating-wrapper .rating-stars i {
   font-size: 1.2rem;
@@ -824,7 +914,7 @@ body {
 .main-container .content-wrapper #reviews-content form .review-submit button {
   padding: 15px 25px;
   background-color: #FF4C30;
-  color: #f1f1f1;
+  color: white;
   border-radius: 5px;
   border: none;
   font-size: 1rem;
@@ -845,16 +935,16 @@ body {
   font-size: 1.2rem;
   font-weight: 500;
   font-family: "Rubik", sans-serif;
-  color: #0c0c0c;
+  color: var(--black);
 }
 .main-container .content-wrapper #reviews-content form .message-box #review-message {
   width: 100%;
-  background-color: white;
+  background-color: var(--smokedWhiteDark);
   padding: 15px 10px;
-  border: 2px solid #d5d5d5;
+  border: 2px solid var(--smokedWhiteDark);
   font-family: "Rubik", sans-serif;
   font-size: 1rem;
-  color: #0c0c0c;
+  color: var(--black);
   border-radius: 5px;
   cursor: pointer;
   -webkit-appearance: none;
@@ -869,13 +959,13 @@ body {
 .main-container .content-wrapper #reviews-content .review {
   display: flex;
   flex-direction: column;
-  background-color: #DADADA;
+  background-color: var(--smokedWhite);
   padding: 20px;
   border-radius: 5px;
   gap: 10px;
 }
 .main-container .content-wrapper #reviews-content .review:hover {
-  box-shadow: 0px 0px 5px #DADADA;
+  box-shadow: 0px 0px 5px var(--smokedWhite);
   cursor: pointer;
 }
 .main-container .content-wrapper #reviews-content .review .review-top {
@@ -901,6 +991,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 5px;
+  color: var(--black);
 }
 .main-container .content-wrapper #reviews-content .review .review-top .left-wrapper .user-data h3 {
   font-size: 1.4rem;
@@ -915,7 +1006,7 @@ body {
 .main-container .content-wrapper #reviews-content .review .review-top .right-wrapper .delete-review-btn button {
   padding: 10px 25px;
   background-color: #FF4C30;
-  color: #f1f1f1;
+  color: white;
   border-radius: 5px;
   border: none;
   font-size: 1rem;
@@ -931,6 +1022,7 @@ body {
   font-size: 1rem;
   font-weight: 400;
   font-family: "Rubik", sans-serif;
+  color: var(--black);
 }
 
 @media screen and (max-width: 900px) {

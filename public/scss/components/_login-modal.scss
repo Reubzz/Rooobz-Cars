@@ -36,6 +36,7 @@
                 color: $black;
             }
             i {
+                color: $black;
                 &:hover {
                     font-size: 1.4rem;
                     color: $orange;
@@ -57,7 +58,7 @@
                 font-size: 1.2rem;
                 font-family: $rubik;
                 font-weight: $medium;
-
+                color: $black;
                 &:hover {
                     background-color: $smokedWhiteDark;
                     cursor: pointer;

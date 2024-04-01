@@ -63,6 +63,8 @@
                 background-color: $white;
                 padding: 20px 20px;
                 border-radius: 2px;
+                color: $black;
+
                 // .active {
                 //     background-color: $orange; 
                 //     color: $white;
@@ -79,7 +81,7 @@
             &[open] {
                 .faq-question-wrapper {
                     background-color: $orange;
-                    color: $white;
+                    color: $black;
                     // border: 2px $orange;
                     box-shadow: 0px 0px 16px $orange;
                     &:hover {
@@ -90,12 +92,13 @@
                 border-width: 2px;
                 border-color: $orange;
                 border-style: solid;
-                box-shadow: 0px 0px 3px $orange inset, 0px 5px 2px $grey;
+                box-shadow: 0px 0px 3px $orange inset, 0px 5px 2px $greyDark;
             }
             .faq-answer-wrapper {
                 padding: 20px 30px;
                 font-weight: $light;
                 font-size: 1.4rem;
+                color: $black; 
             }
         }
     }

@@ -1,4 +1,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
+:root {
+  --background-color: #eeeeee;
+  --smokedWhite: #DADADA;
+  --smokedWhiteLight: #e0e0e0;
+  --smokedWhiteDark: #d5d5d5;
+  --black: #0c0c0c;
+  --white: #f1f1f1;
+  --whiteDark: #f3f3f3;
+  --greyLight: #b9b9b9;
+  --grey: #707070;
+  --greyDark: #2B2B2B;
+}
+
+.dark-theme {
+  --background-color: #1f1f1f;
+  --smokedWhite: #393939;
+  --smokedWhiteLight: #3f3f3f;
+  --smokedWhiteDark: #2b2a2a;
+  --black: #f1f1f1;
+  --white: #1a1a1a;
+  --whiteDark: #222222;
+  --greyLight: #dfdfdf;
+  --grey: #c6c6c6;
+  --greyDark: #b8b8b8;
+}
+
 body {
   font-size: 62.5%;
   font-family: "Rubik", sans-serif;
@@ -18,7 +44,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #DADADA;
+  background: var(--smokedWhite);
   border-radius: 0.2em;
 }
 
@@ -108,7 +134,7 @@ span.placeholder {
   font-family: "Rubik", sans-serif;
   font-weight: 400;
   text-decoration: none;
-  color: #0c0c0c;
+  color: var(--black);
   background-color: transparent;
   border-radius: 5px;
   border: none;
@@ -138,8 +164,7 @@ span.placeholder {
 .data-wrapper .left-wrapper div {
   width: 100%;
   height: 100%;
-  -webkit-backdrop-filter: saturate(100%) brightness(100%) blur(10px) contrast(75%) grayscale(75%);
-          backdrop-filter: saturate(100%) brightness(100%) blur(10px) contrast(75%) grayscale(75%);
+  backdrop-filter: saturate(100%) brightness(100%) blur(10px) contrast(75%) grayscale(75%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -159,7 +184,7 @@ span.placeholder {
   font-size: 2.6rem;
   font-weight: 700;
   font-family: "Rubik", sans-serif;
-  color: #0c0c0c;
+  color: var(--black);
 }
 .data-wrapper .right-wrapper #form {
   display: flex;
@@ -177,11 +202,11 @@ span.placeholder {
 }
 .data-wrapper .right-wrapper #form .username input, .data-wrapper .right-wrapper #form .password input, .data-wrapper .right-wrapper #form .name input, .data-wrapper .right-wrapper #form .email input, .data-wrapper .right-wrapper #form .re-password input {
   padding: 15px 5px;
-  background-color: #f1f1f1;
+  background-color: var(--white);
   border: none;
   font-family: "Rubik", sans-serif;
   font-size: 1rem;
-  color: #0c0c0c;
+  color: var(--black);
   border-radius: 5px;
   cursor: pointer;
   -webkit-appearance: none;
@@ -202,7 +227,7 @@ span.placeholder {
   font-family: "Rubik", sans-serif;
   font-weight: 500;
   cursor: pointer;
-  color: #f1f1f1;
+  color: var(--white);
 }
 .data-wrapper .right-wrapper #form #submit:hover {
   background-color: #e64229;
@@ -220,11 +245,10 @@ span.placeholder {
 }
 .data-wrapper .right-wrapper .redirect-wrapper #redirect-text {
   font-size: 1.4rem;
-  color: #0c0c0c;
+  color: var(--black);
   font-weight: 500;
 }
 .data-wrapper .right-wrapper .redirect-wrapper #redirect-btn {
-  width: -moz-max-content;
   width: max-content;
   padding: 10px 50px;
   background: #FF4C30;
@@ -239,7 +263,7 @@ span.placeholder {
   font-size: 1.4rem;
   font-weight: 500;
   text-decoration: none;
-  color: #f1f1f1;
+  color: var(--white);
 }
 .data-wrapper .right-wrapper .redirect-wrapper #redirect-btn:hover {
   background-color: #e64229;
@@ -258,4 +282,4 @@ span.placeholder {
   .right-wrapper #form {
     gap: 5px !important;
   }
-}
+}/*# sourceMappingURL=login-register.css.map */
