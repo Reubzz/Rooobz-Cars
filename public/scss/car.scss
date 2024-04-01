@@ -8,6 +8,7 @@
 @import "./components/animations";
 @import "./components/title-banner";
 @import "./components/login-modal";
+@import "./components/error-popup";
 
 .container {
     width: 100%;
@@ -29,6 +30,16 @@
 
         flex: 1;
 
+
+        .car-name {
+            font-size: 3rem;
+            color: $orange;
+            font-family: $rubik;
+            font-weight: $semiBold;
+            &.car-name-mobile {
+                display: none;
+            }
+        }
         .images-wrapper {
             width: 100%;
             max-width: 800px;
@@ -123,12 +134,7 @@
             flex-direction: column;
             justify-content: space-between;
 
-            .car-name {
-                font-size: 3rem;
-                color: $orange;
-                font-family: $rubik;
-                font-weight: $semiBold;
-            }
+            
 
             .car-data-wrapper {
                 display: flex;
@@ -467,7 +473,18 @@
 
 @media screen and (max-width: 900px) {
     .top-wrapper {
-        flex-direction: column;
+        flex-direction: column !important;
+    }
+    .car-name-mobile {
+        display: block !important;
+    }
+    .car-name {
+        display: none;
+    }
+    .navigation-bar {
+        a {
+            padding: 20px 0 !important;
+        }
     }
 }
 

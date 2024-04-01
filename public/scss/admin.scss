@@ -160,6 +160,11 @@
                         font-size: 1.2rem;
                         font-weight: $medium;
                         font-family: $rubik;
+                        display: flex;
+                        p:not(:last-child)::after {
+                            content: " | ";
+                            margin-right: 5px;
+                        }
                         span {
                             color: $black;
                             &.orange-span {
@@ -168,6 +173,10 @@
                         }
                     }
                     .detail-tags {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+                        flex-direction: row;
                         span {
                             color: $black;
                             font-size: 1rem;
@@ -176,6 +185,7 @@
                             padding: 5px 10px;
                             background-color: $greyLight;
                             border-radius: 5px;
+                            text-align: center;
                             &:hover {
                                 background-color: $orangeFadded;
                                 cursor: pointer;
@@ -227,6 +237,48 @@
             display: flex;
             justify-content: center;
             align-items: center;
+        }
+    }
+}
+
+@media screen and (max-width: 900px){
+    .section-data-wrapper {
+        flex-direction: column !important;
+        .tabs-wrapper {
+            width: 100% !important;
+        }
+        .data-card {
+            flex-direction: column !important;
+            gap: 20px;
+            .left-wrapper {
+                flex-direction: column !important;
+                .icon {
+                    img {
+                        width: 100% !important;
+                    }
+                }
+                .details {
+                    width: 100%;
+                    .detail-subtitle {
+                        flex-direction: column;
+                        p {
+                            &::before {
+                                content: "• "
+                            }
+                            &::after {
+                                content: "" !important;
+                            }
+    
+                        }
+                    }
+                    .detail-tags {
+                        span {
+                            display: inline-block;
+                            width: 100% !important;
+                        }
+                    }
+                }
+            }
         }
     }
 }

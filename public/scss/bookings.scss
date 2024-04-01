@@ -161,3 +161,28 @@
         }
     }
 }
+
+@media screen and (max-width: 900px){
+    .data-wrapper {
+        flex-direction: column !important;
+        width: 100%;
+        padding: 5%;
+
+        #tabs-container {
+            width: 100%;
+        }
+
+        .booking {
+            flex-direction: column !important;  
+            gap: 20px;
+            .left-wrapper {
+                flex-direction: column !important;  
+                .icon {
+                    img {
+                        width: 100% !important;
+                    }
+                }
+            }
+        }
+    }
+}

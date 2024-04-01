@@ -115,3 +115,9 @@
         width: 100%;
     }
 }
+
+@media screen and (max-width: 900px) {
+    .form-row {
+        flex-direction: column !important;
+    }
+}

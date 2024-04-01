@@ -302,12 +302,17 @@
     }
 }
 @media screen and (max-width: 1400px){
-    .card {
-            // max-width: 300px !important;
-            // flex: 0 1 calc(50% - 1em);
-        .details-data {
-            p {
-                font-size: 1.2rem !important;
+    .data-wrapper {
+        grid-template-columns: repeat(auto-fill, minmax(100%, max-content)) !important;
+        .card {
+                // max-width: 300px !important;
+                // flex: 0 1 calc(50% /- 1em);
+                width: 100% !important;
+                max-width: 100% !important;
+            .details-data {
+                p {
+                    font-size: 1.2rem !important;
+                }
             }
         }
     }

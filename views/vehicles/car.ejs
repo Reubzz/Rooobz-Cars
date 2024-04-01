@@ -11,30 +11,29 @@
 
     <!-- Website Title -->
     <title>
-        <%= car.brand %>
-            <%= car.name %> - Rooobz Cars
+        <%= car.brand %> <%= car.name %> - Rooobz Cars
     </title>
 
     <!-- Icon -->
     <link rel="shortcut icon" href="https://rooobzcars.reubz.io/imgs/logo.png" type="image/x-icon">
 
     <!-- Primary Tags -->
-    <meta name="title" content="Rooobz Cars">
-    <meta name="description" content="Best Car Rental Website on the planet">
+    <meta name="title" content="<%= car.brand %> <%= car.name %> - Rooobz Cars">
+    <meta name="description" content="Book a <%= car.brand %> <%= car.name %>, <%= car.description %>">
 
 
     <!-- Open Graph / Facebook / Insta -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://rooobzcars.reubz.io/">
-    <meta property="og:title" content="Rooobz Cars">
-    <meta property="og:description" content="Best Car Rental Website on the planet">
+    <meta property="og:url" content="https://rooobzcars.reubz.io/vehicles/<%=car.brand%>/<%=car.name%>">
+    <meta property="og:title" content="<%= car.brand %> <%= car.name %> - Rooobz Cars">
+    <meta property="og:description" content="Book a <%= car.brand %> <%= car.name %>, <%= car.description %>">
     <meta property="og:image" itemprop="image" content="https://rooobzcars.reubz.io/imgs/logo-with-text.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://rooobzcars.reubz.io/">
-    <meta property="twitter:title" content="Rooobz Cars">
-    <meta property="twitter:description" content="Best Car Rental Website on the planet">
+    <meta property="twitter:url" content="https://rooobzcars.reubz.io/vehicles/<%=car.brand%>/<%=car.name%>">
+    <meta property="twitter:title" content="<%= car.brand %> <%= car.name %> - Rooobz Cars">
+    <meta property="twitter:description" content="Book a <%= car.brand %> <%= car.name %>, <%= car.description %>">
     <meta property="twitter:image" content="https://rooobzcars.reubz.io/imgs/logo-with-text.png">
 
     <!-- For Discord Embeds -->
@@ -64,6 +63,10 @@
 
     <section class="container">
         <div class="top-wrapper">
+            <h1 class="car-name car-name-mobile">
+                <%= car.brand %>
+                    <%= car.name %>
+            </h1>
             <div class="images-wrapper">
                 <% for( let index=0; index < car.imgUrls.length; index++ ) { %>
                     <div class="image-slideshow fade">
@@ -171,8 +174,8 @@
                         </tr>
                     </table>
                 </div>
-                <button id="book-now-btn" onclick="bookNow('<%=car._id%>')">BOOK
-                    Rs. <%= car.price + car.price*18/100 %> • Book Now
+                <button id="book-now-btn" onclick="bookNow('<%=car._id%>')">BOOK NOW •
+                    Rs. <%= car.price + car.price*18/100 %>
                 </button>
 
 

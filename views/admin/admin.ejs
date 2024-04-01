@@ -158,21 +158,28 @@
                                     <div class="detail-title">
                                         <%= order.car.brand %>
                                             <%= order.car.name %>
-                                                </h2>
+                                                
                                     </div>
                                     <div class="detail-subtitle">
-                                        <span>
-                                            <%= order.startDate %>
-                                        </span> - <span>
-                                            <%= order.endDate %>
-                                        </span> | User - <span class="orange-span">
-                                            <%= order.user.username %>
-                                        </span></h2>
+                                        <p>
+                                            <%= order.startDate %> - <%= order.endDate %>
+                                        </p> 
+                                         
+                                        <p>
+                                            User - <span class="orange-span"> <%= order.user.username %> </span>
+                                        </p>
                                     </div>
                                     <div class="detail-subtitle">
-                                        ID - <span class="orange-span">
-                                            <%= order._id %>
-                                        </span> </h2>
+                                        <p>
+                                            ID - <span class="orange-span">
+                                                <%= order._id %>
+                                            </span>
+                                        </p>
+                                        <p>
+                                            <% let addedDate = new Date(order.orderDate) %>
+                                            <% let formattedDate = `${('0' + addedDate.getDate()).slice(-2)}/${('0' + (addedDate.getMonth() + 1)).slice(-2)}/${addedDate.getFullYear()} - ${('0' + addedDate.getHours()).slice(-2)}:${('0' + addedDate.getMinutes()).slice(-2)}`; %>
+                                            Date: <span class="orange-span"><%= formattedDate %></span>
+                                        </p>
                                     </div>
                                     <div class="detail-tags">
                                         <% order.offers.forEach(offer=> { %>
@@ -217,20 +224,28 @@
                                         </div>
                                         <div class="details">
                                             <div class="detail-title">
-                                                <%= user.name %> (<%= user.username %>)</h2>
+                                                <%= user.name %> (<%= user.username %>)
                                             </div>
                                             <div class="detail-subtitle">
-                                                Email: <span class="orange-span">
-                                                    <%= user.email %>
-                                                </span> | Phone: <span class="orange-span">
-                                                    <%= user.phone %>
-                                                </span></h2>
+                                                <p>
+                                                    Email: <span class="orange-span"> <%= user.email %> </span>
+                                                </p>
+                                                <p>
+                                                    Phone: <span class="orange-span"><%= user.phone %></span>
+                                                </p>
+                                            </div>
+                                            <div class="detail-subtitle">
+                                                <p>
+                                                    ID: <span class="orange-span"><%= user._id %></span>
+                                                </p>
+                                                <p>
+                                                    <% let addedDate = new Date(user.createdDate) %>
+                                                    <% let formattedDate = `${('0' + addedDate.getDate()).slice(-2)}/${('0' + (addedDate.getMonth() + 1)).slice(-2)}/${addedDate.getFullYear()} - ${('0' + addedDate.getHours()).slice(-2)}:${('0' + addedDate.getMinutes()).slice(-2)}`; %>
+                                                    Date: <span class="orange-span"><%= formattedDate %></span>
+                                                </p>
                                             </div>
                                             <div class="detail-tags">
-                                                <span>
-                                                    <%= user._id %>
-                                                </span>
-
+                                                <!-- Empty -->
                                             </div>
                                         </div>
                                     </div>
@@ -273,17 +288,26 @@
                                                 <div class="details">
                                                     <div class="detail-title">
                                                         <%= car.brand %> - <%= car.name %>
-                                                                </h2>
                                                     </div>
                                                     <div class="detail-subtitle">
-                                                        <span>Price: Rs. <%= car.price %></span> - Discount: <span>
-                                                            <%= car.discount %>
-                                                        </span></h2>
+                                                        <p>
+                                                            Price: <span class="orange-span">Rs. <%= car.price %></span>
+                                                        </p>
+                                                        <p>
+                                                            Discount: <span class="orange-span"><%= car.discount %>%</span>
+                                                        </p>
+                                                    </div>
+                                                    <div class="detail-subtitle">
+                                                        <p>
+                                                            ID: <span class="orange-span"><%= car._id %></span>
+                                                        </p>
+                                                        <p>
+                                                            <% let addedDate = new Date(car.createTime) %>
+                                                            <% let formattedDate = `${('0' + addedDate.getDate()).slice(-2)}/${('0' + (addedDate.getMonth() + 1)).slice(-2)}/${addedDate.getFullYear()} - ${('0' + addedDate.getHours()).slice(-2)}:${('0' + addedDate.getMinutes()).slice(-2)}`; %>
+                                                            Date: <span class="orange-span"><%= formattedDate %></span>
+                                                        </p>
                                                     </div>
                                                     <div class="detail-tags">
-                                                        <span>
-                                                            <%= car._id %>
-                                                        </span>
                                                         <span>
                                                             <%= car.color %>
                                                         </span>
@@ -327,25 +351,31 @@
                                                 <div class="data-card transaction transaction-<%=transaction.status%> hidden"
                                                     data-cardtype="transaction-<%=transaction.status%>">
                                                     <div class="left-wrapper">
-                                                        <!-- <div class="icon">
-                                    <img src="<%= transaction._id %>" onerror="this.src = '<%=config.logo.secondary.path%>'" alt="transaction Image Icon">
-                                </div> -->
+                                                        <div class="icon">
+                                                            <img src="<%= transaction.order.car.imgUrls[0] %>" onerror="this.src = '<%=config.logo.secondary.path%>'" alt="transaction Image Icon">
+                                                        </div>
                                                         <div class="details">
                                                             <div class="detail-title">
-                                                                <%= transaction.order.car.brand %>
-                                                                    <%= transaction.order.car.name %>
-                                                                        </h2>
+                                                                <%= transaction.order.car.brand %> <%= transaction.order.car.name %>
                                                             </div>
                                                             <div class="detail-subtitle">
-                                                                ID:<span class="orange-span">
-                                                                    <%= transaction._id %>
-                                                                </span> | By User: <span class="orange-span">
-                                                                    <%= transaction.order.user.username %>
-                                                                </span></h2>
+                                                                <p>
+                                                                    ID: <span class="orange-span"><%= transaction._id %></span>
+                                                                </p>
+                                                                <p>
+                                                                    By User: <span class="orange-span"><%= transaction.order.user.username %></span>
+                                                                </p>
                                                             </div>
-                                                            <!-- <div class="detail-tags">
-                                        <span><%= transaction._id %></span>
-                                    </div> -->
+                                                            <div class="detail-subtitle">
+                                                                <p>
+                                                                    <% let addedDate = new Date(transaction.date.initiated) %>
+                                                                    <% let formattedDate = `${('0' + addedDate.getDate()).slice(-2)}/${('0' + (addedDate.getMonth() + 1)).slice(-2)}/${addedDate.getFullYear()} - ${('0' + addedDate.getHours()).slice(-2)}:${('0' + addedDate.getMinutes()).slice(-2)}`; %>
+                                                                    Date: <span class="orange-span"><%= formattedDate %></span>
+                                                                </p>
+                                                            </div>
+                                                            <div class="detail-tags">
+                                                                <!-- Empty -->
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <% if (transaction.status=='completed' ) {%>
@@ -393,12 +423,16 @@
                                                                 <div class="details">
                                                                     <div class="detail-title">
                                                                         <%= subscriber.email %>
-                                                                            </h2>
                                                                     </div>
                                                                     <div class="detail-subtitle">
-                                                                        ID:<span class="orange-span">
-                                                                            <%= subscriber._id %>
-                                                                        </span> </h2>
+                                                                        <p>
+                                                                            ID: <span class="orange-span"><%= subscriber._id %></span>
+                                                                        </p>
+                                                                        <p>
+                                                                            <% let addedDate = new Date(subscriber.createdAt) %>
+                                                                            <% let formattedDate = `${('0' + addedDate.getDate()).slice(-2)}/${('0' + (addedDate.getMonth() + 1)).slice(-2)}/${addedDate.getFullYear()} - ${('0' + addedDate.getHours()).slice(-2)}:${('0' + addedDate.getMinutes()).slice(-2)}`; %>
+                                                                            Date: <span class="orange-span"><%= formattedDate %></span>
+                                                                        </p>
                                                                     </div>
                                                                 </div>
                                                             </div>
