@@ -14,7 +14,7 @@ app.use(express.urlencoded({ limit: '100mb', extended: true }))
 
 
 // page segregation .. App use statments
-app.use('/', require(path.join(__dirname, "/routes/pages/root.js")));
+// API Routes
 app.use('/api/components', require(path.join(__dirname, "/routes/api/components.js")));
 app.use('/api/auth', require(path.join(__dirname, "/routes/api/authentication.js")));
 app.use('/api/cars', require(path.join(__dirname, "/routes/api/cars.js")));
@@ -26,6 +26,8 @@ app.use('/api/transaction', require(path.join(__dirname, "/routes/api/transactio
 app.use('/api/reviews', require(path.join(__dirname, "/routes/api/reviews.js")));
 app.use('/api/contact', require(path.join(__dirname, "/routes/api/contact.js")));
 
+// Normal Page Routes
+app.use('/', require(path.join(__dirname, "/routes/pages/root.js")));
 
 app.listen(port, () => {
     console.log(`Server is running on ${port}`);

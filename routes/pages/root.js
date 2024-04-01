@@ -20,7 +20,7 @@ const reviewsDB = require('../../models/schemas/reviews');
 const { authCheck } = require("../../middleware/authentication/authentication")
 
 router.get('/', authCheck, async (req, res) => {
-    const allBrands = await carsDB.find().distinct('brand').sort({ brand: 1 })
+    const allBrands = await carsDB.find().distinct('brand').sort({ brand: 1 }).catch(() => res.redirect('/404') )
     // const vehiclesBrands = allCars.distinct('brand').sort({ brand: 1 })
 
     res.render('home/home', {
@@ -33,7 +33,7 @@ router.get('/about', authCheck, (req, res) => {
     res.render('about/about', {})
 })
 router.get('/vehicles', authCheck, async (req, res) => {
-    let vehiclesArr = await carsDB.find();
+    let vehiclesArr = await carsDB.find().catch(() => res.redirect('/404') );
     if (req.query.sort == 'price-high-to-low') {
         vehiclesArr.sort((a, b) => b.price - a.price);
     }
@@ -74,11 +74,11 @@ router.get('/vehicles/:brand/:name', authCheck, async (req, res) => {
     const brand = req.params.brand;
     const name = req.params.name;
 
-    let carData = await carsDB.findOne({ name: name, brand: brand })
+    let carData = await carsDB.findOne({ name: name, brand: brand }).catch(() => res.redirect('/404') )
     res.render("vehicles/car", {
         car: carData,
         user: res.locals,
-        reviews: await reviewsDB.find({ car: carData._id }).populate('user car'),
+        reviews: await reviewsDB.find({ car: carData._id }).populate('user car').catch(() => res.redirect('/404') ),
     })
 })
 
@@ -86,10 +86,10 @@ router.get('/booking', authCheck, async (req, res) => {
     const carId = req.query.id;
 
     if (req.cookies.jwt) {
-        const carData = await carsDB.findOne({ _id: carId }).populate('orders');
-        const offersData = await offersDB.find();
+        const carData = await carsDB.findOne({ _id: carId }).populate('orders').catch(() => res.redirect('/404') );
+        const offersData = await offersDB.find().catch(() => res.redirect('/404') );
         res.render('vehicles/booking', {
-            user: await usersDB.findOne({ _id: res.locals._id }),
+            user: await usersDB.findOne({ _id: res.locals._id }).catch(() => res.redirect('/404') ),
             car: carData,
             offers: offersData,
         })
@@ -104,7 +104,7 @@ router.get('/booking/pay', authCheck, async (req, res) => {
 
     if (!req.cookies.jwt)
         return res.redirect("/login");
-    const orderData = await ordersDB.findOne({ _id: orderId }).populate('car offers user transaction');
+    const orderData = await ordersDB.findOne({ _id: orderId }).populate('car offers user transaction').catch(() => res.redirect('/404') );
 
     // TODO: Check if order is completed or failed and redirect back.
 
@@ -125,7 +125,7 @@ router.get('/booking/pay', authCheck, async (req, res) => {
 router.get('/booking/complete', async (req, res) => {
     const orderId = req.query.orderid;
 
-    const orderData = await ordersDB.findOne({ _id: orderId }).populate('car user transaction offers');
+    const orderData = await ordersDB.findOne({ _id: orderId }).populate('car user transaction offers').catch(() => res.redirect('/404') );
     res.render('vehicles/complete', {
         order: orderData,
     })
@@ -149,7 +149,7 @@ router.get('/how-we-work', authCheck, (req, res) => {
 router.get('/account/profile', authCheck, async (req, res) => {
     if (req.cookies.jwt) {
         res.render('account/account', {
-            user: await usersDB.findOne({ _id: res.locals._id })
+            user: await usersDB.findOne({ _id: res.locals._id }).catch(() => res.redirect('/404') )
         })
     }
     else {
@@ -161,33 +161,35 @@ router.get("/account/bookings", authCheck, async (req, res) => {
     if (!req.cookies.jwt) return res.redirect('/login');
 
     res.render('account/bookings', {
-        orders: await ordersDB.find({ user: res.locals._id }).populate('car transaction user offers'),
-        user: await usersDB.findOne({ _id: res.locals._id }),
+        orders: await ordersDB.find({ user: res.locals._id }).populate('car transaction user offers').catch(() => res.redirect('/404') ),
+        user: await usersDB.findOne({ _id: res.locals._id }).catch(() => res.redirect('/404') ),
         config: config
     })
 })
 router.get("/admin", authCheck, async (req, res) => {
-    const { orders, users, cars, transactions, subscribers } = req.query;
+    const { orders, users, cars, transactions, subscribers, reviews } = req.query;
 
     
     if (res.locals.role != "admin") return res.redirect('/login');
 
-    const ordersData = await ordersDB.find().populate('car transaction user offers');
-    const usersData = await usersDB.find().populate('orders'); // ! Add Reviews Here later
-    const carsData = await carsDB.find().populate('orders'); 
+    const ordersData = await ordersDB.find().populate('car transaction user offers').catch(() => res.redirect('/404') );
+    const usersData = await usersDB.find().populate('orders').catch(() => res.redirect('/404') );
+    const carsData = await carsDB.find().populate('orders').catch(() => res.redirect('/404') ); 
     const transactionsData = await transactionsDB.find().populate({
         path: 'order',
         populate: { 
             path: 'car user offers'
         }
-    })
-    const subscribersData = await emailsDB.find(); 
+    }).catch(() => res.redirect('/404') )
+    const subscribersData = await emailsDB.find().catch(() => res.redirect('/404') ); 
+    const reviewsData = await reviewsDB.find().populate('car user');
 
     if (orders) return res.json({ orders: ordersData });
     if (users) return res.json({ users: usersData });
     if (cars) return res.json({ cars: carsData });
     if (transactions) return res.json({ transactions: transactionsData });
     if (subscribers) return res.json({ subscribers: subscribersData });
+    if (reviews) return res.json({ reviews: reviewsData });
     
     res.render('admin/admin', {
         orders: ordersData,
@@ -195,7 +197,8 @@ router.get("/admin", authCheck, async (req, res) => {
         cars: carsData,
         transactions: transactionsData,
         subscribers: subscribersData,
-        config: config
+        config: config,
+        reviews: reviewsData
     })
 })
 
@@ -219,11 +222,11 @@ router.get('/register', (req, res) => {
 })
 
 // 404 Page
-// router.get("*", (req, res) => {
-//     // * TODO
-//     // res.status(404).sendFile(path.join(__dirname, "../pages", "error", "404.html"));
+router.get("*", (req, res) => {
+    res.status(404).render('errors/404', {})
+});
+// router.get("/404", (req, res) => {
 //     res.status(404).render('errors/404', {})
-
 // });
 
 module.exports = router;

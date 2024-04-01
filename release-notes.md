@@ -239,3 +239,4 @@
 - Updated All Newly Added Pages Css to make it Mobile Responsive.
 - Updated Admin Page layout to work well with Mobile and Improved Accessibility, Added Aditional Data to Cards across all types.
 - Update Meta Tags in few pages for better SEO.
+- Added 404 Page and added 404 route
