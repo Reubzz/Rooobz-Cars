@@ -62,17 +62,18 @@ function updateFinalPrice() {
     }
 
     const finalCarPrice = carPrice * diffDays; 
-    gstDisplay.innerHTML = finalCarPrice * gstPercent
-    const finalAmount = Number.parseInt(finalOffersPrice) + finalCarPrice + (finalCarPrice * gstPercent); 
+    gstDisplay.innerHTML = (finalCarPrice * gstPercent).toFixed(2)
+    const finalAmount = (Number.parseInt(finalOffersPrice) + finalCarPrice + (finalCarPrice * gstPercent)).toFixed(2); 
     bookNowBtn.innerHTML = `Pay Now • Rs. ${finalAmount}`
     totalDisplay.innerHTML = finalAmount
-    return finalAmount;
+    return Number(finalAmount);
 }
 
 // * GOOGLE MAPS API
 const autocomplete = new google.maps.places.Autocomplete(document.getElementById('address'));
 // Optionally, set restrictions on the types of places suggested
 // autocomplete.setTypes(['geocode']);
+autocomplete.setComponentRestrictions({'country': ['in']}); // Restrict Api to only India 
 autocomplete.addListener('place_changed', function() {
     const place = autocomplete.getPlace();
 

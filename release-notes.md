@@ -250,3 +250,4 @@
 ### 4/4/2024 - Update 0.4.7 
 - Minor Changes to color palette. 
 - Fixed decimal value bug in car page and bookings page for total price and gst price
+- Updated final price calculation with fixed precision and returned number
