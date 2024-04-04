@@ -252,3 +252,6 @@
 - Fixed decimal value bug in car page and bookings page for total price and gst price
 - Updated final price calculation with fixed precision and returned number
 - Updated Navbar Mobile Design to fit all buttons properly
+- Fixed home page Book Now Form. 
+- Added car type field in schema [Hatchback, SUV, etc]
+- Changed Homepage and added front end js code to be able to dynamically Select Car Type from dropdown menu and update the Cars dropdown automatically according to the Type.

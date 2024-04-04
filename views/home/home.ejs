@@ -97,39 +97,39 @@
                     <div class="title">
                         <h1>Book a Car</h1>
                     </div>
-                    <form action="/vehicles" method="get" class="form-data">
+                    <form id="book-now-form" class="form-data">
                         <div class="form-left form-column">
                             <div class="data-wrapper">
-                                <div class="form-data-title">
+                                <label for="type" class="form-data-title">
                                     <h2>Select your Car Type <span>*</span></h2>
-                                </div>
+                                </label>
                                 <select class="dropdown" name="type" id="car-type">
-                                    <option value="placeholder" class="placeholder-text">Select a Car Type</option>
-                                    <option value="sedan">Sedan</option>
-                                    <option value="coupe">Coupe</option>
-                                    <option value="suv">SUV</option>
-                                    <option value="wagon">Wagon</option>
-                                    <option value="hatchback">Hatchback</option>
+                                    <option value="" class="placeholder-text">Select a Car Type</option>
+                                    <% allTypes.forEach((type)=> { %>
+                                        <option value="<%= type %>">
+                                            <%= type %>
+                                        </option>
+                                    <% }) %>
                                 </select>
                             </div>
                         </div>
                         <div class="form-center form-column">
                             <div class="data-wrapper">
-                                <div class="form-data-title">
-                                    <h2>Select your Car Brand <span>*</span></h2>
-                                </div>
-                                <select class="dropdown" name="brand" id="car-brand">
-                                    <option value="placeholder" class="placeholder-text">Select a Car Brand</option>
-                                    <% allBrands.forEach((brand)=> { %>
-                                        <option value="<%= brand %>">
-                                            <%= brand %>
+                                <label for="car" class="form-data-title">
+                                    <h2>Select your Car <span>*</span></h2>
+                                </label>
+                                <select class="dropdown" name="car" id="car">
+                                    <option value="placeholder" class="placeholder-text">Select a Car</option>
+                                    <% cars.forEach((car)=> { %>
+                                        <option value="<%= car.name %>">
+                                            <%= car.name %>
                                         </option>
-                                        <% }) %>
+                                    <% }) %>
                                 </select>
                             </div>
                         </div>
                         <div class="form-right form-column">
-                            <button class="search-button" type="submit">Search</button>
+                            <button class="search-button" type="submit">Book Now</button>
                         </div>
                     </form>
                 </div>
@@ -200,11 +200,6 @@
         </section>
     </section>
 
-
-
-
-
-
     <!-- ! Footer -->
     <footer data-include="footer"></footer>
 
@@ -212,6 +207,10 @@
     <script src="/js/navbar.js"></script>
     <script src="/js/footer.js"></script>
     <script src="/js/import-html.js"></script>
+    <script src="/js/home.js"></script>
+    <script>
+        const cars = JSON.parse('<%- JSON.stringify(cars) %>');
+    </script>
 </body>
 
 </html>

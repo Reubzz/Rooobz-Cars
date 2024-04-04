@@ -20,12 +20,10 @@ const reviewsDB = require('../../models/schemas/reviews');
 const { authCheck } = require("../../middleware/authentication/authentication")
 
 router.get('/', authCheck, async (req, res) => {
-    const allBrands = await carsDB.find().distinct('brand').sort({ brand: 1 }).catch(() => res.redirect('/404') )
-    // const vehiclesBrands = allCars.distinct('brand').sort({ brand: 1 })
-
+    const allTypes = await carsDB.find().distinct('type').sort({ type: 1 }).catch(() => res.redirect('/404') )
     res.render('home/home', {
-        allBrands: allBrands,
-        allTypes: null // ! Fix Later
+        allTypes: allTypes,
+        cars: await carsDB.find()
     })
 })
 

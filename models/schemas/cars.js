@@ -14,6 +14,7 @@ const model = mongoose.MAIN_DB.model(
         id: { type: String, required: false }, // ! auto generated unique ID of the car [ REQUIRED ]
         name: { type: String, required: true }, // ! Model of the car - [Eg. Nano]
         brand: { type: String, required: true }, // ! make of the car - [Eg. Tata]
+        type: { type: String, required: true }, // ! Type of the car - [Eg. Hatchback, Sedan, etc]
         color: { type: String, required: true }, // ! Color of the car 
         descrption: { type: String, maxlength: 128 }, // * Description the car 
         condition: { type: String, required: true }, // ! Condition of the car 
