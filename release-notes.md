@@ -251,3 +251,4 @@
 - Minor Changes to color palette. 
 - Fixed decimal value bug in car page and bookings page for total price and gst price
 - Updated final price calculation with fixed precision and returned number
+- Updated Navbar Mobile Design to fit all buttons properly

@@ -224,7 +224,7 @@ header nav #hamburger-menu.open .bar3 {
 }
 header nav #hamburger-menu.open .mobile-menu {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
 }
@@ -238,22 +238,20 @@ header nav #hamburger-menu .mobile-menu {
   z-index: 999;
   height: 100%;
   position: fixed;
-  gap: 50px;
+  gap: 40px;
 }
 header nav #hamburger-menu .mobile-menu .mob-navbar-start {
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  gap: 20px;
-  flex: 1;
+  gap: 40px;
 }
 header nav #hamburger-menu .mobile-menu .mob-navbar-end {
   display: flex;
   justify-content: center;
   gap: 20px;
   width: 100%;
-  flex: 1;
 }
 header nav #hamburger-menu .mobile-menu li {
   list-style: none;

@@ -170,7 +170,7 @@ header {
 
                 .mobile-menu {
                     display: flex;
-                    justify-content: space-around;
+                    justify-content: flex-start;
                     align-items: center;
                     flex-direction: column;
                 }
@@ -188,15 +188,15 @@ header {
                 height: 100%;
                 position: fixed;
 
-                gap: 50px;
+                gap: 40px;
 
                 .mob-navbar-start {
                     display: flex;
                     justify-content: space-around;
                     align-items: center;
                     flex-direction: column;
-                    gap: 20px;
-                    flex: 1;
+                    gap: 40px;
+                    // flex: 1;
                 }
 
                 .mob-navbar-end {
@@ -205,7 +205,7 @@ header {
                     // align-items: center;
                     gap: 20px;
                     width: 100%;
-                    flex: 1;
+                    // flex: 1;
 
                 }
 
