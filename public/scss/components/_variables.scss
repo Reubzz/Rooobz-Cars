@@ -13,6 +13,7 @@
     --greyLight: #b9b9b9;
     --grey: #707070;
     --greyDark: #2B2B2B;
+    --background-color-secondary: #2B2B2B;
 }
 .dark-theme {
     --background-color: #1f1f1f;
@@ -25,6 +26,7 @@
     --greyLight: #dfdfdf;
     --grey: #c6c6c6;
     --greyDark: #b8b8b8;
+    --background-color-secondary: #f1f1f1;
 }
 
 // ! Colors
@@ -44,6 +46,7 @@ $greyDark: var(--greyDark);
 
 
 $bgColor: var(--background-color);
+$bgColorSecondary: var(--background-color-secondary);
 
 // // ! Dark Theme
 // .dark-theme {

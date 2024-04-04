@@ -175,7 +175,7 @@
                     </table>
                 </div>
                 <button id="book-now-btn" onclick="bookNow('<%=car._id%>')">BOOK NOW •
-                    Rs. <%= car.price + car.price*18/100 %>
+                    Rs. <%= (car.price + car.price*18/100).toFixed(2) %>
                 </button>
 
 

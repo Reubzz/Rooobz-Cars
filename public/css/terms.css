@@ -11,6 +11,7 @@
   --greyLight: #b9b9b9;
   --grey: #707070;
   --greyDark: #2B2B2B;
+  --background-color-secondary: #2B2B2B;
 }
 
 .dark-theme {
@@ -24,6 +25,7 @@
   --greyLight: #dfdfdf;
   --grey: #c6c6c6;
   --greyDark: #b8b8b8;
+  --background-color-secondary: #f1f1f1;
 }
 
 body {
@@ -65,6 +67,7 @@ body {
   --greyLight: #b9b9b9;
   --grey: #707070;
   --greyDark: #2B2B2B;
+  --background-color-secondary: #2B2B2B;
 }
 
 .dark-theme {
@@ -78,6 +81,7 @@ body {
   --greyLight: #dfdfdf;
   --grey: #c6c6c6;
   --greyDark: #b8b8b8;
+  --background-color-secondary: #f1f1f1;
 }
 
 body {

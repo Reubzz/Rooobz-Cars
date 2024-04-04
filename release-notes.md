@@ -246,3 +246,7 @@
 - Updated all pages css to allow dark theme. 
 - Updated all variables to allow dark theme. 
 - Removed Unnecessary Icons and replaced them with FontAwesome Icons.
+
+### 4/4/2024 - Update 0.4.7 
+- Minor Changes to color palette. 
+- Fixed decimal value bug in car page and bookings page for total price and gst price

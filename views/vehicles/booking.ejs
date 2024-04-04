@@ -169,7 +169,7 @@
                                     </td>
                                     <td>
                                         <h3 id="gst-display" class="highlight-title">
-                                            <%= car.price*18/100 %>
+                                            <%= (car.price*18/100).toFixed(2) %>
                                         </h3>
                                     </td>
                                 </tr>
@@ -179,7 +179,7 @@
                                     </td>
                                     <td>
                                         <h3 class="highlight-orange" id="total-display">
-                                            <%= car.price + car.price*18/100 %>
+                                            <%= (car.price + car.price*18/100).toFixed(2) %>
                                         </h3>
                                     </td>
                                 </tr>
@@ -260,7 +260,7 @@
             </div>
             <div class="book-now-btn-wrapper">
                 <button id="book-now-btn" type="submit">
-                    Pay Now • Rs. <%= car.price + car.price*18/100 %>
+                    Pay Now • Rs. <%= (car.price + car.price*18/100).toFixed(2) %>
                 </button>
             </div>
         </form>
