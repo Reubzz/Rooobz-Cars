@@ -189,6 +189,7 @@ header nav .dropdown .dropdown-content a {
 }
 header nav .dropdown .dropdown-content a:hover {
   background-color: var(--smokedWhite);
+  cursor: pointer;
 }
 header nav .dropdown:hover {
   /* Change the background color of the dropdown button when the dropdown content is shown */
