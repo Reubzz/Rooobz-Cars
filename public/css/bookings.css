@@ -7,7 +7,7 @@
   --smokedWhiteDark: #d5d5d5;
   --black: #0c0c0c;
   --white: #f1f1f1;
-  --whiteDark: #f3f3f3;
+  --whiteDark: #ededed;
   --greyLight: #b9b9b9;
   --grey: #707070;
   --greyDark: #2B2B2B;
@@ -63,7 +63,7 @@ body {
   --smokedWhiteDark: #d5d5d5;
   --black: #0c0c0c;
   --white: #f1f1f1;
-  --whiteDark: #f3f3f3;
+  --whiteDark: #ededed;
   --greyLight: #b9b9b9;
   --grey: #707070;
   --greyDark: #2B2B2B;
@@ -594,7 +594,7 @@ span.placeholder {
 }
 #tabs-container .tabs-wrapper {
   padding: 10px;
-  background-color: var(--white);
+  background-color: var(--smokedWhiteDark);
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -609,7 +609,7 @@ span.placeholder {
 }
 #tabs-container .tabs-wrapper .tab-title.selected {
   background-color: #FF4C30;
-  color: var(--white);
+  color: white;
 }
 #tabs-container .tabs-wrapper .tab-title.selected:hover {
   background-color: #e64229;
@@ -636,7 +636,7 @@ span.placeholder {
 #bookings-data .bookings-wrapper .booking {
   display: flex;
   flex-direction: row;
-  background-color: var(--white);
+  background-color: var(--smokedWhiteDark);
   width: 100%;
   padding: 10px;
   border-radius: 10px;

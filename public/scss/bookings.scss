@@ -22,7 +22,7 @@
     height: 100%;  
     .tabs-wrapper {
         padding: 10px;
-        background-color: $white;
+        background-color: $smokedWhiteDark;
         border-radius: 5px;
         display: flex;
         flex-direction: column;
@@ -35,7 +35,7 @@
             border-radius: 8px;
             &.selected {
                 background-color: $orange;
-                color: $white;
+                color: white;
                 &:hover {
                     background-color: $orangeDark;
                 }
@@ -62,7 +62,7 @@
         .booking {
             display: flex;
             flex-direction: row;
-            background-color: $white;
+            background-color: $smokedWhiteDark;
             width: 100%;
             padding: 10px;
             border-radius: 10px;

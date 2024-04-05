@@ -9,7 +9,7 @@
   --smokedWhiteDark: #d5d5d5;
   --black: #0c0c0c;
   --white: #f1f1f1;
-  --whiteDark: #f3f3f3;
+  --whiteDark: #ededed;
   --greyLight: #b9b9b9;
   --grey: #707070;
   --greyDark: #2B2B2B;
@@ -65,7 +65,7 @@ body {
   --smokedWhiteDark: #d5d5d5;
   --black: #0c0c0c;
   --white: #f1f1f1;
-  --whiteDark: #f3f3f3;
+  --whiteDark: #ededed;
   --greyLight: #b9b9b9;
   --grey: #707070;
   --greyDark: #2B2B2B;
@@ -534,7 +534,7 @@ span.placeholder {
   --smokedWhiteDark: #d5d5d5;
   --black: #0c0c0c;
   --white: #f1f1f1;
-  --whiteDark: #f3f3f3;
+  --whiteDark: #ededed;
   --greyLight: #b9b9b9;
   --grey: #707070;
   --greyDark: #2B2B2B;
@@ -656,7 +656,7 @@ body {
 }
 #tabs-container .tabs-wrapper {
   padding: 10px;
-  background-color: var(--white);
+  background-color: var(--smokedWhiteDark);
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -696,7 +696,7 @@ body {
 }
 #tabs-container .tabs-wrapper .tab-group .selected {
   background-color: #FF4C30 !important;
-  color: var(--white);
+  color: white;
 }
 #tabs-container .tabs-wrapper .tab-group .selected:hover {
   background-color: #e64229 !important;
@@ -712,7 +712,7 @@ body {
 
 #data-container {
   width: 100%;
-  background-color: var(--white);
+  background-color: var(--smokedWhiteDark);
   border-radius: 10px;
   padding: 20px;
 }
