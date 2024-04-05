@@ -606,6 +606,7 @@ span.placeholder {
   font-size: 1.6rem;
   padding: 10px 30px;
   border-radius: 8px;
+  color: white;
 }
 #tabs-container .tabs-wrapper .tab-title.selected {
   background-color: #FF4C30;
@@ -647,6 +648,7 @@ span.placeholder {
   display: flex;
   flex-direction: row;
   gap: 20px;
+  align-items: center;
 }
 #bookings-data .bookings-wrapper .booking .left-wrapper .icon img {
   width: 150px;
