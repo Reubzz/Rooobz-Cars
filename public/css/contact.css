@@ -985,7 +985,7 @@ span.placeholder {
   flex-direction: column;
   width: 100%;
   gap: 20px;
-  background-color: var(--smokedWhite);
+  background-color: var(--smokedWhiteDark);
   padding: 50px;
   border-radius: 20px;
 }
@@ -1005,7 +1005,7 @@ span.placeholder {
 }
 #contact-us-container .data-wrapper .right-wrapper #contact-us-form .form-element input, #contact-us-container .data-wrapper .right-wrapper #contact-us-form .form-element textarea {
   padding: 15px 10px;
-  background-color: var(--smokedWhiteDark);
+  background-color: var(--white);
   border: none;
   font-family: "Rubik", sans-serif;
   font-size: 1rem;
