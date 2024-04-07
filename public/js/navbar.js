@@ -46,7 +46,12 @@ function toggleTheme() {
     document.body.classList.toggle('dark-theme');
 
     // Save theme preference
-    localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light');
+    const theme = document.body.classList.contains('dark-theme') ? 'dark' : 'light'
+    localStorage.setItem('theme', theme);
+
+    // Change Assets Dark / Light Mode
+    const allElements = document.getElementsByClassName('dark-light-img')
+    for(i=0; i<allElements.length; i++) allElements[i].src = allElements[i].dataset[theme];
 };
 
 // Apply stored theme preference on page load
@@ -55,4 +60,7 @@ window.onload = () => {
     if (theme === 'dark') {
         document.body.classList.add('dark-theme');
     }
+    const allElements = document.getElementsByClassName('dark-light-img')
+    for(i=0; i<allElements.length; i++) allElements[i].src = allElements[i].dataset[theme];
+    
 };

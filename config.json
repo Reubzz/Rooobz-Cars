@@ -13,8 +13,24 @@
             "url": "https://rooobzcars.reubz.io/imgs/logo.png"
         },
         "alternate": {
-            "path": "/imgs/logo-with-text-long-alternate.png",
-            "url": "https://rooobzcars.reubz.io/imgs/logo-with-text-long-alternate.png"
+            "light": {
+                "path": "/imgs/logo-with-text-long.png",
+                "url": "https://rooobzcars.reubz.io/imgs/logo-with-text-long.png"
+            },
+            "dark": {
+                "path": "/imgs/dark/logo-with-text-long.png",
+                "url": "https://rooobzcars.reubz.io/imgs/dark/logo-with-text-long.png"
+            }
+        },
+        "short": {
+            "light": {
+                "path": "/imgs/logo-with-text-short-alternate.png",
+                "url": "https://rooobzcars.reubz.io/imgs/logo-with-text-short-alternate.png"
+            },
+            "dark": {
+                "path": "/imgs/dark/logo-with-text-short-alternate.png",
+                "url": "https://rooobzcars.reubz.io/imgs/dark/logo-with-text-short-alternate.png"
+            }
         },
         "secondary": {
             "path": "/imgs/logo-with-text.png",

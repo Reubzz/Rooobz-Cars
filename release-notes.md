@@ -1,4 +1,7 @@
-<h1 style="font-size: 64px; color: #FF4C30; ">Release Notes</h1>
+<div style="text-align: center;">
+    <img src="./public/imgs/dark/logo-with-text-long.png" style="width: 100%">
+    <h1 style="font-size: 64px; color: #FF4C30; font-family: ''">Release Notes</h1>
+</div>
 
 # 11/11/2023 - Initial Commit
 - Created the initial commit for this project.
@@ -255,3 +258,11 @@
 - Fixed home page Book Now Form. 
 - Added car type field in schema [Hatchback, SUV, etc]
 - Changed Homepage and added front end js code to be able to dynamically Select Car Type from dropdown menu and update the Cars dropdown automatically according to the Type.
+
+### 7/4/2024 - Update 0.4.8 (Part 1)
+- Added New Assets for Dark Mode. 
+- Added a system in Navbar.js so dark mode assets can be changed from `data-dark` dataset from the element and vice versa from `data-light`. 
+- Updated `Navbar.ejs` and `Footer.ejs` logo imgs with two new data tags - `data-light` and `data-dark` which holds the src to the light and dark mode assets.
+- Changed `config.json` to support light mode and dark mode assets src urls and file paths. 
+> [!DETAILED]
+> This diff includes changes to the `config.json` file to update the logo configuration, adding separate light and dark mode paths for the alternate, short, and secondary logos. The `navbar.js` file has been updated to toggle the dark and light themes, and to change the assets accordingly using the `data-dark` and `data-light` datasets. The `footer.ejs` and `navbar.ejs` files have also been updated to include the new logo configuration and to use the `data-dark` and `data-light` datasets for the logo images. Additionally, the release notes have been updated to reflect these changes.
