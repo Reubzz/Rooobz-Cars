@@ -65,24 +65,28 @@
                 <div class="form-row">
                     <div class="form-group-element">
                         <label for="brand">Brand</label>
-                        <input type="text" name="brand" placeholder="Car Brand" required>
+                        <input type="text" name="brand" placeholder="Car Brand (eg: Maruti, Audi)" required>
                     </div>
                     <div class="form-group-element">
                         <label for="name">Model</label>
-                        <input type="text" name="name" placeholder="Car Name (Model)" required>
+                        <input type="text" name="name" placeholder="Car Name (Model eg: Alto 800)" required>
                     </div>
                     <div class="form-group-element">
-                        <label for="color">Colour</label>
-                        <input type="text" name="color" placeholder="Color" required>
+                        <label for="type">Type</label>
+                        <input type="text" name="type" placeholder="Car Type (eg: Sedan, Hatchback)" required>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group-element">
                         <label for="description">Description</label>
-                        <textarea name="description" maxlength="128" placeholder="Description" required></textarea>
+                        <textarea name="description" maxlength="128" placeholder="Describe the car..." required></textarea>
                     </div>
                 </div>
                 <div class="form-row">
+                    <div class="form-group-element">
+                        <label for="color">Colour</label>
+                        <input type="text" name="color" placeholder="Car Color (eg: Blue, Black)" required>
+                    </div>
                     <div class="form-group-element">
                         <label for="condition">Condition</label>
                         <select name="condition" required>
@@ -97,10 +101,13 @@
                         <label for="doors">Number of Doors</label>
                         <select name="doors" required>
                             <option value="2">2</option>
+                            <option value="3">3</option>
                             <option value="4" selected>4</option>
                             <option value="5">5</option>
                         </select>
                     </div>
+                </div>
+                <div class="form-row">
                     <div class="form-group-element">
                         <label for="seats">Number of Seats</label>
                         <select name="seats" required>
@@ -112,8 +119,6 @@
                             <option value="8">8</option>
                         </select>
                     </div>
-                </div>
-                <div class="form-row">
                     <div class="form-group-element">
                         <label for="transmission">Transmission Type</label>
                         <select name="transmission" required>
@@ -132,6 +137,8 @@
                             <option value="Hybrid">Hybrid</option>
                         </select>
                     </div>
+                </div>
+                <div class="form-row">
                     <div class="form-group-element">
                         <label for="status">Availability</label>
                         <select name="status" required>
@@ -139,15 +146,13 @@
                             <option value="unavailable">Unavailable</option>
                         </select>
                     </div>
-                </div>
-                <div class="form-row">
                     <div class="form-group-element">
                         <label for="price">Price</label>
-                        <input type="number" name="price" placeholder="Price" required>
+                        <input type="number" name="price" placeholder="Per Day Rate of the Car" required>
                     </div>
                     <div class="form-group-element">
-                        <label for="discount">Discount</label>
-                        <input type="number" name="discount" placeholder="Discount">
+                        <label for="discount">Discount %</label>
+                        <input type="number" name="discount" placeholder="Discount on Car (eg: 5, 100 = free)">
                     </div>
                 </div>
                 <div class="form-group-element">
