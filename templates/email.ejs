@@ -68,7 +68,7 @@
                     <td><%= carName %></td>
                     <td><%= carDays %> days</td>
                     <td>₹ <%= carPrice %></td>
-                    <td>₹ <%= parseFloat((carPrice*carDays) + (carPrice*0.18)).toFixed(2) %></td>
+                    <td>₹ <%= parseFloat((carPrice*carDays) + (carPrice*carDays*0.18)).toFixed(2) %></td>
                 </tr>
                 <% offers.forEach(offer => { %>
                     <tr>
