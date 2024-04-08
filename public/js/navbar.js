@@ -59,8 +59,7 @@ window.onload = () => {
     const theme = localStorage.getItem('theme');
     if (theme === 'dark') {
         document.body.classList.add('dark-theme');
+        const allElements = document.getElementsByClassName('dark-light-img')
+        for(i=0; i<allElements.length; i++) allElements[i].src = allElements[i].dataset[theme];
     }
-    const allElements = document.getElementsByClassName('dark-light-img')
-    for(i=0; i<allElements.length; i++) allElements[i].src = allElements[i].dataset[theme];
-    
 };
