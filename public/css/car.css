@@ -163,7 +163,8 @@ header nav .dropdown .dropbtn img {
   width: 42px;
   aspect-ratio: 1/1;
   margin: auto;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border: 2px solid var(--smokedWhiteDark);
   border-radius: 50%;
 }
@@ -172,6 +173,7 @@ header nav .dropdown .dropdown-content {
   position: absolute;
   background-color: var(--white);
   right: 0;
+  width: -moz-max-content;
   width: max-content;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
@@ -213,14 +215,12 @@ header nav #hamburger-menu .bar3 {
   transition: 0.5s;
 }
 header nav #hamburger-menu.open .bar1 {
-  -webkit-transform: rotate(-45deg) translate(-6px, 6px);
   transform: rotate(-45deg) translate(-6px, 6px);
 }
 header nav #hamburger-menu.open .bar2 {
   opacity: 0;
 }
 header nav #hamburger-menu.open .bar3 {
-  -webkit-transform: rotate(45deg) translate(-6px, 6px);
   transform: rotate(45deg) translate(-5px, -5px);
 }
 header nav #hamburger-menu.open .mobile-menu {
@@ -284,6 +284,7 @@ footer {
   width: 100%;
   justify-content: space-between;
   align-items: flex-start;
+  height: -moz-max-content;
   height: max-content;
   background-color: var(--smokedWhiteDark);
   flex-direction: row;
@@ -389,6 +390,7 @@ footer div .show {
   footer {
     flex-direction: column-reverse;
     gap: 30px;
+    padding: 30px 10px !important;
   }
   footer .brand-image {
     width: 100% !important;
@@ -697,7 +699,8 @@ body {
 .container .top-wrapper .images-wrapper .image-slideshow img {
   width: 100%;
   aspect-ratio: 1.3/1;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .container .top-wrapper .images-wrapper .prev,
 .container .top-wrapper .images-wrapper .next {
@@ -712,7 +715,9 @@ body {
   font-size: 18px;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   background-color: var(--grey);
 }
 .container .top-wrapper .images-wrapper .next {
@@ -953,7 +958,8 @@ body {
   border-radius: 5px;
   cursor: pointer;
   -webkit-appearance: none;
-  appearance: none;
+  -moz-appearance: none;
+       appearance: none;
 }
 .main-container .content-wrapper #reviews-content form .message-box #review-message#message {
   resize: horizontal;
@@ -1046,4 +1052,4 @@ body {
 }
 .hidden {
   display: none !important;
-}/*# sourceMappingURL=car.css.map */
+}
