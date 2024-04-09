@@ -142,13 +142,12 @@ payNowFrom.addEventListener('submit', async (e) => {
     }
 
     // Check if the car is already booked on the days selected.
-    // TODO : TO BE FIXED
     const dateArray = [];
     while (startDate.isSameOrBefore(dropDate, 'day')) {
         dateArray.push(startDate.format('DD-MM-YYYY'));
         startDate.add(1, 'days');
     }
-    if (bookedDates.includes(dateArray)) {
+    if (dateArray.some(date=> bookedDates.includes(date))) {
         showError({
             code: 105, 
             message:'This car is already booked one of these dates.'
@@ -167,7 +166,6 @@ payNowFrom.addEventListener('submit', async (e) => {
 
         // ! If Unseccessful
         if(res.status == 400 || res.status == 401) {
-            // TODO: Show Error Response Here.
             showError({
                 code: data.error.code,
                 message: data.error.message
