@@ -24,11 +24,11 @@ const error = {
         code: 100
     },
     101: {
-        message: "Username invalid/less than 4 charecters",
+        message: "Username invalid/less than 4 characters",
         code: 101
     },
     102: {
-        message: "Password less than 6 charecters",
+        message: "Password less than 6 characters",
         code: 102
     },
     103: {
