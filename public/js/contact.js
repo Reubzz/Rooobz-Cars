@@ -14,13 +14,13 @@ form.addEventListener('submit', async (event) => {
     console.log(data)
     if (data.status.code != 200) {
         showError({
-            error: data.error.code,
+            code: data.error.code,
             message: data.error.messsage
         })
         return;
     }
     showError({
-        error: 200,
+        code: 200,
         message: "Message Sent Successfully"
     });
     return;

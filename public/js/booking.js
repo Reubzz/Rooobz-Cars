@@ -135,7 +135,7 @@ payNowFrom.addEventListener('submit', async (e) => {
     const  diffDays = dropDate.diff(startDate, "days");
     if (diffDays <= 0) {
         showError({
-            error: 104,
+            code: 104,
             message: 'Drop off date must be later than Pick up date. Both Also cannot be the same date'
         })
         return;
@@ -150,7 +150,7 @@ payNowFrom.addEventListener('submit', async (e) => {
     }
     if (bookedDates.includes(dateArray)) {
         showError({
-            error: 105, 
+            code: 105, 
             message:'This car is already booked one of these dates.'
         })
         return;
@@ -169,7 +169,7 @@ payNowFrom.addEventListener('submit', async (e) => {
         if(res.status == 400 || res.status == 401) {
             // TODO: Show Error Response Here.
             showError({
-                error: data.error.code,
+                code: data.error.code,
                 message: data.error.message
             })
             return;

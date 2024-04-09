@@ -23,14 +23,14 @@ stripe.retrievePaymentIntent(clientSecret).then(({paymentIntent}) => {
     
         case 'processing':
             showError({
-                error: 105,
+                code: 105,
                 message: "Payment processing. We'll update you when payment is received."
             })
             break;
     
         case 'requires_payment_method':
             showError({
-                error: 105,
+                code: 105,
                 message: 'Payment failed. Please try another payment method.'
             })
             // Redirect your user back to your payment page to attempt collecting
@@ -39,7 +39,7 @@ stripe.retrievePaymentIntent(clientSecret).then(({paymentIntent}) => {
     
         default:
             showError({
-                error: 105,
+                code: 105,
                 message: 'Something went wrong.'
             })
             break;
@@ -66,13 +66,13 @@ async function transactionComplete() {
 
         if (res.status == 401 || res.status == 400) {
             showError({
-                error: data.error.code,
+                code: data.error.code,
                 message: data.error.message
             })
         }
         if (res2.status == 401 || res2.status == 400) {
             showError({
-                error: data2.error.code,
+                code: data2.error.code,
                 message: data2.error.message
             })
         }

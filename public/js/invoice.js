@@ -12,7 +12,7 @@ async function getPDF(orderid) {
     // ! If Unsuccessful
     if(res.status == 400 || res.status == 400) {
         showError({
-            error: data.error.code,
+            code: data.error.code,
             message: data.error.message
         })
         return;

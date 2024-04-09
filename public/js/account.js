@@ -54,7 +54,7 @@ async function submitField(inputElement, fieldName, button) {
         if (res.status == 400 || res.status == 401) { 
             inputElement.value = inputElement.dataset.initialdata;
             showError({
-                error: data.error.code,
+                code: data.error.code,
                 message: data.error.message
             })
             return;
@@ -104,12 +104,12 @@ form.addEventListener('submit', async (event) => {
             return;
         }
         showError({
-            error: data.error.code,
+            code: data.error.code,
             message: data.error.message
         })
     } catch (err) {
         showError({
-            error: 103,
+            code: 103,
             message: err.message
         })
         console.log('error in PFP Form in account.js in public/js', err.message)

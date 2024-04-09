@@ -16,7 +16,7 @@ addCarForm.addEventListener('submit', async (e) => {
         // ! If Unseccessful
         if(res.status == 400 || res.status == 401) {
             showError({
-                error: data.error.code,
+                code: data.error.code,
                 message: data.error.message
             })
             return;

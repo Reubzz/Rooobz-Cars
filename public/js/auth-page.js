@@ -56,9 +56,10 @@ async function authApi(apiEndPoint, bodyOptions) {
         const data = await res.json()
 
         // ! If Unsuccessful Login - Error
+        console.log(data)
         if (res.status === 400 || res.status === 401) {
             showError({
-                error: data.error.code,
+                code: data.error.code,
                 message: data.error.message
             })
             return;
