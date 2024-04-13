@@ -16,7 +16,7 @@ const model = mongoose.MAIN_DB.model(
         brand: { type: String, required: true }, // ! make of the car - [Eg. Tata]
         type: { type: String, required: true }, // ! Type of the car - [Eg. Hatchback, Sedan, etc]
         color: { type: String, required: true }, // ! Color of the car 
-        descrption: { type: String, maxlength: 128 }, // * Description the car 
+        description: { type: String, maxlength: 128 }, // * Description the car 
         condition: { type: String, required: true }, // ! Condition of the car 
         doors: { type: Number, default: 4 }, // ? Number of Doors the car has [ defaults to 4 ]
         transmission: { type: String, default: "Manual" }, // ? Manual, Automatic, Semi Automatic [ defaults to Manual ]
