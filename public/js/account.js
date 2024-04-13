@@ -16,7 +16,8 @@ function editButtonClick(button) {
         inputElement.disabled = false;
     }   
     else if(button.id == `${button.dataset.fieldname}-submit`) {
-        inputElement.disabled = true;
+        console.log('entered')
+        inputElement.disabled = !inputElement.disabled;
         submitField(inputElement, button.dataset.fieldname, button);
     }
     changeButton(button.dataset.fieldname, button)
@@ -62,7 +63,12 @@ async function submitField(inputElement, fieldName, button) {
 
         // ! If Sucess
         if (res.status == 200) {
-            window.location.reload(true);
+            // window.location.reload(true);
+            // editButtonClick(button)
+            showError({
+                code: res.status,
+                message: `${fieldName} updated successfully`
+            })
             return; 
         }
     } catch (error) {
