@@ -1,5 +1,5 @@
 // Initialize Stripe.js using your publishable key
-const stripe = Stripe('pk_test_51OriCPSJAPyxY5J1IDelmX4MbtJeX6fxbMQwe6IvPydOiWEZOVW6nCFWg9ayvTbN8NjjqpGe3R3AZNtMq1PERyEW00xa8FcsYe');
+const stripe = Stripe(stripePublicKey);
 // Retrieve the "payment_intent_client_secret" query parameter appended to
 // your return_url by Stripe.js
 const clientSecret = new URLSearchParams(window.location.search).get(

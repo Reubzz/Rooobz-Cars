@@ -104,7 +104,9 @@
     <div data-include="footer"></div>
 
     <!-- ! Javascript -->
-
+    <script>
+        const stripePublicKey = JSON.parse('<%- JSON.stringify(stripePublicKey) %> ')
+    </script>
     <script src="/js/invoice.js"></script>
     <script src="/js/complete.js"></script>
     <script src="/js/error-popup.js"></script>

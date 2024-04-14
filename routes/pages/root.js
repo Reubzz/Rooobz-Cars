@@ -116,7 +116,8 @@ router.get('/booking/pay', authCheck, async (req, res) => {
 
     res.render('vehicles/payment', {
         client_secret: paymentIntent.client_secret,
-        orderData: orderData
+        orderData: orderData,
+        stripePublicKey: process.env.STRIPE_PUBLIC_KEY
     })
 })
 
@@ -126,6 +127,7 @@ router.get('/booking/complete', async (req, res) => {
     const orderData = await ordersDB.findOne({ _id: orderId }).populate('car user transaction offers').catch(() => res.redirect('/404') );
     res.render('vehicles/complete', {
         order: orderData,
+        stripePublicKey: process.env.STRIPE_PUBLIC_KEY
     })
 })
 
