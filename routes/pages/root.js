@@ -2,10 +2,10 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 const config = require('../../config.json');
+require('dotenv').config()
 
 // Stripe Payment Gateway 
-const stripe = require('stripe')('sk_test_51OriCPSJAPyxY5J13cG7iIOc4vfrtsmWXQcMOnfnswH9QyshknBm0joFrLYRCycXHwSuKnQSo8IGNqu0sPHo5CGu00IOrjeNtG')
-
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
 // Databases
 const carsDB = require('../../models/schemas/cars');
 const usersDB = require('../../models/schemas/users');
