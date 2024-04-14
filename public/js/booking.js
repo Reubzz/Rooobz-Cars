@@ -150,7 +150,7 @@ payNowFrom.addEventListener('submit', async (e) => {
     if (dateArray.some(date=> bookedDates.includes(date))) {
         showError({
             code: 105, 
-            message:'This car is already booked one of these dates.'
+            message:'This car is already booked on one of these dates.'
         })
         return;
     }
