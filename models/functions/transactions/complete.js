@@ -112,7 +112,7 @@ exports.transactionComplete = async (req, res, next) => {
             carPrice: orderDetails.car.price,
             offers: orderDetails.offers,
             total: orderDetails.totalCost,
-            logoUrl: config.logo.alternate.url
+            logoUrl: config.logo.alternate.light.url
         })
         
         
