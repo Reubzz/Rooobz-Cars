@@ -601,6 +601,9 @@ span.placeholder {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  color: var(--black);
+  width: -moz-max-content;
+  width: max-content;
 }
 #tabs-container .tabs-wrapper .tab-title {
   font-family: "Rubik", sans-serif;
@@ -608,7 +611,6 @@ span.placeholder {
   font-size: 1.6rem;
   padding: 10px 30px;
   border-radius: 8px;
-  color: white;
 }
 #tabs-container .tabs-wrapper .tab-title.selected {
   background-color: #FF4C30;
@@ -655,6 +657,9 @@ span.placeholder {
 #bookings-data .bookings-wrapper .booking .left-wrapper .icon img {
   width: 150px;
   border-radius: 5px;
+  aspect-ratio: 1.7/1;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 #bookings-data .bookings-wrapper .booking .left-wrapper .booking-details {
   display: flex;

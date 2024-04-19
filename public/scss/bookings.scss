@@ -27,13 +27,15 @@
         display: flex;
         flex-direction: column;
         gap: 10px;
+        color: $black;
+        width: max-content;
+
         .tab-title {
             font-family: $rubik;
             font-weight: $medium;
             font-size: 1.6rem;
             padding: 10px 30px;
             border-radius: 8px;
-            color: white;
             &.selected {
                 background-color: $orange;
                 color: white;
@@ -79,6 +81,8 @@
                     img {
                         width: 150px;
                         border-radius: 5px;
+                        aspect-ratio: 1.7/1;
+                        object-fit: cover; 
                     }
                 }
                 .booking-details {
