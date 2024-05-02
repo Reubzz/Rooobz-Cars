@@ -47,26 +47,49 @@ router.post('/', upload.none(), checkOrigin, async (req, res) => {
     }
 
     try {
-        // await sendEmail(
-        //     'contact@reubz.io',
-        //     'Contact Form Submission - Forwarded Email',
-        //     `
-        //         ---------------- Forwarded Email ----------------
-        //         <br>
-        //         <strong>Name:</strong> ${name}
-        //         <br>
-        //         <strong>Email:</strong> ${email}
-        //         <br>
-        //         <strong>Phone:</strong> ${phone}
-        //         <br>
-        //         <strong>Date:</strong> ${moment().format('DD-MM-YYYY')} at ${moment().format('HH:MM')}
-        //         <br>
-        //         <br>
-        //         <strong>Message:</strong>
-        //         <br>
-        //          ${message.replace(/\r?\n/g, '<br>')}
-        //     `
-        // )
+        await sendEmail(
+            'contact@reubz.io',
+            'Contact Form Submission - Forwarded Email',
+            `
+                -------------- Forwarded Email -------------
+                <br>
+                <strong>Name:</strong> ${name}
+                <br>
+                <strong>Email:</strong> ${email}
+                <br>
+                <strong>Phone:</strong> ${phone}
+                <br>
+                <strong>Date:</strong> ${moment().format('DD-MM-YYYY')} at ${moment().format('HH:MM')}
+                <br>
+                <br>
+                <strong>Message:</strong>
+                <br>
+                 ${message.replace(/\r?\n/g, '<br>')}
+            `
+        )
+
+        await sendEmail(
+            `${email}`,
+            "Your message has been sent successfully",
+            `
+                <img src="https://rooobzcars.reubz.io/imgs/dark/logo-with-text-long.png" alt="Rooobz Cars Logo">
+                <h2>Your message has been sent successfully!</h2> 
+                <br>
+                Thank you for reaching out to us. We will get back to you as soon as possible. 
+                <br>
+                <br>
+                <strong>Your Message: </strong>
+                <br>
+                ${message.replace(/\r?\n/g, '<br>')}
+                
+                <br>
+                <br>
+
+                <p>This is a automated message sent to you as a confirmation of your message on our "Contact Us" Page being sent successfully.</p>
+                <br>
+                <p>If you didn't do anything, kindly ignore this email.</p>
+            `
+        )
         res.status(200).json({
             error: error[100],
             status: status[200]
@@ -77,9 +100,7 @@ router.post('/', upload.none(), checkOrigin, async (req, res) => {
             error: error[102],
             status: status[201]
         });
-        
     }
-    
 })
 
 module.exports = router;
